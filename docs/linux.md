@@ -1,4 +1,29 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Linux Basics
+
+##connect to machine remotely using ssh:
+```bash
+ssh username@hostname
+```
+for example:
+```bash
+ssh milesw@123.92.105
+```
+
+##Find out the hardware name:
+```bash
+uname -m
+```
 
 This is a short sequence of lectures on Python programming for scientific
 work, written by [Thomas J.  Sargent](http://www.tomsargent.com/) and [John
