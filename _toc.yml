@@ -7,4 +7,7 @@ sections:
 - file: docs/learn_more
 - file: docs/linux
 - file: docs/sqlite
+- file: docs/nmap
+- file: docs/struct
+- file: docs/jb
 

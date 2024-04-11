@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SQL General Commands &#8212; Cybersecurity QuickStart</title>
+    <title>nmap Basic Commands and Examples &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sqlite';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/nmap';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="nmap Basic Commands and Examples" href="nmap.html" />
-    <link rel="prev" title="Linux Basics" href="linux.html" />
+    <link rel="next" title="Basics of Data Structres" href="struct.html" />
+    <link rel="prev" title="SQL General Commands" href="sqlite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,8 +174,8 @@
 <li class="toctree-l1"><a class="reference internal" href="python_by_example.html">An Introductory Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn More</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linux.html">Linux Basics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">SQL General Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nmap.html">nmap Basic Commands and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQL General Commands</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">nmap Basic Commands and Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="struct.html">Basics of Data Structres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jb.html">Jupyter Book Basics</a></li>
 </ul>
@@ -232,7 +232,7 @@
       
       
       
-      <li><a href="../_sources/docs/sqlite.md" target="_blank"
+      <li><a href="../_sources/docs/nmap.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +316,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SQL General Commands</h1>
+    <h1>nmap Basic Commands and Examples</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -326,10 +326,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">filtering data:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data-using-and-or-and-not-operators">filtering data using AND, OR and NOT operators:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-data-when-the-name-of-the-target-is-changing">filter data when the name of the target is changing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-tables">Joining Tables:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-a-basic-scan">Perform a basic scan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-scan-results">Saving scan results</a></li>
 </ul>
             </nav>
         </div>
@@ -341,70 +339,33 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sql-general-commands">
-<h1>SQL General Commands<a class="headerlink" href="#sql-general-commands" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>!!! Warning: be careful of spelling !!!</p>
-</div>
-<section id="filtering-data">
-<h2>filtering data:<a class="headerlink" href="#filtering-data" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>WHERE<span class="w"> </span>&lt;colomn_header&gt;<span class="w"> </span>BETWEEN<span class="w"> </span>&lt;data_a&gt;<span class="w"> </span>AND<span class="w"> </span>&lt;data_b&gt;<span class="p">;</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="nmap-basic-commands-and-examples">
+<h1>nmap Basic Commands and Examples<a class="headerlink" href="#nmap-basic-commands-and-examples" title="Link to this heading">#</a></h1>
+<section id="perform-a-basic-scan">
+<h2>Perform a basic scan<a class="headerlink" href="#perform-a-basic-scan" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-p-</span></code> is to scan all ports<br />
+<code class="docutils literal notranslate"><span class="pre">-p&lt;portnumber&gt;</span></code> is to scan a specificed port
+e.g. sudo nmap &lt;ipv4_address&gt; will perform a full TCP port scan</p>
+</section>
+<section id="saving-scan-results">
+<h2>Saving scan results<a class="headerlink" href="#saving-scan-results" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">-oN</span> <span class="pre">&lt;file_name&gt;</span></code>, &lt;file_name&gt;.nmap, default format normal output
+<code class="docutils literal notranslate"><span class="pre">-oG</span> <span class="pre">&lt;file_name&gt;</span></code>, &lt;file_name&gt;.gnmp, grepable output
+<code class="docutils literal notranslate"><span class="pre">-oX</span> <span class="pre">&lt;file_name&gt;</span></code>, &lt;file_name&gt;.xml, can convert to html page, ez to read
+to proceed to convert into an html page, use the command</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xsltproc<span class="w"> </span>&lt;file_name&gt;.xml<span class="w"> </span>-o<span class="w"> </span>&lt;file_name&gt;.html
 </pre></div>
 </div>
-<p>e. g. MySQL&gt;SELECT*
-&gt;FROM machines
-&gt;WHERE <code class="docutils literal notranslate"><span class="pre">os_patch_date</span></code> BETWEEN <code class="docutils literal notranslate"><span class="pre">'2023-03-02'</span></code> AND <code class="docutils literal notranslate"><span class="pre">'2024-01-03'</span></code>;</p>
-<p>e.g.  &gt;WHERE <code class="docutils literal notranslate"><span class="pre">index_number</span></code> BETWEEN <code class="docutils literal notranslate"><span class="pre">5</span></code> AND <code class="docutils literal notranslate"><span class="pre">8</span></code>;</p>
+<p><code class="docutils literal notranslate"><span class="pre">firefox</span> <span class="pre">&lt;file_name&gt;.html</span></code> will open up the report in firefox browser
+<code class="docutils literal notranslate"><span class="pre">-oA</span> <span class="pre">&lt;file_name&gt;</span></code>, save in all formats</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>the ‘BETWEEN’ command will include the data on both larger end and lower end<br />
-&lt;data_a&gt; must be lower than &lt;data_b&gt; in the example above</p>
+<p>after adding these in serach commands, files will be created in the
+current directory that contains the search results.</p>
 </div>
-</section>
-<section id="filtering-data-using-and-or-and-not-operators">
-<h2>filtering data using AND, OR and NOT operators:<a class="headerlink" href="#filtering-data-using-and-or-and-not-operators" title="Link to this heading">#</a></h2>
-<p>e.g. mysql &gt;SELECT *
--&gt;FROM machines
--&gt;WHERE os_patch_date &lt;= ‘2023-02-03’ <code class="docutils literal notranslate"><span class="pre">AND</span></code> os_model = ‘kali’ <code class="docutils literal notranslate"><span class="pre">OR</span></code> os_model = ‘parrot’;</p>
-<p>e.g. mysql &gt;SELECT *
--&gt;FROM machines
--&gt;WHERE <code class="docutils literal notranslate"><span class="pre">NOT</span></code> os_model = ‘kali’ <code class="docutils literal notranslate"><span class="pre">OR</span> <span class="pre">NOT</span></code> os_model = ‘parrot’;</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>this will return machines with os that is neither kali nor parrot!</p>
-</div>
-</section>
-<section id="filter-data-when-the-name-of-the-target-is-changing">
-<h2>filter data when the name of the target is changing:<a class="headerlink" href="#filter-data-when-the-name-of-the-target-is-changing" title="Link to this heading">#</a></h2>
-<p>e.g. mysql &gt;SELECT *
--&gt;FROM machines
--&gt;WHERE os_model <code class="docutils literal notranslate"><span class="pre">LIKE</span> <span class="pre">'WIN%'</span></code>;
-In this way, target machines such as “WIN 8”, “WIN 9”, and “WIN 11” will all be targeted.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>make sure the specificy the title of the targets everytime a filtering operator is used.</p>
-</div>
-<p>e.g. -&gt;WHERE country = ‘China’ OR ‘Japan’ is not correct,
-it should be replaced with -&gt;WHERE country = ‘China’ OR <span style="color: red;">country = </span> ‘Japan’;</p>
-</section>
-<section id="joining-tables">
-<h2>Joining Tables:<a class="headerlink" href="#joining-tables" title="Link to this heading">#</a></h2>
-<p>There are two way of joining tables in mysql, inner and outer join.
-Inner join combines two tables based on the common row entries that they’ve got.
-There are 3 different kinds of outer join: left join, right join and full outer join.
-left join preserves all the left table will combin the row entrys on the right only if they’ve got common terms.
-For right join, vice versa as for full outer join, it is just brute force joining both tables.</p>
-<p>syntaxes:
-mysql&gt;SELECT *
--&gt;FROM machines
--&gt;<code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> generators ON generators.usr = machines.usr;</p>
-<p>mysql&gt;SELECT *
--&gt;FROM machines
--&gt;<code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">OUTER</span> <span class="pre">JOIN</span></code> generators ON generators.usr = machines.usr;</p>
-<p>mysql&gt;SELECT *
--&gt;FROM machines
--&gt;<code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> generators ON generators.usr = machines.usr;</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../_images/tp.png"><img alt="../_images/tp.png" src="../_images/tp.png" style="width: 100px; height: 100px;" /></a>
+</figure>
 </section>
 </section>
 
@@ -439,20 +400,20 @@ mysql&gt;SELECT *
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="linux.html"
+       href="sqlite.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linux Basics</p>
+        <p class="prev-next-title">SQL General Commands</p>
       </div>
     </a>
     <a class="right-next"
-       href="nmap.html"
+       href="struct.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">nmap Basic Commands and Examples</p>
+        <p class="prev-next-title">Basics of Data Structres</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -472,10 +433,8 @@ mysql&gt;SELECT *
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">filtering data:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data-using-and-or-and-not-operators">filtering data using AND, OR and NOT operators:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-data-when-the-name-of-the-target-is-changing">filter data when the name of the target is changing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-tables">Joining Tables:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-a-basic-scan">Perform a basic scan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-scan-results">Saving scan results</a></li>
 </ul>
   </nav></div>
 

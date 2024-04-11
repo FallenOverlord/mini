@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Linux Basics &#8212; Scientific Python QuickStart</title>
+    <title>Linux Basics &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/linux';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SQLite Basics" href="sqlite.html" />
+    <link rel="next" title="SQL General Commands" href="sqlite.html" />
     <link rel="prev" title="Learn More" href="learn_more.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -150,8 +150,8 @@
       
     
     
-    <img src="../_static/qe-logo-large.png" class="logo__image only-light" alt="Scientific Python QuickStart - Home"/>
-    <script>document.write(`<img src="../_static/qe-logo-large.png" class="logo__image only-dark" alt="Scientific Python QuickStart - Home"/>`);</script>
+    <img src="../_static/qe-logo-large.png" class="logo__image only-light" alt="Cybersecurity QuickStart - Home"/>
+    <script>document.write(`<img src="../_static/qe-logo-large.png" class="logo__image only-dark" alt="Cybersecurity QuickStart - Home"/>`);</script>
   
   
 </a></div>
@@ -174,7 +174,10 @@
 <li class="toctree-l1"><a class="reference internal" href="python_by_example.html">An Introductory Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn More</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Linux Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQLite Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQL General Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nmap.html">nmap Basic Commands and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="struct.html">Basics of Data Structres</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jb.html">Jupyter Book Basics</a></li>
 </ul>
 
     </div>
@@ -300,7 +303,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -316,6 +321,22 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-index-inode-number-of-a-file">Find the index/inode number of a file:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#locate-a-file">Locate a file:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-number-of-packages-installed-on-the-machine">Find the number of packages installed on the machine:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redirecting-outputs">Redirecting outputs:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-descriptions">File Descriptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -327,7 +348,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="linux-basics">
 <h1>Linux Basics<a class="headerlink" href="#linux-basics" title="Link to this heading">#</a></h1>
-<p>##connect to machine remotely using ssh:</p>
+<p>connect to machine remotely using ssh:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>username@hostname
 </pre></div>
 </div>
@@ -335,30 +356,110 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>milesw@123.92.105
 </pre></div>
 </div>
-<p>##Find out the hardware name:</p>
+<p>Find out the hardware name:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uname<span class="w"> </span>-m
 </pre></div>
 </div>
-<p>This is a short sequence of lectures on Python programming for scientific
-work, written by <a class="reference external" href="http://www.tomsargent.com/">Thomas J.  Sargent</a> and <a class="reference external" href="https://johnstachurski.net/">John
-Stachurski</a>.</p>
+<p>Find out the kernel version (generic) of the host:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>uname<span class="w"> </span>-r
+</pre></div>
+</div>
+<p>Find out the path to certain directories:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="nv">$MAIL</span>
+<span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
+</pre></div>
+</div>
+<p>Find out the name of network interface:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ip<span class="w"> </span>addr<span class="w"> </span>show
+</pre></div>
+</div>
+<section id="find-the-index-inode-number-of-a-file">
+<h2>Find the index/inode number of a file:<a class="headerlink" href="#find-the-index-inode-number-of-a-file" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-i<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>file&gt;
+ls<span class="w"> </span>-i<span class="w"> </span>/etc/sudoers
+</pre></div>
+</div>
+<p>Find hidden files in a dir:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-la
+</pre></div>
+</div>
+<p>This is a <span style="color: red;">red</span> word.</p>
+<p>Find the files according to the time they’re modified:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>-lt
+</pre></div>
+</div>
+<p>Get an overview of the file and folders in a dir:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tree<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Find the location of a software/tool:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>which<span class="w"> </span>&lt;name_of_the_tool&gt;
+which<span class="w"> </span>python
+which<span class="w"> </span>netcat
+</pre></div>
+</div>
+<section id="locate-a-file">
+<h3>Locate a file:<a class="headerlink" href="#locate-a-file" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>&lt;starting_location&gt;<span class="w"> </span>&lt;param.&gt;
+find<span class="w"> </span>/<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;hello.txt&quot;</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-size<span class="w"> </span>+12<span class="w"> </span>-size<span class="w"> </span>-20<span class="w"> </span>-user<span class="w"> </span>root<span class="w"> </span>-newermt<span class="w"> </span><span class="m">2023</span>-03-03<span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>These lectures were built using the new Sphinx-based <a class="reference external" href="https://beta.jupyterbook.org/intro.html">Jupyter Book
-2.0</a> tool set, as part of the
-<a class="reference external" href="https://ebp.jupyterbook.org/en/latest/">ExecutableBookProject</a>.  They are
-intended mainly as a demonstration of these tools.
-Instructions for how to build them from source can be found in the Jupyter
-Book documentation.</p>
+<p>explain: the command starts finding from the root directory, it detects sources with a file format,
+with a name of “hello.txt” and a size of over 12 but less than 20. In addition, the file has to be owned
+by root and is created later than march 3, 2023. 2&gt;/dev/null disposes the warnning messages.</p>
 </div>
-<p>These lectures are a mini-version of a <a class="reference external" href="https://executablebooks.github.io/quantecon-example/docs/index.html">longer
-series</a>
-of lectures, also built using Jupyter Book 2.0.  That series contains more
-features and applications but also requires more libraries and takes longer to
-run.</p>
-<p>Both lecture series are taken from a <a class="reference external" href="https://python.quantecon.org">more complete set of
-lectures</a> on open source computing hosted by
-<a class="reference external" href="https://quantecon.org">QuantEcon</a>.</p>
+<p>Find the number of files with certain names/extensions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>&lt;starting_location&gt;<span class="w"> </span>&lt;param.&gt;<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+find<span class="w"> </span>/<span class="w"> </span>-name<span class="w"> </span>*.config<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>tip: “wc -l” means “word count”, with an argument of line count.</p>
+</div>
+</section>
+<section id="find-the-number-of-packages-installed-on-the-machine">
+<h3>Find the number of packages installed on the machine:<a class="headerlink" href="#find-the-number-of-packages-installed-on-the-machine" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dpkg<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;^ii&#39;</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>the “-c” command count the number of outputs, ‘^ii’ is the patternin packages that the computer should look for.</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>when using the second command, the header is also being counted, you have to deduct 1 from the total result.</p>
+</div>
+</section>
+<section id="redirecting-outputs">
+<h3>Redirecting outputs:<a class="headerlink" href="#redirecting-outputs" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>/<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;fun.exe&quot;</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span>&gt;path.txt
+</pre></div>
+</div>
+</div>
+<p>tip: this redirects the garbage warnings into null and redirects the rest of the output into a newly created file name path.txt.</p>
+<section id="file-descriptions">
+<h4>File Descriptions<a class="headerlink" href="#file-descriptions" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Data Stream for Input
+<code class="docutils literal notranslate"><span class="pre">STDIN</span> <span class="pre">–</span> <span class="pre">0</span></code></p></li>
+<li><p>Data Stream for Output
+<code class="docutils literal notranslate"><span class="pre">STDOUT</span> <span class="pre">–</span> <span class="pre">1</span></code></p></li>
+<li><p>Data Stream for Output that relates to an error occurring.
+<code class="docutils literal notranslate"><span class="pre">STDERR</span> <span class="pre">–</span> <span class="pre">2</span></code></p></li>
+</ol>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">2&gt;/dev/null</span></code> means that error outputs are being redirected to null.</p>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -405,7 +506,7 @@ lectures</a> on open source computing hosted by
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">SQLite Basics</p>
+        <p class="prev-next-title">SQL General Commands</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -416,7 +517,28 @@ lectures</a> on open source computing hosted by
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-index-inode-number-of-a-file">Find the index/inode number of a file:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#locate-a-file">Locate a file:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-the-number-of-packages-installed-on-the-machine">Find the number of packages installed on the machine:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redirecting-outputs">Redirecting outputs:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-descriptions">File Descriptions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -427,7 +549,7 @@ lectures</a> on open source computing hosted by
   <div class="footer-item">
     
 <p class="component-author">
-By Thomas J. Sargent and John Stachurski
+By Miles Wang
 </p>
 
   </div>

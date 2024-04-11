@@ -1,8 +1,7 @@
-# Scientific Python QuickStart 
+# Cybersecurity QuickStart 
 
-This is a short sequence of lectures on Python programming for scientific
-work, written by [Thomas J.  Sargent](http://www.tomsargent.com/) and [John
-Stachurski](https://johnstachurski.net/).
+This book covers several important areas in the field of cybersecurity,
+ written by [Miles Wang](https://www.linkedin.com/in/miles-wang-177127293/).
 
 ```{note}
 These lectures were built using the new Sphinx-based [Jupyter Book

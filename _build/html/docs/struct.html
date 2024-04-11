@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>SQL General Commands &#8212; Cybersecurity QuickStart</title>
+    <title>Basics of Data Structres &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/sqlite';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/struct';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="nmap Basic Commands and Examples" href="nmap.html" />
-    <link rel="prev" title="Linux Basics" href="linux.html" />
+    <link rel="next" title="Jupyter Book Basics" href="jb.html" />
+    <link rel="prev" title="nmap Basic Commands and Examples" href="nmap.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,9 +174,9 @@
 <li class="toctree-l1"><a class="reference internal" href="python_by_example.html">An Introductory Example</a></li>
 <li class="toctree-l1"><a class="reference internal" href="learn_more.html">Learn More</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linux.html">Linux Basics</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">SQL General Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQL General Commands</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nmap.html">nmap Basic Commands and Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="struct.html">Basics of Data Structres</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basics of Data Structres</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jb.html">Jupyter Book Basics</a></li>
 </ul>
 
@@ -232,7 +232,7 @@
       
       
       
-      <li><a href="../_sources/docs/sqlite.md" target="_blank"
+      <li><a href="../_sources/docs/struct.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -303,9 +303,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -316,22 +314,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>SQL General Commands</h1>
+    <h1>Basics of Data Structres</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">filtering data:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data-using-and-or-and-not-operators">filtering data using AND, OR and NOT operators:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-data-when-the-name-of-the-target-is-changing">filter data when the name of the target is changing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-tables">Joining Tables:</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -341,71 +328,50 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="sql-general-commands">
-<h1>SQL General Commands<a class="headerlink" href="#sql-general-commands" title="Link to this heading">#</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>!!! Warning: be careful of spelling !!!</p>
-</div>
-<section id="filtering-data">
-<h2>filtering data:<a class="headerlink" href="#filtering-data" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>WHERE<span class="w"> </span>&lt;colomn_header&gt;<span class="w"> </span>BETWEEN<span class="w"> </span>&lt;data_a&gt;<span class="w"> </span>AND<span class="w"> </span>&lt;data_b&gt;<span class="p">;</span>
-</pre></div>
-</div>
-<p>e. g. MySQL&gt;SELECT*
-&gt;FROM machines
-&gt;WHERE <code class="docutils literal notranslate"><span class="pre">os_patch_date</span></code> BETWEEN <code class="docutils literal notranslate"><span class="pre">'2023-03-02'</span></code> AND <code class="docutils literal notranslate"><span class="pre">'2024-01-03'</span></code>;</p>
-<p>e.g.  &gt;WHERE <code class="docutils literal notranslate"><span class="pre">index_number</span></code> BETWEEN <code class="docutils literal notranslate"><span class="pre">5</span></code> AND <code class="docutils literal notranslate"><span class="pre">8</span></code>;</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>the ‘BETWEEN’ command will include the data on both larger end and lower end<br />
-&lt;data_a&gt; must be lower than &lt;data_b&gt; in the example above</p>
-</div>
-</section>
-<section id="filtering-data-using-and-or-and-not-operators">
-<h2>filtering data using AND, OR and NOT operators:<a class="headerlink" href="#filtering-data-using-and-or-and-not-operators" title="Link to this heading">#</a></h2>
-<p>e.g. mysql &gt;SELECT *
--&gt;FROM machines
--&gt;WHERE os_patch_date &lt;= ‘2023-02-03’ <code class="docutils literal notranslate"><span class="pre">AND</span></code> os_model = ‘kali’ <code class="docutils literal notranslate"><span class="pre">OR</span></code> os_model = ‘parrot’;</p>
-<p>e.g. mysql &gt;SELECT *
--&gt;FROM machines
--&gt;WHERE <code class="docutils literal notranslate"><span class="pre">NOT</span></code> os_model = ‘kali’ <code class="docutils literal notranslate"><span class="pre">OR</span> <span class="pre">NOT</span></code> os_model = ‘parrot’;</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>this will return machines with os that is neither kali nor parrot!</p>
-</div>
-</section>
-<section id="filter-data-when-the-name-of-the-target-is-changing">
-<h2>filter data when the name of the target is changing:<a class="headerlink" href="#filter-data-when-the-name-of-the-target-is-changing" title="Link to this heading">#</a></h2>
-<p>e.g. mysql &gt;SELECT *
--&gt;FROM machines
--&gt;WHERE os_model <code class="docutils literal notranslate"><span class="pre">LIKE</span> <span class="pre">'WIN%'</span></code>;
-In this way, target machines such as “WIN 8”, “WIN 9”, and “WIN 11” will all be targeted.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>make sure the specificy the title of the targets everytime a filtering operator is used.</p>
-</div>
-<p>e.g. -&gt;WHERE country = ‘China’ OR ‘Japan’ is not correct,
-it should be replaced with -&gt;WHERE country = ‘China’ OR <span style="color: red;">country = </span> ‘Japan’;</p>
-</section>
-<section id="joining-tables">
-<h2>Joining Tables:<a class="headerlink" href="#joining-tables" title="Link to this heading">#</a></h2>
-<p>There are two way of joining tables in mysql, inner and outer join.
-Inner join combines two tables based on the common row entries that they’ve got.
-There are 3 different kinds of outer join: left join, right join and full outer join.
-left join preserves all the left table will combin the row entrys on the right only if they’ve got common terms.
-For right join, vice versa as for full outer join, it is just brute force joining both tables.</p>
-<p>syntaxes:
-mysql&gt;SELECT *
--&gt;FROM machines
--&gt;<code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code> generators ON generators.usr = machines.usr;</p>
-<p>mysql&gt;SELECT *
--&gt;FROM machines
--&gt;<code class="docutils literal notranslate"><span class="pre">FULL</span> <span class="pre">OUTER</span> <span class="pre">JOIN</span></code> generators ON generators.usr = machines.usr;</p>
-<p>mysql&gt;SELECT *
--&gt;FROM machines
--&gt;<code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> generators ON generators.usr = machines.usr;</p>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="basics-of-data-structres">
+<h1>Basics of Data Structres<a class="headerlink" href="#basics-of-data-structres" title="Link to this heading">#</a></h1>
+<p>** What is this chapter about?
+Storing different data types, i.e. int and char, in one variable.</p>
+<p>** How to declear data structure?
+struct Student{
+int stuID;
+double height;
+char name[20];
+bool sex;
+}</p>
+<p>int main(void){
+struct Student student;</p>
+<p>return 0;
+}</p>
+<p>You can also declear a data stucture using:</p>
+<p>struct Prof{
+int staffID;
+double rating;
+char name[20];
+}prof;</p>
+<p>the variable for the data sturcre is defined as lower case prof.</p>
+<p>** Access stuff in the data sturcture.</p>
+<p>using the example above, if we want to know the name of the proffessor, we can write:</p>
+<p><a class="reference external" href="http://prof.name">prof.name</a>[20] = “Seica”</p>
+<p>printf(“the name of the prof is: %s\n”, <a class="reference external" href="http://prof.name">prof.name</a>);</p>
+<p>** Associate values with the variables.</p>
+<p>struct Chestnut{</p>
+<p>int floorNumber;
+double rating;
+char favorateFoodName[20];</p>
+<p>} nut = {27, 1.2, “ribs”};</p>
+<p>Or we can initialize value inside other functions:
+struct Chestnut dong = {4, 1.5, “meat balls”};</p>
+<p>** Give your data sturcture a nickname;</p>
+<p>warning: only for an existing data sturcture.</p>
+<p>use the magic words:
+typedef &lt;name_of_the_data_type&gt; <nickname>;</p>
+<p>&lt;name_of_the_data_type&gt; can be int, char and double,<br />
+it can also be the data structure you’ve defined.</p>
+<p>now you can call data types by their nicknames.</p>
+<p>e.g. typedef char words;</p>
+<p>words my_initial = “M”;
+words my_name = “Miles”;</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -439,20 +405,20 @@ mysql&gt;SELECT *
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="linux.html"
+       href="nmap.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linux Basics</p>
+        <p class="prev-next-title">nmap Basic Commands and Examples</p>
       </div>
     </a>
     <a class="right-next"
-       href="nmap.html"
+       href="jb.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">nmap Basic Commands and Examples</p>
+        <p class="prev-next-title">Jupyter Book Basics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -463,23 +429,7 @@ mysql&gt;SELECT *
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">filtering data:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data-using-and-or-and-not-operators">filtering data using AND, OR and NOT operators:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-data-when-the-name-of-the-target-is-changing">filter data when the name of the target is changing:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-tables">Joining Tables:</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
