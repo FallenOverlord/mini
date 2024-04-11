@@ -303,7 +303,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -319,6 +321,18 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-chapter-about">What is this chapter about?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-declear-data-structure">How to declear data structure?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-stuff-in-the-data-sturcture">Access stuff in the data sturcture.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#associate-values-with-the-variables">Associate values with the variables.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-your-data-sturcture-a-nickname">Give your data sturcture a nickname;</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -330,48 +344,68 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="basics-of-data-structres">
 <h1>Basics of Data Structres<a class="headerlink" href="#basics-of-data-structres" title="Link to this heading">#</a></h1>
-<p>** What is this chapter about?
-Storing different data types, i.e. int and char, in one variable.</p>
-<p>** How to declear data structure?
-struct Student{
-int stuID;
-double height;
-char name[20];
-bool sex;
-}</p>
-<p>int main(void){
-struct Student student;</p>
-<p>return 0;
-}</p>
+<section id="what-is-this-chapter-about">
+<h2>What is this chapter about?<a class="headerlink" href="#what-is-this-chapter-about" title="Link to this heading">#</a></h2>
+<p>Storing different data types, i.e. int and char, in one variable.</p>
+</section>
+<section id="how-to-declear-data-structure">
+<h2>How to declear data structure?<a class="headerlink" href="#how-to-declear-data-structure" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>struct<span class="w"> </span>Student<span class="o">{</span>
+int<span class="w"> </span>stuID<span class="p">;</span>
+double<span class="w"> </span>height<span class="p">;</span>
+char<span class="w"> </span>name<span class="o">[</span><span class="m">20</span><span class="o">]</span><span class="p">;</span>
+bool<span class="w"> </span>sex<span class="p">;</span>
+<span class="o">}</span>
+
+int<span class="w"> </span>main<span class="o">(</span>void<span class="o">){</span>
+struct<span class="w"> </span>Student<span class="w"> </span>student<span class="p">;</span>
+
+<span class="k">return</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
 <p>You can also declear a data stucture using:</p>
-<p>struct Prof{
-int staffID;
-double rating;
-char name[20];
-}prof;</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>struct<span class="w"> </span>Prof<span class="o">{</span>
+int<span class="w"> </span>staffID<span class="p">;</span>
+double<span class="w"> </span>rating<span class="p">;</span>
+char<span class="w"> </span>name<span class="o">[</span><span class="m">20</span><span class="o">]</span><span class="p">;</span>
+<span class="o">}</span>prof<span class="p">;</span>
+</pre></div>
+</div>
 <p>the variable for the data sturcre is defined as lower case prof.</p>
-<p>** Access stuff in the data sturcture.</p>
+</section>
+<section id="access-stuff-in-the-data-sturcture">
+<h2>Access stuff in the data sturcture.<a class="headerlink" href="#access-stuff-in-the-data-sturcture" title="Link to this heading">#</a></h2>
 <p>using the example above, if we want to know the name of the proffessor, we can write:</p>
-<p><a class="reference external" href="http://prof.name">prof.name</a>[20] = “Seica”</p>
+<p><code class="docutils literal notranslate"><span class="pre">prof.name[20]</span> <span class="pre">=</span> <span class="pre">&quot;Seica&quot;</span></code></p>
 <p>printf(“the name of the prof is: %s\n”, <a class="reference external" href="http://prof.name">prof.name</a>);</p>
-<p>** Associate values with the variables.</p>
-<p>struct Chestnut{</p>
-<p>int floorNumber;
-double rating;
-char favorateFoodName[20];</p>
-<p>} nut = {27, 1.2, “ribs”};</p>
+</section>
+<section id="associate-values-with-the-variables">
+<h2>Associate values with the variables.<a class="headerlink" href="#associate-values-with-the-variables" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>struct<span class="w"> </span>Chestnut<span class="o">{</span>
+
+int<span class="w"> </span>floorNumber<span class="p">;</span>
+double<span class="w"> </span>rating<span class="p">;</span>
+char<span class="w"> </span>favorateFoodName<span class="o">[</span><span class="m">20</span><span class="o">]</span><span class="p">;</span>
+
+<span class="o">}</span><span class="w"> </span><span class="nv">nut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">27</span>,<span class="w"> </span><span class="m">1</span>.2,<span class="w"> </span><span class="s2">&quot;ribs&quot;</span><span class="o">}</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>Or we can initialize value inside other functions:
 struct Chestnut dong = {4, 1.5, “meat balls”};</p>
-<p>** Give your data sturcture a nickname;</p>
+</section>
+<section id="give-your-data-sturcture-a-nickname">
+<h2>Give your data sturcture a nickname;<a class="headerlink" href="#give-your-data-sturcture-a-nickname" title="Link to this heading">#</a></h2>
 <p>warning: only for an existing data sturcture.</p>
 <p>use the magic words:
-typedef &lt;name_of_the_data_type&gt; <nickname>;</p>
+<code class="docutils literal notranslate"><span class="pre">typedef</span> <span class="pre">&lt;name_of_the_data_type&gt;</span> <span class="pre">&lt;nickname&gt;;</span></code></p>
 <p>&lt;name_of_the_data_type&gt; can be int, char and double,<br />
 it can also be the data structure you’ve defined.</p>
 <p>now you can call data types by their nicknames.</p>
 <p>e.g. typedef char words;</p>
 <p>words my_initial = “M”;
 words my_name = “Miles”;</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -429,7 +463,24 @@ words my_name = “Miles”;</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this-chapter-about">What is this chapter about?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-declear-data-structure">How to declear data structure?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-stuff-in-the-data-sturcture">Access stuff in the data sturcture.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#associate-values-with-the-variables">Associate values with the variables.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#give-your-data-sturcture-a-nickname">Give your data sturcture a nickname;</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
