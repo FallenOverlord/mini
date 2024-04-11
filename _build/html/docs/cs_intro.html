@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3.2. Jupyter Book Basics &#8212; Cybersecurity QuickStart</title>
+    <title>1. Cybersecurity intro &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -57,10 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/jb';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/cs_intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="3.1. Basics of Data Structres" href="struct.html" />
+    <link rel="next" title="1.1. Linux Basics" href="linux.html" />
+    <link rel="prev" title="Hello, my name is Miles." href="miles.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -172,8 +173,8 @@
 <li class="toctree-l1"><a class="reference internal" href="miles.html">Hello, my name is Miles.</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cybersecurity</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="cs_intro.html">1. Cybersecurity intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Cybersecurity intro</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="linux.html">1.1. Linux Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite.html">1.2. SQL General Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nmap.html">1.3. nmap Basic Commands and Examples</a></li>
@@ -190,10 +191,10 @@
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="c_intro.html">3. Welcome to C Programming Language</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="c_intro.html">3. Welcome to C Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="struct.html">3.1. Basics of Data Structres</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.2. Jupyter Book Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jb.html">3.2. Jupyter Book Basics</a></li>
 </ul>
 </li>
 </ul>
@@ -250,7 +251,7 @@
       
       
       
-      <li><a href="../_sources/docs/jb.md" target="_blank"
+      <li><a href="../_sources/docs/cs_intro.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,9 +322,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -334,29 +333,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Jupyter Book Basics</h1>
+    <h1>Cybersecurity intro</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book-on-vs-code">3.2.1. 1. Install jupyter book on VS Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-version-status">3.2.2. 2.Check version status</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-template">3.2.3. 3. Create a new template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#book-structure">3.2.4. 4. Book structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-markdown-syntaxes">3.2.5. 5. Basic Markdown syntaxes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink">3.2.6. <code class="docutils literal notranslate"><span class="pre">[&lt;hyperlink_text&gt;](&lt;relative_path_to_linked_file&gt;)</span></code> will create a hyperlink</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-book">3.2.7. 6. Building the book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-online-repo-for-jupyter-book">3.2.8. 7. Create an online repo for jupyter-book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-the-jupyter-book-online">3.2.9. 8. Publish the jupyter-book online</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-online-site">3.2.10. 9. Update the online site</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book-explore-more-features">3.2.11. Jupyter-book Explore More Features</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -366,115 +347,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-book-basics">
-<h1><span class="section-number">3.2. </span>Jupyter Book Basics<a class="headerlink" href="#jupyter-book-basics" title="Link to this heading">#</a></h1>
-<section id="install-jupyter-book-on-vs-code">
-<h2><span class="section-number">3.2.1. </span>1. Install jupyter book on VS Code<a class="headerlink" href="#install-jupyter-book-on-vs-code" title="Link to this heading">#</a></h2>
-<p>pip install -U jupyter-book</p>
-</section>
-<section id="check-version-status">
-<h2><span class="section-number">3.2.2. </span>2.Check version status<a class="headerlink" href="#check-version-status" title="Link to this heading">#</a></h2>
-<p>jupyter-book –version</p>
-<p>OR</p>
-<p>jb –version</p>
-</section>
-<section id="create-a-new-template">
-<h2><span class="section-number">3.2.3. </span>3. Create a new template<a class="headerlink" href="#create-a-new-template" title="Link to this heading">#</a></h2>
-<p>jb create &lt;book_name&gt;/</p>
-</section>
-<section id="book-structure">
-<h2><span class="section-number">3.2.4. </span>4. Book structure<a class="headerlink" href="#book-structure" title="Link to this heading">#</a></h2>
-<p>_config.yml contain title, author and logo info
-_toc.yml contain the files and chapters of the book
-.md, .ipynb and .rst files are all part of the book content
-a Markdown file (<a class="reference external" href="http://markdown.md">markdown.md</a>)
-a Jupyter Notebook (.ipynb): a combination of computational content and narrative content
-a MyST Markdown Notebook (<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>)</p>
-</section>
-<section id="basic-markdown-syntaxes">
-<h2><span class="section-number">3.2.5. </span>5. Basic Markdown syntaxes<a class="headerlink" href="#basic-markdown-syntaxes" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>:::<span class="o">{</span>&lt;name&gt;<span class="o">}</span>
-&lt;content&gt;
-:::
-
-<span class="c1">#&lt;title&gt;</span>
-<span class="c1">##&lt;section_header&gt;</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="cybersecurity-intro">
+<h1><span class="section-number">1. </span>Cybersecurity intro<a class="headerlink" href="#cybersecurity-intro" title="Link to this heading">#</a></h1>
+<p>linux</p>
+<div class="toctree-wrapper compound">
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>**&lt;content&gt;**<span class="w"> </span>
-</pre></div>
-</div>
-<p>makes the content bold</p>
-</section>
-<section id="hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink">
-<h2><span class="section-number">3.2.6. </span><code class="docutils literal notranslate"><span class="pre">[&lt;hyperlink_text&gt;](&lt;relative_path_to_linked_file&gt;)</span></code> will create a hyperlink<a class="headerlink" href="#hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink" title="Link to this heading">#</a></h2>
-</section>
-<section id="building-the-book">
-<h2><span class="section-number">3.2.7. </span>6. Building the book<a class="headerlink" href="#building-the-book" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">&lt;book_name&gt;/</span></code> will generate a fully functioning HTML site
-after changes are incurred and a newer version of HTML site needs to
-be built upon the changed files, you should use the command <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">&lt;book_name&gt;/</span></code>
-tip: after new content files are added in, remember to add <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">file:</span> <span class="pre">&lt;file_name&gt;</span></code> in
-the _toc.yml file</p>
-</section>
-<section id="create-an-online-repo-for-jupyter-book">
-<h2><span class="section-number">3.2.8. </span>7. Create an online repo for jupyter-book<a class="headerlink" href="#create-an-online-repo-for-jupyter-book" title="Link to this heading">#</a></h2>
-<p>first create a new dir in github: <a class="github reference external" href="https://github.com/new">new</a>
-tip: ensure that the new dir has both name and descriptions but NO README file
-Next, clone the empty dir into local dev env: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;my-</span> <span class="pre">org&gt;/&lt;my-repository-name&gt;</span></code>
-Now, copy all the jupyter-book content into the newly added empty folder:
-<code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">&lt;jupyter_book_name&gt;/*</span> <span class="pre">&lt;newly_cloned_dir_name&gt;/</span></code>
-Next step is to sync the local and remote repo:
-<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;newly_cloned_dir_name&gt;</span></code>
-git add ./*
-git commit -m “adding my first book!”
-git push</p>
-</section>
-<section id="publish-the-jupyter-book-online">
-<h2><span class="section-number">3.2.9. </span>8. Publish the jupyter-book online<a class="headerlink" href="#publish-the-jupyter-book-online" title="Link to this heading">#</a></h2>
-<p>Firstly, pip install ghp-import
-Secondly, cd into the <code class="docutils literal notranslate"><span class="pre">&lt;newly_cloned_dir&gt;</span></code>
-ghp-import -n -p -f _build/html
-see the hosted website at <code class="docutils literal notranslate"><span class="pre">https://FallenOverlord.github.io/&lt;newly_cloned_dir&gt;/</span></code></p>
-</section>
-<section id="update-the-online-site">
-<h2><span class="section-number">3.2.10. </span>9. Update the online site<a class="headerlink" href="#update-the-online-site" title="Link to this heading">#</a></h2>
-<p>add in the .md file and remember to update the _toc.yml file
-use the command <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">&lt;mybookname&gt;/</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;my_online_book&gt;/
-git<span class="w"> </span>add<span class="w"> </span>./*
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;adding my first book!&quot;</span>
-git<span class="w"> </span>push
-ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
-</pre></div>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>tip: got to <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;user_name&gt;/&lt;project_name&gt;/actions</span></code>
-to check if the update is through</p>
-</div>
-</section>
-<section id="jupyter-book-explore-more-features">
-<h2><span class="section-number">3.2.11. </span>Jupyter-book Explore More Features<a class="headerlink" href="#jupyter-book-explore-more-features" title="Link to this heading">#</a></h2>
-<p>Code blocks, non-executable code
-First, add headers</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>---
-jupytext:
-<span class="w">  </span>text_representation:
-<span class="w">    </span>extension:<span class="w"> </span>.md
-<span class="w">    </span>format_name:<span class="w"> </span>myst
-kernelspec:
-<span class="w">  </span>display_name:<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>
-<span class="w">  </span>language:<span class="w"> </span>python
-<span class="w">  </span>name:<span class="w"> </span>python3
----
-</pre></div>
-</div>
-<p>Next,  foramt non-executable code like this</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>username@hostname
-</pre></div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -508,13 +385,22 @@ kernelspec:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="struct.html"
+       href="miles.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.1. </span>Basics of Data Structres</p>
+        <p class="prev-next-title">Hello, my name is Miles.</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="linux.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.1. </span>Linux Basics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -523,30 +409,7 @@ kernelspec:
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book-on-vs-code">3.2.1. 1. Install jupyter book on VS Code</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-version-status">3.2.2. 2.Check version status</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-template">3.2.3. 3. Create a new template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#book-structure">3.2.4. 4. Book structure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-markdown-syntaxes">3.2.5. 5. Basic Markdown syntaxes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink">3.2.6. <code class="docutils literal notranslate"><span class="pre">[&lt;hyperlink_text&gt;](&lt;relative_path_to_linked_file&gt;)</span></code> will create a hyperlink</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-book">3.2.7. 6. Building the book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-online-repo-for-jupyter-book">3.2.8. 7. Create an online repo for jupyter-book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-the-jupyter-book-online">3.2.9. 8. Publish the jupyter-book online</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-online-site">3.2.10. 9. Update the online site</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book-explore-more-features">3.2.11. Jupyter-book Explore More Features</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>

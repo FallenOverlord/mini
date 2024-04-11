@@ -1,13 +1,33 @@
-format: jb-article
+format: jb-book
 root: docs/index
-sections:
-- file: docs/about_py
-- file: docs/getting_started
-- file: docs/python_by_example
-- file: docs/learn_more
-- file: docs/linux
-- file: docs/sqlite
-- file: docs/nmap
-- file: docs/struct
-- file: docs/jb
+parts:
+  - caption: Introduction
+    chapters:
+      - file: docs/miles
+
+  - caption: Cybersecurity
+    numbered: True
+    chapters:
+      - file: docs/cs_intro
+        sections:
+        - file: docs/linux
+        - file: docs/sqlite
+        - file: docs/nmap
+
+  - caption: Python
+    numbered: True
+    chapters:
+      - file: docs/about_py
+        sections:
+          - file: docs/getting_started
+          - file: docs/python_by_example
+          - file: docs/learn_more
+
+  - caption: C Programming Language
+    numbered: True
+    chapters:
+      - file: docs/c_intro
+        sections:
+          - file: docs/struct
+          - file: docs/jb
 
