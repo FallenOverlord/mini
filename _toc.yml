@@ -13,6 +13,10 @@ parts:
         - file: docs/linux
         - file: docs/sqlite
         - file: docs/nmap
+        - file: docs/cheatSheet
+        - file: docs/ctf
+        - file: docs/cysa
+        - file: docs/cpts
 
   - caption: Python
     numbered: True
@@ -30,4 +34,16 @@ parts:
         sections:
           - file: docs/struct
           - file: docs/jb
+          - file: docs/linkedlist
+          - file: docs/final
+          - file: docs/searching
 
+  - caption: ECE
+    numbered: True
+    chapters:
+      - file: docs/ece_intro
+        sections:
+          - file: docs/circuits_basics
+          - file: docs/java
+          - file: docs/javahw
+          

@@ -1,0 +1,2296 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.3. Java &#8212; Cybersecurity QuickStart</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/java';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.4. Java Practice Questions" href="javahw.html" />
+    <link rel="prev" title="4.2. Circuits Basics" href="circuits_basics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/qe-logo-large.png" class="logo__image only-light" alt="Cybersecurity QuickStart - Home"/>
+    <script>document.write(`<img src="../_static/qe-logo-large.png" class="logo__image only-dark" alt="Cybersecurity QuickStart - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="miles.html">Hello, my name is Miles.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cybersecurity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="cs_intro.html">1. Cybersecurity intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="linux.html">1.1. Linux Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html">1.2. SQL General Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nmap.html">1.3. nmap Basic Commands and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatSheet.html">1.4. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctf.html">1.5. CTF Write Ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">1.7. HTB CPTS Moduals</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="about_py.html">2. About Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html">2.4. Setting up Your Python Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_by_example.html">2.5. An Introductory Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learn_more.html">2.6. Learn More</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="c_intro.html">3. Welcome to C Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct.html">3.2. Basics of Data Structres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jb.html">3.3. Jupyter Book Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linkedlist.html">3.4. Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="final.html">3.5. APS 105 Final Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html">3.6. Searching Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ece_intro.html">4. ECE</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="circuits_basics.html">4.2. Circuits Basics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.3. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javahw.html">4.4. Java Practice Questions</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/java.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Java</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jdk">4.3.1. JDK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">4.3.2. Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-output">4.3.3. Standard Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">4.3.4. Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maths-operators">4.3.5. Maths operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators">4.3.6. Relational Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ternary-operator">4.3.6.1. Ternary Operator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">4.3.7. Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1">4.3.7.1. Q1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2">4.3.7.2. Q2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3">4.3.7.3. Q3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">4.3.7.4. Q4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">4.3.7.5. Q5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">4.3.7.6. Q6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">4.3.7.7. Q7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">4.3.7.8. Q8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q9">4.3.7.9. Q9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q10">4.3.7.10. Q10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q11">4.3.7.11. Q11</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">4.3.8. Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatted-strings">4.3.8.1. Formatted Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">4.3.8.2. String Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-practise-questions">4.3.8.3. Strings Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.3.8.3.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.3.8.3.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3.8.3.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3.8.3.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.8.3.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.3.8.3.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.3.8.3.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.3.8.3.8. Q8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">4.3.9. Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-1-mini-calculator">4.3.10. Project 1: mini calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-cases-statement">4.3.11. Switch Cases Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">4.3.12. Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-properties">4.3.12.1. Array Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-method">4.3.12.2. Sorting Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-method">4.3.12.3. Searching Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-an-array">4.3.12.4. Populating an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-copy-of-an-array">4.3.12.5. Making a copy of an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-arrays">4.3.12.6. Comparing the Arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">4.3.13. Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist">4.3.14. Arraylist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-arrays">4.3.14.1. Limitations of Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-of-arraylists">4.3.14.2. Usage of Arraylists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-elemnts">4.3.14.2.1. remove elemnts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-elements">4.3.14.2.2. Update elements</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-an-arraylist">4.3.14.2.3. Sorting an ArrayList</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-method">4.3.14.2.4. Size Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contains-method">4.3.14.2.5. Contains Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-it-is-empty">4.3.14.2.6. Checking if it is empty</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loop">4.3.14.3. For Each Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist-practise-question">4.3.14.4. ArrayList Practise Question</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.3.14.4.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.3.14.4.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.3.14.4.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.3.14.4.4. Q4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-maps">4.3.15. Hash maps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clear-a-hashmap">4.3.15.1. Clear a hashmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.3.15.2. size method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-out-a-hashmap">4.3.15.3. print out a hashmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-an-elemtn">4.3.15.4. Remove an elemtn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-a-value">4.3.15.5. Check for a value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-a-hashmap-is-empty">4.3.15.6. Checking if a hashmap is empty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-foreach-method">4.3.15.7. Using forEach method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming">4.3.16. Object Oriented Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">4.3.16.1. Constructor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">4.3.16.2. Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practise-questions">4.3.16.3. Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.3.16.3.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.3.16.3.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.3.16.3.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3.16.3.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.3.16.3.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4.3.16.3.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.3.16.3.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">4.3.16.3.8. Q8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="java">
+<h1><span class="section-number">4.3. </span>Java<a class="headerlink" href="#java" title="Link to this heading">#</a></h1>
+<section id="jdk">
+<h2><span class="section-number">4.3.1. </span>JDK<a class="headerlink" href="#jdk" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://yun.itheima.com/course/936.html?capid=3">https://yun.itheima.com/course/936.html?capid=3</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\M</span>ars&gt;javac<span class="w"> </span>-version
+javac<span class="w"> </span><span class="m">21</span>.0.1
+C:<span class="se">\U</span>sers<span class="se">\M</span>ars&gt;java<span class="w"> </span>--version
+java<span class="w"> </span><span class="m">21</span>.0.1<span class="w"> </span><span class="m">2023</span>-10-17<span class="w"> </span>LTS
+Java<span class="o">(</span>TM<span class="o">)</span><span class="w"> </span>SE<span class="w"> </span>Runtime<span class="w"> </span>Environment<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">21</span>.0.1+12-LTS-29<span class="o">)</span>
+Java<span class="w"> </span>HotSpot<span class="o">(</span>TM<span class="o">)</span><span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </span>Server<span class="w"> </span>VM<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">21</span>.0.1+12-LTS-29,<span class="w"> </span>mixed<span class="w"> </span>mode,<span class="w"> </span>sharing<span class="o">)</span>
+
+cmd<span class="w"> </span>cmmand<span class="w"> </span>win11
+cls<span class="w"> </span>-&gt;<span class="w"> </span>clear
+<span class="nb">exit</span><span class="w"> </span>-&gt;<span class="w"> </span>close<span class="w"> </span>cmd
+dir<span class="w"> </span>-&gt;<span class="w"> </span>ls
+</pre></div>
+</div>
+</section>
+<section id="basic-syntax">
+<h2><span class="section-number">4.3.2. </span>Basic Syntax<a class="headerlink" href="#basic-syntax" title="Link to this heading">#</a></h2>
+<p>name of the java file <strong>must</strong> equal to the name of the class</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>hw<span class="o">{</span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">)</span><span class="w"> </span><span class="o">{</span>System.out.println<span class="o">(</span><span class="s2">&quot;hello world.\n&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;helloworld!@&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;sdfkjdjs\n&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;sdfksjdf ksdkfj&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>
+<span class="o">}</span>
+
+Mars@Mars-Blade<span class="w"> </span>MINGW64<span class="w"> </span>/e/用户/桌面/王中意/图书馆/codes<span class="w"> </span><span class="o">(</span>master<span class="o">)</span>
+$<span class="w">  </span>/usr/bin/env<span class="w"> </span>C:<span class="se">\\</span>Program<span class="se">\ </span>Files<span class="se">\\</span>Java<span class="se">\\</span>jdk-11.0.15.1<span class="se">\\</span>bin<span class="se">\\</span>java.exe<span class="w"> </span>-agentlib:jdwp<span class="o">=</span><span class="nv">transport</span><span class="o">=</span>dt_socket,server<span class="o">=</span>n,suspend<span class="o">=</span>y,address<span class="o">=</span>localhost:64908<span class="w"> </span>-XX:+ShowCodeDetailsInExceptionMessages<span class="w"> </span>-cp<span class="w"> </span>C:<span class="se">\\</span>Users<span class="se">\\</span>Mars<span class="se">\\</span>AppData<span class="se">\\</span>Roaming<span class="se">\\</span>Code<span class="se">\\</span>User<span class="se">\\</span>workspaceStorage<span class="se">\\</span>8a96971809f062c8e5b5c26b61ae7110<span class="se">\\</span>redhat.java<span class="se">\\</span>jdt_ws<span class="se">\\</span>codes_d54751c0<span class="se">\\</span>bin<span class="w"> </span>helloworld<span class="w"> </span>
+helloworld!@
+sdfkjdjs
+
+sdfksjdf<span class="w"> </span>ksdkfj
+</pre></div>
+</div>
+</section>
+<section id="standard-output">
+<h2><span class="section-number">4.3.3. </span>Standard Output<a class="headerlink" href="#standard-output" title="Link to this heading">#</a></h2>
+<p>VS Code:
+install extension pack for java<br />
+debug java</p>
+<ol class="arabic simple">
+<li><p>println will automatically change line at the end.</p></li>
+<li><p>print function will not create a new line at the end.</p></li>
+<li><p>printf method will allow formatted string</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>System.out.printf<span class="o">(</span><span class="s2">&quot;hello my anem is %s, age is %d&quot;</span>,<span class="w"> </span><span class="s2">&quot;dnkg&quot;</span>,<span class="w"> </span><span class="m">34</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="data-types">
+<h2><span class="section-number">4.3.4. </span>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Primaritive Type</div>
+<p class="sd-card-text">byte(-138 t0 1w7)
+short
+int
+long</p>
+<p class="sd-card-text">//deciamls
+double
+float</p>
+<p class="sd-card-text">//bolleans
+boolean</p>
+<p class="sd-card-text">//char
+char ‘’</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Reference Type</div>
+<p class="sd-card-text">pointers?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">        </span>int<span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">234</span><span class="p">;</span>
+<span class="w">        </span>double<span class="w"> </span><span class="nv">newnum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>number<span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>newnum<span class="o">)</span><span class="p">;</span>
+
+<span class="c1">#possible loss of data</span>
+<span class="c1">#type casting</span>
+<span class="w">        </span>double<span class="w"> </span><span class="nv">old</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32134</span>.324234234<span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">sdf</span><span class="w"> </span><span class="o">=(</span>int<span class="o">)</span><span class="w"> </span>old<span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>sdf<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="maths-operators">
+<h2><span class="section-number">4.3.5. </span>Maths operators<a class="headerlink" href="#maths-operators" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+<span class="w"> </span>-<span class="w"> </span>*<span class="w"> </span>/
+
+%
+
+public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>int<span class="w"> </span><span class="nv">gnum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">123</span><span class="p">;</span>
+<span class="w">    </span>double<span class="w"> </span><span class="nv">bnum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">23</span>.324<span class="p">;</span>
+
+<span class="w">    </span>System.out.println<span class="o">(</span>gnum/bnum<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>System.out.println<span class="o">((</span>double<span class="o">)</span>gnum/bnum<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+
+<span class="m">5</span>.273537986623221
+<span class="m">5</span>.273537986623221
+
+syntactic<span class="w"> </span>sugar
+-<span class="o">=</span><span class="w"> </span>+<span class="o">=</span><span class="w"> </span>*<span class="o">=</span><span class="w"> </span>/<span class="o">=</span><span class="w"> </span>%<span class="o">=</span>
+</pre></div>
+</div>
+</section>
+<section id="relational-operators">
+<h2><span class="section-number">4.3.6. </span>Relational Operators<a class="headerlink" href="#relational-operators" title="Link to this heading">#</a></h2>
+<p>returns <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code> as the result of the operation</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">==(</span>check<span class="w"> </span><span class="k">if</span><span class="w"> </span>the<span class="w"> </span>object<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>same<span class="o">)</span>
+<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>&gt;<span class="w"> </span>&lt;<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span>&lt;<span class="o">=</span>
+
+logical<span class="w"> </span>operator
+<span class="o">&amp;&amp;</span><span class="w"> </span>and<span class="w"> </span>operator
+<span class="o">||</span><span class="w"> </span>or<span class="w"> </span>operator
+
+increment/decrement<span class="w"> </span>operator
+++<span class="w"> </span>--
+a++<span class="w"> </span>a--
+++a<span class="w"> </span>--b
+println<span class="o">(</span>--a<span class="o">)</span><span class="w"> </span>vs<span class="w"> </span>println<span class="o">(</span>a--<span class="o">)</span>
+</pre></div>
+</div>
+<section id="ternary-operator">
+<h3><span class="section-number">4.3.6.1. </span>Ternary Operator<a class="headerlink" href="#ternary-operator" title="Link to this heading">#</a></h3>
+<p>This is the shortcut for doing a <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement.<br />
+Be aware that if there is an else if statement, the ternary operator cannot be used.</p>
+<p>Think of its relationship with <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement as<code class="docutils literal notranslate"> <span class="pre">number</span> <span class="pre">=</span> <span class="pre">number</span> <span class="pre">+</span> <span class="pre">1</span></code> vs <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">++</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>condition<span class="w"> </span>?<span class="w"> </span>expression1<span class="w"> </span>:<span class="w"> </span>expression2
+</pre></div>
+</div>
+<p>expression1 is the result if the condition is true.
+expression2 is the result if the condition is false.</p>
+</section>
+</section>
+<section id="methods">
+<h2><span class="section-number">4.3.7. </span>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<p>We can define a new method in the class just like we can define a new function in a C or Python file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>test<span class="o">{</span>
+
+<span class="w">    </span>//main<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//define<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>buy<span class="o">(</span>int<span class="w"> </span>number<span class="o">){</span>
+<span class="w">        </span><span class="nv">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>the method we defined is call by value.<br />
+the variable is only relavent within the method.</p>
+<section id="q1">
+<h3><span class="section-number">4.3.7.1. </span>Q1<a class="headerlink" href="#q1" title="Link to this heading">#</a></h3>
+<p>定义一个方法，该方法能够找出两个小数中的较小值并返回。在主方法中调用方法进行测试。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">500</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">smallerNum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>findMin<span class="o">(</span>a,<span class="w"> </span>b<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">small</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>comparison<span class="o">(</span>a,<span class="w"> </span>b<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span>smallerNum<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>small<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//using<span class="w"> </span>the<span class="w"> </span><span class="k">if</span>-else<span class="w"> </span>statement
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="w"> </span>findMin<span class="o">(</span>int<span class="w"> </span>a,<span class="w"> </span>int<span class="w"> </span>b<span class="o">){</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>a<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span>b<span class="o">){</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span>a<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span>b<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>//using<span class="w"> </span>the<span class="w"> </span>ternary<span class="w"> </span>operator
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="w"> </span>comparison<span class="o">(</span>int<span class="w"> </span>a,<span class="w"> </span>int<span class="w"> </span>b<span class="o">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">(</span>a<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span>b<span class="o">)</span>?a<span class="w"> </span>:<span class="w"> </span>b<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span><span class="w">  </span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q2">
+<h3><span class="section-number">4.3.7.2. </span>Q2<a class="headerlink" href="#q2" title="Link to this heading">#</a></h3>
+<p>定义一个方法，该方法能够找出三个整数中的最大值并返回。在主方法中调用方法测试执行。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">500</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span>findMax<span class="o">(</span>a,<span class="w"> </span>b,<span class="w"> </span>c<span class="o">))</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="w"> </span>findMax<span class="o">(</span>int<span class="w"> </span>a,<span class="w"> </span>int<span class="w"> </span>b,<span class="w"> </span>int<span class="w"> </span>c<span class="o">){</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>a<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span>b<span class="o">){</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="o">(</span>b<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span>c<span class="o">)</span><span class="w"> </span>?<span class="w"> </span>c<span class="w"> </span>:<span class="w"> </span>b<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="o">(</span>a<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span>c<span class="o">)</span><span class="w"> </span>?<span class="w"> </span>c<span class="w"> </span>:<span class="w"> </span>a<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q3">
+<h3><span class="section-number">4.3.7.3. </span>Q3<a class="headerlink" href="#q3" title="Link to this heading">#</a></h3>
+<p>在主方法中通过键盘录入三个整数。定义一个方法，方法接收三个整数变量，在方法中从大到小依次打印三个变量。执行效果如下：
+请输入第一个整数：10
+请输入第二个整数：30
+请输入第三个整数：20
+从大到小的顺序是： 30 20 10</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="o">[]</span><span class="w"> </span><span class="nv">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>int<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot;input num #&quot;</span><span class="w"> </span>+<span class="w"> </span>i<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>int<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span>array<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>a<span class="p">;</span>
+<span class="w">            </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>Arrays.sort<span class="o">(</span>array<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;decdending order: &quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i--<span class="o">){</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>array<span class="o">[</span>i<span class="o">])</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q4">
+<h3><span class="section-number">4.3.7.4. </span>Q4<a class="headerlink" href="#q4" title="Link to this heading">#</a></h3>
+<p>数字是有绝对值的，负数的绝对值是它本身取反，非负数的绝对值是它本身。请定义一个方法，方法能够得到小数类型数字的绝对值并返回。请定义方法并测试。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+<span class="w">        </span>double<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">23</span>.34<span class="p">;</span>
+<span class="w">        </span>double<span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-13.24<span class="p">;</span>
+<span class="w">        </span>double<span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-7.63432<span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;abs of a: &quot;</span><span class="w"> </span>+<span class="w"> </span>abs<span class="o">(</span>a<span class="o">))</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;abs of b: &quot;</span><span class="w"> </span>+<span class="w"> </span>abs<span class="o">(</span>b<span class="o">))</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;abs of c: &quot;</span><span class="w"> </span>+<span class="w"> </span>abs<span class="o">(</span>c<span class="o">))</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>double<span class="w"> </span>abs<span class="o">(</span>double<span class="w"> </span>a<span class="o">){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">(</span>a<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span>?<span class="w"> </span><span class="o">(</span>-a<span class="o">)</span><span class="w"> </span>:<span class="w"> </span>a<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q5">
+<h3><span class="section-number">4.3.7.5. </span>Q5<a class="headerlink" href="#q5" title="Link to this heading">#</a></h3>
+<p>键盘录入一个正整数</p>
+<p>定义一个方法,该方法的功能是计算该数字是几位数字,并将位数返回</p>
+<p>在main方法中打印该数字是几位数</p>
+<p>演示格式如下: (1)演示一: 请输入一个整数:1234 控制台输出:1234是4位数字 (2)演示二: 请输入一个整数:34567 控制台输出:34567是5位数字</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;input num: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span>a<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; is a number with &quot;</span><span class="w"> </span>+<span class="w"> </span>getDigits<span class="o">(</span>a<span class="o">)</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; digits.&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="w"> </span>getDigits<span class="o">(</span>int<span class="w"> </span>a<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">do</span><span class="o">{</span>
+<span class="w">            </span>a<span class="w"> </span>/<span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">;</span>
+<span class="w">            </span>count++<span class="p">;</span>
+
+<span class="w">        </span><span class="o">}</span><span class="k">while</span><span class="o">(</span>a<span class="w"> </span>&gt;<span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>count<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q6">
+<h3><span class="section-number">4.3.7.6. </span>Q6<a class="headerlink" href="#q6" title="Link to this heading">#</a></h3>
+<p>需求：</p>
+<p>​ 定义一个方法equals(int[] arr1,int[] arr2).</p>
+<p>功能：</p>
+<p>​ 比较两个数组是否相等（长度和内容均相等则认为两个数组是相同的）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span>arr1<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span><span class="o">}</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span>arr2<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span><span class="o">}</span><span class="p">;</span>
+
+<span class="w">        </span>equals<span class="o">(</span>arr1,<span class="w"> </span>arr2<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>equals<span class="o">(</span>int<span class="o">[]</span><span class="w"> </span>arr1,int<span class="o">[]</span><span class="w"> </span>arr2<span class="o">){</span>
+<span class="w">        </span>
+<span class="w">        </span>boolean<span class="w"> </span><span class="nv">is_same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>arr1.length<span class="w"> </span><span class="o">==</span><span class="w"> </span>arr2.length<span class="o">)</span><span class="w"> </span>?<span class="w"> </span><span class="nb">true</span><span class="w"> </span>:<span class="w"> </span>false<span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>is_same<span class="o">){</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr1.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">                </span><span class="nv">is_same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>arr1<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>arr2<span class="o">[</span>i<span class="o">])</span>?<span class="w"> </span>is_same<span class="w"> </span>:<span class="w"> </span>false<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;equavalence: &quot;</span><span class="w"> </span>+<span class="w"> </span>is_same<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q7">
+<h3><span class="section-number">4.3.7.7. </span>Q7<a class="headerlink" href="#q7" title="Link to this heading">#</a></h3>
+<p>需求：</p>
+<p>​ 定义一个方法fill(int[] arr,int value)</p>
+<p>功能：</p>
+<p>​ 将数组arr中的所有元素的值改为value</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="o">[]</span><span class="w"> </span><span class="nv">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>int<span class="o">[</span><span class="m">6</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span>arr1<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="m">11</span>,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="m">12</span>,34,<span class="w"> </span><span class="m">34</span><span class="o">}</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-2<span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="nv">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fill<span class="o">(</span>arr,<span class="w"> </span>value<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span><span class="nv">arr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fill<span class="o">(</span>arr1,<span class="w"> </span><span class="m">3</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>arr<span class="o">))</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>arr1<span class="o">))</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="o">[]</span><span class="w"> </span>fill<span class="o">(</span>int<span class="o">[]</span><span class="w"> </span>arr,int<span class="w"> </span>value<span class="o">){</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span>arr<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>value<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>arr<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q8">
+<h3><span class="section-number">4.3.7.8. </span>Q8<a class="headerlink" href="#q8" title="Link to this heading">#</a></h3>
+<p>需求：</p>
+<p>​ 定义一个方法fill(int[] arr,int fromIndex,int toIndex,int value)</p>
+<p>功能：</p>
+<p>​ 将数组arr中的元素从索引fromIndex开始到toIndex（不包含toIndex）对应的值改为value</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="o">[]</span><span class="w"> </span><span class="nv">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>int<span class="o">[</span><span class="m">6</span><span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span>arr1<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="m">11</span>,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="m">12</span>,34,<span class="w"> </span><span class="m">34</span><span class="o">}</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-2<span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">fromIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">toIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="nv">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fill<span class="o">(</span>arr,<span class="w"> </span>value,<span class="w"> </span>fromIndex,<span class="w"> </span>toIndex<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span><span class="nv">arr1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fill<span class="o">(</span>arr1,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span>fromIndex,<span class="w"> </span>toIndex<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>arr<span class="o">))</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>arr1<span class="o">))</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="o">[]</span><span class="w"> </span>fill<span class="o">(</span>int<span class="o">[]</span><span class="w"> </span>arr,<span class="w"> </span>int<span class="w"> </span>value,<span class="w"> </span>int<span class="w"> </span>fromIndex,int<span class="w"> </span>toIndex<span class="o">){</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span>fromIndex<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>toIndex<span class="o">){</span>
+<span class="w">                </span>arr<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>value<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>arr<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q9">
+<h3><span class="section-number">4.3.7.9. </span>Q9<a class="headerlink" href="#q9" title="Link to this heading">#</a></h3>
+<p>需求：</p>
+<p>​ 定义一个方法copyOf(int[] arr, int newLength)</p>
+<p>功能：</p>
+<p>​ 将数组arr中的newLength个元素拷贝到新数组中，并将新数组返回，从索引为0开始</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span>arr1<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="m">11</span>,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="m">12</span>,34,<span class="w"> </span><span class="m">34</span><span class="o">}</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>copyOf<span class="o">(</span>arr1,<span class="w"> </span><span class="m">3</span><span class="o">)))</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="o">[]</span><span class="w"> </span>copyOf<span class="o">(</span>int<span class="o">[]</span><span class="w"> </span>arr,<span class="w"> </span>int<span class="w"> </span>newLength<span class="o">){</span>
+<span class="w">        </span>
+<span class="w">        </span>int<span class="o">[]</span><span class="w"> </span><span class="nv">newArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>int<span class="o">[</span>newLength<span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>newLength<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span>newArr<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arr<span class="o">[</span>i<span class="o">]</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>newArr<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q10">
+<h3><span class="section-number">4.3.7.10. </span>Q10<a class="headerlink" href="#q10" title="Link to this heading">#</a></h3>
+<p>需求：</p>
+<p>​ 定义一个方法copyOfRange(int[] arr,int from, int to)</p>
+<p>功能：</p>
+<p>​ 将数组arr中从索引from（包含from）开始，到索引to结束（不包含to）的元素复制到新数组中，</p>
+<p>​ 并将新数组返回。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span>arr1<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="m">11</span>,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="m">12</span>,34,<span class="w"> </span><span class="m">34</span><span class="o">}</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>copyOfRange<span class="o">(</span>arr1,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">7</span><span class="o">)))</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="o">[]</span><span class="w"> </span>copyOfRange<span class="o">(</span>int<span class="o">[]</span><span class="w"> </span>arr,int<span class="w"> </span>from,<span class="w"> </span>int<span class="w"> </span>to<span class="o">){</span>
+<span class="w">        </span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">newLength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>from<span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>to<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span>newLength++<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>int<span class="o">[]</span><span class="w"> </span><span class="nv">newArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>int<span class="o">[</span>newLength<span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>i<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span>from<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>to<span class="o">){</span>
+<span class="w">                </span>newArr<span class="o">[</span>i<span class="w"> </span>-<span class="w"> </span>from<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arr<span class="o">[</span>i<span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>newArr<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q11">
+<h3><span class="section-number">4.3.7.11. </span>Q11<a class="headerlink" href="#q11" title="Link to this heading">#</a></h3>
+<p>一个大V直播抽奖，奖品是现金红包，分别有{2,588,888,1000,10000}五个奖金。请使用代码模拟抽奖，打印出每个奖项，奖项的出现顺序要随机且不重复。打印效果如下：（随机顺序，不一定是下面的顺序）</p>
+<p>888元的奖金被抽出
+588元的奖金被抽出
+10000元的奖金被抽出
+1000元的奖金被抽出
+2元的奖金被抽出</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Random<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span>arr<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">2</span>,588,888,1000,10000<span class="o">}</span><span class="p">;</span>
+
+<span class="w">        </span>printResult<span class="o">(</span>arr<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printResult<span class="o">(</span>int<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+
+<span class="w">        </span>int<span class="o">[]</span><span class="w"> </span><span class="nv">randomArr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>int<span class="o">[</span>arr.length<span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span>Random<span class="w"> </span><span class="nv">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Random<span class="o">()</span><span class="p">;</span><span class="w"> </span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span>
+<span class="w">            </span>int<span class="w"> </span><span class="nv">randomIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>random.nextInt<span class="o">(</span>arr.length<span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span>boolean<span class="w"> </span><span class="nv">occupied</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>occupied<span class="o">){</span>
+<span class="w">                </span><span class="nv">randomIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>random.nextInt<span class="o">(</span>arr.length<span class="o">)</span><span class="p">;</span>
+<span class="w">                </span><span class="nv">occupied</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>randomArr<span class="o">[</span>randomIndex<span class="o">]</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span>?<span class="w"> </span>true:<span class="w"> </span>false<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+
+<span class="w">            </span>randomArr<span class="o">[</span>randomIndex<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arr<span class="o">[</span>i<span class="o">]</span><span class="p">;</span>
+
+<span class="w">        </span><span class="o">}</span>
+
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;a prize worth &quot;</span><span class="w"> </span>+<span class="w"> </span>randomArr<span class="o">[</span>i<span class="o">]</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; has been taken!&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="strings">
+<h2><span class="section-number">4.3.8. </span>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
+<p>methods to declear a string</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;mars oid gog&quot;</span><span class="p">;</span>
+
+String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>String<span class="o">(</span><span class="s2">&quot;mars oid gog&quot;</span><span class="o">)</span><span class="p">;</span>
+
+
+
+<span class="w">   </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dfana&quot;</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">name2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dfana&quot;</span><span class="p">;</span>
+
+<span class="w">        </span>String<span class="w"> </span><span class="nv">objectString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>String<span class="o">(</span><span class="s2">&quot;dsfkjs&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">objectString2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>String<span class="o">(</span><span class="s2">&quot;dsfkjs&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="nv">name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>name2<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="nv">objectString</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>objectString2<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="nb">true</span>
+<span class="nb">false</span>
+
+concatanating<span class="w"> </span>print<span class="w"> </span>output
+a<span class="w"> </span>+<span class="w"> </span>b<span class="w"> </span>+<span class="w"> </span>c,<span class="w"> </span>just<span class="w"> </span>like<span class="w"> </span>python
+</pre></div>
+</div>
+<section id="formatted-strings">
+<h3><span class="section-number">4.3.8.1. </span>Formatted Strings<a class="headerlink" href="#formatted-strings" title="Link to this heading">#</a></h3>
+<p>just like c</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;My name is %s. I am from %s, i am %d yars old. gpa = %f, win = %b&quot;</span><span class="w"> </span>,<span class="w"> </span>name,<span class="w"> </span>country_name,<span class="w"> </span>age,<span class="w"> </span><span class="o">(</span>double<span class="o">)</span>gpa,<span class="w"> </span><span class="o">(</span>boolean<span class="o">)</span>result
+
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">;</span>
+<span class="w">        </span>double<span class="w"> </span><span class="nv">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">93</span>.5<span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dag&quot;</span><span class="p">;</span>
+<span class="w">        </span>Boolean<span class="w"> </span><span class="nv">male</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+
+<span class="w">        </span>String<span class="w"> </span><span class="nv">formattedString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>String.format<span class="o">(</span><span class="s2">&quot;my name is %s, myage is %d, mt score = %f, sex is male: %b&quot;</span>,<span class="w"> </span>name,<span class="w"> </span>age,<span class="w"> </span>score,<span class="w"> </span>male<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>formattedString<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+my<span class="w"> </span>name<span class="w"> </span>is<span class="w"> </span>dag,<span class="w"> </span>myage<span class="w"> </span>is<span class="w"> </span><span class="m">5</span>,<span class="w"> </span>mt<span class="w"> </span><span class="nv">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">93</span>.500000,<span class="w"> </span>sex<span class="w"> </span>is<span class="w"> </span>male:<span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+</section>
+<section id="string-functions">
+<h3><span class="section-number">4.3.8.2. </span>String Functions<a class="headerlink" href="#string-functions" title="Link to this heading">#</a></h3>
+<p><var>.length() returns a int, it counts even the spaces in the string<br />
+<var>.isEmpty() returns a bool<br />
+<var>.toUpperCase() will not modify the var<br />
+<var>.toLowerCase()<br />
+<var1>.equals(<var2>) returns a bool<br />
+<var1>.equalsIgnoreCase(<var2>) will Ignore Cases
+&lt;string_var1&gt;.replace(”<part of the string>”, “<new part of the string>”);
+it doesn’t change the original string.</p>
+<p>#check if the string contains a certain string
+strstr() function in c
+System.out.println(string.contains(“mars”));
+it will return a boolean</p>
+</section>
+<section id="strings-practise-questions">
+<h3><span class="section-number">4.3.8.3. </span>Strings Practise Questions<a class="headerlink" href="#strings-practise-questions" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4><span class="section-number">4.3.8.3.1. </span>Q1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>键盘输入任意字符串，打乱里面的内容</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h4><span class="section-number">4.3.8.3.2. </span>Q2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>生成验证码</p>
+<p>内容：可以是小写字母，也可以是大写字母，还可以是数字</p>
+<p>规则：</p>
+<p>长度为5</p>
+<p>内容中是四位字母，1位数字。</p>
+<p>其中数字只有1位，但是可以出现在任意的位置。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h4><span class="section-number">4.3.8.3.3. </span>Q3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>请编写程序，由键盘录入一个字符串，统计字符串中英文字母和数字分别有多少个。比如：Hello12345World中字母：10个，数字：5个。
+1、键盘录入一个字符串，用 Scanner 实现 2、要统计两种类型的字符个数，需定义两个统计变量，初始值都为0 3、遍历字符串，得到每一个字符 4、判断该字符属于哪种类型，然后对应类型的统计变量+1，判断字母时需要考虑大小写，条件比较复杂，怎样做才能使判断更简单呢？</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h4><span class="section-number">4.3.8.3.4. </span>Q4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>字符串的反转功能，判断是否相等功能</p>
+<p>训练提示
+1、判断是否对称，方法的返回值是什么类型？参数列表是什么？</p>
+<p>2、怎样判断对称呢？如果可以将字符串反转，反转后发现跟原来的字符串完全一样，不就可以判断出来了吗，那么哪个类有字符串的反转功能呢？</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h4><span class="section-number">4.3.8.3.5. </span>Q5<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>请定义一个方法用于判断一个字符串是否是对称的字符串，并在主方法中测试方法。例如：”abcba”、”上海自来水来自海上”均为对称字符串。</p>
+<p>训练目标
+字符串的反转功能，判断是否相等功能</p>
+<p>训练提示
+1、判断是否对称，方法的返回值是什么类型？参数列表是什么？</p>
+<p>2、怎样判断对称呢？如果可以将字符串反转，反转后发现跟原来的字符串完全一样，不就可以判断出来了吗，那么哪个类有字符串的反转功能呢？</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h4><span class="section-number">4.3.8.3.6. </span>Q6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>我国的居民身份证号码，由由十七位数字本体码和一位数字校验码组成。请定义方法判断用户输入的身份证号码是否合法，并在主方法中调用方法测试结果。规则为：号码为18位，不能以数字0开头，前17位只可以是数字，最后一位可以是数字或者大写字母X。</p>
+<p>训练目标
+字符串的遍历、判断</p>
+<p>训练提示
+1、要判断字符串是否符合规则，方法的返回值类型是什么？参数列表是什么？</p>
+<p>2、使用String的API，对每种不符合条件的情况作出判断，一旦发现不符合条件就可以结束方法的执行，返回结果了。</p>
+<p>3、在主方法中创建键盘录入，调用方法，输入各种数据测试结果。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h4><span class="section-number">4.3.8.3.7. </span>Q7<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>定义一个方法，把 int 数组中的数据按照指定的格式拼接成一个字符串返回，调用该方法，并在控制台输出结果。</p>
+<p>要求：</p>
+<p>​ 1、如果传递的参数为空，返回null</p>
+<p>​ 2、如果传递的数组元素个数为0，返回[]</p>
+<p>​ 3、如果数组为int[] arr = {1,2,3}; ，执行方法后的输出结果为：[1, 2, 3]</p>
+<p>训练目标
+字符串的拼接</p>
+<p>训练提示
+1、定义方法的返回值是什么？参数列表是什么？</p>
+<p>2、如果不做判断就对数组进行遍历，那么如果数组对象为空，会报出异常，怎样避免空指针异常呢？</p>
+<p>3、拼接字符串必然涉及到频繁改变，该采用可变的字符序列StringBuilder比较好</p>
+<p>4、遍历数组，按照题目格式拼接数组中的元素。</p>
+<p>5、将字符串返回</p>
+<p>6、在主方法中定义数组，并调用方法，打印结果</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h4><span class="section-number">4.3.8.3.8. </span>Q8<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>在String类的API中，有如下两个方法：</p>
+<p>// 查找参数字符串str在调用方法的字符串中第一次出现的索引，如果不存在，返回-1
+public int indexOf(String str)</p>
+<p>// 截取字符串，从索引beginIndex（包含）开始到字符串的结尾
+public String substring(int beginIndex)
+请仔细阅读API中这两个方法的解释，完成如下需求。</p>
+<p>现有如下文本：”Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的”。请编写程序，统计该文本中”Java”一词出现的次数。</p>
+<p>训练目标
+String类API的灵活使用</p>
+<p>训练提示
+1、要找的子串是否存在，如果存在获取其出现的位置。这个可以使用indexOf完成。 2、如果找到了，那么就记录出现的位置并在剩余的字符串中继续查找该子串，而剩余字符串的起始位是出现位置再加上子串的长度。</p>
+<p>3、以此类推，通过循环完成查找，如果找不到就是-1，每次找到用计数器记录次数。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="input">
+<h2><span class="section-number">4.3.9. </span>Input<a class="headerlink" href="#input" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#if the class is not automatically imported, it may need to be imported</span>
+<span class="c1">#before declearing the class, import the scanner</span>
+import<span class="w"> </span>java.util.Scanner
+
+
+Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+System.out.println<span class="o">(</span><span class="s2">&quot;What is your name&quot;</span><span class="o">)</span><span class="p">;</span>
+String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+scanner.close<span class="o">()</span><span class="p">;</span>
+System.out.println<span class="o">(</span>name<span class="o">)</span><span class="p">;</span>
+
+
+<span class="c1">#ask for a specific data type in the scanner</span>
+System.out.print<span class="o">(</span><span class="s2">&quot;age: &quot;</span><span class="o">)</span><span class="p">;</span>
+int<span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+scanner.close<span class="o">()</span><span class="p">;</span>
+System.out.printf<span class="o">(</span><span class="s2">&quot;age is %d\n&quot;</span>,<span class="w"> </span>age<span class="o">)</span><span class="p">;</span>
+
+age:<span class="w"> </span><span class="m">3242</span>
+age<span class="w"> </span>is<span class="w"> </span><span class="m">3242</span>
+
+scanner.nextFloat<span class="o">()</span><span class="p">;</span>
+scanner.nextBoolean<span class="o">()</span><span class="p">;</span>
+
+<span class="c1">#input buffer consumption</span>
+<span class="c1">#everytime the nextLine methord is used, the whole line is read and the &lt;enter&gt; </span>
+input<span class="w"> </span>by<span class="w"> </span>the<span class="w"> </span>user<span class="w"> </span>is<span class="w"> </span>consumed,<span class="w"> </span>however,<span class="w"> </span><span class="k">if</span><span class="w"> </span>the<span class="w"> </span>use<span class="w"> </span>use<span class="w"> </span>other<span class="w"> </span>scanner<span class="w"> </span>methods,<span class="w"> </span>such<span class="w"> </span>as<span class="w"> </span>nextInt<span class="o">()</span><span class="w"> </span>method,<span class="w"> </span>the<span class="w"> </span>&lt;enter&gt;<span class="w"> </span>character<span class="w"> </span>will<span class="w"> </span>not<span class="w"> </span>be<span class="w"> </span>consumed.<span class="w"> </span>so<span class="w"> </span>it<span class="w"> </span>may<span class="w"> </span>interfere<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>next<span class="w"> </span>input.
+System.out.println<span class="o">(</span><span class="s2">&quot;how old are your&quot;</span><span class="o">)</span><span class="p">;</span>
+int<span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+scanner.nextLine<span class="o">()</span><span class="p">;</span>
+System.out.println<span class="o">(</span><span class="s2">&quot;what is your name&quot;</span><span class="o">)</span><span class="p">;</span>
+String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+System.out.println<span class="o">(</span>name<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; is &quot;</span><span class="w"> </span>+<span class="w"> </span>age<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;years old.&quot;</span><span class="o">)</span><span class="p">;</span>
+scanner.close<span class="o">()</span><span class="p">;</span>
+
+<span class="c1">#alternative of using nextInt() method</span>
+int<span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Integer.parseInt<span class="o">(</span>scanner.nextLine<span class="o">())</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="project-1-mini-calculator">
+<h2><span class="section-number">4.3.10. </span>Project 1: mini calculator<a class="headerlink" href="#project-1-mini-calculator" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">        </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>System.out.print<span class="o">(</span><span class="s2">&quot;Number1: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>int<span class="w"> </span><span class="nv">num1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span>System.out.print<span class="o">(</span><span class="s2">&quot;Operation: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>String<span class="w"> </span><span class="nv">operation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span>System.out.print<span class="o">(</span><span class="s2">&quot;Number2: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>int<span class="w"> </span><span class="nv">num2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+
+<span class="w">    </span>double<span class="w"> </span>result<span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="o">(</span>operation.equals<span class="o">(</span><span class="s2">&quot;+&quot;</span><span class="o">)){</span>
+<span class="w">        </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1<span class="w"> </span>+<span class="w"> </span>num2<span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>operation.equals<span class="o">(</span><span class="s2">&quot;-&quot;</span><span class="o">)){</span>
+<span class="w">        </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1<span class="w"> </span>-<span class="w"> </span>num2<span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>operation.equals<span class="o">(</span><span class="s2">&quot;*&quot;</span><span class="o">)){</span>
+<span class="w">        </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1<span class="w"> </span>*<span class="w"> </span>num2<span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>operation.equals<span class="o">(</span><span class="s2">&quot;/&quot;</span><span class="o">)){</span>
+<span class="w">        </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1/num2<span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;the operation type isnt supported&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">#output</span>
+Number1:<span class="w"> </span><span class="m">34</span>
+Operation:<span class="w"> </span>/
+Number2:<span class="w"> </span><span class="m">7</span>
+Result:<span class="w"> </span><span class="m">4</span>.0
+</pre></div>
+</div>
+</section>
+<section id="switch-cases-statement">
+<h2><span class="section-number">4.3.11. </span>Switch Cases Statement<a class="headerlink" href="#switch-cases-statement" title="Link to this heading">#</a></h2>
+<p>The param. in the switch method is the name of the variable, and in the curly brackets are the cases the variable may present.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>switch<span class="o">(</span>operation<span class="o">){</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;+&quot;</span>:
+<span class="w">            </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1<span class="w"> </span>+<span class="w"> </span>num2<span class="p">;</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>break<span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;-&quot;</span>:
+<span class="w">            </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1<span class="w"> </span>-<span class="w"> </span>num2<span class="p">;</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>break<span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>:
+<span class="w">            </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1<span class="w"> </span>*<span class="w"> </span>num2<span class="p">;</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>break<span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s2">&quot;/&quot;</span>:
+<span class="w">            </span><span class="nv">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>num1<span class="w"> </span>/<span class="w"> </span>num2<span class="p">;</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Result: &quot;</span><span class="w"> </span>+<span class="w"> </span>result<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>break<span class="p">;</span>
+<span class="w">        </span>default:
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Operation not supported&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="arrays">
+<h2><span class="section-number">4.3.12. </span>Arrays<a class="headerlink" href="#arrays" title="Link to this heading">#</a></h2>
+<p>the first index in the array starts at 0</p>
+<p>to initialize an array</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>char<span class="w"> </span>vowls<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>char<span class="o">[</span><span class="m">5</span><span class="o">]</span><span class="p">;</span><span class="w"> </span>
+
+int<span class="o">[]</span><span class="w"> </span><span class="nv">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>int<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>to populate an array</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vowls<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">;</span>
+vowls<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;e&#39;</span><span class="p">;</span>
+...
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>for an array of size 5 the max idex will be 4,
+or you will get an out of bounds error</p>
+</div>
+<p>to declear and initialize an array at the same time</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>char<span class="w"> </span>vowels<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;a&#39;</span>,<span class="w"> </span><span class="s1">&#39;e&#39;</span>,<span class="w"> </span><span class="s1">&#39;i&#39;</span>,<span class="w"> </span><span class="s1">&#39;o&#39;</span>,<span class="w"> </span><span class="s1">&#39;u&#39;</span><span class="o">}</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>to access elements in the array</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>System.out.println<span class="o">(</span>vowls<span class="o">[</span><span class="m">2</span><span class="o">])</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>to print the whole array out as a String</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#first import the array mehode</span>
+import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+
+System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>vowls<span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>you can also print out the entire array using loops</p>
+<section id="array-properties">
+<h3><span class="section-number">4.3.12.1. </span>Array Properties<a class="headerlink" href="#array-properties" title="Link to this heading">#</a></h3>
+<p>the <code class="docutils literal notranslate"><span class="pre">.length</span></code> in arrays are a property<br />
+to find the length of an array</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>int<span class="w"> </span><span class="nv">length_array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>array.length<span class="p">;</span>
+
+int<span class="w"> </span><span class="nv">length_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>string.length<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="sorting-method">
+<h3><span class="section-number">4.3.12.2. </span>Sorting Method<a class="headerlink" href="#sorting-method" title="Link to this heading">#</a></h3>
+<p>a sorting mehod in arrays</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#remeber to import the Array methods at the very beginning</span>
+import<span class="w"> </span>java.utils.Arrays<span class="p">;</span>
+
+<span class="c1">#an out-or-order array</span>
+char<span class="w"> </span>vowels<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;i&#39;</span>,<span class="w"> </span><span class="s1">&#39;e&#39;</span>,<span class="w"> </span><span class="s1">&#39;a&#39;</span>,<span class="w"> </span><span class="s1">&#39;u&#39;</span>,<span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="o">}</span><span class="p">;</span>
+
+Arrays.sort<span class="o">(</span>vowels<span class="o">)</span><span class="p">;</span>
+
+System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>vowels<span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This will sort the vowels array in <code class="docutils literal notranslate"><span class="pre">alphabetical</span></code> order<br />
+Sorting an array within a certain range</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Arrays.sort<span class="o">(</span>array,<span class="w"> </span>StartingIndex,<span class="w"> </span>EndingIndex<span class="o">)</span><span class="p">;</span>
+Arrays.sort<span class="o">(</span>vowels,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">4</span><span class="o">)</span><span class="p">;</span><span class="w"> </span>is<span class="w"> </span>equavalent<span class="w"> </span>to<span class="w"> </span>Array.sort<span class="o">(</span>vowels<span class="o">)</span><span class="p">;</span>
+
+sorting<span class="w"> </span>within<span class="w"> </span>a<span class="w"> </span>certain<span class="w"> </span>index
+Arrays.sort<span class="o">(</span>vowels,<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="m">3</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="searching-method">
+<h3><span class="section-number">4.3.12.3. </span>Searching Method<a class="headerlink" href="#searching-method" title="Link to this heading">#</a></h3>
+<p>searcing methods oonly work on thoroughly sorted arrays
+it will also require the Array Methods to be imported</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#remeber to import the Array methods at the very beginning</span>
+import<span class="w"> </span>java.utils.Arrays<span class="p">;</span>
+
+<span class="c1">#an out-or-order array</span>
+char<span class="w"> </span>vowels<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;i&#39;</span>,<span class="w"> </span><span class="s1">&#39;e&#39;</span>,<span class="w"> </span><span class="s1">&#39;a&#39;</span>,<span class="w"> </span><span class="s1">&#39;u&#39;</span>,<span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="o">}</span><span class="p">;</span>
+
+Arrays.sort<span class="o">(</span>vowels<span class="o">)</span><span class="p">;</span>
+
+char<span class="w"> </span><span class="nv">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;i&#39;</span><span class="p">;</span>
+
+int<span class="w"> </span><span class="nv">foundItemIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Arrays.binarySearch<span class="o">(</span>vowels,<span class="w"> </span>key<span class="o">)</span><span class="p">;</span>
+
+System.out.println<span class="o">(</span>Array.toString<span class="o">(</span>vowels<span class="o">))</span><span class="p">;</span>
+System.out.println<span class="o">(</span>foundItemIndex<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>the foundItemIndex is the the index of the key in an 0-indexing array</p>
+<p>Simiar as sorting, we can search for a certain value within a certain index.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#remeber to import the Array methods at the very beginning</span>
+import<span class="w"> </span>java.utils.Arrays<span class="p">;</span>
+
+<span class="c1">#an out-or-order array</span>
+char<span class="w"> </span>vowels<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s1">&#39;i&#39;</span>,<span class="w"> </span><span class="s1">&#39;e&#39;</span>,<span class="w"> </span><span class="s1">&#39;a&#39;</span>,<span class="w"> </span><span class="s1">&#39;u&#39;</span>,<span class="w"> </span><span class="s1">&#39;o&#39;</span><span class="o">}</span><span class="p">;</span>
+
+Arrays.sort<span class="o">(</span>vowels<span class="o">)</span><span class="p">;</span>
+
+char<span class="w"> </span><span class="nv">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;i&#39;</span><span class="p">;</span>
+
+int<span class="w"> </span><span class="nv">foundItemIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Arrays.binarySearch<span class="o">(</span>vowels,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span>key<span class="o">)</span><span class="p">;</span>
+
+System.out.println<span class="o">(</span>Array.toString<span class="o">(</span>vowels<span class="o">))</span><span class="p">;</span>
+System.out.println<span class="o">(</span>foundItemIndex<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If the searching function failed to locate the keyValue, the output will be a negative number.
+depending on what the key value is, the negative output will varies.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>remember that the range at which the function will search the array is 0-indexed.
+the param in the binarySearch function is between the arrays and the keyValue.</p>
+</div>
+</section>
+<section id="populating-an-array">
+<h3><span class="section-number">4.3.12.4. </span>Populating an Array<a class="headerlink" href="#populating-an-array" title="Link to this heading">#</a></h3>
+<p>in order to populate an array, you can use the fill method, which also comes in the imported array method.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Array.fill<span class="o">(</span>vowels,<span class="w"> </span><span class="s1">&#39;x&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>this will fill the whole array with the character.<br />
+However, you can fillup the array within a certain range.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Array.fill<span class="o">(</span>vowels,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;b&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="making-a-copy-of-an-array">
+<h3><span class="section-number">4.3.12.5. </span>Making a copy of an Array<a class="headerlink" href="#making-a-copy-of-an-array" title="Link to this heading">#</a></h3>
+<p>arrays in Java are in reference types, so if you assign an array to another array, you are essentially pointing a pointer to a variable, if the original array is modified, the pointed array will also be modified.<br />
+It is like an alis of the original arrayo.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>int<span class="w"> </span>num<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span><span class="o">}</span><span class="p">;</span>
+
+int<span class="w"> </span>copy_of_num<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Array.copyOf<span class="o">(</span>num,<span class="w"> </span>num.length<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The default value for integers are 0.<br />
+When copying an array, if you set the size of the new array larger than the original array, it will fill everything with 0.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>int<span class="w"> </span>num<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span><span class="o">}</span><span class="p">;</span>
+
+int<span class="w"> </span>copy_of_num<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Array.copyOf<span class="o">(</span>num,<span class="w"> </span>num.length<span class="w"> </span>+<span class="w"> </span><span class="m">2</span><span class="o">)</span><span class="p">;</span>
+
+
+<span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">0</span><span class="o">}</span>
+</pre></div>
+</div>
+<p>You can also only copy a certain range of the array</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>int<span class="w"> </span>num<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span><span class="o">}</span><span class="p">;</span>
+
+int<span class="w"> </span>copy_of_num<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Array.copyOfRange<span class="o">(</span>num,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If the ending idex is larger than the original array, it will extent the size of the copied array.</p>
+</section>
+<section id="comparing-the-arrays">
+<h3><span class="section-number">4.3.12.6. </span>Comparing the Arrays<a class="headerlink" href="#comparing-the-arrays" title="Link to this heading">#</a></h3>
+<p>if u just use the == operator, it will return faluse no matter what.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>System.out.println<span class="o">(</span>Arrays.equals<span class="o">(</span>num,<span class="w"> </span>copy_of_num<span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="loops">
+<h2><span class="section-number">4.3.13. </span>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h2>
+<p>same syntax as c</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">10</span><span class="p">;</span><span class="w"> </span>i++<span class="o">){}</span>
+</pre></div>
+</div>
+<p>exactly the same</p>
+<p>loop specifically for arrays</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span>num<span class="w"> </span>:<span class="w"> </span>num<span class="o">){}</span>
+</pre></div>
+</div>
+<p>the while loop has the exact same syntax as c</p>
+</section>
+<section id="arraylist">
+<h2><span class="section-number">4.3.14. </span>Arraylist<a class="headerlink" href="#arraylist" title="Link to this heading">#</a></h2>
+<section id="limitations-of-arrays">
+<h3><span class="section-number">4.3.14.1. </span>Limitations of Arrays<a class="headerlink" href="#limitations-of-arrays" title="Link to this heading">#</a></h3>
+<p>Arrays cannot chagne its size after it is decleared.
+The only way is to change its length is through copying and making a new string.</p>
+</section>
+<section id="usage-of-arraylists">
+<h3><span class="section-number">4.3.14.2. </span>Usage of Arraylists<a class="headerlink" href="#usage-of-arraylists" title="Link to this heading">#</a></h3>
+<p>To use an arraylist, you have to first import the arraylist class.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
+</pre></div>
+</div>
+<p>ArrayList<Integer> numbers = new ArrayList<Integer>();</p>
+<p>because int, double and float are all primative types, you can make them reference types by using someing called an “wrapper” class.</p>
+<p>Integer is the reference type for int.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.add<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
+numbers.add<span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="p">;</span>
+...
+</pre></div>
+</div>
+<p>To print out an ArrayList</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>System.out.println<span class="o">(</span>numbers.toString<span class="o">())</span><span class="p">;</span>
+
+<span class="c1">#it looks like an array</span>
+<span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>To print an element in the arraylist, use the get() method.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>System.out.println<span class="o">(</span>numbers.get<span class="o">(</span><span class="m">3</span><span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>the agument in the numbers in the arraylist is the index of an 0-indexed array</p>
+<section id="remove-elemnts">
+<h4><span class="section-number">4.3.14.2.1. </span>remove elemnts<a class="headerlink" href="#remove-elemnts" title="Link to this heading">#</a></h4>
+<p>you can either remove by index, or you cna remove by value.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.remove<span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="p">;</span>
+
+numbers.remove<span class="o">(</span>Integer.valueOf<span class="o">(</span><span class="m">4</span><span class="o">))</span><span class="p">;</span>
+
+numbers.clear<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="update-elements">
+<h4><span class="section-number">4.3.14.2.2. </span>Update elements<a class="headerlink" href="#update-elements" title="Link to this heading">#</a></h4>
+<p>One advantage of using the wapper class is that with the primative class and the wrapper class, you can distinguish between the same number</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.set<span class="o">(</span><span class="m">2</span>,<span class="w"> </span>Integer.valueOf<span class="o">(</span><span class="m">30</span><span class="o">))</span><span class="p">;</span>
+
+numbers.set<span class="o">(</span>index,<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>value_in<span class="w"> </span>wrapper<span class="w"> </span>class<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+<section id="sorting-an-arraylist">
+<h4><span class="section-number">4.3.14.2.3. </span>Sorting an ArrayList<a class="headerlink" href="#sorting-an-arraylist" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Comparator
+
+<span class="c1">#take one agument</span>
+numbers.sort<span class="o">(</span>Comparator.naturalOrder<span class="o">())</span><span class="p">;</span>
+
+numbers.sort<span class="o">(</span>Comparator.reverseOrder<span class="o">())</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="size-method">
+<h4><span class="section-number">4.3.14.2.4. </span>Size Method<a class="headerlink" href="#size-method" title="Link to this heading">#</a></h4>
+<p>Continuing our example with the arraylist numbers</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.size<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="contains-method">
+<h4><span class="section-number">4.3.14.2.5. </span>Contains Method<a class="headerlink" href="#contains-method" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#returns a boolean expression</span>
+numbers.contains<span class="o">(</span>Integer.valueOf<span class="o">(</span><span class="m">10</span><span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="checking-if-it-is-empty">
+<h4><span class="section-number">4.3.14.2.6. </span>Checking if it is empty<a class="headerlink" href="#checking-if-it-is-empty" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#this also returns a bool</span>
+numbers.isEmpty<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="for-each-loop">
+<h3><span class="section-number">4.3.14.3. </span>For Each Loop<a class="headerlink" href="#for-each-loop" title="Link to this heading">#</a></h3>
+<p>For each element in the arrayList, preform a certain set of instructions.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.forEach<span class="o">(</span>number<span class="w"> </span>-&gt;<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>System.out.println<span class="o">(</span>number<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;is the current element&quot;</span><span class="o">)</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In order to modify the element in the arrayList through a loop.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.forEach<span class="o">(</span>number<span class="w"> </span>-&gt;<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>numbers.set<span class="o">(</span>numbers.indexOf<span class="o">(</span>number<span class="o">)</span>,<span class="w"> </span>number<span class="w"> </span>*<span class="w"> </span><span class="m">2</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This program will multiply each element by 2.</p>
+</section>
+<section id="arraylist-practise-question">
+<h3><span class="section-number">4.3.14.4. </span>ArrayList Practise Question<a class="headerlink" href="#arraylist-practise-question" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h4><span class="section-number">4.3.14.4.1. </span>Q1<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p>现有如下字符串元素：[“aaa”, “bbb”, “aaa”, “aaa”, “ccc”, “bbb”]，请将所有的元素按顺序存入ArrayList集合中，并遍历集合查看存储结果。</p>
+<p>训练目标
+ArrayList集合存储字符串元素，并遍历。</p>
+<p>训练提示
+1、创建ArrayList集合，泛型如何定义？</p>
+<p>2、怎样将数据添加到集合中？</p>
+<p>3、怎样遍历集合？</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h4><span class="section-number">4.3.14.4.2. </span>Q2<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<p>请定义教师（Teacher）类，属性包含姓名和专业名称。将若干教师对象存入ArrayList集合中，并遍历集合打印教师信息，格式如下：</p>
+<p>姓名：赵老师, 专业：javase
+姓名：钱老师, 专业：javaee
+姓名：孙老师, 专业：php
+姓名：李老师, 专业：python</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h4><span class="section-number">4.3.14.4.3. </span>Q3<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p>有如下员工信息：</p>
+<p>姓名：张三，工资：3000
+姓名：李四，工资：3500
+姓名：王五，工资：4000
+姓名：赵六，工资：4500
+姓名：田七，工资：5000
+先需要将所有的员工信息都存入ArrayList集合中，并完成如下操作：</p>
+<p>1、判断是否有姓名为“王五”的员工，如果有，改名为“王小五”</p>
+<p>2、判断是否有姓名为“赵六”的员工，如果有，将其删除</p>
+<p>3、给姓名为“田七”的员工，涨500工资</p>
+<p>训练目标
+ArrayList集合的修改元素和删除元素API</p>
+<p>训练提示
+1、需要定义员工类，将员工信息进行封装</p>
+<p>2、创建ArrayList集合，创建员工对象，将所有员工对象存入集合</p>
+<p>3、需要判断集合中元素的信息，那么肯定需要遍历集合获取到所有元素</p>
+<p>4、ArrayList集合中，修改元素和删除元素的方法是什么？在遍历集合时，删除了集合中的元素，会不会对遍历产生影响呢？如果会，该怎么解决？</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id12">
+<h4><span class="section-number">4.3.14.4.4. </span>Q4<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p>利用面向对象的思想设计一个图书管理系统。图书的属性有：编号，书名，作者，价格。要求提供如下功能：</p>
+<p>1、提供操作菜单，可以选择要进行的操作。</p>
+<p>2、可以添加图书，添加图书时，编号需要唯一，添加成功，返回到菜单。</p>
+<p>3、可以查询图书，显示所有图书信息，然后返回到菜单。</p>
+<p>4、可以根据书名，查询单本图书信息，显示信息后，返回到菜单。</p>
+<p>5、可以删除图书，通过编号删除，删除成功后，返回到菜单。</p>
+<p>6、可以修改图书的信息，但编号不可以修改，修改成功后，返回到菜单。</p>
+<p>7、可以退出系统，结束程序运行。</p>
+<p>提示：</p>
+<p>1、所有图书信息由键盘录入</p>
+<p>2、图书的价格可以定义为字符串类型，因为在键盘录入时，不可以先使用nextInt()方法获取整数然后再使用next()方法获取字符串，这样会导致next()方法获取不到数据。</p>
+<p>训练目标
+ArrayList集合API的综合运用、编程逻辑的锻炼</p>
+<p>训练提示
+1、首先需要创建一个图书类，封装图书信息。</p>
+<p>2、提供操作菜单，可以通过键盘录入不同的数字来表示不同的操作，选择结构语句可以实现该需求。</p>
+<p>3、管理图书，需要将图书存放起来，首先需要创建集合容器。</p>
+<p>4、添加图书，即将图书存入集合中，但存入之前需要判定编号的唯一性，如果编号存在，需要重新录入。</p>
+<p>5、查询所有图书，即为遍历集合显示信息。</p>
+<p>6、查询单本图书，需要录入图书名称，遍历集合进行查询。</p>
+<p>7、修改图书信息，需要根据编号先找到该图书，修改其除了编号之外的信息，存入集合覆盖原来的信息。</p>
+<p>8、删除图书信息，需要根据编号先找到该图书，根据索引直接删除即可。</p>
+<p>9、退出系统功能，借助结束程序的API实现即可。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="hash-maps">
+<h2><span class="section-number">4.3.15. </span>Hash maps<a class="headerlink" href="#hash-maps" title="Link to this heading">#</a></h2>
+<p>Key - Value pairs, just like Python Dictionary.<br />
+To use hashmap, you nned to first import the hashmap class.<br />
+<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">java.utils.HashMap;</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>HashMap&lt;String,<span class="w"> </span>Integer&gt;examScores<span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>HashMap&lt;String,<span class="w"> </span>Integer&gt;<span class="o">()</span><span class="p">;</span>
+
+examScores.put<span class="o">(</span><span class="s2">&quot;math&quot;</span>,<span class="w"> </span><span class="m">75</span><span class="o">)</span><span class="p">;</span>
+examScores.put<span class="o">(</span><span class="s2">&quot;sshf&quot;</span>,<span class="w"> </span><span class="m">85</span><span class="o">)</span><span class="p">;</span>
+
+System.out.println<span class="o">(</span>examScores.toString<span class="o">())</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Elements in the hash map are not sorted.<br />
+They appear in random order.</p>
+<p>To access the value in the key-value pair.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>System.out.println<span class="o">(</span>examScores.get<span class="o">(</span><span class="s2">&quot;English&quot;</span><span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If we want to have a default result for entries that are not present.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.putIfAbsent<span class="o">(</span><span class="s2">&quot;math&quot;</span>,<span class="w"> </span><span class="m">70</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>check if the key exist, if no, it will create an entry and associate it with a value.<br />
+If we want to replace a value for a key that already exist.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.replace<span class="o">(</span><span class="s2">&quot;math&quot;</span>,<span class="w"> </span><span class="m">100</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If the entry accessed does not exist, it will return ‘null’.<br />
+So to ensure that at least we get something from the query we can set a default value for searches.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.getOrDefault<span class="o">(</span><span class="s2">&quot;)</span>
+</pre></div>
+</div>
+<section id="clear-a-hashmap">
+<h3><span class="section-number">4.3.15.1. </span>Clear a hashmap<a class="headerlink" href="#clear-a-hashmap" title="Link to this heading">#</a></h3>
+<p>clear out the entire hashmap</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examxScores.clear<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="id13">
+<h3><span class="section-number">4.3.15.2. </span>size method<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>to check the number of elements in a hashmap</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.size<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="print-out-a-hashmap">
+<h3><span class="section-number">4.3.15.3. </span>print out a hashmap<a class="headerlink" href="#print-out-a-hashmap" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.toString<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-an-elemtn">
+<h3><span class="section-number">4.3.15.4. </span>Remove an elemtn<a class="headerlink" href="#remove-an-elemtn" title="Link to this heading">#</a></h3>
+<p>provide the key as the agument of the method</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.remove<span class="o">(</span><span class="s2">&quot;Sociology&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="check-for-a-value">
+<h3><span class="section-number">4.3.15.5. </span>Check for a value<a class="headerlink" href="#check-for-a-value" title="Link to this heading">#</a></h3>
+<p>check if the hashmap contains a certain value.<br />
+the value that you are looking for must be in the hashmap</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.containsValue<span class="o">(</span>Integer.valueOf<span class="o">(</span><span class="m">100</span><span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="checking-if-a-hashmap-is-empty">
+<h3><span class="section-number">4.3.15.6. </span>Checking if a hashmap is empty<a class="headerlink" href="#checking-if-a-hashmap-is-empty" title="Link to this heading">#</a></h3>
+<p>returns a boolean expression</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.isEmpty<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="using-foreach-method">
+<h3><span class="section-number">4.3.15.7. </span>Using forEach method<a class="headerlink" href="#using-foreach-method" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">subject</span></code> is the key, <code class="docutils literal notranslate"><span class="pre">score</span></code> is the value.<br />
+forEach method is using a lamda method</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.forEach<span class="o">(</span>action<span class="o">)</span>
+
+
+examScores.forEach<span class="o">((</span>subject,<span class="w"> </span>score<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>System.out.println<span class="o">(</span>subject<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;: &quot;</span><span class="w"> </span>+<span class="w"> </span>score<span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>because there is multiple variables provided into the lambda function, we need a pair of parentheises.</p>
+<p>We can also loop throught the hashmap and update the values associated with each element.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>examScores.forEach<span class="o">((</span>subject,<span class="w"> </span>score<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>examScores.replace<span class="o">(</span>subject,<span class="w"> </span>score<span class="w"> </span>*<span class="w"> </span><span class="m">2</span><span class="o">)</span><span class="p">;</span>
+<span class="o">})</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="object-oriented-programming">
+<h2><span class="section-number">4.3.16. </span>Object Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Link to this heading">#</a></h2>
+<p>creating classes.<br />
+make a new file and a new class that have the same name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>User<span class="o">{</span>
+
+<span class="o">}</span>
+
+User.java
+</pre></div>
+</div>
+<p>now we can put info pertaining to the user in the class, i.e. name and birthday</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+public<span class="w"> </span>LocalDate<span class="w"> </span>birthday<span class="p">;</span>
+</pre></div>
+</div>
+<p>to use the LocalDate Class, we must import it first thing into the program<br />
+in the main function</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>we will create a new object named youngerUser, declared variable will be initialized as null.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>User<span class="w"> </span><span class="nv">youngerUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>User<span class="o">()</span><span class="p">;</span>
+
+youngerUser.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dsf&quot;</span><span class="p">;</span>
+youngerUser.birthDay<span class="w"> </span><span class="o">=</span><span class="w"> </span>LocalDate.parse<span class="o">(</span><span class="s2">&quot;1008-01-03&quot;</span><span class="o">)</span><span class="p">;</span>
+
+//to<span class="w"> </span>access<span class="w"> </span>the<span class="w"> </span>LocalDate<span class="w"> </span>data<span class="w"> </span>as<span class="w"> </span>String
+youngerUser.birthDay.toString<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If you write a public method, it will be available to the entire program</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>//import<span class="w"> </span>Period<span class="w"> </span>and<span class="w"> </span>LocalDate<span class="w"> </span>classes
+//in<span class="w"> </span>the<span class="w"> </span>User<span class="w"> </span>class
+public<span class="w"> </span>int<span class="w"> </span>age<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>//this<span class="w"> </span>will<span class="w"> </span>calculate<span class="w"> </span>the<span class="w"> </span>difference<span class="w"> </span>between<span class="w"> </span>now<span class="w"> </span>and<span class="w"> </span>birthday
+<span class="w">    </span>int<span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Period.between<span class="o">(</span>this.birthDay,<span class="w"> </span>LocalDate.now<span class="o">())</span><span class="p">;</span>
+<span class="o">}</span>
+
+public<span class="w"> </span>void<span class="w"> </span>borrow<span class="o">(</span>Book<span class="w"> </span>book<span class="o">){</span>
+<span class="w">    </span>this.books.add<span class="o">(</span>book<span class="o">)</span><span class="p">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>if the method doesnt return anything, the type is void<br />
+the method borrow is accepting parameters<br />
+initializea an ArrayList Variable</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
+
+public<span class="w"> </span>ArrayList&lt;Book&gt;<span class="w"> </span><span class="nv">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>ArrayList&lt;book&gt;<span class="p">;</span>
+</pre></div>
+</div>
+<p>accessing the values that is a custom class</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>//implement<span class="w"> </span>a<span class="w"> </span>toString<span class="w"> </span>method<span class="w"> </span>int<span class="w"> </span>the<span class="w"> </span>custom<span class="w"> </span>class
+public<span class="w"> </span>String<span class="w"> </span>toString<span class="o">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>String.format<span class="o">(</span><span class="s2">&quot;%s by %s.&quot;</span>,<span class="w"> </span>this.title,<span class="w"> </span>this.author<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<section id="constructor">
+<h3><span class="section-number">4.3.16.1. </span>Constructor<a class="headerlink" href="#constructor" title="Link to this heading">#</a></h3>
+<p>every class in java have a special method called the consttuctor, it is responsible for initializing the values of the class</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>User<span class="o">(</span>String<span class="w"> </span>name,<span class="w"> </span>String<span class="w"> </span>birthDay<span class="o">){</span>
+<span class="w">    </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>this.birthDay<span class="w"> </span><span class="o">=</span><span class="w"> </span>LocalDate.parse<span class="o">(</span>birthDay<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>the constructor method is called where the class is defined<br />
+and when we declare a new variable in that class</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>User<span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>newUser<span class="o">(</span><span class="s2">&quot;dsnfds&quot;</span>,<span class="w"> </span><span class="s2">&quot;2002-02-03&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>We can create new methods when defineing the user class to make printing out the names eaiser</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>String<span class="w"> </span>getUserName<span class="o">(){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>this.name<span class="p">;</span>
+<span class="o">}</span>
+
+public<span class="w"> </span>String<span class="w"> </span>getBirthDay<span class="o">(){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>this.birthDay.toString<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>user.birthDay is still in LocalDate format, so we need to convert it back to String when returning it.<br />
+Using the newly created get method to print the name</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user.getBirthDay<span class="o">()</span><span class="p">;</span>
+
+user.getUserName<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>we can make the variables in the class private, implement the get method and use the constructor method.<br />
+This will make the data more secure.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>private<span class="w"> </span>String<span class="w"> </span>title<span class="p">;</span>
+private<span class="w"> </span>String<span class="w"> </span>author<span class="p">;</span>
+
+public<span class="w"> </span>String<span class="w"> </span>getTitle<span class="o">()</span>.......
+public<span class="w"> </span>String<span class="w"> </span>getAuthor<span class="o">()</span>...
+
+//constructor<span class="w"> </span>method
+Book<span class="o">(</span>String<span class="w"> </span>title,<span class="w"> </span>String<span class="w"> </span>author<span class="o">){</span>
+<span class="w">    </span>this.autor<span class="w"> </span><span class="o">=</span><span class="w"> </span>author<span class="p">;</span>
+<span class="w">    </span>this.title<span class="w"> </span><span class="o">=</span><span class="w"> </span>title<span class="p">;</span>
+<span class="o">}</span>
+
+//update<span class="w">  </span>the<span class="w"> </span>object<span class="w"> </span>creation<span class="w"> </span>process
+Book<span class="w"> </span><span class="nv">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Book<span class="o">(</span><span class="s2">&quot;little princess&quot;</span>,<span class="w"> </span><span class="s2">&quot;fiarhan neight&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dont forget to update the object creation process</p>
+</section>
+<section id="inheritance">
+<h3><span class="section-number">4.3.16.2. </span>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h3>
+<p>make a default class that has the most common methods.<br />
+make a child class that inherit all the properties and methods and then add some specific methods and properties.
+We can firt initialize a custom class and declear all the propeties, then we put all the properties into the constructor method.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>Book<span class="o">{</span>
+
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>title<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>author<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>pageCount<span class="p">;</span>
+
+<span class="w">    </span>Book<span class="w"> </span><span class="o">(</span>String<span class="w"> </span>title,<span class="w"> </span>String<span class="w"> </span>author,<span class="w"> </span>int<span class="w"> </span>pageCount<span class="o">){</span>
+<span class="w">        </span>this.title<span class="w"> </span><span class="o">=</span><span class="w"> </span>title<span class="p">;</span>
+<span class="w">        </span>this.author<span class="w"> </span><span class="o">=</span><span class="w"> </span>author<span class="p">;</span>
+<span class="w">        </span>this.pageCount<span class="w"> </span><span class="o">=</span><span class="w"> </span>pageCount<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>This is the parent class, now is the time to make a child class.<br />
+First create a new java file, the name of the new child class must be the same as the name of the java file.<br />
+Then we delcear the child class as an extension of the parent class.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>AudioBook<span class="w"> </span>extends<span class="w"> </span>Book<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>time<span class="p">;</span>
+
+<span class="w">    </span>//constructor
+<span class="w">    </span>AudoBook<span class="o">(</span>String<span class="w"> </span>title,<span class="w"> </span>String<span class="w"> </span>author,<span class="w"> </span>int<span class="w"> </span>pageCount,<span class="w"> </span>int<span class="w"> </span><span class="nb">time</span><span class="o">){</span>
+<span class="w">        </span>super<span class="o">(</span>title,<span class="w"> </span>author,<span class="w"> </span>pageCount<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>this.AudoBook<span class="w"> </span><span class="o">=</span><span class="w"> </span>AudoBook
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>super refoers to the pareent class in the current class</p>
+</section>
+<section id="practise-questions">
+<h3><span class="section-number">4.3.16.3. </span>Practise Questions<a class="headerlink" href="#practise-questions" title="Link to this heading">#</a></h3>
+<section id="id14">
+<h4><span class="section-number">4.3.16.3.1. </span>Q1<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<p>题目1（完成）
+定义手机类，手机有品牌(brand),价格(price)和颜色(color)三个属性，有打电话call()和sendMessage()两个功能。</p>
+<p>请定义出手机类，类中要有空参、有参构造方法，set/get方法。</p>
+<p>定义测试类，在主方法中使用空参构造创建对象，使用set方法赋值。</p>
+<p>调用对象的两个功能，打印效果如下：</p>
+<p>正在使用价格为3998元黑色的小米手机打电话….
+正在使用价格为3998元黑色的小米手机发短信….</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>//create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>object
+
+<span class="w">    </span>//use<span class="w"> </span>the<span class="w"> </span>setters<span class="w"> </span>to<span class="w"> </span>populate<span class="w"> </span>the<span class="w"> </span>object
+
+<span class="w">    </span>//call<span class="w"> </span>the<span class="w"> </span>call<span class="w"> </span>and<span class="w"> </span>sendMessage<span class="w"> </span>methods
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+
+public<span class="w"> </span>class<span class="w"> </span>Phone<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+
+<span class="w">    </span>//constructors
+
+<span class="w">    </span>//setters
+
+<span class="w">    </span>//getters
+
+<span class="w">    </span>//call<span class="w"> </span>method
+
+<span class="w">    </span>//sendMessage<span class="w"> </span>method
+
+
+
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h4><span class="section-number">4.3.16.3.2. </span>Q2<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<p>定义一个女朋友类。女朋友的属性包含：姓名，身高，体重。行为包含：洗衣服wash()，做饭cook()。另外定义一个用于展示三个属性值的show()方法。请在测试类中通过有参构造方法创建对象并赋值，然后分别调用展示方法、洗衣服方法和做饭方法。打印效果如下：</p>
+<p>我女朋友叫凤姐,身高155.0厘米,体重130.0斤
+女朋友帮我洗衣服
+女朋友给我做饭</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id16">
+<h4><span class="section-number">4.3.16.3.3. </span>Q3<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
+<p>定义项目经理类Manager。属性：姓名name，工号id，工资salary，奖金bonus。行为：工作work() 定义程序员类Coder。属性：姓名name，工号id，工资salary。行为：工作work()</p>
+<p>要求：</p>
+<p>​ 1.按照以上要求定义Manager类和Coder类,属性要私有,生成空参、有参构造，set和get方法​ 2.定义测试类,在main方法中创建该类的对象并给属性赋值(set方法或有参构造方法)​ 3.调用成员方法,打印格式如下:</p>
+<p>工号为123基本工资为15000奖金为6000的项目经理张三正在努力的做着管理工作,分配任务,检查员工提交上来的代码…..
+工号为135基本工资为10000的程序员李四正在努力的写着代码……</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id17">
+<h4><span class="section-number">4.3.16.3.4. </span>Q4<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
+<p>定义猫类Cat。属性:毛的颜色color，品种breed。行为:吃饭eat()，抓老鼠catchMouse() 定义狗类Dog。属性:毛的颜色color，品种breed。行为:吃饭()，看家lookHome() 要求:​ 1.按照以上要求定义Cat类和Dog类,属性要私有,生成空参、有参构造，set和get方法​ 2.定义测试类,在main方法中创建该类的对象并给属性赋值(set方法或有参构造方法)​ 3.调用成员方法,打印格式如下:</p>
+<p>花色的波斯猫正在吃鱼…..
+花色的波斯猫正在逮老鼠….
+黑色的藏獒正在啃骨头…..
+黑色的藏獒正在看家…..</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id18">
+<h4><span class="section-number">4.3.16.3.5. </span>Q5<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储3部汽车对象。</p>
+<p>​ 汽车的属性：品牌，价格，颜色。</p>
+<p>​ 创建三个汽车对象，数据通过键盘录入而来，并把数据存入到数组当中。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id19">
+<h4><span class="section-number">4.3.16.3.6. </span>Q6<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储3部手机对象。</p>
+<p>​ 手机的属性：品牌，价格，颜色。</p>
+<p>​ 要求，计算出三部手机的平均价格</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id20">
+<h4><span class="section-number">4.3.16.3.7. </span>Q7<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储4个女朋友的对象</p>
+<p>​ 女朋友的属性：姓名、年龄、性别、爱好</p>
+<p>​ 要求1：计算出四女朋友的平均年龄</p>
+<p>​ 要求2：统计年龄比平均值低的女朋友有几个？并把她们的所有信息打印出来。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="id21">
+<h4><span class="section-number">4.3.16.3.8. </span>Q8<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储3个学生对象。</p>
+<p>​ 学生的属性：学号，姓名，年龄。</p>
+<p>​ 要求1：添加的时候需要进行学号的唯一性判断。</p>
+<p>​ 要求2：添加完毕之后，遍历所有学生信息。</p>
+<p>​ 要求3：通过id删除学生信息</p>
+<p>​ 如果存在，则删除，如果不存在，则提示删除失败。</p>
+<p>​ 要求4：删除完毕之后，遍历所有学生信息。</p>
+<p>​ 要求5：id为2的学生，年龄+1岁</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="circuits_basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.2. </span>Circuits Basics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="javahw.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.4. </span>Java Practice Questions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jdk">4.3.1. JDK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-syntax">4.3.2. Basic Syntax</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standard-output">4.3.3. Standard Output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">4.3.4. Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maths-operators">4.3.5. Maths operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relational-operators">4.3.6. Relational Operators</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ternary-operator">4.3.6.1. Ternary Operator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">4.3.7. Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1">4.3.7.1. Q1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2">4.3.7.2. Q2</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q3">4.3.7.3. Q3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">4.3.7.4. Q4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">4.3.7.5. Q5</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">4.3.7.6. Q6</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">4.3.7.7. Q7</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">4.3.7.8. Q8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q9">4.3.7.9. Q9</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q10">4.3.7.10. Q10</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q11">4.3.7.11. Q11</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">4.3.8. Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatted-strings">4.3.8.1. Formatted Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">4.3.8.2. String Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-practise-questions">4.3.8.3. Strings Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.3.8.3.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.3.8.3.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.3.8.3.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.3.8.3.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.3.8.3.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.3.8.3.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.3.8.3.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.3.8.3.8. Q8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">4.3.9. Input</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-1-mini-calculator">4.3.10. Project 1: mini calculator</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switch-cases-statement">4.3.11. Switch Cases Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arrays">4.3.12. Arrays</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-properties">4.3.12.1. Array Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-method">4.3.12.2. Sorting Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#searching-method">4.3.12.3. Searching Method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#populating-an-array">4.3.12.4. Populating an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-copy-of-an-array">4.3.12.5. Making a copy of an Array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-the-arrays">4.3.12.6. Comparing the Arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">4.3.13. Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist">4.3.14. Arraylist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-arrays">4.3.14.1. Limitations of Arrays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-of-arraylists">4.3.14.2. Usage of Arraylists</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-elemnts">4.3.14.2.1. remove elemnts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-elements">4.3.14.2.2. Update elements</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-an-arraylist">4.3.14.2.3. Sorting an ArrayList</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-method">4.3.14.2.4. Size Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contains-method">4.3.14.2.5. Contains Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-it-is-empty">4.3.14.2.6. Checking if it is empty</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loop">4.3.14.3. For Each Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist-practise-question">4.3.14.4. ArrayList Practise Question</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">4.3.14.4.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">4.3.14.4.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.3.14.4.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.3.14.4.4. Q4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hash-maps">4.3.15. Hash maps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clear-a-hashmap">4.3.15.1. Clear a hashmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.3.15.2. size method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-out-a-hashmap">4.3.15.3. print out a hashmap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-an-elemtn">4.3.15.4. Remove an elemtn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#check-for-a-value">4.3.15.5. Check for a value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-a-hashmap-is-empty">4.3.15.6. Checking if a hashmap is empty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-foreach-method">4.3.15.7. Using forEach method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming">4.3.16. Object Oriented Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">4.3.16.1. Constructor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">4.3.16.2. Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practise-questions">4.3.16.3. Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.3.16.3.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">4.3.16.3.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">4.3.16.3.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">4.3.16.3.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">4.3.16.3.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">4.3.16.3.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">4.3.16.3.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">4.3.16.3.8. Q8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miles Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
