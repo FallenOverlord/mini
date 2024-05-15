@@ -115,4 +115,6 @@ tip: this redirects the garbage warnings into null and redirects the rest of the
 
 e.g. `2>/dev/null` means that error outputs are being redirected to null.
 
+### Web Services
+visite a website `[★]$ curl http://10.129.27.243/robots.txt`
 

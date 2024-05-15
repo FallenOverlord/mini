@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/nmap';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. About Python" href="about_py.html" />
+    <link rel="next" title="1.4. Commands" href="cheatSheet.html" />
     <link rel="prev" title="1.2. SQL General Commands" href="sqlite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,6 +178,10 @@
 <li class="toctree-l2"><a class="reference internal" href="linux.html">1.1. Linux Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite.html">1.2. SQL General Commands</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. nmap Basic Commands and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatSheet.html">1.4. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctf.html">1.5. CTF Write Ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">1.7. HTB CPTS Moduals</a></li>
 </ul>
 </li>
 </ul>
@@ -193,8 +197,20 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="c_intro.html">3. Welcome to C Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="struct.html">3.1. Basics of Data Structres</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jb.html">3.2. Jupyter Book Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="struct.html">3.2. Basics of Data Structres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jb.html">3.3. Jupyter Book Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linkedlist.html">3.4. Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="final.html">3.5. APS 105 Final Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html">3.6. Searching Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="ece_intro.html">4. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="circuits_basics.html">4.2. Circuits Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html">4.3. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javahw.html">4.4. Java Practice Questions</a></li>
 </ul>
 </li>
 </ul>
@@ -347,6 +363,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-a-basic-scan">1.3.1. Perform a basic scan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-scan-results">1.3.2. Saving scan results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#service-enumeration">1.3.3. Service Enumeration</a></li>
 </ul>
             </nav>
         </div>
@@ -360,6 +377,57 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="nmap-basic-commands-and-examples">
 <h1><span class="section-number">1.3. </span>nmap Basic Commands and Examples<a class="headerlink" href="#nmap-basic-commands-and-examples" title="Link to this heading">#</a></h1>
+<p>Service Enumeration
+If we can somehow aquire the exact version number a service is running on, we might just be<br />
+able to find known exploits and source code on the service.</p>
+<p>The best practice is to run a quick scan for available ports first, because it doesn’t involves<br />
+heavy traffic and will not be blocked by the security mechanism.</p>
+<p>We can use the following command to scan all ports, looking for service versions
+sudo nmap &lt;target_ip_address&gt; -p- -sV</p>
+<p>the command will take a long time, so press the space bar to check for the scan status<br />
+the other way is to use –stats-every=<time>, where time is in s or m, to periodically<br />
+check the scan stats.</p>
+<p>sudo nmap 10.129.2.28 -p- -sV –stats-every=5s</p>
+<p>Alternatively, we can use -v to increase the verbosity level that nmap will print out all<br />
+the info once it aquires them.</p>
+<p>sudo nmap &lt;target_ip_address&gt; -p -sV -v</p>
+<p>The three-way handshape:
+18:28:07.128564 IP 10.10.14.2.59618 &gt; 10.129.2.28.smtp: <code class="docutils literal notranslate"><span class="pre">Flags</span> <span class="pre">[S]</span></code>, seq 1798872233, win 65535, options [mss 1460,nop,wscale 6,nop,nop,TS val 331260178 ecr 0,sackOK,eol], length 0 [SYN]
+18:28:07.255151 IP 10.129.2.28.smtp &gt; 10.10.14.2.59618: Flags [S.], seq 1130574379, ack 1798872234, win 65160, options [mss 1460,sackOK,TS val 1800383922 ecr 331260178,nop,wscale 7], length 0 [SYN-ACK]
+18:28:07.255281 IP 10.10.14.2.59618 &gt; 10.129.2.28.smtp: Flags [.], ack 1, win 2058, options [nop,nop,TS val 331260304 ecr 1800383922], length 0 [ACK]</p>
+<p>The PSH flag states that the target server is sending data to us, while the ACK flag confirms the data is indeed sent.
+The last ACK flag confirms the receipt of the data.
+18:28:07.319306 IP 10.129.2.28.smtp &gt; 10.10.14.2.59618: Flags [P.], seq 1:36, ack 1, win 510, options [nop,nop,TS val 1800383985 ecr 331260304], length 35: SMTP: 220 inlane ESMTP Postfix (Ubuntu) [PSH-ACK]
+18:28:07.319426 IP 10.10.14.2.59618 &gt; 10.129.2.28.smtp: Flags [.], ack 36, win 2058, options [nop,nop,TS val 331260368 ecr 1800383985], length 0 [ACK]</p>
+<p>Nmap Scripting Engine (NSE)
+It lets us to create scripts in Lua and interact with existing services, there’re a total of 14 catagories.
+auth	Determination of authentication credentials.
+broadcast	Scripts, which are used for host discovery by broadcasting and the discovered hosts, can be automatically added to the remaining scans.
+brute	Executes scripts that try to log in to the respective service by brute-forcing with credentials.
+default	Default scripts executed by using the -sC option.
+discovery	Evaluation of accessible services.
+dos	These scripts are used to check services for denial of service vulnerabilities and are used less as it harms the services.
+exploit	This category of scripts tries to exploit known vulnerabilities for the scanned port.
+external	Scripts that use external services for further processing.
+fuzzer	This uses scripts to identify vulnerabilities and unexpected packet handling by sending different fields, which can take much time.
+intrusive	Intrusive scripts that could negatively affect the target system.
+malware	Checks if some malware infects the target system.
+safe	Defensive scripts that do not perform intrusive and destructive access.
+version	Extension for service detection.
+vuln	 Identification of specific vulnerabilities.</p>
+<p>10.129.38.188
+To use default scripts in nmap
+sudo nmap <target> -sC</p>
+<p>To use specificed scripts in nmap
+sudo nmap <target> -p&lt;target_port&gt; –script &lt;script1_name&gt;,&lt;script2_name&gt;, …
+tip: there’s no space between script1 and script2</p>
+<p>To use aggressive scan in nmap
+sudo nmap <target> -A
+benefits, it can determine the web server, web application and the web-page title from the target, it can even guess the os the target is running on.</p>
+<p>To use vuln scan in nmap
+sudo nmap <target> -p&lt;target_port&gt; –script vuln -sV
+this command will scan the target port number and the services that are running on it, it also uses scripts to find more info about the service
+the -script vuln have the capability of checking the service versions against known vulnerabilites in the database</p>
 <section id="perform-a-basic-scan">
 <h2><span class="section-number">1.3.1. </span>Perform a basic scan<a class="headerlink" href="#perform-a-basic-scan" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">-p-</span></code> is to scan all ports<br />
@@ -385,6 +453,12 @@ current directory that contains the search results.</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="../_images/tp.png"><img alt="../_images/tp.png" src="../_images/tp.png" style="width: 100px; height: 100px;" /></a>
 </figure>
+</section>
+<section id="service-enumeration">
+<h2><span class="section-number">1.3.3. </span>Service Enumeration<a class="headerlink" href="#service-enumeration" title="Link to this heading">#</a></h2>
+<p>If the attacker knows the exact service version the machine is runing on, it can reuse known vulnbilities, and it can aquare more information.</p>
+<p><a class="reference external" href="https://www.markdownguide.org/cheat-sheet/">markdown syntax</a></p>
+<p><em><strong>hello</strong></em></p>
 </section>
 </section>
 
@@ -428,11 +502,11 @@ current directory that contains the search results.</p>
       </div>
     </a>
     <a class="right-next"
-       href="about_py.html"
+       href="cheatSheet.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>About Python</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Commands</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -454,6 +528,7 @@ current directory that contains the search results.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perform-a-basic-scan">1.3.1. Perform a basic scan</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-scan-results">1.3.2. Saving scan results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#service-enumeration">1.3.3. Service Enumeration</a></li>
 </ul>
   </nav></div>
 

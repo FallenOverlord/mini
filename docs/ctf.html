@@ -1,0 +1,1040 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.5. CTF Write Ups &#8212; Cybersecurity QuickStart</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/ctf';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.6. CompTIA CySA+ (CS0-003)" href="cysa.html" />
+    <link rel="prev" title="1.4. Commands" href="cheatSheet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/qe-logo-large.png" class="logo__image only-light" alt="Cybersecurity QuickStart - Home"/>
+    <script>document.write(`<img src="../_static/qe-logo-large.png" class="logo__image only-dark" alt="Cybersecurity QuickStart - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="miles.html">Hello, my name is Miles.</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cybersecurity</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="cs_intro.html">1. Cybersecurity intro</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux.html">1.1. Linux Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html">1.2. SQL General Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nmap.html">1.3. nmap Basic Commands and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatSheet.html">1.4. Commands</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.5. CTF Write Ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpts.html">1.7. HTB CPTS Moduals</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="about_py.html">2. About Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html">2.4. Setting up Your Python Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_by_example.html">2.5. An Introductory Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learn_more.html">2.6. Learn More</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="c_intro.html">3. Welcome to C Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="struct.html">3.2. Basics of Data Structres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jb.html">3.3. Jupyter Book Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linkedlist.html">3.4. Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="final.html">3.5. APS 105 Final Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html">3.6. Searching Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="ece_intro.html">4. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="circuits_basics.html">4.2. Circuits Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html">4.3. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javahw.html">4.4. Java Practice Questions</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/ctf.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>CTF Write Ups</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-knowledge">1.5.1. General Knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-engineering">1.5.2. Reverse Engineering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safe-opener-2">1.5.2.1. Safe Opener 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question">1.5.2.1.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">1.5.2.1.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm">1.5.2.2. Bit-O-Asm</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.5.2.2.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.5.2.2.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm-2">1.5.2.3. Bit-O-Asm-2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.5.2.3.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.5.2.3.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm-3">1.5.2.4. Bit-O-Asm-3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.5.2.4.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.5.2.4.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm-4">1.5.2.5. Bit-O-Asm-4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdb-baby-step-1">1.5.2.6. GDB Baby Step 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.5.2.6.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.5.2.6.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdb-baby-step-2">1.5.2.7. GDB Baby Step 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.5.2.7.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.5.2.7.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdb-baby-steps-4">1.5.2.8. GDB Baby Steps 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.5.2.8.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.5.2.8.2. Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ctf-write-ups">
+<h1><span class="section-number">1.5. </span>CTF Write Ups<a class="headerlink" href="#ctf-write-ups" title="Link to this heading">#</a></h1>
+<section id="general-knowledge">
+<h2><span class="section-number">1.5.1. </span>General Knowledge<a class="headerlink" href="#general-knowledge" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://docs.google.com/document/d/1JmjkpvIywCfmudMSs3kBxFYP2t5kwVuc7Gf2Rhm3MWs/edit?usp=drive_link">picoCTF</a></p>
+</section>
+<section id="reverse-engineering">
+<h2><span class="section-number">1.5.2. </span>Reverse Engineering<a class="headerlink" href="#reverse-engineering" title="Link to this heading">#</a></h2>
+<section id="safe-opener-2">
+<h3><span class="section-number">1.5.2.1. </span>Safe Opener 2<a class="headerlink" href="#safe-opener-2" title="Link to this heading">#</a></h3>
+<section id="question">
+<h4><span class="section-number">1.5.2.1.1. </span>Question<a class="headerlink" href="#question" title="Link to this heading">#</a></h4>
+<p>What can you do with this file?
+I forgot the key to my safe but this file is supposed to help me with retrieving the lost key. Can you help me unlock my safe?</p>
+</section>
+<section id="answer">
+<h4><span class="section-number">1.5.2.1.2. </span>Answer<a class="headerlink" href="#answer" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Download the required file
+<a class="reference external" href="https://artifacts.picoctf.net/c/292/SafeOpener.class">https://artifacts.picoctf.net/c/292/SafeOpener.class</a></p></li>
+<li><p>Analyse the file</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/safe2<span class="o">]</span>
+└─$<span class="w"> </span>file<span class="w"> </span>SafeOpener.class<span class="w"> </span>
+SafeOpener.class:<span class="w"> </span>compiled<span class="w"> </span>Java<span class="w"> </span>class<span class="w"> </span>data,<span class="w"> </span>version<span class="w"> </span><span class="m">52</span>.0<span class="w"> </span><span class="o">(</span>Java<span class="w"> </span><span class="m">1</span>.8<span class="o">)</span>
+</pre></div>
+</div>
+<p>It shows a compiled Java Class data, and the hint ask us to decompile it. So it makes sense.</p>
+<ol class="arabic simple" start="3">
+<li><p>Get a look at the file</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/safe2<span class="o">]</span>
+└─$<span class="w"> </span>cat<span class="w"> </span>SafeOpener.class<span class="w"> </span>
+����4�
+CDE<span class="w">     </span>FG
+H
+I
+JL<span class="w">      </span>FN
+OP
+Q
+RS
+.T
+OU
+VW
+X
+</pre></div>
+</div>
+<p>We can see that it is impossible to look at the content of the file because it is all compiled.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>d
+<span class="w"> </span>uv
+<span class="w">   </span>wx
+<span class="w">     </span>yr
+<span class="w">       </span>&gt;?java/lang/StringBuilder
+You<span class="w"> </span>have<span class="w">  </span>
+<span class="w">          </span>z<span class="o">{</span>
+<span class="w">            </span>z<span class="p">|</span><span class="w"> </span>attempt<span class="o">(</span>s<span class="o">)</span><span class="w"> </span>left
+<span class="w">                              </span><span class="o">}</span>t,picoCTF<span class="o">{</span>SAf3_0p3n3rr_y0u_solv3d_it_0e57c117<span class="o">}</span>
+<span class="w">                                                                             </span>~
+<span class="w">                                                                              </span>Sesame<span class="w"> </span>openPassword<span class="w"> </span>is<span class="w"> </span>incorrect
+</pre></div>
+</div>
+<p>However, if you are careful and patient enough, you would realize that amids the chaos, the flag is right there.</p>
+<ol class="arabic simple" start="4">
+<li><p>Decompile the file
+To aquire the right tools for decompiling the file, we must download Java and CFR.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>default-jdk
+
+┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/safe2<span class="o">]</span>
+└─$<span class="w"> </span>wget<span class="w"> </span>https://github.com/leibnitz27/cfr/releases/download/0.152/cfr-0.152.jar
+</pre></div>
+</div>
+<p>Now we use the CFR tool to decompile the Java Class Data.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/safe2<span class="o">]</span>
+└─$<span class="w"> </span>java<span class="w"> </span>-jar<span class="w"> </span>cfr-0.152.jar<span class="w"> </span>SafeOpener.class<span class="w">                                    </span>
+Picked<span class="w"> </span>up<span class="w"> </span>_JAVA_OPTIONS:<span class="w"> </span>-Dawt.useSystemAAFontSettings<span class="o">=</span>on<span class="w"> </span>-Dswing.aatext<span class="o">=</span><span class="nb">true</span>
+/*
+<span class="w"> </span>*<span class="w"> </span>Decompiled<span class="w"> </span>with<span class="w"> </span>CFR<span class="w"> </span><span class="m">0</span>.152.
+<span class="w"> </span>*/
+import<span class="w"> </span>java.io.BufferedReader<span class="p">;</span>
+import<span class="w"> </span>java.io.IOException<span class="p">;</span>
+import<span class="w"> </span>java.io.InputStreamReader<span class="p">;</span>
+import<span class="w"> </span>java.util.Base64<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>SafeOpener<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">)</span><span class="w"> </span>throws<span class="w"> </span>IOException<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>BufferedReader<span class="w"> </span><span class="nv">keyboard</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>BufferedReader<span class="o">(</span>new<span class="w"> </span>InputStreamReader<span class="o">(</span>System.in<span class="o">))</span><span class="p">;</span>
+<span class="w">        </span>Base64.Encoder<span class="w"> </span><span class="nv">encoder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Base64.getEncoder<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">encodedkey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span><span class="p">;</span><span class="w"> </span>++i<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot;Enter password for the safe: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="nv">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>keyboard.readLine<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="nv">encodedkey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>encoder.encodeToString<span class="o">(</span>key.getBytes<span class="o">())</span><span class="p">;</span>
+<span class="w">            </span>System.out.println<span class="o">(</span>encodedkey<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>boolean<span class="w"> </span><span class="nv">isOpen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>SafeOpener.openSafe<span class="o">(</span>encodedkey<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>isOpen<span class="o">)</span><span class="w"> </span>break<span class="p">;</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;You have  &quot;</span><span class="w"> </span>+<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="w"> </span>-<span class="w"> </span>i<span class="o">)</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; attempt(s) left&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>boolean<span class="w"> </span>openSafe<span class="o">(</span>String<span class="w"> </span>password<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">encodedkey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;picoCTF{SAf3_0p3n3rr_y0u_solv3d_it_0e57c117}&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>password.equals<span class="o">(</span>encodedkey<span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Sesame open&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span>true<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Password is incorrect\n&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>false<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span><span class="w">     </span>
+</pre></div>
+</div>
+<p>Now it will be much easier to see the logic in the code;thus, find the flag to this challenge.</p>
+</section>
+</section>
+<section id="bit-o-asm">
+<h3><span class="section-number">1.5.2.2. </span>Bit-O-Asm<a class="headerlink" href="#bit-o-asm" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4><span class="section-number">1.5.2.2.1. </span>Question<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Can you figure out what is in the eax register? Put your answer in the picoCTF flag format: picoCTF{n} where n is the contents of the eax register in the decimal number base. If the answer was 0x11 your flag would be picoCTF{17}.
+Download the assembly dump <a class="reference external" href="https://artifacts.picoctf.net/c/509/disassembler-dump0_a.txt">here</a>.</p>
+<p>As with most assembly, there is a lot of noise in the instruction dump. Find the one line that pertains to this question and don’t second guess yourself!</p>
+</section>
+<section id="id2">
+<h4><span class="section-number">1.5.2.2.2. </span>Answer<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Understanding the question<br />
+We want to find something in the <code class="docutils literal notranslate"><span class="pre">eax</span> <span class="pre">register</span></code> that looks like <code class="docutils literal notranslate"><span class="pre">0x11</span></code>, and convert the hexdecimal number into decimal number.<br />
+Finally we are to put the number we get into the template <code class="docutils literal notranslate"><span class="pre">picoCTF{}</span></code></p></li>
+<li><p>Analyse the information</p></li>
+</ol>
+<p>After downloading the required file, we need to analyze and try to understand its content.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/bitOAsm<span class="o">]</span>
+└─$<span class="w"> </span>wget<span class="w"> </span>https://artifacts.picoctf.net/c/509/disassembler-dump0_a.txt
+</pre></div>
+</div>
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">file</span></code> command to analyze the file, we can see that it is in ASCII text format.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/bitOAsm<span class="o">]</span>
+└─$<span class="w"> </span>file<span class="w"> </span>disassembler-dump0_a.txt<span class="w"> </span>
+disassembler-dump0_a.txt:<span class="w"> </span>ASCII<span class="w"> </span>text
+</pre></div>
+</div>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">cat</span></code> command to see its full content.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/bitOAsm<span class="o">]</span>
+└─$<span class="w"> </span>cat<span class="w"> </span>disassembler-dump0_a.txt<span class="w"> </span>
+&lt;+0&gt;:<span class="w">     </span>endbr64<span class="w"> </span>
+&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>rbp
+&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>rbp,rsp
+&lt;+8&gt;:<span class="w">     </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,edi
+&lt;+11&gt;:<span class="w">    </span>mov<span class="w">    </span>QWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x10<span class="o">]</span>,rsi
+&lt;+15&gt;:<span class="w">    </span>mov<span class="w">    </span>eax,0x30
+&lt;+20&gt;:<span class="w">    </span>pop<span class="w">    </span>rbp
+&lt;+21&gt;:<span class="w">    </span>ret
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>code such as <code class="docutils literal notranslate"><span class="pre">endbr64</span></code>, <code class="docutils literal notranslate"><span class="pre">mov</span></code> and <code class="docutils literal notranslate"><span class="pre">push</span></code> are instructions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rbp</span></code> is the current base pointer, and <code class="docutils literal notranslate"><span class="pre">rsp</span></code> is the stack pointer.</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">mov</span></code> command is used to move the value of pointers.</p></li>
+<li><p>variables <code class="docutils literal notranslate"><span class="pre">edi</span></code> and <code class="docutils literal notranslate"><span class="pre">rsi</span></code> holds the value of the aguments of a funciton.</p></li>
+<li><p>The instruction <code class="docutils literal notranslate"><span class="pre">mov</span> <span class="pre">eax,</span> <span class="pre">0x30</span></code> moves the value <code class="docutils literal notranslate"><span class="pre">0x30</span></code> into the eax register.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">eax</span></code> register usually holds the return value of a function.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Finding the flag<br />
+From the above analysis, it is clear that <code class="docutils literal notranslate"><span class="pre">0x30</span></code> is the value we are looking for.<br />
+After converting it into a decimal value, we get 48 as the final answer.
+<code class="docutils literal notranslate"><span class="pre">picoCTF{48}</span></code></p></li>
+</ol>
+</section>
+</section>
+<section id="bit-o-asm-2">
+<h3><span class="section-number">1.5.2.3. </span>Bit-O-Asm-2<a class="headerlink" href="#bit-o-asm-2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4><span class="section-number">1.5.2.3.1. </span>Question<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Can you figure out what is in the eax register? Put your answer in the picoCTF flag format: picoCTF{n} where n is the contents of the eax register in the decimal number base. If the answer was 0x11 your flag would be picoCTF{17}.
+Download the assembly dump <a class="reference external" href="https://artifacts.picoctf.net/c/510/disassembler-dump0_b.txt">here</a>.</p>
+<p>PTR’s or ‘pointers’, reference a location in memory where values can be stored.</p>
+</section>
+<section id="id4">
+<h4><span class="section-number">1.5.2.3.2. </span>Answer<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Understanding the question<br />
+Same as before, we need to find the hexdecimal number stored in the <code class="docutils literal notranslate"><span class="pre">eax</span></code> register and convert it into decimal.</p></li>
+<li><p>Analysing the information</p></li>
+</ol>
+<p>We can see that the content in the disassambler dump file is a bit more complex this time.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/bito2<span class="o">]</span>
+└─$<span class="w"> </span>cat<span class="w"> </span>disassembler-dump0_b.txt<span class="w"> </span>
+&lt;+0&gt;:<span class="w">     </span>endbr64<span class="w"> </span>
+&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>rbp
+&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>rbp,rsp
+&lt;+8&gt;:<span class="w">     </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x14<span class="o">]</span>,edi
+&lt;+11&gt;:<span class="w">    </span>mov<span class="w">    </span>QWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x20<span class="o">]</span>,rsi
+&lt;+15&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,0x9fe1a
+&lt;+22&gt;:<span class="w">    </span>mov<span class="w">    </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>
+&lt;+25&gt;:<span class="w">    </span>pop<span class="w">    </span>rbp
+&lt;+26&gt;:<span class="w">    </span>ret
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">mov</span> <span class="pre">a,</span> <span class="pre">b</span></code> comand will move the value of b into a.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[rbp-0x14]</span></code> tells the location of the local pointer (PTR) DWORD.  It is located 20 bytes below the base pointer.</p></li>
+<li><p>In the &lt;+15&gt; line, the value <code class="docutils literal notranslate"><span class="pre">0x9fela</span></code> is being moved into the pointer DWORD.  Which is later moved into the <code class="docutils literal notranslate"><span class="pre">eax</span> <span class="pre">register</span></code> on line &lt;+22&gt;.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Finding the flag
+If we convert <code class="docutils literal notranslate"><span class="pre">0x9fela</span></code> into decimal and put the result into the flag template, we will get <code class="docutils literal notranslate"><span class="pre">picoCTF{654874}</span></code>.</p></li>
+</ol>
+</section>
+</section>
+<section id="bit-o-asm-3">
+<h3><span class="section-number">1.5.2.4. </span>Bit-O-Asm-3<a class="headerlink" href="#bit-o-asm-3" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h4><span class="section-number">1.5.2.4.1. </span>Question<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Can you figure out what is in the eax register? Put your answer in the picoCTF flag format: picoCTF{n} where n is the contents of the eax register in the decimal number base. If the answer was 0x11 your flag would be picoCTF{17}.
+Download the assembly dump <a class="reference external" href="https://artifacts.picoctf.net/c/530/disassembler-dump0_c.txt">here</a>.<br />
+Not everything in this disassembly listing is optimal.</p>
+</section>
+<section id="id6">
+<h4><span class="section-number">1.5.2.4.2. </span>Answer<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Understanding the Question</strong><br />
+Same rules as before, we need to find out the value that is stored in the register named <code class="docutils literal notranslate"><span class="pre">eax</span></code>.</p></li>
+<li><p><strong>Analysing the content</strong><br />
+After downloading and opeing the file we can see that it has became more complex this time.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/BitOAsm3<span class="o">]</span>
+└─$<span class="w"> </span>cat<span class="w"> </span>disassembler-dump0_c.txt<span class="w"> </span>
+&lt;+0&gt;:<span class="w">     </span>endbr64<span class="w"> </span>
+&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>rbp
+&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>rbp,rsp
+&lt;+8&gt;:<span class="w">     </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x14<span class="o">]</span>,edi
+&lt;+11&gt;:<span class="w">    </span>mov<span class="w">    </span>QWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x20<span class="o">]</span>,rsi
+&lt;+15&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0xc<span class="o">]</span>,0x9fe1a
+&lt;+22&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x8<span class="o">]</span>,0x4
+&lt;+29&gt;:<span class="w">    </span>mov<span class="w">    </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0xc<span class="o">]</span>
+&lt;+32&gt;:<span class="w">    </span>imul<span class="w">   </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x8<span class="o">]</span>
+&lt;+36&gt;:<span class="w">    </span>add<span class="w">    </span>eax,0x1f5
+&lt;+41&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,eax
+&lt;+44&gt;:<span class="w">    </span>mov<span class="w">    </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>
+&lt;+47&gt;:<span class="w">    </span>pop<span class="w">    </span>rbp
+&lt;+48&gt;:<span class="w">    </span>ret
+</pre></div>
+</div>
+<p>Notably there are some new instructions, such as <code class="docutils literal notranslate"><span class="pre">imul</span></code> and <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">imul</span></code> means multiplication.   imul a, b means a = a * b.   imul a, b, c means a = b * c.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code> add a, b means a = a + b.</p></li>
+</ul>
+<p>Let’s have a closer look at the lines that have something to do with the <code class="docutils literal notranslate"><span class="pre">eax</span> <span class="pre">register</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;+15&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0xc<span class="o">]</span>,0x9fe1a
+&lt;+22&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x8<span class="o">]</span>,0x4
+&lt;+29&gt;:<span class="w">    </span>mov<span class="w">    </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0xc<span class="o">]</span>
+&lt;+32&gt;:<span class="w">    </span>imul<span class="w">   </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x8<span class="o">]</span>
+&lt;+36&gt;:<span class="w">    </span>add<span class="w">    </span>eax,0x1f5
+&lt;+41&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,eax
+&lt;+44&gt;:<span class="w">    </span>mov<span class="w">    </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>
+</pre></div>
+</div>
+<p><strong>0x9fela</strong>(654874 in decimal) is stored at  <code class="docutils literal notranslate"><span class="pre">[rbp-0xc]</span></code> and <strong>0x4</strong>(4 in decimal) is stored at  <code class="docutils literal notranslate"><span class="pre">[rbp-0x8]</span></code>.<br />
+0x9fe1a is then moved to the eax register.<br />
+After that, the value held in the eax register is multiplied by the value stored in  <code class="docutils literal notranslate"><span class="pre">[rbp-0x8]</span></code>, which is <strong>0x4</strong>.<br />
+Finally, <strong>0x1f5</strong>(501 in decimal) is added into the register.<br />
+The last two lines are redundant, regarding this challenge.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">654874</span><span class="w"> </span>*<span class="w"> </span><span class="m">4</span><span class="w"> </span>+<span class="w"> </span><span class="nv">501</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2619997</span>
+</pre></div>
+</div>
+<p><strong>picoCTF{2619997}</strong> is the flag to this challenge.</p>
+</section>
+</section>
+<section id="bit-o-asm-4">
+<h3><span class="section-number">1.5.2.5. </span>Bit-O-Asm-4<a class="headerlink" href="#bit-o-asm-4" title="Link to this heading">#</a></h3>
+<p>Let’s look at the disassambler dump in this challenge.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/BitOAsm4<span class="o">]</span>
+└─$<span class="w"> </span>cat<span class="w"> </span>disassembler-dump0_d.txt<span class="w"> </span>
+&lt;+0&gt;:<span class="w">     </span>endbr64<span class="w"> </span>
+&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>rbp
+&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>rbp,rsp
+&lt;+8&gt;:<span class="w">     </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x14<span class="o">]</span>,edi
+&lt;+11&gt;:<span class="w">    </span>mov<span class="w">    </span>QWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x20<span class="o">]</span>,rsi
+&lt;+15&gt;:<span class="w">    </span>mov<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,0x9fe1a
+&lt;+22&gt;:<span class="w">    </span>cmp<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,0x2710
+&lt;+29&gt;:<span class="w">    </span>jle<span class="w">    </span>0x55555555514e<span class="w"> </span>&lt;main+37&gt;
+&lt;+31&gt;:<span class="w">    </span>sub<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,0x65
+&lt;+35&gt;:<span class="w">    </span>jmp<span class="w">    </span>0x555555555152<span class="w"> </span>&lt;main+41&gt;
+&lt;+37&gt;:<span class="w">    </span>add<span class="w">    </span>DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>,0x65
+&lt;+41&gt;:<span class="w">    </span>mov<span class="w">    </span>eax,DWORD<span class="w"> </span>PTR<span class="w"> </span><span class="o">[</span>rbp-0x4<span class="o">]</span>
+&lt;+44&gt;:<span class="w">    </span>pop<span class="w">    </span>rbp
+&lt;+45&gt;:<span class="w">    </span>ret
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cmp</span></code> and <code class="docutils literal notranslate"><span class="pre">jle</span></code> forms an if-statement(a conditional jump): comparing the value stored at <code class="docutils literal notranslate"><span class="pre">[rbp-0x4]</span></code> and <code class="docutils literal notranslate"><span class="pre">0x2710</span></code>. If the value stored at [<code class="docutils literal notranslate"><span class="pre">rbp-0x4]</span></code> is less than 0x2710, then the program will jump to line<code class="docutils literal notranslate"> <span class="pre">&lt;main+37&gt;</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sub</span></code> will subtract 0x65 from the value stored at [rbp-0x4].</p></li>
+<li><p>at line <strong>&lt;+35&gt;</strong> <code class="docutils literal notranslate"><span class="pre">jump</span></code> is an unconditional jump, it will automatically jump to line 41.</p></li>
+<li><p>The value stored at <code class="docutils literal notranslate"><span class="pre">[rbp-0x4]</span></code>, <strong>0x9fe1a</strong>, will <strong>subtract 0x65</strong> in line 31 but will not add 0x65 in line 37, and will be finally transferred to <code class="docutils literal notranslate"><span class="pre">eax</span></code>.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">654042</span><span class="w"> </span>-<span class="w"> </span><span class="nv">101</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">653941</span>
+</pre></div>
+</div>
+</section>
+<section id="gdb-baby-step-1">
+<h3><span class="section-number">1.5.2.6. </span>GDB Baby Step 1<a class="headerlink" href="#gdb-baby-step-1" title="Link to this heading">#</a></h3>
+<section id="id7">
+<h4><span class="section-number">1.5.2.6.1. </span>Question<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Can you figure out what is in the eax register at the end of the main function? Put your answer in the picoCTF flag format: picoCTF{n} where n is the contents of the eax register in the decimal number base. If the answer was 0x11 your flag would be picoCTF{17}.
+Disassemble <a class="reference external" href="https://artifacts.picoctf.net/c/512/debugger0_a">this</a>.<br />
+gdb is a very good debugger to use for this problem and many others!<br />
+main is actually a recognized symbol that can be used with gdb commands.</p>
+</section>
+<section id="id8">
+<h4><span class="section-number">1.5.2.6.2. </span>Answer<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Understanding the Question<br />
+The question asks the value that is stored in eax register, but we are not provided with the assembler dump that can be analysed right away.</p></li>
+</ul>
+<p>If we download the file and analyse the file type using the <code class="docutils literal notranslate"><span class="pre">file</span></code> command, we can see that it is an ELF executable file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/gdb1<span class="o">]</span>
+└─$<span class="w"> </span>file<span class="w"> </span>debugger0_a<span class="w">                                    </span>
+debugger0_a:<span class="w"> </span>ELF<span class="w"> </span><span class="m">64</span>-bit<span class="w"> </span>LSB<span class="w"> </span>pie<span class="w"> </span>executable,<span class="w"> </span>x86-64,<span class="w"> </span>version<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>SYSV<span class="o">)</span>,<span class="w"> </span>dynamically<span class="w"> </span>linked,<span class="w"> </span>interpreter<span class="w"> </span>/lib64/ld-linux-x86-64.so.2,<span class="w"> </span>BuildID<span class="o">[</span>sha1<span class="o">]=</span>15a10290db2cd2ec0c123cf80b88ed7d7f5cf9ff,<span class="w"> </span><span class="k">for</span><span class="w"> </span>GNU/Linux<span class="w"> </span><span class="m">3</span>.2.0,<span class="w"> </span>not<span class="w"> </span>stripped
+</pre></div>
+</div>
+<p>This means that we can perhaps run it to look for any clue.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/gdb1<span class="o">]</span>
+└─$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>debugger0_a<span class="w"> </span>
+<span class="w">                                                                                                                    </span>
+┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/gdb1<span class="o">]</span>
+└─$<span class="w"> </span>./debugger0_a<span class="w"> </span>
+</pre></div>
+</div>
+<p>It does not provides any information, so let’s try to disassamble it using gdb as recommended.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/gdb1<span class="o">]</span>
+└─$<span class="w"> </span>gdb<span class="w"> </span>debugger0_a<span class="w"> </span>
+
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>disassemble<span class="w"> </span>main
+Dump<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>code<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">function</span><span class="w"> </span>main:
+<span class="w">   </span>0x0000000000001129<span class="w"> </span>&lt;+0&gt;:<span class="w">     </span>endbr64
+<span class="w">   </span>0x000000000000112d<span class="w"> </span>&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>%rbp
+<span class="w">   </span>0x000000000000112e<span class="w"> </span>&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>%rsp,%rbp
+<span class="w">   </span>0x0000000000001131<span class="w"> </span>&lt;+8&gt;:<span class="w">     </span>mov<span class="w">    </span>%edi,-0x4<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000001134<span class="w"> </span>&lt;+11&gt;:<span class="w">    </span>mov<span class="w">    </span>%rsi,-0x10<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000001138<span class="w"> </span>&lt;+15&gt;:<span class="w">    </span>mov<span class="w">    </span><span class="nv">$0</span>x86342,%eax
+<span class="w">   </span>0x000000000000113d<span class="w"> </span>&lt;+20&gt;:<span class="w">    </span>pop<span class="w">    </span>%rbp
+<span class="w">   </span>0x000000000000113e<span class="w"> </span>&lt;+21&gt;:<span class="w">    </span>ret
+End<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>dump.
+</pre></div>
+</div>
+<p>We can see that the value assocaiated with the <code class="docutils literal notranslate"><span class="pre">eax</span></code> register is <strong>0x86342</strong>, which translates to 549698 in decimal.<br />
+Which makes the flag <code class="docutils literal notranslate"><span class="pre">picoCTF{549698}</span></code>.</p>
+</section>
+</section>
+<section id="gdb-baby-step-2">
+<h3><span class="section-number">1.5.2.7. </span>GDB Baby Step 2<a class="headerlink" href="#gdb-baby-step-2" title="Link to this heading">#</a></h3>
+<section id="id9">
+<h4><span class="section-number">1.5.2.7.1. </span>Question<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p>Can you figure out what is in the eax register at the end of the main function? Put your answer in the picoCTF flag format: picoCTF{n} where n is the contents of the eax register in the decimal number base. If the answer was 0x11 your flag would be picoCTF{17}.
+Debug <a class="reference external" href="https://artifacts.picoctf.net/c/520/debugger0_b">this</a>.<br />
+You could calculate eax yourself, or you could set a breakpoint for after the calculcation and inspect eax to let the program do the heavy-lifting for you.</p>
+</section>
+<section id="id10">
+<h4><span class="section-number">1.5.2.7.2. </span>Answer<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<p>Following the hind dropped by the question, we need to use gdb tool to set a breakpoint assembler dump to moniter the value of the eax register.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>└─$<span class="w"> </span>file<span class="w"> </span>debugger0_b<span class="w"> </span>
+debugger0_b:<span class="w"> </span>ELF<span class="w"> </span><span class="m">64</span>-bit<span class="w"> </span>LSB<span class="w"> </span>executable,<span class="w"> </span>x86-64,<span class="w"> </span>version<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span>SYSV<span class="o">)</span>,<span class="w"> </span>dynamically<span class="w"> </span>linked,<span class="w"> </span>interpreter<span class="w"> </span>/lib64/ld-linux-x86-64.so.2,<span class="w"> </span>BuildID<span class="o">[</span>sha1<span class="o">]=</span>95b0203be2982e75dbc01d1cc25b1309f7aec5f7,<span class="w"> </span><span class="k">for</span><span class="w"> </span>GNU/Linux<span class="w"> </span><span class="m">3</span>.2.0,<span class="w"> </span>not<span class="w"> </span>stripped
+</pre></div>
+</div>
+<p>We can see that the debugger0_b file is a ELF executable, which means that we need to use the gdb tool to analyse it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/gdb2<span class="o">]</span>
+└─$<span class="w"> </span>gdb<span class="w"> </span>debugger0_b<span class="w"> </span>
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>disassemble<span class="w"> </span>main
+Dump<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>code<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">function</span><span class="w"> </span>main:
+<span class="w">   </span>0x0000000000401106<span class="w"> </span>&lt;+0&gt;:<span class="w">     </span>endbr64
+<span class="w">   </span>0x000000000040110a<span class="w"> </span>&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>%rbp
+<span class="w">   </span>0x000000000040110b<span class="w"> </span>&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>%rsp,%rbp
+<span class="w">   </span>0x000000000040110e<span class="w"> </span>&lt;+8&gt;:<span class="w">     </span>mov<span class="w">    </span>%edi,-0x14<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000401111<span class="w"> </span>&lt;+11&gt;:<span class="w">    </span>mov<span class="w">    </span>%rsi,-0x20<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000401115<span class="w"> </span>&lt;+15&gt;:<span class="w">    </span>movl<span class="w">   </span><span class="nv">$0</span>x1e0da,-0x4<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x000000000040111c<span class="w"> </span>&lt;+22&gt;:<span class="w">    </span>movl<span class="w">   </span><span class="nv">$0</span>x25f,-0xc<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000401123<span class="w"> </span>&lt;+29&gt;:<span class="w">    </span>movl<span class="w">   </span><span class="nv">$0</span>x0,-0x8<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x000000000040112a<span class="w"> </span>&lt;+36&gt;:<span class="w">    </span>jmp<span class="w">    </span>0x401136<span class="w"> </span>&lt;main+48&gt;
+<span class="w">   </span>0x000000000040112c<span class="w"> </span>&lt;+38&gt;:<span class="w">    </span>mov<span class="w">    </span>-0x8<span class="o">(</span>%rbp<span class="o">)</span>,%eax
+<span class="w">   </span>0x000000000040112f<span class="w"> </span>&lt;+41&gt;:<span class="w">    </span>add<span class="w">    </span>%eax,-0x4<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000401132<span class="w"> </span>&lt;+44&gt;:<span class="w">    </span>addl<span class="w">   </span><span class="nv">$0</span>x1,-0x8<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000401136<span class="w"> </span>&lt;+48&gt;:<span class="w">    </span>mov<span class="w">    </span>-0x8<span class="o">(</span>%rbp<span class="o">)</span>,%eax
+<span class="w">   </span>0x0000000000401139<span class="w"> </span>&lt;+51&gt;:<span class="w">    </span>cmp<span class="w">    </span>-0xc<span class="o">(</span>%rbp<span class="o">)</span>,%eax
+<span class="w">   </span>0x000000000040113c<span class="w"> </span>&lt;+54&gt;:<span class="w">    </span>jl<span class="w">     </span>0x40112c<span class="w"> </span>&lt;main+38&gt;
+<span class="w">   </span>0x000000000040113e<span class="w"> </span>&lt;+56&gt;:<span class="w">    </span>mov<span class="w">    </span>-0x4<span class="o">(</span>%rbp<span class="o">)</span>,%eax
+<span class="w">   </span>0x0000000000401141<span class="w"> </span>&lt;+59&gt;:<span class="w">    </span>pop<span class="w">    </span>%rbp
+<span class="w">   </span>0x0000000000401142<span class="w"> </span>&lt;+60&gt;:<span class="w">    </span>ret
+End<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>dump.
+</pre></div>
+</div>
+<p>We can se that the value of the eax register is returned at the last line (&lt;+60&gt;), so we need to set a breakpoint just before the value is returned.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span><span class="nb">break</span><span class="w"> </span>*0x0000000000401142
+Breakpoint<span class="w"> </span><span class="m">1</span><span class="w"> </span>at<span class="w"> </span>0x401142
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>run
+Starting<span class="w"> </span>program:<span class="w"> </span>/home/kali/Desktop/picoctf/gdb2/debugger0_b<span class="w"> </span>
+<span class="o">[</span>Thread<span class="w"> </span>debugging<span class="w"> </span>using<span class="w"> </span>libthread_db<span class="w"> </span>enabled<span class="o">]</span>
+Using<span class="w"> </span>host<span class="w"> </span>libthread_db<span class="w"> </span>library<span class="w"> </span><span class="s2">&quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;</span>.
+</pre></div>
+</div>
+<p>Now that we’ve run the code up <em>until the breakpoint</em> we can check eax using <code class="docutils literal notranslate"><span class="pre">info</span> <span class="pre">registers</span> <span class="pre">eax</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Breakpoint<span class="w"> </span><span class="m">1</span>,<span class="w"> </span>0x0000000000401142<span class="w"> </span><span class="k">in</span><span class="w"> </span>main<span class="w"> </span><span class="o">()</span>
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>info<span class="w"> </span>registers<span class="w"> </span>eax
+eax<span class="w">            </span>0x4af4b<span class="w">             </span><span class="m">307019</span>
+</pre></div>
+</div>
+<p>The flag for this challenge is** picoCTF{307019}**.</p>
+</section>
+</section>
+<section id="gdb-baby-steps-4">
+<h3><span class="section-number">1.5.2.8. </span>GDB Baby Steps 4<a class="headerlink" href="#gdb-baby-steps-4" title="Link to this heading">#</a></h3>
+<section id="id11">
+<h4><span class="section-number">1.5.2.8.1. </span>Question<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p>main calls a function that multiplies eax by a constant. The flag for this challenge is that constant in decimal base. If the constant you find is 0x1000, the flag will be picoCTF{4096}.
+Debug <a class="reference external" href="https://artifacts.picoctf.net/c/532/debugger0_d">this</a>.
+A function can be referenced by either its name or its starting address in gdb.</p>
+</section>
+<section id="id12">
+<h4><span class="section-number">1.5.2.8.2. </span>Answer<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p>The question asks us to find a constant in a function that multiplies eax.</p>
+<p>We first need download the file and use gdb tool to disassemble it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~/Desktop/picoctf/gdb4<span class="o">]</span>
+└─$<span class="w"> </span>gdb<span class="w"> </span>debugger0_d<span class="w"> </span>
+<span class="o">(</span>gdb<span class="o">)</span><span class="w"> </span>disassemble<span class="w"> </span>main
+Dump<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>code<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">function</span><span class="w"> </span>main:
+<span class="w">   </span>0x000000000040111c<span class="w"> </span>&lt;+0&gt;:<span class="w">     </span>endbr64
+<span class="w">   </span>0x0000000000401120<span class="w"> </span>&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>%rbp
+<span class="w">   </span>0x0000000000401121<span class="w"> </span>&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>%rsp,%rbp
+<span class="w">   </span>0x0000000000401124<span class="w"> </span>&lt;+8&gt;:<span class="w">     </span>sub<span class="w">    </span><span class="nv">$0</span>x20,%rsp
+<span class="w">   </span>0x0000000000401128<span class="w"> </span>&lt;+12&gt;:<span class="w">    </span>mov<span class="w">    </span>%edi,-0x14<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x000000000040112b<span class="w"> </span>&lt;+15&gt;:<span class="w">    </span>mov<span class="w">    </span>%rsi,-0x20<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x000000000040112f<span class="w"> </span>&lt;+19&gt;:<span class="w">    </span>movl<span class="w">   </span><span class="nv">$0</span>x28e,-0x4<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000401136<span class="w"> </span>&lt;+26&gt;:<span class="w">    </span>movl<span class="w">   </span><span class="nv">$0</span>x0,-0x8<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x000000000040113d<span class="w"> </span>&lt;+33&gt;:<span class="w">    </span>mov<span class="w">    </span>-0x4<span class="o">(</span>%rbp<span class="o">)</span>,%eax
+<span class="w">   </span>0x0000000000401140<span class="w"> </span>&lt;+36&gt;:<span class="w">    </span>mov<span class="w">    </span>%eax,%edi
+<span class="w">   </span>0x0000000000401142<span class="w"> </span>&lt;+38&gt;:<span class="w">    </span>call<span class="w">   </span>0x401106<span class="w"> </span>&lt;func1&gt;
+<span class="w">   </span>0x0000000000401147<span class="w"> </span>&lt;+43&gt;:<span class="w">    </span>mov<span class="w">    </span>%eax,-0x8<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x000000000040114a<span class="w"> </span>&lt;+46&gt;:<span class="w">    </span>mov<span class="w">    </span>-0x4<span class="o">(</span>%rbp<span class="o">)</span>,%eax
+<span class="w">   </span>0x000000000040114d<span class="w"> </span>&lt;+49&gt;:<span class="w">    </span>leave
+<span class="w">   </span>0x000000000040114e<span class="w"> </span>&lt;+50&gt;:<span class="w">    </span>ret
+End<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>dump.
+</pre></div>
+</div>
+<p>When we try to disassemble main, we can see that there is a function called in main. Following the hint, we can disassemble the function by using the commands (gdb)disassemble func1</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Dump<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>code<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">function</span><span class="w"> </span>func1:
+<span class="w">   </span>0x0000000000401106<span class="w"> </span>&lt;+0&gt;:<span class="w">     </span>endbr64
+<span class="w">   </span>0x000000000040110a<span class="w"> </span>&lt;+4&gt;:<span class="w">     </span>push<span class="w">   </span>%rbp
+<span class="w">   </span>0x000000000040110b<span class="w"> </span>&lt;+5&gt;:<span class="w">     </span>mov<span class="w">    </span>%rsp,%rbp
+<span class="w">   </span>0x000000000040110e<span class="w"> </span>&lt;+8&gt;:<span class="w">     </span>mov<span class="w">    </span>%edi,-0x4<span class="o">(</span>%rbp<span class="o">)</span>
+<span class="w">   </span>0x0000000000401111<span class="w"> </span>&lt;+11&gt;:<span class="w">    </span>mov<span class="w">    </span>-0x4<span class="o">(</span>%rbp<span class="o">)</span>,%eax
+<span class="w">   </span>0x0000000000401114<span class="w"> </span>&lt;+14&gt;:<span class="w">    </span>imul<span class="w">   </span><span class="nv">$0</span>x3269,%eax,%eax
+<span class="w">   </span>0x000000000040111a<span class="w"> </span>&lt;+20&gt;:<span class="w">    </span>pop<span class="w">    </span>%rbp
+<span class="w">   </span>0x000000000040111b<span class="w"> </span>&lt;+21&gt;:<span class="w">    </span>ret
+End<span class="w"> </span>of<span class="w"> </span>assembler<span class="w"> </span>dump.
+</pre></div>
+</div>
+<p>We can see from the imul (integer mulplication) line that eax is multiplied by 0x3269, which translates to 12905 in decimal.<br />
+The flag of this challenge is <strong>picoCTF{12905}</strong></p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cheatSheet.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Commands</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="cysa.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>CompTIA CySA+ (CS0-003)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-knowledge">1.5.1. General Knowledge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reverse-engineering">1.5.2. Reverse Engineering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#safe-opener-2">1.5.2.1. Safe Opener 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#question">1.5.2.1.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">1.5.2.1.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm">1.5.2.2. Bit-O-Asm</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.5.2.2.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.5.2.2.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm-2">1.5.2.3. Bit-O-Asm-2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.5.2.3.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.5.2.3.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm-3">1.5.2.4. Bit-O-Asm-3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">1.5.2.4.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">1.5.2.4.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bit-o-asm-4">1.5.2.5. Bit-O-Asm-4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdb-baby-step-1">1.5.2.6. GDB Baby Step 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1.5.2.6.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">1.5.2.6.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdb-baby-step-2">1.5.2.7. GDB Baby Step 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">1.5.2.7.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">1.5.2.7.2. Answer</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gdb-baby-steps-4">1.5.2.8. GDB Baby Steps 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">1.5.2.8.1. Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">1.5.2.8.2. Answer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miles Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
