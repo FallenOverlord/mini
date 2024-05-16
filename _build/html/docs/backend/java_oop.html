@@ -1,0 +1,1223 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4.16. Java OOP &#8212; Cybersecurity QuickStart</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/backend/java_oop';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.17. Jupyter Book Basics" href="jb.html" />
+    <link rel="prev" title="4.15. Java" href="java_basics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/qe-logo-large.png" class="logo__image only-light" alt="Cybersecurity QuickStart - Home"/>
+    <script>document.write(`<img src="../../_static/qe-logo-large.png" class="logo__image only-dark" alt="Cybersecurity QuickStart - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cybersecurity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cybersecurity/cs_intro.html">1. Cybersecurity intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/linux.html">1.1. Linux Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/sqlite.html">1.2. SQL General Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/nmap.html">1.3. nmap Basic Commands and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cheatSheet.html">1.4. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/ctf.html">1.5. CTF Write Ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cpts.html">1.7. HTB CPTS Moduals</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../c/c_intro.html">2. Welcome to C Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../c/struct.html">2.2. Basics of Data Structres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/linkedlist.html">2.3. Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/final.html">2.4. APS 105 Final Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/searching.html">2.5. Searching Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">3. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">3.2. Circuits Basics</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Dev</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="java_intro.html">4. Backend Roadmap</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="java_basics.html">4.15. Java</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.16. Java OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jb.html">4.17. Jupyter Book Basics</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/backend/java_oop.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Java OOP</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming">4.16.1. Object Oriented Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">4.16.1.1. Constructor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">4.16.1.2. Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practise-questions">4.16.1.3. Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q1">4.16.1.3.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q2">4.16.1.3.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q3">4.16.1.3.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">4.16.1.3.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">4.16.1.3.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">4.16.1.3.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">4.16.1.3.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">4.16.1.3.8. Q8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="java-oop">
+<h1><span class="section-number">4.16. </span>Java OOP<a class="headerlink" href="#java-oop" title="Link to this heading">#</a></h1>
+<section id="object-oriented-programming">
+<h2><span class="section-number">4.16.1. </span>Object Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Link to this heading">#</a></h2>
+<p>creating classes.<br />
+make a new file and a new class that have the same name.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>User<span class="o">{</span>
+
+<span class="o">}</span>
+
+User.java
+</pre></div>
+</div>
+<p>now we can put info pertaining to the user in the class, i.e. name and birthday</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+public<span class="w"> </span>LocalDate<span class="w"> </span>birthday<span class="p">;</span>
+</pre></div>
+</div>
+<p>to use the LocalDate Class, we must import it first thing into the program<br />
+in the main function</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>we will create a new object named youngerUser, declared variable will be initialized as null.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>User<span class="w"> </span><span class="nv">youngerUser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>User<span class="o">()</span><span class="p">;</span>
+
+youngerUser.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dsf&quot;</span><span class="p">;</span>
+youngerUser.birthDay<span class="w"> </span><span class="o">=</span><span class="w"> </span>LocalDate.parse<span class="o">(</span><span class="s2">&quot;1008-01-03&quot;</span><span class="o">)</span><span class="p">;</span>
+
+//to<span class="w"> </span>access<span class="w"> </span>the<span class="w"> </span>LocalDate<span class="w"> </span>data<span class="w"> </span>as<span class="w"> </span>String
+youngerUser.birthDay.toString<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>If you write a public method, it will be available to the entire program</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>//import<span class="w"> </span>Period<span class="w"> </span>and<span class="w"> </span>LocalDate<span class="w"> </span>classes
+//in<span class="w"> </span>the<span class="w"> </span>User<span class="w"> </span>class
+public<span class="w"> </span>int<span class="w"> </span>age<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>//this<span class="w"> </span>will<span class="w"> </span>calculate<span class="w"> </span>the<span class="w"> </span>difference<span class="w"> </span>between<span class="w"> </span>now<span class="w"> </span>and<span class="w"> </span>birthday
+<span class="w">    </span>int<span class="w"> </span><span class="nv">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Period.between<span class="o">(</span>this.birthDay,<span class="w"> </span>LocalDate.now<span class="o">())</span><span class="p">;</span>
+<span class="o">}</span>
+
+public<span class="w"> </span>void<span class="w"> </span>borrow<span class="o">(</span>Book<span class="w"> </span>book<span class="o">){</span>
+<span class="w">    </span>this.books.add<span class="o">(</span>book<span class="o">)</span><span class="p">;</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>if the method doesnt return anything, the type is void<br />
+the method borrow is accepting parameters<br />
+initializea an ArrayList Variable</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
+
+public<span class="w"> </span>ArrayList&lt;Book&gt;<span class="w"> </span><span class="nv">books</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>ArrayList&lt;book&gt;<span class="p">;</span>
+</pre></div>
+</div>
+<p>accessing the values that is a custom class</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>//implement<span class="w"> </span>a<span class="w"> </span>toString<span class="w"> </span>method<span class="w"> </span>int<span class="w"> </span>the<span class="w"> </span>custom<span class="w"> </span>class
+public<span class="w"> </span>String<span class="w"> </span>toString<span class="o">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>String.format<span class="o">(</span><span class="s2">&quot;%s by %s.&quot;</span>,<span class="w"> </span>this.title,<span class="w"> </span>this.author<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<section id="constructor">
+<h3><span class="section-number">4.16.1.1. </span>Constructor<a class="headerlink" href="#constructor" title="Link to this heading">#</a></h3>
+<p>every class in java have a special method called the consttuctor, it is responsible for initializing the values of the class</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>User<span class="o">(</span>String<span class="w"> </span>name,<span class="w"> </span>String<span class="w"> </span>birthDay<span class="o">){</span>
+<span class="w">    </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>this.birthDay<span class="w"> </span><span class="o">=</span><span class="w"> </span>LocalDate.parse<span class="o">(</span>birthDay<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>the constructor method is called where the class is defined<br />
+and when we declare a new variable in that class</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>User<span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>newUser<span class="o">(</span><span class="s2">&quot;dsnfds&quot;</span>,<span class="w"> </span><span class="s2">&quot;2002-02-03&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>We can create new methods when defineing the user class to make printing out the names eaiser</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>String<span class="w"> </span>getUserName<span class="o">(){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>this.name<span class="p">;</span>
+<span class="o">}</span>
+
+public<span class="w"> </span>String<span class="w"> </span>getBirthDay<span class="o">(){</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>this.birthDay.toString<span class="o">()</span><span class="p">;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>user.birthDay is still in LocalDate format, so we need to convert it back to String when returning it.<br />
+Using the newly created get method to print the name</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user.getBirthDay<span class="o">()</span><span class="p">;</span>
+
+user.getUserName<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>we can make the variables in the class private, implement the get method and use the constructor method.<br />
+This will make the data more secure.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>private<span class="w"> </span>String<span class="w"> </span>title<span class="p">;</span>
+private<span class="w"> </span>String<span class="w"> </span>author<span class="p">;</span>
+
+public<span class="w"> </span>String<span class="w"> </span>getTitle<span class="o">()</span>.......
+public<span class="w"> </span>String<span class="w"> </span>getAuthor<span class="o">()</span>...
+
+//constructor<span class="w"> </span>method
+Book<span class="o">(</span>String<span class="w"> </span>title,<span class="w"> </span>String<span class="w"> </span>author<span class="o">){</span>
+<span class="w">    </span>this.autor<span class="w"> </span><span class="o">=</span><span class="w"> </span>author<span class="p">;</span>
+<span class="w">    </span>this.title<span class="w"> </span><span class="o">=</span><span class="w"> </span>title<span class="p">;</span>
+<span class="o">}</span>
+
+//update<span class="w">  </span>the<span class="w"> </span>object<span class="w"> </span>creation<span class="w"> </span>process
+Book<span class="w"> </span><span class="nv">book</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Book<span class="o">(</span><span class="s2">&quot;little princess&quot;</span>,<span class="w"> </span><span class="s2">&quot;fiarhan neight&quot;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dont forget to update the object creation process</p>
+</section>
+<section id="inheritance">
+<h3><span class="section-number">4.16.1.2. </span>Inheritance<a class="headerlink" href="#inheritance" title="Link to this heading">#</a></h3>
+<p>make a default class that has the most common methods.<br />
+make a child class that inherit all the properties and methods and then add some specific methods and properties.
+We can firt initialize a custom class and declear all the propeties, then we put all the properties into the constructor method.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>Book<span class="o">{</span>
+
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>title<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>author<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>pageCount<span class="p">;</span>
+
+<span class="w">    </span>Book<span class="w"> </span><span class="o">(</span>String<span class="w"> </span>title,<span class="w"> </span>String<span class="w"> </span>author,<span class="w"> </span>int<span class="w"> </span>pageCount<span class="o">){</span>
+<span class="w">        </span>this.title<span class="w"> </span><span class="o">=</span><span class="w"> </span>title<span class="p">;</span>
+<span class="w">        </span>this.author<span class="w"> </span><span class="o">=</span><span class="w"> </span>author<span class="p">;</span>
+<span class="w">        </span>this.pageCount<span class="w"> </span><span class="o">=</span><span class="w"> </span>pageCount<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>This is the parent class, now is the time to make a child class.<br />
+First create a new java file, the name of the new child class must be the same as the name of the java file.<br />
+Then we delcear the child class as an extension of the parent class.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>AudioBook<span class="w"> </span>extends<span class="w"> </span>Book<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>time<span class="p">;</span>
+
+<span class="w">    </span>//constructor
+<span class="w">    </span>AudoBook<span class="o">(</span>String<span class="w"> </span>title,<span class="w"> </span>String<span class="w"> </span>author,<span class="w"> </span>int<span class="w"> </span>pageCount,<span class="w"> </span>int<span class="w"> </span><span class="nb">time</span><span class="o">){</span>
+<span class="w">        </span>super<span class="o">(</span>title,<span class="w"> </span>author,<span class="w"> </span>pageCount<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>this.AudoBook<span class="w"> </span><span class="o">=</span><span class="w"> </span>AudoBook
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>super refoers to the pareent class in the current class</p>
+</section>
+<section id="practise-questions">
+<h3><span class="section-number">4.16.1.3. </span>Practise Questions<a class="headerlink" href="#practise-questions" title="Link to this heading">#</a></h3>
+<section id="q1">
+<h4><span class="section-number">4.16.1.3.1. </span>Q1<a class="headerlink" href="#q1" title="Link to this heading">#</a></h4>
+<p>题目1（完成）
+定义手机类，手机有品牌(brand),价格(price)和颜色(color)三个属性，有打电话call()和sendMessage()两个功能。</p>
+<p>请定义出手机类，类中要有空参、有参构造方法，set/get方法。</p>
+<p>定义测试类，在主方法中使用空参构造创建对象，使用set方法赋值。</p>
+<p>调用对象的两个功能，打印效果如下：</p>
+<p>正在使用价格为3998元黑色的小米手机打电话….
+正在使用价格为3998元黑色的小米手机发短信….</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>phone<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>Phone<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>brand<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>color<span class="p">;</span>
+
+<span class="w">    </span>Phone<span class="o">(</span>String<span class="w"> </span>brand,<span class="w"> </span>String<span class="w"> </span>color,<span class="w"> </span>double<span class="w"> </span>price<span class="o">){</span>
+<span class="w">        </span>this.brand<span class="w"> </span><span class="o">=</span><span class="w"> </span>brand<span class="p">;</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//setters
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setBrand<span class="o">(</span>String<span class="w"> </span>brand<span class="o">){</span>
+<span class="w">        </span>this.brand<span class="w"> </span><span class="o">=</span><span class="w"> </span>brand<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setColor<span class="o">(</span>String<span class="w"> </span>color<span class="o">){</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setPrice<span class="o">(</span>double<span class="w"> </span>price<span class="o">){</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//getters
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getBrand<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>brand<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getColor<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getPrice<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//call<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>call<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;im calling with a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>brand<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; phone, which is worth &quot;</span><span class="w"> </span>+<span class="w"> </span>price<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; RMB&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//sendMessage<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>sendMessage<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;im sending a message with a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>brand<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; phone, which is worth &quot;</span><span class="w"> </span>+<span class="w"> </span>price<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; RMB&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+
+package<span class="w"> </span>phone<span class="p">;</span>
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>//create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>object
+<span class="w">    </span>Phone<span class="w"> </span><span class="nv">honorPhone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Phone<span class="o">(</span><span class="s2">&quot;honor&quot;</span>,<span class="w"> </span><span class="s2">&quot;black&quot;</span>,<span class="w"> </span><span class="m">1236</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>//use<span class="w"> </span>the<span class="w"> </span>setters<span class="w"> </span>to<span class="w"> </span>populate<span class="w"> </span>the<span class="w"> </span>object
+<span class="w">    </span>honorPhone.setPrice<span class="o">(</span><span class="m">1234</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>honorPhone.setColor<span class="o">(</span><span class="s2">&quot;black&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>honorPhone.setBrand<span class="o">(</span><span class="s2">&quot;honor&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>//call<span class="w"> </span>the<span class="w"> </span>call<span class="w"> </span>and<span class="w"> </span>sendMessage<span class="w"> </span>methods
+<span class="w">    </span>honorPhone.call<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>honorPhone.sendMessage<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q2">
+<h4><span class="section-number">4.16.1.3.2. </span>Q2<a class="headerlink" href="#q2" title="Link to this heading">#</a></h4>
+<p>定义一个女朋友类。女朋友的属性包含：姓名，身高，体重。行为包含：洗衣服wash()，做饭cook()。另外定义一个用于展示三个属性值的show()方法。请在测试类中通过有参构造方法创建对象并赋值，然后分别调用展示方法、洗衣服方法和做饭方法。打印效果如下：</p>
+<p>我女朋友叫凤姐,身高155.0厘米,体重130.0斤
+女朋友帮我洗衣服
+女朋友给我做饭</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>gf<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>Gf<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>height<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>weight<span class="p">;</span>
+
+<span class="w">    </span>Phone<span class="o">(</span>String<span class="w"> </span>name,<span class="w"> </span>double<span class="w"> </span>height,<span class="w"> </span>double<span class="w"> </span>weight<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">        </span>this.height<span class="w"> </span><span class="o">=</span><span class="w"> </span>height<span class="p">;</span>
+<span class="w">        </span>this.weight<span class="w"> </span><span class="o">=</span><span class="w"> </span>weight<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//setters
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setName<span class="o">(</span>String<span class="w"> </span>name<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setHeight<span class="o">(</span>double<span class="w"> </span>height<span class="o">){</span>
+<span class="w">        </span>this.height<span class="w"> </span><span class="o">=</span><span class="w"> </span>height<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setWeight<span class="o">(</span>double<span class="w"> </span>weight<span class="o">){</span>
+<span class="w">        </span>this.weight<span class="w"> </span><span class="o">=</span><span class="w"> </span>weight<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//getters
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getName<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getHeight<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>height<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getWeight<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>weight<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//call<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>wash<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;im calling with a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>brand<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; phone, which is worth &quot;</span><span class="w"> </span>+<span class="w"> </span>price<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; RMB&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//sendMessage<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>cook<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;im sending a message with a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>brand<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; phone, which is worth &quot;</span><span class="w"> </span>+<span class="w"> </span>price<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; RMB&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>show<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;her name is &quot;</span><span class="w"> </span>+<span class="w"> </span>name<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;. She weigh &quot;</span><span class="w"> </span>+<span class="w"> </span>weight<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; and she is &quot;</span><span class="w">  </span>+<span class="w"> </span>height<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; cm tall.&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+
+package<span class="w"> </span>gf<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>//create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>object
+<span class="w">    </span>Phone<span class="w"> </span><span class="nv">honorPhone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Phone<span class="o">(</span><span class="s2">&quot;honor&quot;</span>,<span class="w"> </span><span class="s2">&quot;black&quot;</span>,<span class="w"> </span><span class="m">1236</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>//use<span class="w"> </span>the<span class="w"> </span>setters<span class="w"> </span>to<span class="w"> </span>populate<span class="w"> </span>the<span class="w"> </span>object
+<span class="w">    </span>honorPhone.setPrice<span class="o">(</span><span class="m">1234</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>honorPhone.setColor<span class="o">(</span><span class="s2">&quot;black&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>honorPhone.setBrand<span class="o">(</span><span class="s2">&quot;honor&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>//call<span class="w"> </span>the<span class="w"> </span>call<span class="w"> </span>and<span class="w"> </span>sendMessage<span class="w"> </span>methods
+<span class="w">    </span>honorPhone.call<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>honorPhone.sendMessage<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="q3">
+<h4><span class="section-number">4.16.1.3.3. </span>Q3<a class="headerlink" href="#q3" title="Link to this heading">#</a></h4>
+<p>定义项目经理类Manager。属性：姓名name，工号id，工资salary，奖金bonus。行为：工作work() 定义程序员类Coder。属性：姓名name，工号id，工资salary。行为：工作work()</p>
+<p>要求：</p>
+<p>​ 1.按照以上要求定义Manager类和Coder类,属性要私有,生成空参、有参构造，set和get方法​ 2.定义测试类,在main方法中创建该类的对象并给属性赋值(set方法或有参构造方法)​ 3.调用成员方法,打印格式如下:</p>
+<p>工号为123基本工资为15000奖金为6000的项目经理张三正在努力的做着管理工作,分配任务,检查员工提交上来的代码…..
+工号为135基本工资为10000的程序员李四正在努力的写着代码……</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>//manager<span class="w"> </span>class
+public<span class="w"> </span>class<span class="w"> </span>Managers<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>salary<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>bonus<span class="p">;</span>
+
+<span class="w">    </span>Managers<span class="o">(</span>String<span class="w"> </span>name,<span class="w"> </span>int<span class="w"> </span>id,<span class="w"> </span>double<span class="w"> </span>salary,<span class="w"> </span>double<span class="w"> </span>bonus<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">        </span>this.salary<span class="w"> </span><span class="o">=</span><span class="w"> </span>salary<span class="p">;</span>
+<span class="w">        </span>this.bonus<span class="w"> </span><span class="o">=</span><span class="w"> </span>bonus<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//setters
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setName<span class="o">(</span>String<span class="w"> </span>name<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setId<span class="o">(</span>int<span class="w"> </span>id<span class="o">){</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setSalary<span class="o">(</span>double<span class="w"> </span>salary<span class="o">){</span>
+<span class="w">        </span>this.salary<span class="w"> </span><span class="o">=</span><span class="w"> </span>salary<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setBonus<span class="o">(</span>double<span class="w"> </span>bonus<span class="o">){</span>
+<span class="w">        </span>this.bonus<span class="w"> </span><span class="o">=</span><span class="w"> </span>bonus<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//getters
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getName<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>int<span class="w"> </span>getId<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getSalary<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>salary<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getBonus<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>bonus<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//call<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>work<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Manager name: &quot;</span><span class="w"> </span>+<span class="w"> </span>name<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; (&quot;</span><span class="w"> </span>+<span class="w"> </span>id<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;). Salary: &quot;</span><span class="w"> </span>+<span class="w"> </span>salary<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; Bonus: &quot;</span><span class="w"> </span>+<span class="w"> </span>bonus<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+
+//coder<span class="w"> </span>class
+public<span class="w"> </span>class<span class="w"> </span>Coders<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>salary<span class="p">;</span>
+
+<span class="w">    </span>Coders<span class="o">(</span>String<span class="w"> </span>name,<span class="w"> </span>int<span class="w"> </span>id,<span class="w"> </span>double<span class="w"> </span>salary<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">        </span>this.salary<span class="w"> </span><span class="o">=</span><span class="w"> </span>salary<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//setters
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setName<span class="o">(</span>String<span class="w"> </span>name<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setId<span class="o">(</span>int<span class="w"> </span>id<span class="o">){</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setSalary<span class="o">(</span>double<span class="w"> </span>salary<span class="o">){</span>
+<span class="w">        </span>this.salary<span class="w"> </span><span class="o">=</span><span class="w"> </span>salary<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//getters
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getName<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>int<span class="w"> </span>getId<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getSalary<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>salary<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//call<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>work<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Coder name: &quot;</span><span class="w"> </span>+<span class="w"> </span>name<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; (&quot;</span><span class="w"> </span>+<span class="w"> </span>id<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;). Salary: &quot;</span><span class="w"> </span>+<span class="w"> </span>salary<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>//create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>object
+<span class="w">    </span>Coders<span class="w"> </span><span class="nv">mars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Coders<span class="o">(</span><span class="s2">&quot;sram&quot;</span>,<span class="w"> </span><span class="m">10035252</span>,<span class="w"> </span><span class="m">213</span>.53<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>Managers<span class="w"> </span><span class="nv">boss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Managers<span class="o">(</span><span class="s2">&quot;boos&quot;</span>,<span class="w"> </span><span class="m">23423345</span>,<span class="w"> </span><span class="m">234</span>.51,<span class="w"> </span><span class="m">3242</span>.2<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>//call<span class="w"> </span>the<span class="w"> </span>call<span class="w"> </span>and<span class="w"> </span>sendMessage<span class="w"> </span>methods
+<span class="w">    </span>mars.work<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>boss.work<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>console output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Coder<span class="w"> </span>name:<span class="w"> </span>sram<span class="w"> </span><span class="o">(</span><span class="m">10035252</span><span class="o">)</span>.<span class="w"> </span>Salary:<span class="w"> </span><span class="m">213</span>.53
+Manager<span class="w"> </span>name:<span class="w"> </span>boos<span class="w"> </span><span class="o">(</span><span class="m">23423345</span><span class="o">)</span>.<span class="w"> </span>Salary:<span class="w"> </span><span class="m">234</span>.51<span class="w"> </span>Bonus:<span class="w"> </span><span class="m">3242</span>.2
+</pre></div>
+</div>
+</section>
+<section id="q4">
+<h4><span class="section-number">4.16.1.3.4. </span>Q4<a class="headerlink" href="#q4" title="Link to this heading">#</a></h4>
+<p>定义猫类Cat。属性:毛的颜色color，品种breed。行为:吃饭eat()，抓老鼠catchMouse() 定义狗类Dog。属性:毛的颜色color，品种breed。行为:吃饭()，看家lookHome() 要求:​ 1.按照以上要求定义Cat类和Dog类,属性要私有,生成空参、有参构造，set和get方法​ 2.定义测试类,在main方法中创建该类的对象并给属性赋值(set方法或有参构造方法)​ 3.调用成员方法,打印格式如下:</p>
+<p>花色的波斯猫正在吃鱼…..
+花色的波斯猫正在逮老鼠….
+黑色的藏獒正在啃骨头…..
+黑色的藏獒正在看家…..</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>//Cats<span class="w"> </span>class
+public<span class="w"> </span>class<span class="w"> </span>Cats<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>breed<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>color<span class="p">;</span>
+
+<span class="w">    </span>Cats<span class="o">(</span>String<span class="w"> </span>breed,<span class="w"> </span>String<span class="w"> </span>color<span class="o">){</span>
+<span class="w">        </span>this.breed<span class="w"> </span><span class="o">=</span><span class="w"> </span>breed<span class="p">;</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//setters
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setBreed<span class="o">(</span>String<span class="w"> </span>breed<span class="o">){</span>
+<span class="w">        </span>this.breed<span class="w"> </span><span class="o">=</span><span class="w"> </span>breed<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setColor<span class="o">(</span>String<span class="w"> </span>color<span class="o">){</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//getters
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getBreed<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>breed<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getColor<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//call<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>eadFish<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>breed<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; cat is eating fish.&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>catchMouse<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>breed<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; cat is catching mouse.&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+
+//Dogs<span class="w"> </span>class
+public<span class="w"> </span>class<span class="w"> </span>Dogs<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>breed<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>color<span class="p">;</span>
+
+<span class="w">    </span>Dogs<span class="o">(</span>String<span class="w"> </span>breed,<span class="w"> </span>String<span class="w"> </span>color<span class="o">){</span>
+<span class="w">        </span>this.brand<span class="w"> </span><span class="o">=</span><span class="w"> </span>breed<span class="p">;</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//setters
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setBreed<span class="o">(</span>String<span class="w"> </span>breed<span class="o">){</span>
+<span class="w">        </span>this.breed<span class="w"> </span><span class="o">=</span><span class="w"> </span>breed<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setColor<span class="o">(</span>String<span class="w"> </span>color<span class="o">){</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//getters
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getBreed<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>brand<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getColor<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//call<span class="w"> </span>method
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>eatingBones<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>breed<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; dog is eating a bone.&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>guarding<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;a &quot;</span><span class="w"> </span>+<span class="w"> </span>color<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>breed<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; dog is guarding my house.&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>//create<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>object
+<span class="w">    </span>Cats<span class="w"> </span><span class="nv">persianCat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Cats<span class="o">(</span><span class="s2">&quot;Persian&quot;</span>,<span class="w"> </span><span class="s2">&quot;black&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>Dogs<span class="w"> </span><span class="nv">hasky</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Dogs<span class="o">(</span><span class="s2">&quot;Hasky&quot;</span>,<span class="w"> </span><span class="s2">&quot;white&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>//call<span class="w"> </span>the<span class="w"> </span>call<span class="w"> </span>and<span class="w"> </span>sendMessage<span class="w"> </span>methods
+<span class="w">    </span>persianCat.eatFish<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>hasky.eatingBones<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>pearsianCat.catchMouse<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>hasky.guarding<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>console output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>a<span class="w"> </span>black<span class="w"> </span>Persian<span class="w"> </span>cat<span class="w"> </span>is<span class="w"> </span>eating<span class="w"> </span>fish.
+a<span class="w"> </span>white<span class="w"> </span>Hasky<span class="w"> </span>dog<span class="w"> </span>is<span class="w"> </span>eating<span class="w"> </span>a<span class="w"> </span>bone.
+a<span class="w"> </span>black<span class="w"> </span>Persian<span class="w"> </span>cat<span class="w"> </span>is<span class="w"> </span>catching<span class="w"> </span>mouse.
+a<span class="w"> </span>white<span class="w"> </span>Hasky<span class="w"> </span>dog<span class="w"> </span>is<span class="w"> </span>guarding<span class="w"> </span>my<span class="w"> </span>house.
+</pre></div>
+</div>
+</section>
+<section id="q5">
+<h4><span class="section-number">4.16.1.3.5. </span>Q5<a class="headerlink" href="#q5" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储3部汽车对象。</p>
+<p>​ 汽车的属性：品牌，价格，颜色。</p>
+<p>​ 创建三个汽车对象，数据通过键盘录入而来，并把数据存入到数组当中。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>garage<span class="p">;</span>
+
+//Cars<span class="w"> </span>class
+public<span class="w"> </span>class<span class="w"> </span>Cars<span class="o">{</span>
+<span class="w">    </span>//set<span class="w"> </span>the<span class="w"> </span>variables
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>brand<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>price<span class="p">;</span>
+
+<span class="w">    </span>Cars<span class="o">(</span>String<span class="w"> </span>brand,<span class="w"> </span>String<span class="w"> </span>color,<span class="w"> </span>double<span class="w"> </span>price<span class="o">){</span>
+<span class="w">        </span>this.brand<span class="w"> </span><span class="o">=</span><span class="w"> </span>brand<span class="p">;</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>Cars<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>//<span class="w"> </span>Initialize<span class="w"> </span>fields<span class="w"> </span>with<span class="w"> </span>default<span class="w"> </span>values
+<span class="w">        </span>this.brand<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Brand&quot;</span><span class="p">;</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Color&quot;</span><span class="p">;</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>.0<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//setters
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setBrand<span class="o">(</span>String<span class="w"> </span>brand<span class="o">){</span>
+<span class="w">        </span>this.brand<span class="w"> </span><span class="o">=</span><span class="w"> </span>brand<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setColor<span class="o">(</span>String<span class="w"> </span>color<span class="o">){</span>
+<span class="w">        </span>this.color<span class="w"> </span><span class="o">=</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setPrice<span class="o">(</span>double<span class="w"> </span>price<span class="o">){</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>//getters
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getBrand<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>brand<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getColor<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>color<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getPrice<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+
+package<span class="w"> </span>garage<span class="p">;</span>
+
+import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>//<span class="w"> </span>Create<span class="w"> </span>an<span class="w"> </span>array<span class="w"> </span>to<span class="w"> </span>store<span class="w"> </span>Cars<span class="w"> </span>objects
+<span class="w">        </span>Cars<span class="o">[]</span><span class="w"> </span><span class="nv">myCars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Cars<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">        </span>//<span class="w"> </span>Initialize<span class="w"> </span>each<span class="w"> </span>Cars<span class="w"> </span>object<span class="w"> </span>and<span class="w"> </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>brand
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>myCars.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>myCars<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Cars<span class="o">()</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>Initialize<span class="w"> </span>the<span class="w"> </span>Cars<span class="w"> </span>object<span class="w"> </span>at<span class="w"> </span>index<span class="w"> </span>i
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;please input brand for car #&quot;</span><span class="w"> </span>+<span class="w"> </span><span class="o">(</span>i<span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="o">))</span><span class="p">;</span>
+<span class="w">            </span>myCars<span class="o">[</span>i<span class="o">]</span>.setBrand<span class="o">(</span>scanner.nextLine<span class="o">())</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>//<span class="w"> </span>Set<span class="w"> </span>the<span class="w"> </span>color<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>car
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>myCars.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;please input color for car #&quot;</span><span class="w"> </span>+<span class="w"> </span><span class="o">(</span>i<span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="o">))</span><span class="p">;</span>
+<span class="w">            </span>myCars<span class="o">[</span>i<span class="o">]</span>.setColor<span class="o">(</span>scanner.nextLine<span class="o">())</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>//<span class="w"> </span>Set<span class="w"> </span>the<span class="w"> </span>price<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>car
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>myCars.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;please input price for car #&quot;</span><span class="w"> </span>+<span class="w"> </span><span class="o">(</span>i<span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="o">))</span><span class="p">;</span>
+<span class="w">            </span>myCars<span class="o">[</span>i<span class="o">]</span>.setPrice<span class="o">(</span>scanner.nextDouble<span class="o">())</span><span class="p">;</span>
+<span class="w">            </span>scanner.nextLine<span class="o">()</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>Consume<span class="w"> </span>the<span class="w"> </span>remaining<span class="w"> </span>newline
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>printCarDetails<span class="o">(</span>myCars<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printCarDetails<span class="o">(</span>Cars<span class="o">[]</span><span class="w"> </span>myCars<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Car Details:&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>Cars<span class="w"> </span>car<span class="w"> </span>:<span class="w"> </span>myCars<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Brand: &quot;</span><span class="w"> </span>+<span class="w"> </span>car.getBrand<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;, Color: &quot;</span><span class="w"> </span>+<span class="w"> </span>car.getColor<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;, Price: &quot;</span><span class="w"> </span>+<span class="w"> </span>car.getPrice<span class="o">())</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>console output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>please<span class="w"> </span>input<span class="w"> </span>brand<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#1</span>
+audi
+please<span class="w"> </span>input<span class="w"> </span>brand<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#2</span>
+BMW
+please<span class="w"> </span>input<span class="w"> </span>brand<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#3</span>
+Xpeng
+please<span class="w"> </span>input<span class="w"> </span>color<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#1</span>
+black<span class="w"> </span>
+please<span class="w"> </span>input<span class="w"> </span>color<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#2</span>
+white
+please<span class="w"> </span>input<span class="w"> </span>color<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#3</span>
+green
+please<span class="w"> </span>input<span class="w"> </span>price<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#1</span>
+<span class="m">3243</span>
+please<span class="w"> </span>input<span class="w"> </span>price<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#2</span>
+<span class="m">325423</span>
+please<span class="w"> </span>input<span class="w"> </span>price<span class="w"> </span><span class="k">for</span><span class="w"> </span>car<span class="w"> </span><span class="c1">#3</span>
+<span class="m">1242</span>
+Car<span class="w"> </span>Details:
+Brand:<span class="w"> </span>audi,<span class="w"> </span>Color:<span class="w"> </span>black,<span class="w"> </span>Price:<span class="w"> </span><span class="m">3243</span>.0
+Brand:<span class="w"> </span>BMW,<span class="w"> </span>Color:<span class="w"> </span>white,<span class="w"> </span>Price:<span class="w"> </span><span class="m">325423</span>.0
+Brand:<span class="w"> </span>Xpeng,<span class="w"> </span>Color:<span class="w"> </span>green,<span class="w"> </span>Price:<span class="w"> </span><span class="m">1242</span>.0
+</pre></div>
+</div>
+</section>
+<section id="q6">
+<h4><span class="section-number">4.16.1.3.6. </span>Q6<a class="headerlink" href="#q6" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储3部手机对象。</p>
+<p>​ 手机的属性：品牌，价格，颜色。</p>
+<p>​ 要求，计算出三部手机的平均价格</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="q7">
+<h4><span class="section-number">4.16.1.3.7. </span>Q7<a class="headerlink" href="#q7" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储4个女朋友的对象</p>
+<p>​ 女朋友的属性：姓名、年龄、性别、爱好</p>
+<p>​ 要求1：计算出四女朋友的平均年龄</p>
+<p>​ 要求2：统计年龄比平均值低的女朋友有几个？并把她们的所有信息打印出来。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+<section id="q8">
+<h4><span class="section-number">4.16.1.3.8. </span>Q8<a class="headerlink" href="#q8" title="Link to this heading">#</a></h4>
+<p>​ 定义数组存储3个学生对象。</p>
+<p>​ 学生的属性：学号，姓名，年龄。</p>
+<p>​ 要求1：添加的时候需要进行学号的唯一性判断。</p>
+<p>​ 要求2：添加完毕之后，遍历所有学生信息。</p>
+<p>​ 要求3：通过id删除学生信息</p>
+<p>​ 如果存在，则删除，如果不存在，则提示删除失败。</p>
+<p>​ 要求4：删除完毕之后，遍历所有学生信息。</p>
+<p>​ 要求5：id为2的学生，年龄+1岁</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\backend"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="java_basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">4.15. </span>Java</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="jb.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">4.17. </span>Jupyter Book Basics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-programming">4.16.1. Object Oriented Programming</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">4.16.1.1. Constructor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inheritance">4.16.1.2. Inheritance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practise-questions">4.16.1.3. Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q1">4.16.1.3.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q2">4.16.1.3.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q3">4.16.1.3.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">4.16.1.3.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">4.16.1.3.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">4.16.1.3.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">4.16.1.3.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">4.16.1.3.8. Q8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miles Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

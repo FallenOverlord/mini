@@ -1,0 +1,1108 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>2.3. Linked Lists &#8212; Cybersecurity QuickStart</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/c/linkedlist';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.4. APS 105 Final Review" href="final.html" />
+    <link rel="prev" title="2.2. Basics of Data Structres" href="struct.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/qe-logo-large.png" class="logo__image only-light" alt="Cybersecurity QuickStart - Home"/>
+    <script>document.write(`<img src="../../_static/qe-logo-large.png" class="logo__image only-dark" alt="Cybersecurity QuickStart - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cybersecurity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cybersecurity/cs_intro.html">1. Cybersecurity intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/linux.html">1.1. Linux Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/sqlite.html">1.2. SQL General Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/nmap.html">1.3. nmap Basic Commands and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cheatSheet.html">1.4. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/ctf.html">1.5. CTF Write Ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cpts.html">1.7. HTB CPTS Moduals</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="c_intro.html">2. Welcome to C Programming Language</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="struct.html">2.2. Basics of Data Structres</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="final.html">2.4. APS 105 Final Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html">2.5. Searching Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">3. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">3.2. Circuits Basics</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Dev</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../backend/java_intro.html">4. Backend Roadmap</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_basics.html">4.15. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_oop.html">4.16. Java OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/jb.html">4.17. Jupyter Book Basics</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/c/linkedlist.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linked Lists</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-linked-list">2.3.1. how to make a linked list?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequsit-knowledge">2.3.1.1. prerequsit knowledge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide-on-creating-a-linked-list">2.3.1.2. Step by Step guide on Creating a linked list!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-linked-list-dynamically">2.3.1.3. Define a linked list dynamically</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-function-to-create-a-linked-list">2.3.1.4. Use a function to create a linked list</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-there-is-no-memery-to-allocate">2.3.1.4.1. What happens when there is no memery to allocate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-function-that-have-the-type-node-pointer">2.3.1.4.2. Create the function that have the type Node pointer</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-function-in-the-main-function">2.3.1.4.3. Use the function in the main function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-working-code">2.3.1.4.4. the working code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-a-new-head-to-an-existing-linked-list">2.3.1.5. Insert a new head to an existing linked list.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-data-sturcture">2.3.1.6. Create a New Data Sturcture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-print-a-linked-list">2.3.2. how to print a linked list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-insert-at-the-end">2.3.3. how to insert at the end</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-in-the-middle">2.3.4. Insert in the middle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-node">2.3.5. Find Node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-node">2.3.6. Delete Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-linked-list">2.3.6.1. Empty linked list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-the-head-of-the-list">2.3.6.2. Delete the head of the list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-the-end-of-a-list">2.3.6.3. Delete the end of a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annhialation">2.3.6.4. annhialation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detete-first-match">2.3.6.5. Detete First Match</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-all-matches">2.3.6.6. Delete all matches</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linked-lists">
+<h1><span class="section-number">2.3. </span>Linked Lists<a class="headerlink" href="#linked-lists" title="Link to this heading">#</a></h1>
+<p>alternative to arrays</p>
+<p>arrays are not flexible</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Append</span></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>appending elements may lead to the change of the size of the array
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Modification</span></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>not possible to modify elements in the middle of the array,  
+or delete them
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="how-to-make-a-linked-list">
+<h2><span class="section-number">2.3.1. </span>how to make a linked list?<a class="headerlink" href="#how-to-make-a-linked-list" title="Link to this heading">#</a></h2>
+<section id="prerequsit-knowledge">
+<h3><span class="section-number">2.3.1.1. </span>prerequsit knowledge<a class="headerlink" href="#prerequsit-knowledge" title="Link to this heading">#</a></h3>
+<p>a linked list is consists of multiple nodes.<br />
+each node is like an element in the array.</p>
+<p><strong>Anatomy of a Node</strong></p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">Value</span></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>the information that the element holds
+e.g. `int data;`
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Link</span></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a pointer to a node
+e.g. `struct node *next;`
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>tip: to give the node data type ( struct node ) a nickname as “Node”:<br />
+<code class="docutils literal notranslate"><span class="pre">typedef</span> <span class="pre">&lt;original_name&gt;</span> <span class="pre">&lt;nickname&gt;;</span>&#160; </code>
+<code class="docutils literal notranslate"><span class="pre">typedef</span> <span class="pre">sturct</span> <span class="pre">node</span> <span class="pre">{...}</span> <span class="pre">Node;</span></code></p>
+</section>
+<section id="step-by-step-guide-on-creating-a-linked-list">
+<h3><span class="section-number">2.3.1.2. </span>Step by Step guide on Creating a linked list!<a class="headerlink" href="#step-by-step-guide-on-creating-a-linked-list" title="Link to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+create data structure</label><div class="sd-tab-content docutils">
+<p>create a data structure and give it the nickname of “Node” data type.
+<code class="docutils literal notranslate"><span class="pre">typedef</span> <span class="pre">struct</span> <span class="pre">node</span> <span class="pre">{</span>&#160;&#160;&#160;&#160; <span class="pre">int</span> <span class="pre">value;</span>&#160;&#160;&#160;&#160; <span class="pre">struct</span> <span class="pre">node</span> <span class="pre">*next;</span> <span class="pre">}</span> <span class="pre">Node;</span></code></p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Declearing Variables</label><div class="sd-tab-content docutils">
+<p>`int main(void) {
+Node firstElement;
+firstElement.value = 1;
+firstElement.next = NULL;</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Node secondElement;
+secondElement.value = 2;
+secondElement.next = NULL;
+</pre></div>
+</div>
+<p>}`</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Create link</label><div class="sd-tab-content docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>link the pointer equipped in the first node to point to the next item
+`firstElement.next = &amp;secondElement;`
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Test it Out</label><div class="sd-tab-content docutils">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>printf(&quot;the vlaue hold in the second item is %d&quot;, (* firstElement.next).value);
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="define-a-linked-list-dynamically">
+<h3><span class="section-number">2.3.1.3. </span>Define a linked list dynamically<a class="headerlink" href="#define-a-linked-list-dynamically" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>create a data structure and give it the nickname of “Node” data type.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="n">node</span> <span class="p">{</span>
+    <span class="nb">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">node</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Node</span><span class="p">;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>First &amp; Last
+the first node will always be pointed by a pointer named “head”</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>newNode is the first Node in the linked list!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">newNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">newNode</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>initiating the values within the first node!</p>
+<p>Here is where the magic starts!<br />
+Make the already-defined first node the “head” and define the second node based on the “position” the first node holds.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+
+<span class="n">newNode</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
+<span class="n">newNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="n">newNode</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>after that, if we want to define more nodes we can just follow the same procedure.</p>
+</section>
+<section id="use-a-function-to-create-a-linked-list">
+<h3><span class="section-number">2.3.1.4. </span>Use a function to create a linked list<a class="headerlink" href="#use-a-function-to-create-a-linked-list" title="Link to this heading">#</a></h3>
+<section id="what-happens-when-there-is-no-memery-to-allocate">
+<h4><span class="section-number">2.3.1.4.1. </span>What happens when there is no memery to allocate<a class="headerlink" href="#what-happens-when-there-is-no-memery-to-allocate" title="Link to this heading">#</a></h4>
+<p>in the previous part, where we attempted to use melloc function to dynamically allocate memory to a pointer and assign the pointer to a pointer variable, next.  The operation could be risky if there is no more memory to allocate to the pointer, and if we try to allocation membmer that is not yet freed to a pointer, a segmentation error will occur.</p>
+<p>To avioding allocating inaccessable memory, we can use the if( next != NULL ) to detect if the pointer is valid.</p>
+</section>
+<section id="create-the-function-that-have-the-type-node-pointer">
+<h4><span class="section-number">2.3.1.4.2. </span>Create the function that have the type Node pointer<a class="headerlink" href="#create-the-function-that-have-the-type-node-pointer" title="Link to this heading">#</a></h4>
+<p>the aim of this function is to create a new node on our little linked list train, and the way we are doing that is to dynamically create a new pointer with the data type node.<br />
+we then check if the pointer is successfully created, and if yes, we will procced to assign the value and the link to the pointer.<br />
+we will finally return the pointer.</p>
+<p>Node *createNode(int number){</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Node *node = (Node *) malloc(sizeof(Node));
+
+if (node != NULL){
+    node-&gt;data = number;
+    node-&gt;next = NULL;
+}
+
+return node;
+}
+</pre></div>
+</div>
+</section>
+<section id="use-the-function-in-the-main-function">
+<h4><span class="section-number">2.3.1.4.3. </span>Use the function in the main function<a class="headerlink" href="#use-the-function-in-the-main-function" title="Link to this heading">#</a></h4>
+<p>the reason why we return the pointer is because we can assign to pointer to a new node.<br />
+we have to create the head of this train first, after that each time we create a new node pointer and assign that pointer to the link within the existing node.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Node *head = NULL;
+
+head = createNode(2);
+
+head-&gt;next = createNode(5);
+
+head-&gt;next-&gt;next = createNode(7);
+</pre></div>
+</div>
+</section>
+<section id="the-working-code">
+<h4><span class="section-number">2.3.1.4.4. </span>the working code<a class="headerlink" href="#the-working-code" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#include &lt;stdlib.h&gt;</span>
+
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">Node</span> <span class="p">{</span>
+    <span class="nb">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="nb">next</span><span class="p">;</span>
+
+<span class="p">}</span> <span class="n">Node</span><span class="p">;</span>
+
+<span class="n">Node</span> <span class="o">*</span><span class="n">createNode</span><span class="p">(</span><span class="nb">int</span> <span class="n">number</span><span class="p">){</span>
+
+    <span class="n">Node</span> <span class="o">*</span><span class="n">node</span> <span class="o">=</span> <span class="p">(</span><span class="n">Node</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">Node</span><span class="p">));</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="n">node</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">number</span><span class="p">;</span>
+        <span class="n">node</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">node</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">){</span>
+
+    <span class="n">Node</span> <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+
+    <span class="n">head</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="n">head</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+
+    <span class="n">head</span><span class="o">-&gt;</span><span class="nb">next</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;the value of the last node is </span><span class="si">%d</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">head</span><span class="o">-&gt;</span><span class="nb">next</span><span class="o">-&gt;</span><span class="nb">next</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+    
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="insert-a-new-head-to-an-existing-linked-list">
+<h3><span class="section-number">2.3.1.5. </span>Insert a new head to an existing linked list.<a class="headerlink" href="#insert-a-new-head-to-an-existing-linked-list" title="Link to this heading">#</a></h3>
+<p>ok, it is a bit hard and there are several ways, so let me introduce the easiest way first.<br />
+we first need to create a node that is going to subsitute the head of the linked list, newhead, by using the existing createNode function. and check if the pointer points to a valid memory space</p>
+<p>warning: we cannot call the newhead function by value, we must pass in a pointer that points to the head(which is a pointer)<br />
+if we have a variable that we want to modify its value through a function, we pass in the pointer of the the variable.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<span class="nb">int</span> <span class="n">newhead</span><span class="p">(</span><span class="n">Node</span> <span class="o">**</span><span class="n">head</span><span class="p">,</span> <span class="nb">int</span> <span class="n">value</span><span class="p">){</span>
+
+    <span class="nb">int</span> <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">Node</span> <span class="o">*</span><span class="n">newhead</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">newhead</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">newhead</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+        <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="n">newhead</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;memory allocation not successful.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">status</span><span class="p">;</span>
+<span class="p">}</span>
+
+</pre></div>
+</div>
+<p>which means that is logical that if we want to modify a pointer, we have to have another pointer that points to that pointer.</p>
+<p><code class="docutils literal notranslate"><span class="pre">newhead(&amp;head,</span> <span class="pre">0);</span></code>
+we need to pass in the address of the old head pointer in order to change its address to the second node.</p>
+</section>
+<section id="create-a-new-data-sturcture">
+<h3><span class="section-number">2.3.1.6. </span>Create a New Data Sturcture<a class="headerlink" href="#create-a-new-data-sturcture" title="Link to this heading">#</a></h3>
+<p>make a new data sturcture that holds the heads of linked lists</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">typedef</span> <span class="n">struct</span> <span class="nb">list</span> <span class="p">{</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">LinkedList</span><span class="p">;</span>
+
+</pre></div>
+</div>
+<p>the new data type struct list has been assigned a nickname LinkedList<br />
+any variable that have the type LinkedList can access a pointer value by using <code class="docutils literal notranslate"><span class="pre">&lt;var_name&gt;.head</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="n">LinkedList</span> <span class="nb">list</span><span class="p">;</span>
+
+    <span class="nb">list</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="n">head</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>next we call a function, insertAtFront, and pass in the pointer to the head of the linked list.<br />
+insertAtFront will create a new node, serving as the new head.
+then it will valideate the new head.
+after that it links the old head after the new node by using <code class="docutils literal notranslate"><span class="pre">temp-&gt;next</span> <span class="pre">=</span> <span class="pre">list-&gt;head</span></code>.
+Finally it changes the old head(a pointer in the list) to point to the new node using <code class="docutils literal notranslate"><span class="pre">list-&gt;head</span> <span class="pre">=</span> <span class="pre">temp</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span> <span class="n">insertAtFront</span> <span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">,</span> <span class="nb">int</span> <span class="n">value</span><span class="p">){</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">tem</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">){</span> <span class="k">return</span> <span class="kc">False</span><span class="p">;}</span>
+    <span class="n">temp</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+    <span class="n">retrun</span> <span class="kc">True</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>also add in main function <code class="docutils literal notranslate"><span class="pre">insertAtFront(&amp;list,</span> <span class="pre">0);</span></code>.</p>
+</section>
+</section>
+<section id="how-to-print-a-linked-list">
+<h2><span class="section-number">2.3.2. </span>how to print a linked list<a class="headerlink" href="#how-to-print-a-linked-list" title="Link to this heading">#</a></h2>
+<p>remember the pointer next defined when we created the list?<br />
+we can have a variable called current (just like int i in a for loop that’s used to print the array[i]) make it switch to next using `current = current-&gt;next’ to loop through all the nodes in a linked list.<br />
+the loop will stop because the last node’s next pointer is pointing to ‘NULL’ and has not being modified.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">printLinkedList</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">){</span>
+
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">current</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;this node has a value of </span><span class="si">%d</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="how-to-insert-at-the-end">
+<h2><span class="section-number">2.3.3. </span>how to insert at the end<a class="headerlink" href="#how-to-insert-at-the-end" title="Link to this heading">#</a></h2>
+<p>we can employ the same logic as above to find out where is the end of the linked list.<br />
+we will know because the last node’s next pointer is NULL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">appendLinkedList</span><span class="p">(</span><span class="n">linkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">,</span> <span class="nb">int</span> <span class="n">value</span><span class="p">){</span>
+
+    <span class="n">Node</span> <span class="o">*</span><span class="n">endnode</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">endnode</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">){</span>
+            <span class="o">//</span><span class="n">the</span> <span class="n">linnked</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span>
+            <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">endnode</span><span class="p">;</span>
+
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+
+            <span class="k">while</span><span class="p">(</span><span class="n">current</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+                <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">endnode</span><span class="p">;</span>
+
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="insert-in-the-middle">
+<h2><span class="section-number">2.3.4. </span>Insert in the middle<a class="headerlink" href="#insert-in-the-middle" title="Link to this heading">#</a></h2>
+<p>if we are given a list that has a current ascending value in the “data” and we need to insert an item
+in such a position that its value fits in the right place</p>
+<p>we need to traverse the linked list in the same way until current-&gt;data is smaller than newnode-&gt;data.
+we will first link newnode-&gt;next to current-&gt;next, so now current-&gt;next is linked to two elements.
+we will sever the first connection and relink it to newnode.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span> <span class="n">insertInMid</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">,</span> <span class="nb">int</span> <span class="n">value</span><span class="p">){</span>
+    
+    <span class="o">//</span><span class="n">create</span> <span class="n">the</span> <span class="n">newnode</span> <span class="ow">and</span> <span class="n">validate</span> <span class="n">it</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">newnode</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="n">value</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">newnode</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">loop</span> <span class="n">through</span> <span class="n">the</span> <span class="nb">list</span> <span class="ow">and</span> <span class="n">compare</span> <span class="n">values</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="o">//</span><span class="n">the</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span>
+        <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">newnode</span><span class="p">;</span>
+        <span class="k">return</span> <span class="kc">True</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">//</span> <span class="n">The</span> <span class="n">value</span> <span class="n">to</span> <span class="n">insert</span> <span class="n">comes</span> <span class="n">before</span> <span class="n">the</span> <span class="n">current</span> <span class="n">head</span><span class="p">,</span> <span class="n">so</span> <span class="n">insert</span> <span class="n">before</span> <span class="n">it</span><span class="o">.</span>
+    <span class="k">return</span> <span class="n">insertAtFront</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">){</span>
+            <span class="o">//</span><span class="k">if</span> <span class="n">the</span> <span class="n">node</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">end</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">list</span>
+            <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">newnode</span><span class="p">;</span>
+            <span class="k">return</span> <span class="kc">True</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span><span class="n">now</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">value</span>
+    <span class="n">newnode</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">;</span>
+    <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">newnode</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kc">True</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="find-node">
+<h2><span class="section-number">2.3.5. </span>Find Node<a class="headerlink" href="#find-node" title="Link to this heading">#</a></h2>
+<p>Sometimes we need to search for a node with a particular value.<br />
+We want to implment a function that takes in the list of heads and the target value.
+the function will return a pointer that points to the target found or NULL if thereis none.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Node</span> <span class="o">*</span><span class="n">searchNode</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">,</span> <span class="nb">int</span> <span class="n">target_value</span><span class="p">){</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">current</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">==</span> <span class="n">target_value</span><span class="p">){</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s2">&quot;found match.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+            <span class="k">return</span> <span class="n">current</span><span class="p">;</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>there is no need to worry about empty lists because te while loop already took care of it</p>
+</section>
+<section id="delete-node">
+<h2><span class="section-number">2.3.6. </span>Delete Node<a class="headerlink" href="#delete-node" title="Link to this heading">#</a></h2>
+<p>to complete the lifecycle of a node, we must delete them to free up the memory.</p>
+<section id="empty-linked-list">
+<h3><span class="section-number">2.3.6.1. </span>Empty linked list<a class="headerlink" href="#empty-linked-list" title="Link to this heading">#</a></h3>
+<p>For example, we may be in a situation where there is nothing to delete.<br />
+we have to test if the linked list even exist by doing <code class="docutils literal notranslate"><span class="pre">list-&gt;head</span> <span class="pre">==</span> <span class="pre">NULL</span></code> validation</p>
+</section>
+<section id="delete-the-head-of-the-list">
+<h3><span class="section-number">2.3.6.2. </span>Delete the head of the list<a class="headerlink" href="#delete-the-head-of-the-list" title="Link to this heading">#</a></h3>
+<p>Or we may find ourselves in a situation where there is only one element in the list.
+we need to set the new head pointer to the node-&gt;next of the head, which in this case is NULL.<br />
+<code class="docutils literal notranslate"><span class="pre">*newhead</span> <span class="pre">=</span> <span class="pre">list-&gt;head-&gt;next;</span></code> after that we can free up the memory using <code class="docutils literal notranslate"><span class="pre">free(list-&gt;head);</span></code>
+finally we need to point the list-&gt;head to the newhead using <code class="docutils literal notranslate"><span class="pre">list-&gt;head</span> <span class="pre">=</span> <span class="pre">newhead;</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">deleteHead</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="n">Node</span> <span class="o">*</span><span class="n">newhead</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">;</span>
+        <span class="n">free</span><span class="p">(</span><span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">);</span>
+        <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">newhead</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="delete-the-end-of-a-list">
+<h3><span class="section-number">2.3.6.3. </span>Delete the end of a list<a class="headerlink" href="#delete-the-end-of-a-list" title="Link to this heading">#</a></h3>
+<p>It has to ensure that the node after the next is NULL so it can delete the current-&gt;next and set the new current-&gt;next position to NULL.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">deleteButt</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">){</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">The</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">empty</span><span class="p">,</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">nothing</span> <span class="n">to</span> <span class="n">delete</span><span class="o">.</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">There</span> <span class="ow">is</span> <span class="n">only</span> <span class="n">one</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">list</span><span class="o">.</span>
+        <span class="n">deleteFront</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">){</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="n">free</span><span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">);</span>
+    <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>There is two special case to consider:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-2 sd-g-xs-2 sd-g-sm-2 sd-g-md-2 sd-g-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">empty list</span></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>list-&gt;head == NULL
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">only one element</span></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>list-&gt;head-&gt;next == NULL
+
+which means that the head is the only element  
+proceed to delete the head
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="annhialation">
+<h3><span class="section-number">2.3.6.4. </span>annhialation<a class="headerlink" href="#annhialation" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">deleteAllNodes</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">deleteFront</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">=</span> <span class="n">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>brute force</p>
+</section>
+<section id="detete-first-match">
+<h3><span class="section-number">2.3.6.5. </span>Detete First Match<a class="headerlink" href="#detete-first-match" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Find the target node.</p></li>
+<li><p>Fix the link before and after the node.</p></li>
+<li><p>Delete the target node.</p></li>
+<li><p>Fix head/butt issues</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">bool</span> <span class="n">deleteFirstMatch</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">,</span> <span class="nb">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">//</span><span class="n">head</span><span class="o">/</span><span class="n">butt</span> <span class="n">issues</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">==</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">deleteFront</span><span class="p">(</span><span class="nb">list</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span> <span class="n">Search</span> <span class="k">for</span> <span class="n">a</span> <span class="n">node</span> <span class="n">that</span> <span class="n">matches</span> <span class="n">the</span> <span class="n">value</span><span class="p">,</span> <span class="n">but</span> <span class="n">maintain</span> <span class="n">a</span> <span class="n">pointer</span> <span class="n">to</span> <span class="n">the</span> <span class="n">node</span> <span class="n">just</span> <span class="n">before</span> <span class="n">it</span><span class="o">.</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="nb">list</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">!=</span> <span class="n">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">!=</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="o">//</span> <span class="n">current</span> <span class="n">now</span> <span class="n">points</span> <span class="n">to</span> <span class="n">a</span> <span class="n">node</span> <span class="n">just</span> <span class="n">before</span> <span class="n">the</span> <span class="n">node</span> <span class="n">that</span> <span class="n">matched</span><span class="p">,</span> <span class="n">OR</span> <span class="n">current</span> <span class="n">points</span> <span class="n">to</span> <span class="n">the</span> <span class="n">last</span> <span class="n">node</span><span class="o">.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">//</span> <span class="n">current</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">point</span> <span class="n">to</span> <span class="n">the</span> <span class="n">last</span> <span class="n">node</span><span class="o">.</span>
+        <span class="n">Node</span> <span class="o">*</span><span class="n">temp</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">;</span>  <span class="o">//</span> <span class="n">temp</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">node</span> <span class="n">we</span> <span class="n">must</span> <span class="n">delete</span><span class="o">.</span>
+        <span class="n">current</span><span class="o">-&gt;</span><span class="nb">next</span> <span class="o">=</span> <span class="n">temp</span><span class="o">-&gt;</span><span class="nb">next</span><span class="p">;</span>  <span class="o">//</span> <span class="n">Update</span> <span class="n">n</span> <span class="n">so</span> <span class="n">that</span> <span class="n">temp</span> <span class="ow">is</span> <span class="n">no</span> <span class="n">longer</span> <span class="n">linked</span><span class="o">.</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">false</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="delete-all-matches">
+<h3><span class="section-number">2.3.6.6. </span>Delete all matches<a class="headerlink" href="#delete-all-matches" title="Link to this heading">#</a></h3>
+<p>composite weapon</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">deleteAllNodes</span><span class="p">(</span><span class="n">LinkedList</span> <span class="o">*</span><span class="nb">list</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="n">deleteFirstMatch</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span> <span class="p">{</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\c"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="struct.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>Basics of Data Structres</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="final.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>APS 105 Final Review</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-make-a-linked-list">2.3.1. how to make a linked list?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequsit-knowledge">2.3.1.1. prerequsit knowledge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step-guide-on-creating-a-linked-list">2.3.1.2. Step by Step guide on Creating a linked list!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-a-linked-list-dynamically">2.3.1.3. Define a linked list dynamically</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-function-to-create-a-linked-list">2.3.1.4. Use a function to create a linked list</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-there-is-no-memery-to-allocate">2.3.1.4.1. What happens when there is no memery to allocate</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-function-that-have-the-type-node-pointer">2.3.1.4.2. Create the function that have the type Node pointer</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-function-in-the-main-function">2.3.1.4.3. Use the function in the main function</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-working-code">2.3.1.4.4. the working code</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-a-new-head-to-an-existing-linked-list">2.3.1.5. Insert a new head to an existing linked list.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-data-sturcture">2.3.1.6. Create a New Data Sturcture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-print-a-linked-list">2.3.2. how to print a linked list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-insert-at-the-end">2.3.3. how to insert at the end</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-in-the-middle">2.3.4. Insert in the middle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-node">2.3.5. Find Node</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-node">2.3.6. Delete Node</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#empty-linked-list">2.3.6.1. Empty linked list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-the-head-of-the-list">2.3.6.2. Delete the head of the list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-the-end-of-a-list">2.3.6.3. Delete the end of a list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annhialation">2.3.6.4. annhialation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detete-first-match">2.3.6.5. Detete First Match</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-all-matches">2.3.6.6. Delete all matches</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miles Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

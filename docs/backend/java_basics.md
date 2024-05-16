@@ -1092,6 +1092,46 @@ System.out.println(Arrays.equals(num, copy_of_num));
 
 ```
 
+### Q1
+请创建一个长度为6的整数数组，并为数组中的元素赋值。遍历数组，打印所有元素，元素之间用空格隔开。比如：
+
+数组为：{1,2,3,4,5}
+打印结果：1 2 3 4 5 
+
+```bash
+
+public class helloworld {
+
+    public static void main(String[] args){
+
+    int array[] = {1, 2, 3, 4, 5};
+
+    for (int number = 0; number < 5; number++){
+        System.out.print(array[number] + " ");
+    }
+    }
+}
+```
+### Q2
+现有一个小数数组{12.9, 53.54, 75.0, 99.1, 3.14}。请编写代码，找出数组中的最小值并打印。
+```bash
+import java.util.Arrays;
+
+public class helloworld {
+
+    public static void main(String[] args){
+
+    double array[] = {12.9, 53.54, 75.0, 99.1, 3.14};
+
+    Arrays.sort(array);
+
+    System.out.println("the smallest item is: " + array[0]);
+
+    }
+}
+```
+A sorted array is in ascending order.
+
 ## Loops
 same syntax as c
 ```bash
@@ -1437,311 +1477,4 @@ examScores.forEach((subject, score) -> {
 });
 
 ```
-
-## Object Oriented Programming
-
-creating classes.  
-make a new file and a new class that have the same name.  
-```bash
-public class User{
-
-}
-
-User.java
-```
-now we can put info pertaining to the user in the class, i.e. name and birthday
-```bash
-public String name;
-public LocalDate birthday;
-```
-to use the LocalDate Class, we must import it first thing into the program  
-in the main function
-```bash
-public static void main(String[] args){
-
-}
-```
-we will create a new object named youngerUser, declared variable will be initialized as null.
-```bash
-
-User youngerUser = new User();
-
-youngerUser.name = "dsf";
-youngerUser.birthDay = LocalDate.parse("1008-01-03");
-
-//to access the LocalDate data as String
-youngerUser.birthDay.toString();
-
-
-```
-If you write a public method, it will be available to the entire program
-```bash
-//import Period and LocalDate classes
-//in the User class
-public int age() {
-    //this will calculate the difference between now and birthday
-    int age = Period.between(this.birthDay, LocalDate.now());
-}
-
-public void borrow(Book book){
-    this.books.add(book);
-
-}
-```
-if the method doesnt return anything, the type is void  
-the method borrow is accepting parameters  
-initializea an ArrayList Variable
-```bash
-import java.util.ArrayList;
-
-public ArrayList<Book> books = new ArrayList<book>;
-```
-
-accessing the values that is a custom class
-```bash
-//implement a toString method int the custom class
-public String toString{
-    return String.format("%s by %s.", this.title, this.author);
-}
-
-```
-
-### Constructor
-every class in java have a special method called the consttuctor, it is responsible for initializing the values of the class
-
-```bash
-User(String name, String birthDay){
-    this.name = name;
-    this.birthDay = LocalDate.parse(birthDay);
-}
-
-
-```
-the constructor method is called where the class is defined  
-and when we declare a new variable in that class  
-```bash
-
-User user = newUser("dsnfds", "2002-02-03");
-
-```
-We can create new methods when defineing the user class to make printing out the names eaiser
-```bash
-
-public String getUserName(){
-    return this.name;
-}
-
-public String getBirthDay(){
-    return this.birthDay.toString();
-}
-```
-user.birthDay is still in LocalDate format, so we need to convert it back to String when returning it.  
-Using the newly created get method to print the name  
-```bash
-user.getBirthDay();
-
-user.getUserName();
-```
-we can make the variables in the class private, implement the get method and use the constructor method.  
-This will make the data more secure.
-```bash
-private String title;
-private String author;
-
-public String getTitle().......
-public String getAuthor()...
-
-//constructor method
-Book(String title, String author){
-    this.autor = author;
-    this.title = title;
-}
-
-//update  the object creation process
-Book book = new Book("little princess", "fiarhan neight");
-```
-Dont forget to update the object creation process
-
-### Inheritance
-make a default class that has the most common methods.  
-make a child class that inherit all the properties and methods and then add some specific methods and properties. 
-We can firt initialize a custom class and declear all the propeties, then we put all the properties into the constructor method.
-```bash
-public class Book{
-
-    private String title;
-    private String author;
-    private int pageCount;
-
-    Book (String title, String author, int pageCount){
-        this.title = title;
-        this.author = author;
-        this.pageCount = pageCount;
-    }
-
-}
-```
-This is the parent class, now is the time to make a child class.  
-First create a new java file, the name of the new child class must be the same as the name of the java file.  
-Then we delcear the child class as an extension of the parent class.
-```bash
-
-public class AudioBook extends Book {
-    private int time;
-
-    //constructor
-    AudoBook(String title, String author, int pageCount, int time){
-        super(title, author, pageCount);
-        this.AudoBook = AudoBook
-    }
-}
-
-```
-super refoers to the pareent class in the current class
-
-### Practise Questions
-
-#### Q1
-题目1（完成）
-定义手机类，手机有品牌(brand),价格(price)和颜色(color)三个属性，有打电话call()和sendMessage()两个功能。
-
-请定义出手机类，类中要有空参、有参构造方法，set/get方法。
-
-定义测试类，在主方法中使用空参构造创建对象，使用set方法赋值。
-
-调用对象的两个功能，打印效果如下：
-
-正在使用价格为3998元黑色的小米手机打电话....
-正在使用价格为3998元黑色的小米手机发短信....
-
-```bash
-public class helloworld{
-    
-    public static void main(String[] args){
-
-    //create a new object
-
-    //use the setters to populate the object
-
-    //call the call and sendMessage methods
-
-    }
-
-}
-
-public class Phone{
-    //set the variables
-
-    //constructors
-
-    //setters
-
-    //getters
-
-    //call method
-
-    //sendMessage method
-
-
-
-
-}
-```
-
-#### Q2
-
-定义一个女朋友类。女朋友的属性包含：姓名，身高，体重。行为包含：洗衣服wash()，做饭cook()。另外定义一个用于展示三个属性值的show()方法。请在测试类中通过有参构造方法创建对象并赋值，然后分别调用展示方法、洗衣服方法和做饭方法。打印效果如下：
-
-我女朋友叫凤姐,身高155.0厘米,体重130.0斤
-女朋友帮我洗衣服
-女朋友给我做饭
-
-```bash
-
-
-```
-
-#### Q3
-定义项目经理类Manager。属性：姓名name，工号id，工资salary，奖金bonus。行为：工作work() 定义程序员类Coder。属性：姓名name，工号id，工资salary。行为：工作work()
-
-要求：
-
-​ 1.按照以上要求定义Manager类和Coder类,属性要私有,生成空参、有参构造，set和get方法​ 2.定义测试类,在main方法中创建该类的对象并给属性赋值(set方法或有参构造方法)​ 3.调用成员方法,打印格式如下:
-
-工号为123基本工资为15000奖金为6000的项目经理张三正在努力的做着管理工作,分配任务,检查员工提交上来的代码.....
-工号为135基本工资为10000的程序员李四正在努力的写着代码......
-
-```bash
-
-```
-
-#### Q4
-定义猫类Cat。属性:毛的颜色color，品种breed。行为:吃饭eat()，抓老鼠catchMouse() 定义狗类Dog。属性:毛的颜色color，品种breed。行为:吃饭()，看家lookHome() 要求:​ 1.按照以上要求定义Cat类和Dog类,属性要私有,生成空参、有参构造，set和get方法​ 2.定义测试类,在main方法中创建该类的对象并给属性赋值(set方法或有参构造方法)​ 3.调用成员方法,打印格式如下:
-
-花色的波斯猫正在吃鱼.....
-花色的波斯猫正在逮老鼠....
-黑色的藏獒正在啃骨头.....
-黑色的藏獒正在看家.....
-
-```bash
-
-```
-
-#### Q5
-​ 定义数组存储3部汽车对象。
-
-​ 汽车的属性：品牌，价格，颜色。
-
-​ 创建三个汽车对象，数据通过键盘录入而来，并把数据存入到数组当中。
-
-```bash
-
-```
-
-#### Q6
-​ 定义数组存储3部手机对象。
-
-​ 手机的属性：品牌，价格，颜色。
-
-​ 要求，计算出三部手机的平均价格
-
-```bash
-
-```
-
-#### Q7
-​ 定义数组存储4个女朋友的对象
-
-​ 女朋友的属性：姓名、年龄、性别、爱好
-
-​ 要求1：计算出四女朋友的平均年龄
-
-​ 要求2：统计年龄比平均值低的女朋友有几个？并把她们的所有信息打印出来。
-
-```bash
-
-```
-
-#### Q8
-​ 定义数组存储3个学生对象。
-
-​ 学生的属性：学号，姓名，年龄。
-
-​ 要求1：添加的时候需要进行学号的唯一性判断。
-
-​ 要求2：添加完毕之后，遍历所有学生信息。
-
-​ 要求3：通过id删除学生信息
-
-​ 如果存在，则删除，如果不存在，则提示删除失败。
-
-​ 要求4：删除完毕之后，遍历所有学生信息。
-
-​ 要求5：id为2的学生，年龄+1岁
-
-```bash
-
-```
-
-
 

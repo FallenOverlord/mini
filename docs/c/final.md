@@ -155,7 +155,7 @@ the strstr() function returns a pointer, pointing to the first occurance of the 
 
 ## Linked List
 
-Review with [notes](../docs/linkedlist.md)
+Review with [notes](linkedlist.md)
 
 ### How to initialize a data structure
 ```bash

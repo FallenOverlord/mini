@@ -1,49 +1,41 @@
 format: jb-book
 root: docs/index
 parts:
-  - caption: Introduction
-    chapters:
-      - file: docs/miles
-
   - caption: Cybersecurity
     numbered: True
     chapters:
-      - file: docs/cs_intro
+      - file: docs/cybersecurity/cs_intro
         sections:
-        - file: docs/linux
-        - file: docs/sqlite
-        - file: docs/nmap
-        - file: docs/cheatSheet
-        - file: docs/ctf
-        - file: docs/cysa
-        - file: docs/cpts
-
-  - caption: Python
-    numbered: True
-    chapters:
-      - file: docs/about_py
-        sections:
-          - file: docs/getting_started
-          - file: docs/python_by_example
-          - file: docs/learn_more
+        - file: docs/cybersecurity/linux
+        - file: docs/cybersecurity/sqlite
+        - file: docs/cybersecurity/nmap
+        - file: docs/cybersecurity/cheatSheet
+        - file: docs/cybersecurity/ctf
+        - file: docs/cybersecurity/cysa
+        - file: docs/cybersecurity/cpts
 
   - caption: C Programming Language
     numbered: True
     chapters:
-      - file: docs/c_intro
+      - file: docs/c/c_intro
         sections:
-          - file: docs/struct
-          - file: docs/jb
-          - file: docs/linkedlist
-          - file: docs/final
-          - file: docs/searching
+          - file: docs/c/struct
+          - file: docs/c/linkedlist
+          - file: docs/c/final
+          - file: docs/c/searching
 
   - caption: ECE
     numbered: True
     chapters:
-      - file: docs/ece_intro
+      - file: docs/ece/ece_intro
         sections:
-          - file: docs/circuits_basics
-          - file: docs/java
-          - file: docs/javahw
-          
+          - file: docs/ece/circuits_basics
+
+  - caption: Backend Dev
+    numbered: True
+    chapters:
+      - file: docs/backend/java_intro
+        sections:
+          - file: docs/backend/java_basics
+          - file: docs/backend/java_oop
+          - file: docs/backend/jb

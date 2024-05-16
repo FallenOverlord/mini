@@ -49,6 +49,6 @@ Convert complex numbers between the two forms
 
 ::::
 
-[Download PDF](pp.pdf){download}
+
 
 
