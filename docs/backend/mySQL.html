@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Backend Roadmap &#8212; Cybersecurity QuickStart</title>
+    <title>5.18. mySQL Basics &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/backend/java_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/backend/mySQL';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.15. Java" href="java_basics.html" />
-    <link rel="prev" title="4.2. Circuits Basics" href="../ece/circuits_basics.html" />
+    <link rel="next" title="5.19. Jupyter Book Basics" href="jb.html" />
+    <link rel="prev" title="5.17. My Projects" href="java_projects.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -206,11 +206,11 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Dev</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. Backend Roadmap</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="java_intro.html">5. Backend Roadmap</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="java_basics.html">5.15. Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java_oop.html">5.16. Java OOP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java_projects.html">5.17. My Projects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mySQL.html">5.18. mySQL Basics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.18. mySQL Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jb.html">5.19. Jupyter Book Basics</a></li>
 </ul>
 </li>
@@ -268,7 +268,7 @@
       
       
       
-      <li><a href="../../_sources/docs/backend/java_intro.md" target="_blank"
+      <li><a href="../../_sources/docs/backend/mySQL.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Backend Roadmap</h1>
+    <h1>mySQL Basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -362,20 +362,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">5.1. JavaScript</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-for-backend-web-dev">5.2. Python for Backend Web Dev</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">5.3. PostgreSQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql">5.4. MySQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#springboot">5.5. SpringBoot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#springcloud">5.6. SpringCloud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#java-basics">5.7. Java Basics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">5.8. Docker</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#node-js">5.9. Node JS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis">5.10. Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphql">5.11. GraphQl</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firebase">5.12. Firebase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#django">5.13. Django</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">5.14. MongoDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">5.18.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-sql">5.18.1.1. Intro to SQL</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -387,52 +377,55 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="backend-roadmap">
-<h1><span class="section-number">5. </span>Backend Roadmap<a class="headerlink" href="#backend-roadmap" title="Link to this heading">#</a></h1>
-<section id="javascript">
-<h2><span class="section-number">5.1. </span>JavaScript<a class="headerlink" href="#javascript" title="Link to this heading">#</a></h2>
-</section>
-<section id="python-for-backend-web-dev">
-<h2><span class="section-number">5.2. </span>Python for Backend Web Dev<a class="headerlink" href="#python-for-backend-web-dev" title="Link to this heading">#</a></h2>
-</section>
-<section id="postgresql">
-<h2><span class="section-number">5.3. </span>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h2>
-</section>
-<section id="mysql">
-<h2><span class="section-number">5.4. </span>MySQL<a class="headerlink" href="#mysql" title="Link to this heading">#</a></h2>
-</section>
-<section id="springboot">
-<h2><span class="section-number">5.5. </span>SpringBoot<a class="headerlink" href="#springboot" title="Link to this heading">#</a></h2>
-</section>
-<section id="springcloud">
-<h2><span class="section-number">5.6. </span>SpringCloud<a class="headerlink" href="#springcloud" title="Link to this heading">#</a></h2>
-</section>
-<section id="java-basics">
-<h2><span class="section-number">5.7. </span>Java Basics<a class="headerlink" href="#java-basics" title="Link to this heading">#</a></h2>
-</section>
-<section id="docker">
-<h2><span class="section-number">5.8. </span>Docker<a class="headerlink" href="#docker" title="Link to this heading">#</a></h2>
-</section>
-<section id="node-js">
-<h2><span class="section-number">5.9. </span>Node JS<a class="headerlink" href="#node-js" title="Link to this heading">#</a></h2>
-</section>
-<section id="redis">
-<h2><span class="section-number">5.10. </span>Redis<a class="headerlink" href="#redis" title="Link to this heading">#</a></h2>
-</section>
-<section id="graphql">
-<h2><span class="section-number">5.11. </span>GraphQl<a class="headerlink" href="#graphql" title="Link to this heading">#</a></h2>
-</section>
-<section id="firebase">
-<h2><span class="section-number">5.12. </span>Firebase<a class="headerlink" href="#firebase" title="Link to this heading">#</a></h2>
-</section>
-<section id="django">
-<h2><span class="section-number">5.13. </span>Django<a class="headerlink" href="#django" title="Link to this heading">#</a></h2>
-</section>
-<section id="mongodb">
-<h2><span class="section-number">5.14. </span>MongoDB<a class="headerlink" href="#mongodb" title="Link to this heading">#</a></h2>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="mysql-basics">
+<h1><span class="section-number">5.18. </span>mySQL Basics<a class="headerlink" href="#mysql-basics" title="Link to this heading">#</a></h1>
+<p>mySQL is a relational database management system.<br />
+It is a software that manages databases.</p>
+<section id="introduction">
+<h2><span class="section-number">5.18.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>There is always something that should uniquely identify a row in the table(database).</p>
+<p>Columns represents attributes.<br />
+Primary Key: unique attributes for each row.<br />
+Segarate Key: a primary key that has no real-world implications.<br />
+Natural Key: a real-world attribute that is used as the primary key.<br />
+Foreign Key: Primary keys from another table. The way multiple tables connect.<br />
+Composite Key: when there is no sigle attribut that uniquely define a row, u need the bondle of two attributes that is unique for each row.<br />
+You can use two foriegn keys as a composite key.</p>
+<section id="intro-to-sql">
+<h3><span class="section-number">5.18.1.1. </span>Intro to SQL<a class="headerlink" href="#intro-to-sql" title="Link to this heading">#</a></h3>
+<p>A STANDARD language for interacting with RELATIONAL databases.<br />
+Queries: request made to DB management sys for specific info</p>
+<p>SQL = Data (Query + Definition + Control + Manipulation) Language.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">();</span>
+
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">student_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">major</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">);</span>
+
+<span class="k">DESCRIBE</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
+
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
+
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">gpa</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">gpa</span><span class="p">;</span>
+</pre></div>
 </div>
+<p>SQL Datatypes</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="nb">INT</span>
+<span class="nb">DECIMAL</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
+<span class="nb">VARCHAR</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">BLOB</span>
+<span class="nb">DATE</span>
+<span class="k">TIMESTAMP</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -466,20 +459,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../ece/circuits_basics.html"
+       href="java_projects.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.2. </span>Circuits Basics</p>
+        <p class="prev-next-title"><span class="section-number">5.17. </span>My Projects</p>
       </div>
     </a>
     <a class="right-next"
-       href="java_basics.html"
+       href="jb.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.15. </span>Java</p>
+        <p class="prev-next-title"><span class="section-number">5.19. </span>Jupyter Book Basics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -499,20 +492,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#javascript">5.1. JavaScript</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-for-backend-web-dev">5.2. Python for Backend Web Dev</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#postgresql">5.3. PostgreSQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mysql">5.4. MySQL</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#springboot">5.5. SpringBoot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#springcloud">5.6. SpringCloud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#java-basics">5.7. Java Basics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">5.8. Docker</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#node-js">5.9. Node JS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redis">5.10. Redis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphql">5.11. GraphQl</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firebase">5.12. Firebase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#django">5.13. Django</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mongodb">5.14. MongoDB</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">5.18.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-sql">5.18.1.1. Intro to SQL</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

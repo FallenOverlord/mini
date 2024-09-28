@@ -1,0 +1,856 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>5.17. My Projects &#8212; Cybersecurity QuickStart</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/backend/java_projects';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5.18. mySQL Basics" href="mySQL.html" />
+    <link rel="prev" title="5.16. Java OOP" href="java_oop.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/qe-logo-large.png" class="logo__image only-light" alt="Cybersecurity QuickStart - Home"/>
+    <script>document.write(`<img src="../../_static/qe-logo-large.png" class="logo__image only-dark" alt="Cybersecurity QuickStart - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Cybersecurity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cybersecurity/cs_intro.html">1. Cybersecurity intro</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/linux.html">1.1. Linux Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/sqlite.html">1.2. SQL General Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/nmap.html">1.3. nmap Basic Commands and Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cheatSheet.html">1.4. Commands Cheatsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/ctf.html">1.5. CTF Write Ups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cybersecurity/cpts.html">1.7. HTB CPTS Moduals</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">C Programming Language</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../c/c_intro.html">2. Welcome to C Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../c/struct.html">2.2. Basics of Data Structres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/linkedlist.html">2.3. Linked Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/final.html">2.4. APS 105 Final Review</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../c/searching.html">2.5. Searching Algorithms</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE244</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cpp/cpp_intro.html">3. Learn ECE244</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">4. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">4.2. Circuits Basics</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Dev</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="java_intro.html">5. Backend Roadmap</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="java_basics.html">5.15. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java_oop.html">5.16. Java OOP</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.17. My Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mySQL.html">5.18. mySQL Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jb.html">5.19. Jupyter Book Basics</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/backend/java_projects.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>My Projects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdf-generator">5.17.1. PDF generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">5.17.1.1. Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">5.17.1.2. Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-requirement-breakdown">5.17.1.2.1. Specific Requirement Breakdown</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">5.17.1.2.1.1. Functions</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">5.17.1.2.1.2. Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrought">5.17.1.2.2. Walkthrought</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="my-projects">
+<h1><span class="section-number">5.17. </span>My Projects<a class="headerlink" href="#my-projects" title="Link to this heading">#</a></h1>
+<section id="pdf-generator">
+<h2><span class="section-number">5.17.1. </span>PDF generator<a class="headerlink" href="#pdf-generator" title="Link to this heading">#</a></h2>
+<section id="requirements">
+<h3><span class="section-number">5.17.1.1. </span>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h3>
+<p>Generate an email consists of a PDF file generated using Java.</p>
+</section>
+<section id="solutions">
+<h3><span class="section-number">5.17.1.2. </span>Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h3>
+<section id="specific-requirement-breakdown">
+<h4><span class="section-number">5.17.1.2.1. </span>Specific Requirement Breakdown<a class="headerlink" href="#specific-requirement-breakdown" title="Link to this heading">#</a></h4>
+<section id="functions">
+<h5><span class="section-number">5.17.1.2.1.1. </span>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Getting the info that needs to be put in the pdf file</p></li>
+<li><p>Generate a PDF file/ generate a file of some kind of format and convert it into PDF format</p></li>
+<li><p>Choose a base email accnount and choose a target email account</p></li>
+<li><p>error handelling process</p></li>
+<li><p>exception handelling process</p></li>
+</ol>
+</section>
+<section id="constraints">
+<h5><span class="section-number">5.17.1.2.1.2. </span>Constraints<a class="headerlink" href="#constraints" title="Link to this heading">#</a></h5>
+<ol class="arabic simple">
+<li><p>Must use Java Programming Language</p></li>
+</ol>
+</section>
+</section>
+<section id="walkthrought">
+<h4><span class="section-number">5.17.1.2.2. </span>Walkthrought<a class="headerlink" href="#walkthrought" title="Link to this heading">#</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>C:<span class="se">\U</span>sers<span class="se">\M</span>ars<span class="se">\I</span>deaProjects
+</pre></div>
+</div>
+<p>PDFgen.java</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>com.itextpdf.io.font.PdfEncodings<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.io.font.constants.StandardFonts<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.kernel.font.PdfFont<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.kernel.font.PdfFontFactory<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.kernel.pdf.PdfDocument<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.kernel.pdf.PdfReader<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.kernel.pdf.PdfWriter<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.kernel.pdf.canvas.parser.PdfTextExtractor<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.layout.Document<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.layout.element.Paragraph<span class="p">;</span>
+import<span class="w"> </span>com.itextpdf.layout.properties.TextAlignment<span class="p">;</span>
+import<span class="w"> </span>java.io.IOException<span class="p">;</span>
+import<span class="w"> </span>java.util.*<span class="p">;</span>
+import<span class="w"> </span>javax.mail.*<span class="p">;</span>
+import<span class="w"> </span>javax.mail.internet.*<span class="p">;</span>
+import<span class="w"> </span>javax.activation.*<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>PDFgen<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;PDF File Name: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;.pdf&quot;</span><span class="p">;</span>
+
+<span class="w">        </span>//<span class="w"> </span>Recipient<span class="s1">&#39;s email ID needs to be mentioned.</span>
+<span class="s1">        String to0 = &quot;mars.wang@mail.utoronto.ca&quot;;</span>
+<span class="s1">        String to = &quot;chenxl8@asiainfo.com&quot;;</span>
+<span class="s1">        // Sender&#39;</span>s<span class="w"> </span>email<span class="w"> </span>ID<span class="w"> </span>needs<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span>mentioned
+<span class="w">        </span>String<span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3330525778@qq.com&quot;</span><span class="p">;</span>
+<span class="w">        </span>final<span class="w"> </span>String<span class="w"> </span><span class="nv">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;3330525778&quot;</span><span class="p">;</span>
+<span class="w">        </span>//auth<span class="w"> </span>code,<span class="w"> </span>not<span class="w"> </span>real<span class="w"> </span>password
+<span class="w">        </span>final<span class="w"> </span>String<span class="w"> </span><span class="nv">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;txgpyfurohtociid&quot;</span><span class="p">;</span>
+
+<span class="w">        </span>//<span class="w"> </span>SMTP<span class="w"> </span>server<span class="w"> </span>config
+<span class="w">        </span>String<span class="w"> </span><span class="nv">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;smtp.qq.com&quot;</span><span class="p">;</span>
+
+<span class="w">        </span>Properties<span class="w"> </span><span class="nv">props</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Properties<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>props.put<span class="o">(</span><span class="s2">&quot;mail.smtp.auth&quot;</span>,<span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>props.put<span class="o">(</span><span class="s2">&quot;mail.smtp.starttls.enable&quot;</span>,<span class="w"> </span><span class="s2">&quot;true&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>props.put<span class="o">(</span><span class="s2">&quot;mail.smtp.host&quot;</span>,<span class="w"> </span>host<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>props.put<span class="o">(</span><span class="s2">&quot;mail.smtp.port&quot;</span>,<span class="w"> </span><span class="s2">&quot;587&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>//<span class="w"> </span>Get<span class="w"> </span>the<span class="w"> </span>Session<span class="w"> </span>object.
+<span class="w">        </span>Session<span class="w"> </span><span class="nv">session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Session.getInstance<span class="o">(</span>props,
+<span class="w">                </span>new<span class="w"> </span>javax.mail.Authenticator<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                    </span>protected<span class="w"> </span>PasswordAuthentication<span class="w"> </span>getPasswordAuthentication<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                        </span><span class="k">return</span><span class="w"> </span>new<span class="w"> </span>PasswordAuthentication<span class="o">(</span>username,<span class="w"> </span>password<span class="o">)</span><span class="p">;</span>
+<span class="w">                    </span><span class="o">}</span>
+<span class="w">                </span><span class="o">})</span><span class="p">;</span>
+
+
+<span class="w">        </span>try<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>createPdf<span class="o">(</span>file,<span class="w"> </span>scanner<span class="o">)</span><span class="p">;</span>
+
+
+<span class="w">            </span>//<span class="w"> </span>Create<span class="w"> </span>a<span class="w"> </span>default<span class="w"> </span>MimeMessage<span class="w"> </span>object.
+<span class="w">            </span>Message<span class="w"> </span><span class="nv">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>MimeMessage<span class="o">(</span>session<span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Set<span class="w"> </span>From:<span class="w"> </span>header<span class="w"> </span>field<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>header.
+<span class="w">            </span>message.setFrom<span class="o">(</span>new<span class="w"> </span>InternetAddress<span class="o">(</span>from<span class="o">))</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Set<span class="w"> </span>To:<span class="w"> </span>header<span class="w"> </span>field<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>header.
+<span class="w">            </span>message.setRecipients<span class="o">(</span>Message.RecipientType.TO,
+<span class="w">                    </span>InternetAddress.parse<span class="o">(</span>to<span class="o">))</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Set<span class="w"> </span>Subject:<span class="w"> </span>header<span class="w"> </span>field
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot;Subject: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>message.setSubject<span class="o">(</span>scanner.nextLine<span class="o">())</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Create<span class="w"> </span>the<span class="w"> </span>message<span class="w"> </span>part
+<span class="w">            </span>BodyPart<span class="w"> </span><span class="nv">messageBodyPart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>MimeBodyPart<span class="o">()</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Set<span class="w"> </span>Subject:<span class="w"> </span>header<span class="w"> </span>field
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot;Subject: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>message.setSubject<span class="o">(</span>scanner.nextLine<span class="o">())</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Create<span class="w"> </span>a<span class="w"> </span>multipar<span class="w"> </span>message
+<span class="w">            </span>Multipart<span class="w"> </span><span class="nv">multipart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>MimeMultipart<span class="o">()</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Set<span class="w"> </span>text<span class="w"> </span>message<span class="w"> </span>part
+<span class="w">            </span>multipart.addBodyPart<span class="o">(</span>messageBodyPart<span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Part<span class="w"> </span>two<span class="w"> </span>is<span class="w"> </span>attachment
+<span class="w">            </span><span class="nv">messageBodyPart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>MimeBodyPart<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span>DataSource<span class="w"> </span><span class="nb">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>FileDataSource<span class="o">(</span>file<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>messageBodyPart.setDataHandler<span class="o">(</span>new<span class="w"> </span>DataHandler<span class="o">(</span><span class="nb">source</span><span class="o">))</span><span class="p">;</span>
+<span class="w">            </span>messageBodyPart.setFileName<span class="o">(</span>file<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>multipart.addBodyPart<span class="o">(</span>messageBodyPart<span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Send<span class="w"> </span>the<span class="w"> </span><span class="nb">complete</span><span class="w"> </span>message<span class="w"> </span>parts
+<span class="w">            </span>message.setContent<span class="o">(</span>multipart<span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span>//<span class="w"> </span>Send<span class="w"> </span>message
+<span class="w">            </span>Transport.send<span class="o">(</span>message<span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Sent message successfully....&quot;</span><span class="o">)</span><span class="p">;</span>
+
+
+
+<span class="w">        </span><span class="o">}</span><span class="w"> </span>catch<span class="w"> </span><span class="o">(</span>IOException<span class="w"> </span>e<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>e.printStackTrace<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>catch<span class="w"> </span><span class="o">(</span>MessagingException<span class="w"> </span>e2<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>throw<span class="w"> </span>new<span class="w"> </span>RuntimeException<span class="o">(</span>e2<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+
+
+
+
+
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>private<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>createPdf<span class="o">(</span>String<span class="w"> </span>file,<span class="w"> </span>Scanner<span class="w"> </span>scanner<span class="o">)</span><span class="w"> </span>throws<span class="w"> </span>IOException<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>PdfWriter<span class="w"> </span><span class="nv">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>PdfWriter<span class="o">(</span>file<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>PdfDocument<span class="w"> </span><span class="nv">pdfDoc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>PdfDocument<span class="o">(</span>writer<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>Document<span class="w"> </span><span class="nv">doc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Document<span class="o">(</span>pdfDoc<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>PdfFont<span class="w"> </span><span class="nv">titleFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>PdfFontFactory.createFont<span class="o">(</span>StandardFonts.HELVETICA_BOLDOBLIQUE<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>PdfFont<span class="w"> </span><span class="nv">myFont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>PdfFontFactory.createFont<span class="o">(</span>StandardFonts.TIMES_ROMAN<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>Paragraph<span class="w"> </span><span class="nv">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Paragraph<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;PDF Title: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>p1.add<span class="o">(</span>scanner.nextLine<span class="o">())</span><span class="p">;</span>
+<span class="w">        </span>p1.setTextAlignment<span class="o">(</span>TextAlignment.CENTER<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>p1.setFont<span class="o">(</span>titleFont<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>p1.setFontSize<span class="o">(</span><span class="m">28</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>doc.add<span class="o">(</span>p1<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>Paragraph<span class="w"> </span><span class="nv">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Paragraph<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>p3.add<span class="o">(</span><span class="s2">&quot;yoeaalsirrr!&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>p3.setFont<span class="o">(</span>myFont<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>p3.setFontSize<span class="o">(</span><span class="m">18</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>doc.add<span class="o">(</span>p3<span class="o">)</span><span class="p">;</span>
+
+
+<span class="w">        </span>doc.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+
+
+
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>pom.xml</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&lt;?xml<span class="w"> </span><span class="nv">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="w"> </span><span class="nv">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span>?&gt;
+&lt;project<span class="w"> </span><span class="nv">xmlns</span><span class="o">=</span><span class="s2">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+<span class="w">         </span>xmlns:xsi<span class="o">=</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w">         </span>xsi:schemaLocation<span class="o">=</span><span class="s2">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;
+<span class="w">    </span>&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+<span class="w">    </span>&lt;groupId&gt;org.example&lt;/groupId&gt;
+<span class="w">    </span>&lt;artifactId&gt;PDFgen&lt;/artifactId&gt;
+<span class="w">    </span>&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+<span class="w">    </span>&lt;properties&gt;
+<span class="w">        </span>&lt;maven.compiler.source&gt;21&lt;/maven.compiler.source&gt;
+<span class="w">        </span>&lt;maven.compiler.target&gt;21&lt;/maven.compiler.target&gt;
+<span class="w">        </span>&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+<span class="w">    </span>&lt;/properties&gt;
+
+
+<span class="w">    </span>&lt;dependencies&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;barcodes&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>barcodes<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;font-asian&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;forms&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>forms<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel<span class="w"> </span>and<span class="w"> </span>layout<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;hyph&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;io&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;kernel&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>kernel<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>io<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;layout&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>layout<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;pdfa&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>pdfa<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;sign&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>sign<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel,<span class="w"> </span>layout<span class="w"> </span>and<span class="w"> </span>forms<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;commons&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>sign<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel,<span class="w"> </span>layout<span class="w"> </span>and<span class="w"> </span>forms<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;styled-xml-parser&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>sign<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel,<span class="w"> </span>layout<span class="w"> </span>and<span class="w"> </span>forms<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;svg&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;7.2.1&lt;/version&gt;
+<span class="w">            </span>&lt;!--<span class="w"> </span>sign<span class="w"> </span>depends<span class="w"> </span>on<span class="w"> </span>kernel,<span class="w"> </span>layout<span class="w"> </span>and<span class="w"> </span>forms<span class="w"> </span>--&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;log4j-api&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;2.13.3&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;log4j-core&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;2.13.3&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;org.apache.logging.log4j&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;log4j-slf4j-impl&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;2.13.3&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+
+
+
+
+
+
+
+
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;com.sun.mail&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;javax.mail&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;1.6.2&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+<span class="w">        </span>&lt;dependency&gt;
+<span class="w">            </span>&lt;groupId&gt;javax.activation&lt;/groupId&gt;
+<span class="w">            </span>&lt;artifactId&gt;activation&lt;/artifactId&gt;
+<span class="w">            </span>&lt;version&gt;1.1.1&lt;/version&gt;
+<span class="w">        </span>&lt;/dependency&gt;
+
+
+
+
+
+
+
+
+<span class="w">    </span>&lt;/dependencies&gt;
+
+
+
+&lt;/project&gt;
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\backend"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="java_oop.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">5.16. </span>Java OOP</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="mySQL.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5.18. </span>mySQL Basics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pdf-generator">5.17.1. PDF generator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">5.17.1.1. Requirements</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">5.17.1.2. Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-requirement-breakdown">5.17.1.2.1. Specific Requirement Breakdown</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">5.17.1.2.1.1. Functions</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#constraints">5.17.1.2.1.2. Constraints</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#walkthrought">5.17.1.2.2. Walkthrought</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Miles Wang
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

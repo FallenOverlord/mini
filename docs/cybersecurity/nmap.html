@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/cybersecurity/nmap';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.4. Commands" href="cheatSheet.html" />
+    <link rel="next" title="1.4. Commands Cheatsheet" href="cheatSheet.html" />
     <link rel="prev" title="1.2. SQL General Commands" href="sqlite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,7 +174,7 @@
 <li class="toctree-l2"><a class="reference internal" href="linux.html">1.1. Linux Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite.html">1.2. SQL General Commands</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. nmap Basic Commands and Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cheatSheet.html">1.4. Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatSheet.html">1.4. Commands Cheatsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ctf.html">1.5. CTF Write Ups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpts.html">1.7. HTB CPTS Moduals</a></li>
@@ -191,19 +191,27 @@
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE244</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cpp/cpp_intro.html">3. Learn ECE244</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">3. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">3.2. Circuits Basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">4. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">4.2. Circuits Basics</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Dev</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../backend/java_intro.html">4. Backend Roadmap</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../backend/java_basics.html">4.15. Java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../backend/java_oop.html">4.16. Java OOP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../backend/jb.html">4.17. Jupyter Book Basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../backend/java_intro.html">5. Backend Roadmap</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_basics.html">5.15. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_oop.html">5.16. Java OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_projects.html">5.17. My Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/mySQL.html">5.18. mySQL Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/jb.html">5.19. Jupyter Book Basics</a></li>
 </ul>
 </li>
 </ul>
@@ -358,7 +366,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-scan-results">1.3.2. Saving scan results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#service-enumeration">1.3.3. Service Enumeration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firewall-evasion">1.3.4. Firewall Evasion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns-scan-ips-ids-evasion-2">1.3.4.1. DNS Scan (IPS/IDS Evasion 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns-scan-ips-ids-evasion-2">1.3.4.1. DNS Scan (IPS/IDS Evasion 2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-identify-the-publicly-accessible-dns-server">1.3.4.1.1. Steps to Identify the Publicly Accessible DNS Server</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#service-version-detection-ips-ids-3">1.3.4.2. Service Version Detection IPS/IDS 3</a></li>
 </ul>
 </li>
 </ul>
@@ -560,7 +572,225 @@ Host<span class="w"> </span>script<span class="w"> </span>results:
 <span class="p">|</span>_<span class="w">    </span>all.spamrats.com<span class="w"> </span>-<span class="w"> </span>FAIL
 </pre></div>
 </div>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>
+<p>It wouldnt connect no matter how evasive the scann is.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span>-T1<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>--dns-server<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>--script<span class="o">=</span><span class="s2">&quot;dns-service-discovery,dns-recursion,dns-zone-transfer&quot;</span><span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.2.48
+PORT<span class="w">   </span>STATE<span class="w">    </span>SERVICE<span class="w"> </span>REASON<span class="w">      </span>VERSION
+<span class="m">53</span>/tcp<span class="w"> </span>filtered<span class="w"> </span>domain<span class="w">  </span>no-response
+Final<span class="w"> </span><span class="nb">times</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>host:<span class="w"> </span>srtt:<span class="w"> </span><span class="m">65523</span><span class="w"> </span>rttvar:<span class="w"> </span><span class="m">65523</span><span class="w">  </span>to:<span class="w"> </span><span class="m">1000000</span>
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span>-T1<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>--dns-server<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>--script<span class="o">=</span><span class="s2">&quot;dns-service-discovery,dns-recursion,dns-zone-transfer&quot;</span><span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.2.48
+</pre></div>
+</div>
+<section id="steps-to-identify-the-publicly-accessible-dns-server">
+<h4><span class="section-number">1.3.4.1.1. </span>Steps to Identify the Publicly Accessible DNS Server<a class="headerlink" href="#steps-to-identify-the-publicly-accessible-dns-server" title="Link to this heading">#</a></h4>
+<p>Identify All Interfaces: Scan for other interfaces or IP addresses associated with the target.<br />
+Check Public Records: Use tools like whois, nslookup, or dig to find public DNS records associated with the domain.<br />
+Leverage Subdomain Enumeration: Use tools to enumerate subdomains that might reveal additional publicly accessible services.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.125<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-c1qvcg4v7i<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>nmap<span class="w"> </span>-sP<span class="w"> </span><span class="m">10</span>.129.2.0/24
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2024</span>-05-18<span class="w"> </span><span class="m">10</span>:46<span class="w"> </span>BST
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.2.48
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.065s<span class="w"> </span>latency<span class="o">)</span>.
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.2.210
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.066s<span class="w"> </span>latency<span class="o">)</span>.
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">256</span><span class="w"> </span>IP<span class="w"> </span>addresses<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="w"> </span>hosts<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">10</span>.71<span class="w"> </span>seconds
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span>-T1<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>--dns-server<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>--script<span class="o">=</span><span class="s2">&quot;dns-service-discovery,dns-recursion,dns-zone-transfer&quot;</span><span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.229.175
+PORT<span class="w">   </span>STATE<span class="w">  </span>SERVICE<span class="w"> </span>REASON<span class="w">       </span>VERSION
+<span class="m">53</span>/tcp<span class="w"> </span>closed<span class="w"> </span>domain<span class="w">  </span>reset<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span>
+Final<span class="w"> </span><span class="nb">times</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>host:<span class="w"> </span>srtt:<span class="w"> </span><span class="m">65541</span><span class="w"> </span>rttvar:<span class="w"> </span><span class="m">49239</span><span class="w">  </span>to:<span class="w"> </span><span class="m">1000000</span>
+
+nslookup<span class="w"> </span><span class="m">10</span>.129.2.210
+dig<span class="w"> </span><span class="m">10</span>.129.2.210<span class="w"> </span>ANY
+
+<span class="c1"># Full port scan on 10.129.2.48</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-p-<span class="w"> </span>-T1<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.2.48
+
+<span class="c1"># Full port scan on 10.129.2.210</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-p-<span class="w"> </span>-T1<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.2.210
+
+<span class="c1"># Service version detection on discovered open ports (example ports 80 and 443)</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span>,443<span class="w"> </span>--dns-server<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>--script<span class="o">=</span><span class="s2">&quot;service-version&quot;</span><span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.2.48
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">80</span>,443<span class="w"> </span>--dns-server<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>--script<span class="o">=</span><span class="s2">&quot;service-version&quot;</span><span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.2.210
+
+http://10.129.2.48/status.php
+
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span>-T1<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>--dns-server<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>--script<span class="o">=</span><span class="s2">&quot;dns-service-discovery,dns-recursion,dns-zone-transfer&quot;</span><span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.229.175<span class="w"> </span>–packet-trace
+
+nc<span class="w"> </span><span class="m">10</span>.129.229.175<span class="w"> </span><span class="m">53</span>
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sSU<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span>--script<span class="w"> </span>dns-nsid<span class="w"> </span><span class="m">10</span>.129.229.175
+PORT<span class="w">   </span>STATE<span class="w">    </span>SERVICE
+<span class="m">53</span>/tcp<span class="w"> </span>filtered<span class="w"> </span>domain
+<span class="m">53</span>/udp<span class="w"> </span>open<span class="w">     </span>domain
+<span class="p">|</span><span class="w"> </span>dns-nsid:<span class="w"> </span>
+<span class="p">|</span>_<span class="w">  </span>bind.version:<span class="w"> </span>HTB<span class="o">{</span>GoTtgUnyze9Psw4vGjcuMpHRp<span class="o">}</span>
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sU<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>--dns-server<span class="w"> </span><span class="m">8</span>.8.8.8<span class="w"> </span>--script<span class="o">=</span><span class="s2">&quot;dns-service-discovery,dns-recursion,dns-zone-transfer&quot;</span><span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.229.175
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>REASON
+<span class="m">53</span>/udp<span class="w"> </span>open<span class="w">  </span>domain<span class="w">  </span>udp-response<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span>
+Final<span class="w"> </span><span class="nb">times</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>host:<span class="w"> </span>srtt:<span class="w"> </span><span class="m">65480</span><span class="w"> </span>rttvar:<span class="w"> </span><span class="m">49175</span><span class="w">  </span>to:<span class="w"> </span><span class="m">1000000</span>
+
+<span class="p">;;</span><span class="w"> </span>OPT<span class="w"> </span>PSEUDOSECTION:
+<span class="p">;</span><span class="w"> </span>EDNS:<span class="w"> </span>version:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>flags:<span class="p">;</span><span class="w"> </span>udp:<span class="w"> </span><span class="m">4096</span>
+<span class="p">;</span><span class="w"> </span>COOKIE:<span class="w"> </span>20d5279e9b155f8b253c4a34664880bff2bcb050cf8b2372<span class="w"> </span><span class="o">(</span>good<span class="o">)</span>
+<span class="p">;;</span><span class="w"> </span>QUESTION<span class="w"> </span>SECTION:
+<span class="p">;</span>version.bind.<span class="w">			</span>CH<span class="w">	</span>TXT
+
+<span class="p">;;</span><span class="w"> </span>ANSWER<span class="w"> </span>SECTION:
+version.bind.<span class="w">		</span><span class="m">0</span><span class="w">	</span>CH<span class="w">	</span>TXT<span class="w">	</span><span class="s2">&quot;HTB{GoTtgUnyze9Psw4vGjcuMpHRp}&quot;</span>
+
+<span class="p">;;</span><span class="w"> </span>AUTHORITY<span class="w"> </span>SECTION:
+version.bind.<span class="w">		</span><span class="m">0</span><span class="w">	</span>CH<span class="w">	</span>NS<span class="w">	</span>version.bind.
+</pre></div>
+</div>
+</section>
+</section>
+<section id="service-version-detection-ips-ids-3">
+<h3><span class="section-number">1.3.4.2. </span>Service Version Detection IPS/IDS 3<a class="headerlink" href="#service-version-detection-ips-ids-3" title="Link to this heading">#</a></h3>
+<p>Now our client wants to know if it is possible to find out the version of the running services. Identify the version of service our client was talking about and submit the flag as the answer.</p>
+<p>FTP (File Transfer Protocol): Used for transferring large files over the internet.<br />
+SFTP/FTPS (Secure FTP): Secure versions of FTP that use encryption to protect data during transfer.<br />
+HTTP/HTTPS: Web servers that might host large files for download.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.125<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-c1qvcg4v7i<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47
+Starting<span class="w"> </span>Nmap<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org<span class="w"> </span><span class="o">)</span><span class="w"> </span>at<span class="w"> </span><span class="m">2024</span>-05-18<span class="w"> </span><span class="m">11</span>:23<span class="w"> </span>BST
+Nmap<span class="w"> </span>scan<span class="w"> </span>report<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.2.47
+Host<span class="w"> </span>is<span class="w"> </span>up<span class="w"> </span><span class="o">(</span><span class="m">0</span>.065s<span class="w"> </span>latency<span class="o">)</span>.
+Not<span class="w"> </span>shown:<span class="w"> </span><span class="m">869</span><span class="w"> </span>closed<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>conn-refused<span class="o">)</span>,<span class="w"> </span><span class="m">129</span><span class="w"> </span>filtered<span class="w"> </span>tcp<span class="w"> </span>ports<span class="w"> </span><span class="o">(</span>no-response<span class="o">)</span>
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http
+
+Nmap<span class="w"> </span><span class="k">done</span>:<span class="w"> </span><span class="m">1</span><span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span>host<span class="w"> </span>up<span class="o">)</span><span class="w"> </span>scanned<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">2</span>.50<span class="w"> </span>seconds
+
+nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>-sV<span class="w"> </span><span class="m">10</span>.129.2.47
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.7<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">21</span>,22,80,443,445,873,2049<span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.220.154
+PORT<span class="w">     </span>STATE<span class="w">    </span>SERVICE<span class="w">      </span>REASON<span class="w">         </span>VERSION
+<span class="m">21</span>/tcp<span class="w">   </span>closed<span class="w">   </span>ftp<span class="w">          </span>reset<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span>
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">     </span>ssh<span class="w">          </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span><span class="w"> </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.7<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">   </span>open<span class="w">     </span>http<span class="w">         </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span><span class="w"> </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="m">443</span>/tcp<span class="w">  </span>filtered<span class="w"> </span>https<span class="w">        </span>no-response
+<span class="m">445</span>/tcp<span class="w">  </span>filtered<span class="w"> </span>microsoft-ds<span class="w"> </span>no-response
+<span class="m">873</span>/tcp<span class="w">  </span>filtered<span class="w"> </span>rsync<span class="w">        </span>no-response
+<span class="m">2049</span>/tcp<span class="w"> </span>closed<span class="w">   </span>nfs<span class="w">          </span>reset<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+
+<span class="c1">#Full port scan</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-p-<span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.220.154
+
+<span class="c1">#Service Version Detection</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>--scan-delay<span class="w"> </span>1s<span class="w"> </span>-v<span class="w"> </span>-d<span class="w"> </span><span class="m">10</span>.129.220.154
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>REASON<span class="w">         </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span><span class="w"> </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.7<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>syn-ack<span class="w"> </span>ttl<span class="w"> </span><span class="m">63</span><span class="w"> </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+Final<span class="w"> </span><span class="nb">times</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>host:<span class="w"> </span>srtt:<span class="w"> </span><span class="m">8899</span><span class="w"> </span>rttvar:<span class="w"> </span><span class="m">5147</span><span class="w">  </span>to:<span class="w"> </span><span class="m">1000000</span>
+
+<span class="c1">#Check DNS info</span>
+dig<span class="w"> </span>@10.129.220.154<span class="w"> </span>version.bind<span class="w"> </span>txt<span class="w"> </span>chaos
+
+<span class="c1">#Scan for open ports</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-T4<span class="w"> </span>-p-<span class="w"> </span>-v<span class="w"> </span><span class="m">10</span>.129.220.154
+
+<span class="c1">#UDP probes</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sU<span class="w"> </span>-T4<span class="w"> </span>-p-<span class="w"> </span>-v<span class="w"> </span><span class="m">10</span>.129.220.154
+
+<span class="c1">#Evasive Scan</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span>-sS<span class="w"> </span>-p-<span class="w"> </span>-T2<span class="w"> </span>-f<span class="w"> </span>--scan-delay<span class="w"> </span>500ms<span class="w"> </span>-D<span class="w"> </span>RND:10<span class="w"> </span>--randomize-hosts<span class="w"> </span>--source-port<span class="w"> </span><span class="m">80</span><span class="w"> </span>-v<span class="w"> </span><span class="m">10</span>.129.220.154
+
+<span class="c1">#system</span>
+<span class="m">10</span>.129.2.47
+</pre></div>
+</div>
+<p>It seems that it there is only 2 open ports on the system, p22 and p80, and htb is not looking for their service versions.<br />
+checking for UDP access</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmap<span class="w"> </span>-sSU<span class="w"> </span>-p-<span class="w"> </span>-sV<span class="w"> </span><span class="m">10</span>.129.2.47
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>-p-<span class="w"> </span>-sA<span class="w"> </span><span class="m">10</span>.129.2.47
+
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span>-p-<span class="w"> </span>-sA<span class="w"> </span>-Pn<span class="w"> </span>-n<span class="w"> </span>--disable-arp-ping<span class="w"> </span>--packet-trace
+
+<span class="c1">#decoy scan</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80<span class="w"> </span>-sV<span class="w"> </span>-Pn<span class="w"> </span>-n<span class="w"> </span>--disable-arp-ping<span class="w"> </span>--packet-trace<span class="w"> </span>-D<span class="w"> </span>RND:5
+PORT<span class="w">   </span>STATE<span class="w"> </span>SERVICE<span class="w"> </span>VERSION
+<span class="m">22</span>/tcp<span class="w"> </span>open<span class="w">  </span>ssh<span class="w">     </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.7<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w"> </span>open<span class="w">  </span>http<span class="w">    </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+</pre></div>
+</div>
+<p>IDS/IPS
+Like the firewall, the intrusion detection system (IDS) and intrusion prevention system (IPS) are also software-based components. IDS scans the network for potential attacks, analyzes them, and reports any detected attacks. IPS complements IDS by taking specific defensive measures if a potential attack should have been detected. The analysis of such attacks is based on pattern matching and signatures. If specific patterns are detected, such as a service detection scan, IPS may prevent the pending connection attempts.</p>
+<p>Detect IDS/IPS
+Unlike firewalls and their rules, the detection of IDS/IPS systems is much more difficult because these are passive traffic monitoring systems. IDS systems examine all connections between hosts. If the IDS finds packets containing the defined contents or specifications, the administrator is notified and takes appropriate action in the worst case.</p>
+<p>IPS systems take measures configured by the administrator independently to prevent potential attacks automatically. It is essential to know that IDS and IPS are different applications and that IPS serves as a complement to IDS.</p>
+<p>Several virtual private servers (VPS) with different IP addresses are recommended to determine whether such systems are on the target network during a penetration test. If the administrator detects such a potential attack on the target network, the first step is to block the IP address from which the potential attack comes. As a result, we will no longer be able to access the network using that IP address, and our Internet Service Provider (ISP) will be contacted and blocked from all access to the Internet.</p>
+<p>IDS systems alone are usually there to help administrators detect potential attacks on their network. They can then decide how to handle such connections. We can trigger certain security measures from an administrator, for example, by aggressively scanning a single port and its service. Based on whether specific security measures are taken, we can detect if the network has some monitoring applications or not.</p>
+<p>One method to determine whether such IPS system is present in the target network is to scan from a single host (VPS). If at any time this host is blocked and has no access to the target network, we know that the administrator has taken some security measures. Accordingly, we can continue our penetration test with another VPS.</p>
+<p>Consequently, we know that we need to be quieter with our scans and, in the best case, disguise all interactions with the target network and its services.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span>-p<span class="w"> </span><span class="m">22</span>,80,50000<span class="w"> </span>-sV<span class="w"> </span>-sS<span class="w"> </span>-Pn<span class="w"> </span>-n<span class="w"> </span>--disable-arp-ping<span class="w"> </span>--packet-trace<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span>-e<span class="w"> </span>tun0<span class="w"> </span>-D<span class="w"> </span>RND:10
+PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE<span class="w">    </span>VERSION
+<span class="m">22</span>/tcp<span class="w">    </span>open<span class="w">  </span>ssh<span class="w">        </span>OpenSSH<span class="w"> </span><span class="m">7</span>.6p1<span class="w"> </span>Ubuntu<span class="w"> </span>4ubuntu0.7<span class="w"> </span><span class="o">(</span>Ubuntu<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>protocol<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<span class="m">80</span>/tcp<span class="w">    </span>open<span class="w">  </span>http<span class="w">       </span>Apache<span class="w"> </span>httpd<span class="w"> </span><span class="m">2</span>.4.29<span class="w"> </span><span class="o">((</span>Ubuntu<span class="o">))</span>
+<span class="m">50000</span>/tcp<span class="w"> </span>open<span class="w">  </span>tcpwrapped
+Service<span class="w"> </span>Info:<span class="w"> </span>OS:<span class="w"> </span>Linux<span class="p">;</span><span class="w"> </span>CPE:<span class="w"> </span>cpe:/o:linux:linux_kernel
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>ncat<span class="w"> </span>-nv<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span><span class="m">50000</span>
+ncat<span class="w"> </span>-nv<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span><span class="m">50000</span>
+
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span><span class="w"> </span>-O
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span>-n<span class="w"> </span>-Pn<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span><span class="w"> </span>-O<span class="w"> </span>-S<span class="w"> </span><span class="m">10</span>.129.2.200<span class="w"> </span>-e<span class="w"> </span>tun0
+
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span>-p<span class="w"> </span><span class="m">50000</span><span class="w"> </span>-sS<span class="w"> </span>-Pn<span class="w"> </span>-n<span class="w"> </span>--disable-arp-ping<span class="w"> </span>--packet-trace<span class="w"> </span>--source-port<span class="w"> </span><span class="m">53</span>
+PORT<span class="w">      </span>STATE<span class="w"> </span>SERVICE
+<span class="m">50000</span>/tcp<span class="w"> </span>open<span class="w">  </span>ibm-db2
+
+nc<span class="w"> </span>-nv<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span><span class="m">50000</span>
+
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span>-p<span class="w"> </span><span class="m">50000</span><span class="w"> </span>-sS<span class="w"> </span>-Pn<span class="w"> </span>-n<span class="w"> </span>--disable-arp-ping<span class="w"> </span>--packet-trace
+
+nc<span class="w"> </span>-nv<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span><span class="m">50000</span><span class="w"> </span>
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.125<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-78pmn8pedq<span class="o">]</span>─<span class="o">[</span>~/Desktop<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>nc<span class="w"> </span>-nv<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span><span class="m">50000</span><span class="w"> </span>
+Ncat:<span class="w"> </span>Version<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org/ncat<span class="w"> </span><span class="o">)</span>
+libnsock<span class="w"> </span>mksock_bind_addr<span class="o">()</span>:<span class="w"> </span>Bind<span class="w"> </span>to<span class="w"> </span><span class="m">0</span>.0.0.0:53<span class="w"> </span>failed<span class="w"> </span><span class="o">(</span>IOD<span class="w"> </span><span class="c1">#1): Permission denied (13)</span>
+Ncat:<span class="w"> </span>TIMEOUT.
+
+sudo<span class="w"> </span>nc<span class="w"> </span>-nv<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span><span class="m">50000</span>
+┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.125<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-78pmn8pedq<span class="o">]</span>─<span class="o">[</span>~/Desktop<span class="o">]</span>
+└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>nc<span class="w"> </span>-nv<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">10</span>.129.2.47<span class="w"> </span><span class="m">50000</span>
+Ncat:<span class="w"> </span>Version<span class="w"> </span><span class="m">7</span>.93<span class="w"> </span><span class="o">(</span><span class="w"> </span>https://nmap.org/ncat<span class="w"> </span><span class="o">)</span>
+Ncat:<span class="w"> </span>Connected<span class="w"> </span>to<span class="w"> </span><span class="m">10</span>.129.2.47:50000.
+<span class="m">220</span><span class="w"> </span>HTB<span class="o">{</span>kjnsdf2n982n1827eh76238s98di1w6<span class="o">}</span>
+
+
+<span class="m">10</span>.129.42.195
+<span class="c1"># find other name server</span>
+dig<span class="w"> </span>ns<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.42.195
+<span class="c1"># find the server version</span>
+dig<span class="w"> </span>CH<span class="w"> </span>TXT<span class="w"> </span>version.bind<span class="w"> </span>@10.129.42.195
+<span class="c1"># show all disclosable available entries(zone included)</span>
+dig<span class="w"> </span>any<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.14.128
+
+<span class="c1"># Zone Trans</span>
+TCP<span class="w"> </span>-p<span class="w"> </span><span class="m">53</span><span class="w"> </span>using<span class="w"> </span>rndc-key
+
+<span class="c1"># may show internal ip addr/ hostnames</span>
+dig<span class="w"> </span>axfr<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.42.128
+
+<span class="c1"># brute force possible host names</span>
+dig<span class="w"> </span>axfr<span class="w"> </span>internal.inlanefreight.htb<span class="w"> </span>@10.129.42.128
+
+<span class="c1"># subdomain bruteforcing</span>
+<span class="k">for</span><span class="w"> </span>sub<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>/opt/useful/SecLists/Discovery/DNS/subdomains-top1million-110000.txt<span class="k">)</span><span class="p">;</span><span class="k">do</span><span class="w"> </span>dig<span class="w"> </span><span class="nv">$sub</span>.inlanefreight.htb<span class="w"> </span>@10.129.42.195<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;;\|SOA&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;/^\s*$/d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="nv">$sub</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>subdomains.txt<span class="p">;</span><span class="k">done</span>
+
+<span class="c1">#alternative</span>
+dnsenum<span class="w"> </span>--dnsserver<span class="w"> </span><span class="m">10</span>.129.42.195<span class="w"> </span>--enum<span class="w"> </span>-p<span class="w"> </span><span class="m">0</span><span class="w"> </span>-s<span class="w"> </span><span class="m">0</span><span class="w"> </span>-o<span class="w"> </span>subdomains.txt<span class="w"> </span>-f<span class="w"> </span>/opt/useful/SecLists/Discovery/DNS/subdomains-top1million-110000.txt<span class="w"> </span>inlanefreight.htb
 </pre></div>
 </div>
 </section>
@@ -611,7 +841,7 @@ Host<span class="w"> </span>script<span class="w"> </span>results:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>Commands</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Commands Cheatsheet</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -635,7 +865,11 @@ Host<span class="w"> </span>script<span class="w"> </span>results:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-scan-results">1.3.2. Saving scan results</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#service-enumeration">1.3.3. Service Enumeration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firewall-evasion">1.3.4. Firewall Evasion</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns-scan-ips-ids-evasion-2">1.3.4.1. DNS Scan (IPS/IDS Evasion 2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns-scan-ips-ids-evasion-2">1.3.4.1. DNS Scan (IPS/IDS Evasion 2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#steps-to-identify-the-publicly-accessible-dns-server">1.3.4.1.1. Steps to Identify the Publicly Accessible DNS Server</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#service-version-detection-ips-ids-3">1.3.4.2. Service Version Detection IPS/IDS 3</a></li>
 </ul>
 </li>
 </ul>
