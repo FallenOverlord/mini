@@ -2313,7 +2313,49 @@ Name: Cybersecurity QuickStart ID: 3 Author:Zhongyi Wang Price: 3000.0
 
 >quit
 ```
+#### Q5
+```bash
+package hackerrank;
 
+import java.io.*;
+import java.util.*;
+
+public class list {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int length = Integer.parseInt(scanner.nextLine());  // Get the number of initial elements
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        // Read initial array elements
+        String[] elements = scanner.nextLine().split(" ");
+        for (int i = 0; i < length; i++) {
+            arr.add(Integer.parseInt(elements[i]));
+        }
+
+        int numQueries = Integer.parseInt(scanner.nextLine());  // Number of queries
+        for (int i = 0; i < numQueries; i++) {
+            String command = scanner.nextLine();
+            if (command.equals("Insert")) {
+                String[] parts = scanner.nextLine().split(" ");
+                int index = Integer.parseInt(parts[0]);
+                int value = Integer.parseInt(parts[1]);
+                arr.add(index, value);
+            } else if (command.equals("Delete")) {
+                int index = Integer.parseInt(scanner.nextLine());
+                arr.remove(index);
+            }
+        }
+
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        scanner.close();
+    }
+}
+
+```
 ## Hash maps
 Key - Value pairs, just like Python Dictionary.  
 To use hashmap, you nned to first import the hashmap class.  
@@ -2352,7 +2394,6 @@ So to ensure that at least we get something from the query we can set a default 
 examScores.getOrDefault(")
 
 ```
-
 
 ### Clear a hashmap
 
@@ -2419,4 +2460,325 @@ examScores.forEach((subject, score) -> {
 });
 
 ```
+
+
+## Stack
+In computer science, a stack or LIFO (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes the last element that was added.
+
+### Basic Operations of a Stack
+Push: Add an element to the top of the stack.
+Pop: Remove and return the top element of the stack. If the stack is empty, this operation might throw an exception.
+Peek: Return the top element without removing it from the stack.
+IsEmpty: Check if the stack is empty.
+
+#### Basic Examples of using a Stack
+
+```bash
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a stack
+        Stack<Integer> stack = new Stack<>();
+
+        // Pushing elements onto the stack
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        // Displaying the top element
+        System.out.println("Top element: " + stack.peek());
+
+        // Popping elements from the stack
+        while (!stack.isEmpty()) {
+            System.out.println("Popped element: " + stack.pop());
+        }
+    }
+}
+
+
+```
+
+A more mordern approach would be using deque as an alternative.
+
+```bash
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a stack using Deque
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        // Pushing elements onto the stack
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        // Displaying the top element
+        System.out.println("Top element: " + stack.peek());
+
+        // Popping elements from the stack
+        while (!stack.isEmpty()) {
+            System.out.println("Popped element: " + stack.pop());
+        }
+    }
+}
+
+```
+
+#### Balanced String Example
+```bash
+package hackerrank;
+
+import java.util.*;
+
+public class Stack {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Deque<String> stack = new ArrayDeque<>();
+
+        while (scanner.hasNext()) {
+            char[] originalInput = scanner.nextLine().toCharArray();
+            boolean is_balanced = true;
+            for (char c : originalInput) {
+                if (c == '(' || c == '[' || c == '{') {
+                    stack.push(String.valueOf(c));
+                } else if (c == ')' || c == ']' || c == '}') {
+                    String topEle = String.valueOf(stack.peek());
+                    if (topEle.equals(String.valueOf('(')) || topEle.equals(String.valueOf('[')) || topEle.equals(String.valueOf('{'))) {
+                        stack.pop();
+                    } else {
+                        is_balanced = false;
+                        break;
+                    }
+                }
+            }
+
+            if (is_balanced && stack.isEmpty()) {
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+                stack.clear();
+            }
+        }
+    }
+}
+```
+
+## Set
+In Java, a Set is a collection that does not allow duplicate elements. This means it can be very useful for storing unique items. Java provides several implementations of the Set interface, each with different characteristics:
+
+HashSet: Offers the best performance for the operations of adding, removing, and checking if an item exists. It does not maintain the order of elements.
+LinkedHashSet: Similar to HashSet but also maintains the insertion order of the elements.
+TreeSet: Stores elements in a sorted (ascending) order. It is useful when sorted order retrieval is needed.
+
+### Basic set operations
+
+
+### HashSet
+
+```bash
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        Set<String> fruits = new HashSet<>();
+
+        // Adding elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+
+        // Adding a duplicate element (which will not be added)
+        fruits.add("Apple");
+
+        // Check if an element exists
+        if (fruits.contains("Banana")) {
+            System.out.println("Banana is in the set");
+        }
+
+        // Iterate over the set
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        // Size of the set
+        System.out.println("There are " + fruits.size() + " elements in the set.");
+    }
+}
+
+```
+
+## Generic Types
+
+### Generic Methods
+Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Using generic methods, you can write a single method declaration that can be called with arguments of different types, based on the type of arguments passed to the method. The compiler will ensure that the parameters are correctly typed.
+
+```bash
+public class GenericMethodExample {
+
+    // A generic method to print an array of any type
+    public static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
+        String[] stringArray = {"hello", "world"};
+
+        printArray(intArray);
+        printArray(doubleArray);
+        printArray(stringArray);
+    }
+}
+```
+
+## Queue
+
+### Priority Queue
+```bash
+Class Priorities
+
+    // Define a priority queue to store students with a comparator
+    Define priorityQueue as PriorityQueue of Student
+
+    Method getStudents(events as List of String) returns List of Student
+        // Loop through each event in the events list
+        For each event in events
+            // Split the event string into components
+            Split event into parts
+
+            // Check the first part of the event to determine the action
+            If parts[0] is "ENTER"
+                // Create a new student using the remaining parts of the event
+                student = new Student(parts[3] as Integer, parts[1] as String, parts[2] as Double)
+                // Add the student to the priority queue
+                priorityQueue.add(student)
+            Else if parts[0] is "SERVED"
+                // Remove the student with the highest priority from the queue
+                priorityQueue.poll()
+
+        // Create a list to hold the remaining students
+        remainingStudents = new List of Student
+
+        // Empty the priority queue into remainingStudents in priority order
+        While priorityQueue is not empty
+            remainingStudents.add(priorityQueue.poll())
+
+        // Return the list of remaining students
+        Return remainingStudents
+End Class
+
+```
+
+```bash
+package hackerrank;
+import java.util.*;
+
+public class PriorityQueuePractise {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int entries = scanner.nextInt();
+        scanner.nextLine();
+
+        // Read the next line of input
+        String inputLine = scanner.nextLine();
+
+        // Split the input line into parts based on spaces
+        String[] parts = inputLine.split(" ");
+
+
+
+
+}
+
+class Student{
+    private int id;
+    private String name;
+    private double cgpa;
+
+    public Student(int id, String name, double cgpa) {
+        this.id = id;
+        this.name = name;
+        this.cgpa = cgpa;
+    }
+    // Getter for the student ID
+    public int getID() {
+        return id;
+    }
+
+    // Getter for the student name
+    public String getName() {
+        return name;
+    }
+
+    // Getter for the student CGPA
+    public double getCGPA() {
+        return cgpa;
+    }
+}
+
+class Priority{
+    public List<Student> getStudents(List<String> events){
+        PriorityQueue<Student> Q = new PriorityQueue<>();
+
+        for (String event: events){
+            // Split the input line into parts based on spaces
+            String[] parts = event.split(" ");
+
+            // Assign and parse parts to variables
+            String op = parts[0];
+            String name = parts[1];
+            double cgpa = Double.parseDouble(parts[2]);
+            int id = Integer.parseInt(parts[3]);
+
+            switch (op){
+                case "SERVED":{
+                    //search and deque
+                    Q.poll();
+                    break;
+                }
+                case "ENTER":{
+                    //queue in
+                    Student student = new Student(id, name, cgpa);
+                    Q.offer(student);
+                    break;
+                }
+            }
+            //order Q into a proiority queue
+
+
+        }
+
+        //print remaining list
+
+    }
+
+    @Override
+    public int compare(Student s1, Student s2) {
+        if (Double.compare(s1.getCGPA(), s2.getCGPA()) == 0) {
+            return s1.getName().compareTo(s2.getName());
+        }
+        return Double.compare(s2.getCGPA(), s1.getCGPA());
+    }
+
+    }
+
+}
+```
+
+
+
+
+
+
+
 

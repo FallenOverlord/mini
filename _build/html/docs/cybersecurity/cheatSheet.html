@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.4. Commands &#8212; Cybersecurity QuickStart</title>
+    <title>1.4. Commands Cheatsheet &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -174,7 +174,7 @@
 <li class="toctree-l2"><a class="reference internal" href="linux.html">1.1. Linux Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sqlite.html">1.2. SQL General Commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nmap.html">1.3. nmap Basic Commands and Examples</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Commands</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.4. Commands Cheatsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ctf.html">1.5. CTF Write Ups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpts.html">1.7. HTB CPTS Moduals</a></li>
@@ -191,19 +191,27 @@
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE244</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cpp/cpp_intro.html">3. Learn ECE244</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ECE</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">3. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">3.2. Circuits Basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">4. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">4.2. Circuits Basics</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Backend Dev</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../backend/java_intro.html">4. Backend Roadmap</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../backend/java_basics.html">4.15. Java</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../backend/java_oop.html">4.16. Java OOP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../backend/jb.html">4.17. Jupyter Book Basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../backend/java_intro.html">5. Backend Roadmap</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_basics.html">5.15. Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_oop.html">5.16. Java OOP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/java_projects.html">5.17. My Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/mySQL.html">5.18. mySQL Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../backend/jb.html">5.19. Jupyter Book Basics</a></li>
 </ul>
 </li>
 </ul>
@@ -344,7 +352,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Commands</h1>
+    <h1>Commands Cheatsheet</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -354,7 +362,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nmap-commands">1.4.1. nmap Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footprinting">1.4.1. Footprinting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imap-pop3">1.4.1.1. IMAP/POP3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smtp">1.4.1.2. SMTP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.4.1.3. DNS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">1.4.1.4. Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.4.1.4.1. SSH</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-lab">1.4.1.4.2. SQL Lab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-gathering-web">1.4.2. Info gathering web</a></li>
 </ul>
             </nav>
         </div>
@@ -366,31 +385,177 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="commands">
-<h1><span class="section-number">1.4. </span>Commands<a class="headerlink" href="#commands" title="Link to this heading">#</a></h1>
-<section id="nmap-commands">
-<h2><span class="section-number">1.4.1. </span>nmap Commands<a class="headerlink" href="#nmap-commands" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nmap</span> <span class="pre">&lt;target&gt;</span> <span class="pre">&lt;argumentns&gt;</span></code> <em>target</em>: i.e. 10.129.2.18; 10.129.2.0/24</p>
-<p>Scanning Options</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">-F</span> </code>Scan top 100 ports</p></li>
-<li><p>-<code class="docutils literal notranslate"><span class="pre">sn</span></code> Disables port scanning</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-Pn</span></code> Disable ICMP Echo Requests</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-n</span></code> Disable DNS Resolution</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-p-</span></code> Scan all ports</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-p25-38</span></code> Scan ports between 25 and 38</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-p24,</span> <span class="pre">34</span> </code>Scan Port 24 and 34</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-sS</span></code> perfom TCP SYN-Scan</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-sA</span></code> perform TCP ACK-Scan</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-sU</span></code> perform UDP scan</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-sV</span></code> scan against service versions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-O</span></code> scan the target Operating System</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">-A</span></code> OS Dectection, Service Detection, tracerout scans</p></li>
-</ul>
-<p>Output Options</p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nmap</span> <span class="pre">10.129.2.28</span> <span class="pre">-p</span> <span class="pre">25</span> <span class="pre">--script</span> <span class="pre">banner,smtp-commands</span></code> Use defined scripts</p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nmap</span> <span class="pre">10.129.2.28</span> <span class="pre">-p</span> <span class="pre">80</span> <span class="pre">-A</span></code> Agressive Scan: find <strong>Webserver</strong>, web app and the <strong>title</strong> of the <strong>webpage</strong>. It also guess the <strong>Operating System</strong>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nmap</span> <span class="pre">10.129.2.28</span> <span class="pre">-p</span> <span class="pre">80</span> <span class="pre">-sV</span> <span class="pre">--script</span> <span class="pre">vuln</span></code> Vulnerability Assessment: detect service <strong>version</strong>, check for <strong>known vulnerabilities</strong>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="commands-cheatsheet">
+<h1><span class="section-number">1.4. </span>Commands Cheatsheet<a class="headerlink" href="#commands-cheatsheet" title="Link to this heading">#</a></h1>
+<section id="footprinting">
+<h2><span class="section-number">1.4.1. </span>Footprinting<a class="headerlink" href="#footprinting" title="Link to this heading">#</a></h2>
+<section id="imap-pop3">
+<h3><span class="section-number">1.4.1.1. </span>IMAP/POP3<a class="headerlink" href="#imap-pop3" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan the server for ICMP/POP3 ports for server info</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.84.93<span class="w"> </span>-sV<span class="w"> </span>-p110,143,993,995<span class="w"> </span>-sC
+
+<span class="c1"># find FQDN info</span>
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.84.93<span class="w"> </span>-sV<span class="w"> </span>-p110,143,993,995<span class="w"> </span>-sC<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;commonName&#39;</span>
+
+<span class="c1"># login to mailbox using imaps</span>
+curl<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;imaps://10.129.84.93&#39;</span><span class="w"> </span>--user<span class="w"> </span>robin:robin
+
+<span class="c1"># show TLS version and SSL cert when logging in</span>
+curl<span class="w"> </span>-k<span class="w"> </span><span class="s1">&#39;imaps://10.129.14.128&#39;</span><span class="w"> </span>--user<span class="w"> </span>cry0l1t3:1234<span class="w"> </span>-v
+
+<span class="c1"># interact with pop3 server</span>
+openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span><span class="m">10</span>.129.84.93:pop3s
+
+USER<span class="w"> </span>&lt;username&gt;<span class="w"> </span><span class="c1">#Identify the user</span>
+PASS<span class="w"> </span>&lt;password&gt;<span class="w"> </span><span class="c1">#login using his/hers password</span>
+QUIT
+
+<span class="c1"># interact with ICMP server</span>
+openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span><span class="m">10</span>.129.84.93:imaps
+<span class="m">1</span><span class="w"> </span>LOGIN<span class="w"> </span>&lt;usr&gt;:&lt;pswd&gt;<span class="w"> </span><span class="c1"># login</span>
+<span class="m">1</span><span class="w"> </span>LIST<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span>*<span class="w">         </span><span class="c1"># list directories</span>
+<span class="m">1</span><span class="w"> </span>CREATE<span class="w"> </span><span class="s2">&quot;&lt;dir_name&gt;&quot;</span><span class="w"> </span><span class="c1">#create new directory</span>
+<span class="m">1</span><span class="w"> </span>DELETE<span class="w"> </span><span class="s2">&quot;&lt;dir&gt;&quot;</span>
+<span class="m">1</span><span class="w"> </span>SELECT<span class="w"> </span><span class="s2">&quot;&lt;dir&gt;&quot;</span><span class="w">    </span><span class="c1"># select to access a mailbox</span>
+<span class="m">1</span><span class="w"> </span>FETCH<span class="w"> </span>&lt;email_id&gt;<span class="w"> </span>all<span class="w"> </span><span class="c1"># get sender info</span>
+<span class="m">1</span><span class="w"> </span>FETCH<span class="w"> </span>&lt;email_id&gt;<span class="w"> </span>BODY<span class="o">[]</span><span class="w"> </span><span class="c1"># get email content</span>
+<span class="m">1</span><span class="w"> </span>UNSELECT<span class="w"> </span><span class="s2">&quot;&lt;dir&gt;&quot;</span><span class="w">  </span><span class="c1"># exits the selected mailbox</span>
+<span class="m">1</span><span class="w"> </span>LOGOUT
+</pre></div>
+</div>
+</section>
+<section id="smtp">
+<h3><span class="section-number">1.4.1.2. </span>SMTP<a class="headerlink" href="#smtp" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interact with SMTP Server</span>
+telnet<span class="w"> </span><span class="m">10</span>.129.84.93<span class="w"> </span><span class="m">25</span>
+HELO<span class="w"> </span>mail1.inlanefreight.htb<span class="w"> </span><span class="c1"># init session</span>
+EHLO<span class="w"> </span>mail1<span class="w">                  </span><span class="c1"># init session</span>
+VRFY<span class="w"> </span>&lt;usr_name&gt;<span class="w">             </span><span class="c1"># verify if the user exist</span>
+
+
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.84.93<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span>-p25
+
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.84.93<span class="w"> </span>-p25<span class="w"> </span>--script<span class="w"> </span>smtp-open-relay<span class="w"> </span>-v
+</pre></div>
+</div>
+</section>
+<section id="dns">
+<h3><span class="section-number">1.4.1.3. </span>DNS<a class="headerlink" href="#dns" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#grep admin email info</span>
+dig<span class="w"> </span>soa<span class="w"> </span>&lt;target_ip&gt;
+
+<span class="c1"># NS record: FQDN name</span>
+dig<span class="w"> </span>ns<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.202.7
+
+<span class="c1"># dns server version</span>
+dig<span class="w"> </span>CH<span class="w"> </span>TXT<span class="w"> </span>version.bind<span class="w"> </span><span class="m">10</span>.129.202.7
+
+<span class="c1"># all available records</span>
+dig<span class="w"> </span>any<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.202.7
+
+<span class="c1"># performs a zone transfer for the DNS server at a target ip</span>
+dig<span class="w"> </span>axfr<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.202.7
+
+<span class="c1"># may show internal ip addr</span>
+dig<span class="w"> </span>axfr<span class="w"> </span>internal.inlanefreight.htb<span class="w"> </span>@10.129.202.7
+
+<span class="c1"># subdomain brute forcing</span>
+<span class="k">for</span><span class="w"> </span>sub<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>cat<span class="w"> </span>/opt/useful/SecLists/Discovery/DNS/subdomains-top1million-110000.txt<span class="k">)</span><span class="p">;</span><span class="k">do</span><span class="w"> </span>dig<span class="w"> </span><span class="nv">$sub</span>.inlanefreight.htb<span class="w"> </span>@10.129.202.7<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;;\|SOA&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;/^\s*$/d&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="nv">$sub</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>subdomains.txt<span class="p">;</span><span class="k">done</span>
+
+dnsenum<span class="w"> </span>--dnsserver<span class="w"> </span><span class="m">10</span>.129.202.7<span class="w"> </span>--enum<span class="w"> </span>-p<span class="w"> </span><span class="m">0</span><span class="w"> </span>-s<span class="w"> </span><span class="m">0</span><span class="w"> </span>-o<span class="w"> </span>subdomains.txt<span class="w"> </span>-f<span class="w"> </span>/opt/useful/SecLists/Discovery/DNS/fierce-hostlist.txt<span class="w"> </span>dev.inlanefreight.htb
+</pre></div>
+</div>
+</section>
+<section id="lab">
+<h3><span class="section-number">1.4.1.4. </span>Lab<a class="headerlink" href="#lab" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE
+<span class="m">21</span>/tcp<span class="w">   </span>open<span class="w">  </span>ftp
+<span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh
+<span class="m">53</span>/tcp<span class="w">   </span>open<span class="w">  </span>domain
+<span class="m">2121</span>/tcp<span class="w"> </span>open<span class="w">  </span>ccproxy-ftp
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ceil:qwer1234
+</pre></div>
+</div>
+<section id="ssh">
+<h4><span class="section-number">1.4.1.4.1. </span>SSH<a class="headerlink" href="#ssh" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/etc/ssh/sshd_config<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;/^\s*$/d&#39;</span>
+
+dig<span class="w"> </span>soa<span class="w"> </span><span class="m">10</span>.129.203.129
+
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/jtesta/ssh-audit.git<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>ssh-audit
+
+./ssh-audit.py<span class="w"> </span><span class="m">10</span>.129.203.129
+
+ssh<span class="w"> </span>-v<span class="w"> </span>ceil@10.129.203.129<span class="w"> </span>-o<span class="w"> </span><span class="nv">PreferredAuthentications</span><span class="o">=</span>password
+
+<span class="nb">cd</span><span class="w"> </span>~/.ssh
+
+ssh-keygen<span class="w"> </span>-t<span class="w"> </span>rsa<span class="w"> </span>-b<span class="w"> </span><span class="m">4096</span><span class="w"> </span>-C<span class="w"> </span><span class="s2">&quot;your_email@example.com&quot;</span>
+
+ssh-copy-id<span class="w"> </span>ceil@10.129.136.243
+
+chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/id_rsa
+chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>~/.ssh/id_rsa.pub
+
+chmod<span class="w"> </span><span class="m">700</span><span class="w"> </span>~/.ssh
+chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.ssh/authorized_keys
+
+ssh<span class="w"> </span>ceil@10.129.203.129
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh-rsa<span class="w"> </span>AAAAB3NzaC1yc2EAAAADAQABAAACAQDMMIdh7gRCYQoImViBLcAtXzfPlgNmWVsFi5AyDz21U2+c+FqRgt9IPDDKGenuVVJzm+5zQ+ptNdehnKqCe68s5YkDmJTO7oAFqGv/eO1jQAYjsmcXIUr3cLeQI+BJgjKMtoVbDKN89qLJN/14cuQU2dtHjYXlrCu25O5F4pjWy4Jf6BuVtl6PA54isirbggjmurbY/1fBujLWPW1hliX+PjakL1ioQ56NRY+Z9EcOFvGoSTB1NrOhCEe6l+ZoyRIKC6DGaY6rre5raM9P34KMtgsYobQMV3jYJxswV0fKE/K6ymyCErjXYiMFz6K9TZ87RzryCNAK4A5m9h2jNuPV7KFvuI4BHtfZZIadBkwMeaRqs5d1C6lNIagjgm9sSWcwaEhjiPQCR8h4cFvrsHyH+sFKMu2bHXgZvZsButc+iTxK8/XjVQudSff1gPGjXS5LS1LxMkjXtkyniFPwSmqmmcGfDeObkPmBC/a+Yriw6VpCkRM7IixzFiIhl46IqrJpLxovGu665q+C+zg+RM+ATdDO+m4ONxo3vfIbvg8OG15FjRhjdkfiiVepAjf+unsblBMphbdXTv5P2cQk7eYmlGsCPiF50jZ+7rOm/k4ETaf4DxBOXQhkq48+rTE8VWggwuTKorwrfCfCoqtlWIyQejlBtj83D/uk0uUd7PnuYw<span class="o">==</span><span class="w"> </span>your_email@example.com
+</pre></div>
+</div>
+<p>doenst work</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span><span class="m">10</span>.129.136.243
+
+ssh-copy-id<span class="w"> </span><span class="m">10</span>.129.136.243
+
+fPve51nX
+</pre></div>
+</div>
+</section>
+<section id="sql-lab">
+<h4><span class="section-number">1.4.1.4.2. </span>SQL Lab<a class="headerlink" href="#sql-lab" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.202.41<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-p3306<span class="w"> </span>--script<span class="w"> </span>mysql*
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>--script<span class="w"> </span>ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes<span class="w"> </span>--script-args<span class="w"> </span>mssql.instance-port<span class="o">=</span><span class="m">1433</span>,mssql.username<span class="o">=</span>sa,mssql.password<span class="o">=</span>,mssql.instance-name<span class="o">=</span>MSSQLSERVER<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">1433</span><span class="w"> </span><span class="m">10</span>.129.202.41
+
+sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.202.41<span class="w"> </span>-p111,2049<span class="w"> </span>-sV<span class="w"> </span>-sC
+
+sudo<span class="w"> </span>nmap<span class="w"> </span>--script<span class="w"> </span>nfs*<span class="w"> </span><span class="m">10</span>.129.202.41<span class="w"> </span>-sV<span class="w"> </span>-p111,2049
+
+showmount<span class="w"> </span>-e<span class="w"> </span><span class="m">10</span>.129.202.41
+
+mkdir<span class="w"> </span>target-NFS
+
+sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span><span class="m">10</span>.129.202.41:/<span class="w"> </span>./target-NFS/<span class="w"> </span>-o<span class="w"> </span>nolock
+
+<span class="nb">cd</span><span class="w"> </span>target-NFS
+
+tree<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="info-gathering-web">
+<h2><span class="section-number">1.4.2. </span>Info gathering web<a class="headerlink" href="#info-gathering-web" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span><span class="s2">&quot;tesla.com&quot;</span>
+whois<span class="w"> </span><span class="nv">$TARGET</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;@&#39;</span>
+
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span><span class="s2">&quot;facebook.com&quot;</span>
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>nslookup<span class="w"> </span><span class="nv">$TARGET</span>
+
+FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>dig<span class="w"> </span>facebook.com<span class="w"> </span>@1.1.1.1
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span><span class="s2">&quot;app.inlanefreight.local&quot;</span>
+nslookup<span class="w"> </span><span class="nv">$TARGET</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;Apa&#39;</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -458,7 +623,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nmap-commands">1.4.1. nmap Commands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footprinting">1.4.1. Footprinting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imap-pop3">1.4.1.1. IMAP/POP3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smtp">1.4.1.2. SMTP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.4.1.3. DNS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">1.4.1.4. Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.4.1.4.1. SSH</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-lab">1.4.1.4.2. SQL Lab</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-gathering-web">1.4.2. Info gathering web</a></li>
 </ul>
   </nav></div>
 
