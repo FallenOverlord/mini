@@ -24,6 +24,13 @@ parts:
           - file: docs/c/final
           - file: docs/c/searching
 
+  - caption: ECE244
+    numbered: True
+    chapters:
+      - file: docs/cpp/cpp_intro
+        sections:
+        - file: docs/cpp/io
+
   - caption: ECE
     numbered: True
     chapters:
@@ -38,4 +45,6 @@ parts:
         sections:
           - file: docs/backend/java_basics
           - file: docs/backend/java_oop
+          - file: docs/backend/java_projects
+          - file: docs/backend/mySQL
           - file: docs/backend/jb

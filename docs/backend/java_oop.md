@@ -570,9 +570,23 @@ a white Hasky dog is guarding my house.
 #### Q5
 ​ 定义数组存储3部汽车对象。
 
-​ 汽车的属性：品牌，价格，颜色。
+​ 汽车的属性：品牌，价格，颜色，车牌号。
 
 ​ 创建三个汽车对象，数据通过键盘录入而来，并把数据存入到数组当中。
+​ 要求，计算出三部汽车的平均价格
+统计价格比平均值低的汽车有几个？并把她们的所有信息打印出来。
+​ 要求1：添加的时候需要进行车牌号的唯一性判断。
+       a.k.a get a new Cars object, if the car ID already exist, the system will not add the new one into the array, if it is unique, then the system will create a larger array and add the new car info into the database
+
+​ 要求2：添加完毕之后，遍历所有汽车信息。
+
+​ 要求3：通过id删除汽车信息
+
+​ 如果存在，则删除，如果不存在，则提示删除失败。
+
+​ 要求4：删除完毕之后，遍历所有汽车信息。
+
+​ 要求5：车牌号为 GH835 的汽车，价格涨了8000
 
 ```bash
 package garage;
@@ -660,10 +674,24 @@ public class helloworld {
     }
 
     public static void printCarDetails(Cars[] myCars) {
+
+        double totalPrice = 0;
+
         System.out.println("Car Details:");
         for (Cars car : myCars) {
             System.out.println("Brand: " + car.getBrand() + ", Color: " + car.getColor() + ", Price: " + car.getPrice());
+            totalPrice += car.getPrice();
         }
+
+        double avgPrice = (totalPrice / myCars.length);
+        System.out.println("Average: " + avgPrice);
+
+        for (Cars car : myCars) {
+            if (car.getPrice() < avgPrice) {
+                System.out.println(car.getBrand() + "'s price is lower than the average price. (" + car.getPrice() + " < " + avgPrice + ")");
+            }
+        }
+
     }
 }
 ```
@@ -693,34 +721,20 @@ Car Details:
 Brand: audi, Color: black, Price: 3243.0
 Brand: BMW, Color: white, Price: 325423.0
 Brand: Xpeng, Color: green, Price: 1242.0
+Average: 8937.0
 
+
+Car Details:
+Brand: BYD, Color: black, Price: 34235.0
+Brand: Toyota, Color: grey, Price: 23511.0
+Brand: Landrover, Color: white, Price: 23452.0
+Average: 27066.0
+Toyota's price is lower than the average price. (23511.0 < 27066.0)
+Landrover's price is lower than the average price. (23452.0 < 27066.0)
 
 ```
+
 #### Q6
-​ 定义数组存储3部手机对象。
-
-​ 手机的属性：品牌，价格，颜色。
-
-​ 要求，计算出三部手机的平均价格
-
-```bash
-
-```
-
-#### Q7
-​ 定义数组存储4个女朋友的对象
-
-​ 女朋友的属性：姓名、年龄、性别、爱好
-
-​ 要求1：计算出四女朋友的平均年龄
-
-​ 要求2：统计年龄比平均值低的女朋友有几个？并把她们的所有信息打印出来。
-
-```bash
-
-```
-
-#### Q8
 ​ 定义数组存储3个学生对象。
 
 ​ 学生的属性：学号，姓名，年龄。
@@ -738,8 +752,503 @@ Brand: Xpeng, Color: green, Price: 1242.0
 ​ 要求5：id为2的学生，年龄+1岁
 
 ```bash
+public class Student {
+    private int id;
+    private String name;
+    private int age;
+
+    public Student() {
+    }
+
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+
+public class Test {
+    public static void main(String[] args) {
+
+        //1.创建一个数组用来存储学生对象
+        Student[] arr = new Student[3];
+        //2.创建学生对象并添加到数组当中
+        Student stu1 = new Student(1, "zhangsan", 23);
+        Student stu2 = new Student(2, "lisi", 24);
+
+        //3.把学生对象添加到数组当中
+        arr[0] = stu1;
+        arr[1] = stu2;
+
+
+        //要求1：再次添加一个学生对象，并在添加的时候进行学号的唯一性判断。
+        Student stu4 = new Student(1, "zhaoliu", 26);
+
+        //唯一性判断
+        //已存在 --- 不用添加
+        //不存在 --- 就可以把学生对象添加进数组
+        for (Student student : arr) {
+            if (stu4.getId() == student.getId){
+
+            }else{
+
+            }
+        }
+    }
+
+    public static void printArr(Student[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            Student stu = arr[i];
+            if(stu != null){
+                System.out.println(stu.getId() + ", " + stu.getName() + ", " + stu.getAge());
+            }
+        }
+    }
+
+    public static void addStu(Student[] arr, Student stu4){
+
+        boolean is_space_left = false;
+        for (Student student : arr) {
+            is_space_left = (student.getId() == null) ? true : is_space_left;
+        }
+
+        count = 0;
+
+        if (is_space_left){
+            while (arr[count] != null){
+                count++;
+            }
+            Student[count].setName(sut4.getName());
+            Student[count].setId(sut4.getId());
+            Student[count].setAge(sut4.getAge());
+
+        }else{
+            
+            
+        }
+    }
+}
+```
+
+## Inheritance
+
+### Static Interitance
+intellij idea:  
+hot keys
+```bash
+
+alt + insert
+
+press tab keys to switch options
+
+press ctrl + A to select all
 
 ```
+
+chaning from an int array to a double array
+
+```bash
+
+Arrays.stream(arr1).asDoubleStream().toArray()
+```
+
+Sorting an int array makes it in ascending order
+```bash
+Arrays.sort(array1);
+```
+
+Static variables can be used by every object of the class
+```bash
+public static teacherName;
+
+Student.teacherName = "dsf";
+```
+Static variables will be the same for every object in the class
+
+### Method overrides
+Method overriding occurs when a subclass provides a specific implementation for a method that is already defined in its superclass. The method in the subclass should have the same name, return type, and parameters as the method in the superclass.
+
+The @Override annotation is used to indicate that a method is intended to override a method in the superclass. It helps catch errors at compile time if the method signatures don't match.
+
+```bash
+package demo3;
+
+public class Test {
+    public static void main(String[] args) {
+        Canine husky = new Canine();
+        husky.eat();
+    }
+}
+
+package demo3;
+
+public class Animal {
+    public void eat(){
+        System.out.println("This animal eats food.");
+    }
+}
+
+package demo3;
+
+public class Canine extends  Animal{
+    @Override
+    public void eat() {
+        System.out.println("The dog eats meat.");
+    }
+}
+
+The dog eats meat.
+
+
+
+```
+
+
+
+
+
+
+### Practise Questions
+
+#### Q1
+```bash
+
+在黑马程序员中有很多员工(Employee)。
+
+​ 按照工作内容不同分教研部员工(Teacher)和行政部员工(AdminStaff)
+
+教研部根据教学的方式不同又分为讲师(Lecturer)和助教(Tutor)
+行政部根据负责事项不同,又分为维护专员(Maintainer),采购专员(Buyer)
+公司的每一个员工都编号,姓名和其负责的工作
+每个员工都有工作的功能，但是具体的工作内容又不一样。
+
+```
+
+
+#### Q2
+```bash
+需求：
+​ 在传智教育的tlias教学资源管理系统中，存在学生、老师角色会进入系统。
+
+分析：
+​ 学生信息和行为（名称，年龄，所在班级，查看课表，填写听课反馈fillForm）
+
+​ 老师信息和行为（名称，年龄，部门名称，查看课表，发布问题publishForm）
+
+​ 定义角色类作为父类包含属性（名称，年龄），行为（查看课表）
+
+​ 定义子类：学生类包含属性（所在班级），行为（填写听课反馈）
+
+​ 定义子类：老师类包含属性（部门名称），行为（发布问题）
+```
+
+##### Answer
+```bash
+
+```
+
+##### Console Output
+
+```bash
+
+```
+
+#### Q3
+
+```bash
+
+需求:
+​ 完成代码(按照标准格式写)，然后在测试类中测试。
+
+​ 1.手机类Phone
+
+​ 属性:品牌brand,价格price
+
+​ 无参构造,有参构造
+
+​ 行为:打电话call,发短信sendMessage,玩游戏playGame
+
+​ 2.测试类
+
+​ 创建Phone类对象,调用Phone类中的方法
+
+思考:
+​ 假设所有的手机都有属性屏幕的尺寸(int size),而且假设所有手机的屏幕尺寸为6,应该如何实现?
+
+提示：
+​ 可以把size定义为静态
+```
+
+```bash
+
+```
+
+#### Q4
+
+```bash
+需求：
+​ 分析以下需求，并用代码实现
+
+​ 1.定义Person类
+
+​ 属性：
+
+​ 姓名name、性别gender、年龄age、国籍nationality；
+
+​ 方法：
+
+​ 吃饭eat、睡觉sleep，工作work。
+
+​ 2.根据人类，创建一个学生类Student
+
+​ 增加属性：
+
+​ 学校school、学号stuNumber；
+
+​ 重写工作方法（学生的工作是学习）。
+
+​ 3.根据人类，创建一个工人类Worker
+
+​ 增加属性：
+
+​ 单位unit、工龄workAge；
+
+​ 重写工作方法（工人的工作是盖房子）。
+
+​ 4.根据学生类，创建一个学生干部类 StudentLeader
+
+​ 增加属性：
+
+​ 职务job；
+
+​ 增加方法：开会meeting。
+
+​ 5.编写测试类分别对上述3类具体人物进行测试。
+
+​ 6.要求运行结果:
+
+学生需要学习!
+工人的工作是盖房子!
+学生干部喜欢开会!
+```
+
+#### Q5
+
+```bash
+需求：
+​ 1.定义项目经理类 属性： 姓名 工号 工资 奖金 行为： 工作work 2.定义程序员类 属性： 姓名 工号 工资 行为： 工作work
+
+​ 3.向上抽取一个父类,让这两个类都继承这个父类,共有的属性写在父类中，子类重写父类中的方法
+
+​ 4.编写测试类:完成这两个类的测试
+```
+
+#### Q6
+
+```bash
+需求：
+​ 根据需求完成代码:
+
+​ 1.定义动物类
+
+​ 属性： 年龄，颜色 行为: eat(String something)方法(无具体行为,不同动物吃的方式和东西不一样,something表示吃的东西)
+
+​ 生成空参有参构造，set和get方法
+
+​ 2.定义狗类继承动物类
+
+​ 行为: eat(String something)方法,看家lookHome方法(无参数)
+
+​ 3.定义猫类继承动物类
+
+​ 行为:
+
+​ eat(String something)方法,逮老鼠catchMouse方法(无参数)
+
+​ 4.定义Person类
+
+​ 属性： 姓名，年龄
+
+​ 行为： keepPet(Dog dog,String something)方法
+
+​ 功能：喂养宠物狗，something表示喂养的东西
+
+​ 该方法调用后打印结果为：颜色为黑色的2岁的狗，在吃骨头
+
+​ 行为： keepPet(Cat cat,String something)方法 功能：喂养宠物猫，something表示喂养的东西
+
+​ 该方法调用后打印结果为：颜色为白色的2岁的猫，在吃小鱼干
+
+​ 5.生成空参有参构造，set和get方法
+
+​ 6.测试以上方法
+```
+
+## Class - Advanced
+
+### Q1
+
+```bash
+需求：
+分析以下需求用代码实现:
+
+定义形状类:
+
+功能：求面积，求周长
+
+定义圆形类Round:
+
+属性：半径，圆周率
+
+功能：求面积，求周长
+
+定义长方形类Rectangle:
+
+ 属性：长和宽
+功能：求面积，求周长
+
+定义测试类:
+
+ 分别创建圆形和长方形对象，为相应的属性赋值
+分别调用求面积和求周长的方法
+```
+
+### Q2
+```bash
+需求：
+定义手机类
+​ 行为：打电话,发短信
+
+定义接口IPlay
+​ 行为：玩游戏
+
+定义旧手机类继承手机类
+​ 行为：继承父类的行为
+
+定义新手机继承手机类实现IPlay接口
+
+行为：继承父类的行为,重写玩游戏方法
+
+定义测试类
+
+​ 在测试类中定义一个 用手机的方法,要求该方法既能接收老手机对象,也能接收新手机对象
+
+​ 在该方法内部调用打电话,发短信以及新手机特有的玩游戏方法
+```
+
+### Q3
+
+```bash
+需求:
+接口IPlay中有一个方法playGame()，在测试类中如何调用该方法？
+​ 要求1.创建子类实现接口的方式实现 要求2:用匿名内部类实现
+
+一个抽象类Fun中有一个抽象方法 fun() , 在测试类中如何调用该方法?
+​ 要求1.创建子类继承抽象类的方式实现 要求2:用匿名内部类实现
+```
+
+### Q4
+
+```bash
+需求：
+​ 在控制台输出”HelloWorld”
+
+​ 自己书写，不要用idea自动生成。
+
+interface Inter {
+    void show(); 
+}
+class Outer { 
+    //补齐代码 
+}
+public class OuterDemo {
+    public static void main(String[] args) {
+        Outer.method().show();
+    }
+}
+
+```
+
+### Q5
+```bash
+需求：
+​ 在测试类Test中创建A的对象a并调用成员方法methodA(),要求用两种方式实现
+
+​ 自己书写，不要用idea自动生成。
+
+public class Test {
+    public static void main(String[] args) {	
+        
+    }
+}
+
+//定义接口
+interface InterA {
+    void showA();	
+}
+
+class A {
+    public void methodA(InterA a) {
+        a.showA();		
+    }	
+}
+```
+
+### Q6
+```bash
+需求：
+​ 在测试类Test中创建B的对象b，并调用成员方法methodB
+
+​ 自己书写，不要用idea自动生成。
+
+public class Test {
+    public static void main(String[] args) {
+
+    }
+}
+
+//定义一个接口
+interface InterB {
+    void showB();	
+}
+
+//目标：调用成员方法methodB
+class B {
+    InterB b;
+    public B(InterB b){
+        this.b = b;
+    }
+    public void methodB(){
+        b.showB();		
+    }
+}
+```
+
 
 
 

@@ -6,11 +6,13 @@ public class Cars{
     private String brand;
     private String color;
     private double price;
+    private String id;
 
-    Cars(String brand, String color, double price){
+    Cars(String brand, String color, double price, String id){
         this.brand = brand;
         this.color = color;
         this.price = price;
+        this.id = id;
     }
 
     public Cars() {
@@ -18,6 +20,7 @@ public class Cars{
         this.brand = "Unknown Brand";
         this.color = "Unknown Color";
         this.price = 0.0;
+        this.id = "unknown id";
     }
 
     //setters
@@ -30,6 +33,9 @@ public class Cars{
     public void setPrice(double price){
         this.price = price;
     }
+    public void setId(String id){
+        this.id = id;
+    }
 
     //getters
     public String getBrand(){
@@ -40,6 +46,9 @@ public class Cars{
     }
     public double getPrice(){
         return price;
+    }
+    public String getId(){
+        return id;
     }
 
 }

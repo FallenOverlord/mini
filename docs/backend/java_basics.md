@@ -598,8 +598,17 @@ public class helloworld{
 
     }
 }
+
 ```
 
+Console Output
+
+```bash
+Please input a string: 
+bash
+Original String:  b a s h
+Randomfied String:  b h s a
+```
 
 ## Strings
 
@@ -667,12 +676,73 @@ strstr() function in c
 System.out.println(string.contains("mars"));
 it will return a boolean
 
+### String method: indexOf() 
+find the position of a character or a substring within a string
+
+```bash
+String myString = "Hello, world!";
+int index = myString.indexOf('o');  // Returns 4
+int strIndex = myString.indexOf("world");  // Returns 7
+```
+
+### String method: substring()
+
+extract a substring from a string
+
+```bash
+String myString = "Hello, world!";
+String sub = myString.substring(7);  // Returns "world!"
+String limitedSub = myString.substring(0, 5);  // Returns "Hello"
+String sub2 = myString.substring(0); // Returns "Hello, world"
+
+```
 ### Strings Practise Questions
 #### Q1
 键盘输入任意字符串，打乱里面的内容
 
 ```bash
+import java.util.Scanner;
+import java.util.StringBuilder;
+import java.util.Random;
 
+public class helloworld{
+    
+    public static void main(String[] args){
+
+        Scanner scanner = new Scanner(System.in);
+
+        char[] originalInput = new StringBuilder(scanner.nextLine()).toString().toCharArray();
+
+        printArr(originalInput);
+
+        printArr(randomfy(originalInput));
+
+        
+        scanner.close();
+    }
+
+    public static void printArr(char[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(" " + arr[i]);
+        }
+    }
+
+    public static char[] randomfy(char[] arr){
+
+        Random random = new random();
+
+        for (int i = 0; i < arr.length; i++) {
+            char temp = null;
+
+            int randomIndex = random.nextInt(arr.length);
+            temp = arr[i];
+            arr[i] = arr[randomIndex];
+            arr[randomIndex] = temp;
+        }
+
+        return arr;
+    }
+}
 ```
 
 #### Q2
@@ -689,15 +759,103 @@ it will return a boolean
 其中数字只有1位，但是可以出现在任意的位置。
 
 ```bash
+import java.util.Random;
 
+public class helloworld {
+
+    private static final Random random = new Random(); // Single Random instance
+
+    public static void main(String[] args) {
+
+        int numberIndex = getRandomNum(5);
+        int randomNumber = getRandomNum(10);
+        char[] array = new char[5];
+        char randomChar = (char) ('0' + randomNumber); // Correctly map number to character
+
+        for (int i = 0; i < array.length; i++) {
+            if (i == numberIndex) {
+                array[numberIndex] = randomChar; // Use the char mapped from randomNumber
+                System.out.println("Random Number as Char: " + randomChar);
+            } else {
+                array[i] = getRandomChar();
+            }
+        }
+
+        printArr(array);
+    }
+
+    public static char getRandomChar() {
+        boolean isUppercase = random.nextBoolean();
+        return (char) (isUppercase ? 'A' + random.nextInt(26) : 'a' + random.nextInt(26));
+    }
+
+    public static int getRandomNum(int size) {
+        return random.nextInt(size);
+    }
+
+    public static void printArr(char[] arr) {
+        for (char c : arr) {
+            System.out.print(" " + c);
+        }
+    }
+}
 ```
 
+Console Output
+```bash
+Random Number as Char: 4
+ S q y y 4
+```
 #### Q3
 请编写程序，由键盘录入一个字符串，统计字符串中英文字母和数字分别有多少个。比如：Hello12345World中字母：10个，数字：5个。
+
 1、键盘录入一个字符串，用 Scanner 实现 2、要统计两种类型的字符个数，需定义两个统计变量，初始值都为0 3、遍历字符串，得到每一个字符 4、判断该字符属于哪种类型，然后对应类型的统计变量+1，判断字母时需要考虑大小写，条件比较复杂，怎样做才能使判断更简单呢？
 
 ```bash
+import java.lang.StringBuilder;
+import java.util.Scanner;
 
+public class helloworld {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        char[] str = new StringBuilder(scanner.nextLine()).toString().toCharArray();
+
+        int charCount = 0;
+        int numCount = 0;
+
+        for (int i = 0; i < str.length; i++){
+
+            int num = (int)(str[i] + 'a');
+            System.err.println(num);
+            if (num >= 145 && num <= 154){
+                numCount++;
+            }else{
+                charCount++;
+            }
+
+        }
+
+        System.err.println("char: " + charCount + " int: " + numCount);
+        scanner.close();
+    }
+}
+```
+
+Console Output
+
+```bash
+
+AaZz90
+162
+194
+187
+219
+154
+145
+char: 4 int: 2
 ```
 
 #### Q4
@@ -709,7 +867,44 @@ it will return a boolean
 2、怎样判断对称呢？如果可以将字符串反转，反转后发现跟原来的字符串完全一样，不就可以判断出来了吗，那么哪个类有字符串的反转功能呢？
 
 ```bash
+import java.util.Scanner;
+import java.lang.StringBuilder;
 
+public class helloworld{
+    
+    public static void main(String[] args){
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        char[] originalInput = new StringBuilder(input).toString().toCharArray();
+        char[] reverseInput = new StringBuilder(input).reverse().toString().toCharArray();
+
+        printArr(originalInput);
+        System.out.println("");
+        printArr(reverseInput);
+
+        System.out.println("It is " + arrCmp(originalInput, reverseInput) + " that the input is symmetric.");
+
+        
+        scanner.close();
+    }
+
+    public static void printArr(char[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(" " + arr[i]);
+        }
+    }
+
+    public static boolean arrCmp(char[] arr1, char[] arr2){
+        boolean is_same = true;
+        for (int i = 0; i < arr1.length; i++){
+            is_same = (arr1[i] == arr2[i]) ? is_same : false;
+        }
+
+        return is_same;
+    }
+}
 ```
 
 #### Q5
@@ -724,12 +919,50 @@ it will return a boolean
 2、怎样判断对称呢？如果可以将字符串反转，反转后发现跟原来的字符串完全一样，不就可以判断出来了吗，那么哪个类有字符串的反转功能呢？
 
 ```bash
+import java.util.Scanner;
+import java.lang.StringBuilder;
 
+public class helloworld{
+    
+    public static void main(String[] args){
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        char[] originalInput = new StringBuilder(input).toString().toCharArray();
+        char[] reverseInput = new StringBuilder(input).reverse().toString().toCharArray();
+
+        printArr(originalInput);
+        System.out.println("");
+        printArr(reverseInput);
+
+        System.out.println("It is " + arrCmp(originalInput, reverseInput) + " that the input is symmetric.");
+
+        
+        scanner.close();
+    }
+
+    public static void printArr(char[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(" " + arr[i]);
+        }
+    }
+
+    public static boolean arrCmp(char[] arr1, char[] arr2){
+        boolean is_same = true;
+        for (int i = 0; i < arr1.length; i++){
+            is_same = (arr1[i] == arr2[i]) ? is_same : false;
+        }
+
+        return is_same;
+    }
+}
 ```
 
 
 #### Q6
-我国的居民身份证号码，由由十七位数字本体码和一位数字校验码组成。请定义方法判断用户输入的身份证号码是否合法，并在主方法中调用方法测试结果。规则为：号码为18位，不能以数字0开头，前17位只可以是数字，最后一位可以是数字或者大写字母X。
+我国的居民身份证号码，由由十七位数字本体码和一位数字校验码组成。请定义方法判断用户输入的身份证号码是否合法，并在主方法中调用方法测试结果。
+规则为：号码为18位，不能以数字0开头，前17位只可以是数字，最后一位可以是数字或者大写字母X。
 
 训练目标
 字符串的遍历、判断
@@ -742,7 +975,98 @@ it will return a boolean
 3、在主方法中创建键盘录入，调用方法，输入各种数据测试结果。
 
 ```bash
+import java.util.Scanner;
+import java.lang.StringBuilder;
 
+// 0 ~ 9 | 145 ~ 154
+public class helloworld{
+    
+    public static void main(String[] args){
+
+        tInterface();
+        
+    }
+
+    public static void tInterface() {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            //get user input
+            System.out.println("pls type in 'quit' or 'exit' to quit the program :)");
+            System.out.print("Please input your id number: ");
+            String input = scanner.nextLine();
+
+            if (input.equals("quit") || input.equals("exit")) {
+                break;  // Exit the loop after quitting
+            } else {
+
+                // Program logic
+                if (input.isEmpty()) {
+                    System.out.println("Input cannot be empty. Please try again.");
+                    continue;
+                }
+                char[] originalInput = new StringBuilder(input).toString().toCharArray();
+                printArr(originalInput);
+                System.out.println("It is " + checkValidity(originalInput) + " that the input is valid.");
+
+            }
+        }
+
+        scanner.close();
+    }
+
+    public static void printArr(char[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(" " + arr[i]);
+        }
+        System.out.println("");
+    }
+
+    public static boolean checkValidity(char[] arr){
+        boolean is_valid = true;
+
+        if (arr.length != 18) return false;
+        if (((int)arr[0]) == 48) return false;
+
+        for (int i = 0; i < (arr.length - 1); i++){
+            is_valid = (((int)arr[i]) >= 48 && ((int)arr[i]) <= 57) ? is_valid : false;
+            System.out.print(" " + ((int)arr[i]));
+        }
+
+        System.out.println("");
+
+        is_valid = (((int)arr[arr.length - 1]) >= 48 && ((int)arr[arr.length - 1]) <= 57 
+        || (int)arr[arr.length - 1] == 88) ? is_valid : false;
+        
+
+        return is_valid;
+    }
+}
+```
+
+Console Output
+
+```bash
+pls type in 'quit' or 'exit' to quit the program :)
+Please input your id number: inwkn34itrg
+ i n w k n 3 4 i t r g
+It is false that the input is valid.
+pls type in 'quit' or 'exit' to quit the program :)
+Please input your id number: 324jsafi
+ 3 2 4 j s a f i
+It is false that the input is valid.
+pls type in 'quit' or 'exit' to quit the program :)
+Please input your id number: ifiaiaibbeqqorwfef
+ i f i a i a i b b e q q o r w f e f
+ 105 102 105 97 105 97 105 98 98 101 113 113 111 114 119 102 101
+It is false that the input is valid.
+pls type in 'quit' or 'exit' to quit the program :)
+Please input your id number: AIFNENVIEFIINISLFZ
+ A I F N E N V I E F I I N I S L F Z
+ 65 73 70 78 69 78 86 73 69 70 73 73 78 73 83 76 70
+It is false that the input is valid.
+pls type in 'quit' or 'exit' to quit the program :)
+Please input your id number: exit
 ```
 
 #### Q7
@@ -773,7 +1097,22 @@ it will return a boolean
 6、在主方法中定义数组，并调用方法，打印结果
 
 ```bash
+import java.util.Arrays;
+public class helloworld{
+    
+    public static void main(String[] args){
 
+        int arr1[] = {1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 12,34, 34};
+        System.out.println(Arrays.toString(arr1));
+    }
+}
+```
+
+Console Output
+
+```bash
+
+[1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 12, 34, 34]
 ```
 
 #### Q8
@@ -786,7 +1125,9 @@ public int indexOf(String str)
 public String substring(int beginIndex)
 请仔细阅读API中这两个方法的解释，完成如下需求。
 
-现有如下文本："Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的"。请编写程序，统计该文本中"Java"一词出现的次数。
+现有如下文本：
+"Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的"。
+请编写程序，统计该文本中"Java"一词出现的次数。
 
 训练目标
 String类API的灵活使用
@@ -797,9 +1138,40 @@ String类API的灵活使用
 3、以此类推，通过循环完成查找，如果找不到就是-1，每次找到用计数器记录次数。
 
 ```bash
+public class helloworld{
+    
+    public static void main(String[] args){
+
+        String str = "Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的"。;
+        System.out.println("There is a total of"  +  findOccurance(str) + " occurance of the str 'Java' in str " + str);
+        
+    }
+
+    public static findOccurance(String str){
+
+        int count = 0;
+
+        while (myString.indexOf("Java") != -1){
+            count++;
+            str = str.substring(myString.indexOf("Java"););
+        }
+
+        return count;
+    }
+}
 
 ```
 
+Console Output
+
+```bash
+语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的。9
+语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的。7
+语言是安全的，Java是高性能的，Java语言是跨平台的。7
+是高性能的，Java语言是跨平台的。6
+语言是跨平台的。-1
+There is a total of5 occurance of the str 'Java' in str Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的。
+```
 
 ## Input
 ```bash
@@ -1159,19 +1531,43 @@ To use an arraylist, you have to first import the arraylist class.
 ```bash
 import java.util.ArrayList;
 ```
+To declare and initialize an empty ArrayList
+```bash
 ArrayList<Integer> numbers = new ArrayList<Integer>();  
-
+ArrayList<String> list = new ArrayList<>();
+```
 because int, double and float are all primative types, you can make them reference types by using someing called an "wrapper" class.  
 
-Integer is the reference type for int.
+Integer is the reference type for int.  
+Initializing an ArrayList with values  
+```bash
+    ArrayList<String> list = 
+    new ArrayList<>(Arrays.asList("aaa", "bbb", "aaa", "aaa", "ccc", "bbb"));
+```
 
+### Adding elements to an ArrayList
 ```bash
 numbers.add(1);
 numbers.add(2);
+list.add("aaa");
+list.add(1, "bbb");
 ...
 ```
-
+`add(int index, E element)`: Inserts the specified element at the specified position in the list.
 To print out an ArrayList
+
+### Accessing and Modifying values
+`get(int index)`: Returns the element at the specified position in the list.  
+`set(int index, E element)`: Replaces the element at the specified position in the list with the specified element.
+```bash
+String value = list.get(0);
+list.set(0, "ccc");
+numbers.set(2, Integer.valueOf(30));
+
+numbers.set(index, the new value_in wrapper class)
+```
+One advantage of using the wapper class is that with the primative class and the wrapper class, you can distinguish between the same number
+
 ```bash
 System.out.println(numbers.toString());
 
@@ -1187,20 +1583,17 @@ the agument in the numbers in the arraylist is the index of an 0-indexed array
 
 #### remove elemnts
 you can either remove by index, or you cna remove by value.  
+`remove(int index)`: Removes the element at the specified position in the list.  
+`remove(Object o)`: Removes the first occurrence of the specified element from the list.
 ```bash
 numbers.remove(2);
+
+list.remove(0);
+list.remove("bbb");
 
 numbers.remove(Integer.valueOf(4));
 
 numbers.clear();
-```
-
-#### Update elements
-One advantage of using the wapper class is that with the primative class and the wrapper class, you can distinguish between the same number
-```bash
-numbers.set(2, Integer.valueOf(30));
-
-numbers.set(index, the new value_in wrapper class)
 ```
 
 #### Sorting an ArrayList
@@ -1225,12 +1618,14 @@ numbers.size();
 
 ```
 #### Contains Method
-
+`contains(Object o)`: Returns true if the list contains the specified element.  
+`indexOf(Object o)`: Returns the index of the first occurrence of the specified element in the list, or -1 if the list does not contain the element.  
+`lastIndexOf(Object o)`: Returns the index of the last occurrence of the specified element in the list, or -1 if the list does not contain the element.  
 ```bash
-
 #returns a boolean expression
 numbers.contains(Integer.valueOf(10));
-
+int firstIndex = list.indexOf("aaa");
+int lastIndex = list.lastIndexOf("aaa");
 ```
 
 #### Checking if it is empty
@@ -1249,6 +1644,11 @@ numbers.forEach(number -> {
     System.out.println(number + "is the current element")
 });
 
+
+for (String s : list) {
+    System.out.println(s);
+}
+
 ```
 
 In order to modify the element in the arrayList through a loop.
@@ -1260,6 +1660,16 @@ numbers.forEach(number -> {
 
 ```
 This program will multiply each element by 2.  
+
+### Converting an ArrayList to an array
+`toArray()`: Returns an array containing all of the elements in the list in proper sequence.  
+`toArray(T[] a)`: Returns an array containing all of the elements in the list in proper sequence; the runtime type of the returned array is that of the specified array.  
+
+```bash
+Object[] array = list.toArray();
+String[] stringArray = list.toArray(new String[0]);
+
+```
 
 ### ArrayList Practise Question
 #### Q1
@@ -1276,6 +1686,32 @@ ArrayList集合存储字符串元素，并遍历。
 3、怎样遍历集合？
 
 ```bash
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class helloworld {
+
+    public static void main(String[] args){
+
+    ArrayList<String> list = 
+    new ArrayList<>(Arrays.asList("aaa", "bbb", "aaa", "aaa", "ccc", "bbb"));
+
+    for (String s : list) {
+        System.out.println(s);
+    }
+
+    }
+}
+```
+Console Output
+
+```bash
+aaa
+bbb
+aaa
+aaa
+ccc
+bbb
 
 ```
 
@@ -1288,7 +1724,81 @@ ArrayList集合存储字符串元素，并遍历。
 姓名：李老师, 专业：python
 
 ```bash
+package teachers;
 
+import java.util.ArrayList;
+
+public class helloworld {
+
+    public static void main(String[] args){
+
+    ArrayList<Teacher> list = new ArrayList<>();
+
+    Teacher teacher1 = new Teacher();
+    teacher1.setName("Blinda Wang");
+    teacher1.setMajor("ECE");
+    list.add(teacher1);
+
+    Teacher teacher2 = new Teacher();
+    teacher2.setName("Pirrer Sullivan");
+    teacher2.setMajor("CIV");
+    list.add(teacher2);
+
+    Teacher teacher3 = new Teacher();
+    teacher3.setName("Salma Elma");
+    teacher3.setMajor("ECE");
+    list.add(teacher3);
+
+    for (Teacher s : list) {
+        System.out.println("the name of teacher is " + s.getName()
+        + " their major is " + s.getMajor());
+    }
+
+    }
+}
+
+
+package teachers;
+public class Teacher {
+
+    private String name;
+    private String major;
+    
+    public Teacher() {
+        // Initialize fields with default values
+        this.name = "Unknown Brand";
+        this.major = "Unknown Color";
+    }
+
+    Teacher(String name, String major){
+        this.name = name;
+        this.major = major;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setMajor(String major){
+        this.major = major;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getMajor(){
+        return major;
+    }
+}
+```
+
+Console Output
+
+```bash
+the name of teacher is Blinda Wang their major is ECE
+the name of teacher is Pirrer Sullivan their major is CIV
+the name of teacher is Salma Elma their major is ECE
 ```
 
 #### Q3
@@ -1320,9 +1830,166 @@ ArrayList集合的修改元素和删除元素API
 4、ArrayList集合中，修改元素和删除元素的方法是什么？在遍历集合时，删除了集合中的元素，会不会对遍历产生影响呢？如果会，该怎么解决？
 
 ```bash
+package teachers;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class helloworld {
+
+    public static void main(String[] args){
+
+    ArrayList<Teacher> list = new ArrayList<>();
+
+    Teacher teacher1 = new Teacher();
+    teacher1.setName("Blinda Wang");
+    teacher1.setMajor("ECE");
+    teacher1.setWage(22315);
+    list.add(teacher1);
+
+    Teacher teacher2 = new Teacher();
+    teacher2.setName("Pirrer Sullivan");
+    teacher2.setMajor("CIV");
+    teacher2.setWage(235324);
+    list.add(teacher2);
+
+    Teacher teacher3 = new Teacher();
+    teacher3.setName("Salma Elma");
+    teacher3.setMajor("ECE");
+    teacher2.setWage(324255);
+    list.add(teacher3);
+
+    Teacher teacher4 = new Teacher("Seica", "CIV" , 23425);
+    list.add(teacher4);
+
+    Teacher teacher5 = new Teacher("Scott Ramsay", "ChemEng", 3256343);
+    list.add(teacher5);
+    
+    printTeacherInfo(list);
+
+    checkSeica(list);
+    printTeacherInfo(list);
+    System.out.println("");
+
+    delElma(list);
+    printTeacherInfo(list);
+    System.out.println("");
+
+    RamsayWageRaise(list);
+    printTeacherInfo(list);
+
+
+    }
+
+    public static void printTeacherInfo(ArrayList<Teacher> list){
+        for (Teacher s : list) {
+            System.out.println("the name of teacher is " + s.getName()
+            + " their major is " + s.getMajor() + " their wage is " + s.getWage());
+        }
+    }
+
+    public static void checkSeica(ArrayList<Teacher> list) {
+        Iterator<Teacher> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Teacher s = iterator.next();
+            if (s.getName().equals("Seica")) {
+                s.setName("Big Seica");
+            }
+        }
+    }
+
+    public static void delElma(ArrayList<Teacher> list) {
+        Iterator<Teacher> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Teacher s = iterator.next();
+            if (s.getName().equals("Salma Elma")) {
+                iterator.remove();
+            }
+        }
+        
+    }
+
+    public static void RamsayWageRaise(ArrayList<Teacher> list) {
+        Iterator<Teacher> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Teacher s = iterator.next();
+            if (s.getName().equals("Scott Ramsay")) {
+                s.setWage(s.getWage() + 500000);
+            }
+        }
+    }
+}
+
+package teachers;
+public class Teacher {
+
+    private String name;
+    private String major;
+    private double wage;
+    
+    public Teacher() {
+        // Initialize fields with default values
+        this.name = "Unknown Brand";
+        this.major = "Unknown Color";
+        this.wage = 0;
+    }
+
+    Teacher(String name, String major, double wage){
+        this.name = name;
+        this.major = major;
+        this.wage = wage;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setMajor(String major){
+        this.major = major;
+    }
+
+    public void setWage(double wage){
+        this.wage = wage;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String getMajor(){
+        return major;
+    }
+
+    public double getWage(){
+        return wage;
+    }
+
+}
 ```
 
+Console Output
+
+```bash
+the name of teacher is Blinda Wang their major is ECE their wage is 22315.0
+the name of teacher is Pirrer Sullivan their major is CIV their wage is 324255.0
+the name of teacher is Salma Elma their major is ECE their wage is 0.0
+the name of teacher is Seica their major is CIV their wage is 23425.0
+the name of teacher is Scott Ramsay their major is ChemEng their wage is 3256343.0
+the name of teacher is Blinda Wang their major is ECE their wage is 22315.0
+the name of teacher is Pirrer Sullivan their major is CIV their wage is 324255.0        
+the name of teacher is Salma Elma their major is ECE their wage is 0.0
+the name of teacher is Big Seica their major is CIV their wage is 23425.0
+the name of teacher is Scott Ramsay their major is ChemEng their wage is 3256343.0      
+
+the name of teacher is Blinda Wang their major is ECE their wage is 22315.0
+the name of teacher is Pirrer Sullivan their major is CIV their wage is 324255.0        
+the name of teacher is Big Seica their major is CIV their wage is 23425.0
+the name of teacher is Scott Ramsay their major is ChemEng their wage is 3256343.0      
+
+the name of teacher is Blinda Wang their major is ECE their wage is 22315.0
+the name of teacher is Pirrer Sullivan their major is CIV their wage is 324255.0        
+the name of teacher is Big Seica their major is CIV their wage is 23425.0
+```
 #### Q4
 利用面向对象的思想设计一个图书管理系统。图书的属性有：编号，书名，作者，价格。要求提供如下功能：
 
@@ -1369,9 +2036,326 @@ ArrayList集合API的综合运用、编程逻辑的锻炼
 9、退出系统功能，借助结束程序的API实现即可。
 
 ```bash
+package myLib;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class helloworld {
+
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Book> list = new ArrayList<>();
+
+        tInterface(list, scanner);
+        scanner.close();
+    }
+
+    public static void tInterface(ArrayList<Book> list, Scanner scanner) {
+        printNotice();
+        while (true) {
+            System.out.println("");
+            System.out.print(">");
+            String input = scanner.nextLine();
+
+            if (input.equals("quit") || input.equals("exit")) {
+                break;
+            } else if (input.equals("add")){
+                add(list, scanner);
+
+            } else if (input.equals("show")){
+                showAll(list);
+            } else if (input.equals("search")){
+                search(list, scanner);
+            } else if (input.equals("delete")){
+                delete(list, scanner);
+            } else if (input.equals("modify")){
+                modify(list, scanner);
+            } else {
+                printNotice();
+            }
+
+        }
+    }
+
+    public static void add(ArrayList<Book> list, Scanner scanner){
+        System.out.print(">New Book ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        if ( checkDuplicate(list, id) ){
+            System.out.println("ID duplicate, quitting!");
+            return;
+        }
+        System.out.print(">New Book Name: ");
+        String name = scanner.nextLine();
+        System.out.print(">New Book Author: ");
+        String author = scanner.nextLine();
+        System.out.print(">New Book Price: ");
+        double price = scanner.nextDouble();
+        Book newBook = new Book(id, name, author, price);
+        list.add(newBook);
+    }
+
+    public static boolean checkDuplicate(ArrayList<Book> list, int key){
+        Iterator<Book> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Book s = iterator.next();
+            if (s.getId() == key){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static void showAll(ArrayList<Book> list){
+        Iterator<Book> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            Book s = iterator.next();
+            System.out.println("Name: " + s.getName()
+            + " ID: " + s.getId() + " Author:" + s.getAuthor()
+            + " Price: " + s.getPrice());
+        }
+    }
+
+    public static void search(ArrayList<Book> list, Scanner scanner){
+        boolean avail = false;
+        Iterator<Book> iterator = list.iterator();
+        System.out.print(">Book Name: ");
+        String input = scanner.nextLine();
+        while (iterator.hasNext()) {
+            Book s = iterator.next();
+                if (s.getName().equals(input)){
+                    System.out.println("Name: " + s.getName()
+                    + " ID: " + s.getId() + " Author:" + s.getAuthor()
+                    + " Price: " + s.getPrice());
+                    avail = true;
+                }
+        }
+        if(avail == false) System.out.println("No such entry with name " + input);
+    }
+
+    public static void delete(ArrayList<Book> list, Scanner scanner){
+        Iterator<Book> iterator = list.iterator();
+        System.out.print(">ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        if (checkDuplicate(list, id)){
+            while (iterator.hasNext()) {
+                Book s = iterator.next();
+                    if (s.getId() == id){
+                        iterator.remove();
+                        System.out.println(">Sucess");
+                    }
+            }
+        } else {
+            System.out.println(">ID# Does Not Exist, Quitting!");
+        }
+    }
+
+    public static void modify(ArrayList<Book> list, Scanner scanner){
+        Iterator<Book> iterator = list.iterator();
+        //get ID
+        System.out.print(">ID: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+
+        //check ID validity
+        if (checkDuplicate(list, id)){
+            while (iterator.hasNext()) {
+                Book s = iterator.next();
+                    if (s.getId() == id){
+                        System.out.print(">New Book Name: ");
+                        String name = scanner.nextLine();
+                        s.setName(name);
+                        System.out.print(">New Book Author: ");
+                        String author = scanner.nextLine();
+                        s.setAuthor(author);
+                        System.out.print(">New Book Price: ");
+                        double price = scanner.nextDouble();
+                        s.setPrice(price);
+                        System.out.println(">Sucess");
+                    }
+            }
+        }else{
+            System.out.println(">ID# Does Not Exist, Quitting!");
+        }
+    }
+
+    public static void printNotice(){
+        System.out.println("pls type in 'quit' or 'exit' to quit the program," + 
+        "'add' to add to lib, 'show' to show all book info, 'search' to check book info after providing a bookname, 'delete' to delete an entry accorind to its id, 'modify' to modify an entry after providing a valid id :)");
+    }
+}
+
+package myLib;
+
+public class Book {
+
+    private String name;
+    private String author;
+    private double price;
+    private int id;
+    
+    public Book() {
+        // Initialize fields with default values
+        this.name = "Unknown Brand";
+        this.author = "Unknown Color";
+        this.price = 0;
+        this.id = 0;
+    }
+
+    Book(int id, String name, String author, double price){
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.price = price;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setAuthor(String author){
+        this.author = author;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public String getAuthor(){
+        return author;
+    }
+
+}
 ```
 
+Console Output
+
+```bash
+pls type in 'quit' or 'exit' to quit the program,'add' to add to lib, 'show' to show all book info, 'search' to check book info after providing a bookname, 'delete' to delete an entry accorind to its id, 'modify' to modify an entry after providing a valid id :)
+
+>add
+>New Book ID: 1
+>New Book Name: Livewired
+>New Book Author: David Eagleman
+>New Book Price: 324
+
+>pls type in 'quit' or 'exit' to quit the program,'add' to add to lib, 'show' to show all book info, 'search' to check book info after providing a bookname, 'delete' to delete an entry accorind to its id, 'modify' to modify an entry after providing a valid id :)  
+
+>add
+>New Book ID: 1
+ID duplicate, quitting!
+
+>add
+>New Book ID: 2
+>New Book Name: Verity
+>New Book Author: Coleen Hoover
+>New Book Price: 342
+
+>pls type in 'quit' or 'exit' to quit the program,'add' to add to lib, 'show' to show all book info, 'search' to check book info after providing a bookname, 'delete' to delete an entry accorind to its id, 'modify' to modify an entry after providing a valid id :)  
+
+>add
+>New Book ID: 3                        
+>New Book Name: Cybersecurity QuickStart
+>New Book Author: Miles Wang
+>New Book Price: 324
+
+>pls type in 'quit' or 'exit' to quit the program,'add' to add to lib, 'show' to show all book info, 'search' to check book info after providing a bookname, 'delete' to delete an entry accorind to its id, 'modify' to modify an entry after providing a valid id :)  
+
+>show
+Name: Livewired ID: 1 Author:David Eagleman Price: 324.0
+Name: Verity ID: 2 Author:Coleen Hoover Price: 342.0
+Name: Cybersecurity QuickStart ID: 3 Author:Miles Wang Price: 324.0
+
+>search
+>Book Name: Verity
+Name: Verity ID: 2 Author:Coleen Hoover Price: 342.0
+
+>delete
+>ID: 1
+>Sucess
+
+>show 
+Name: Verity ID: 2 Author:Coleen Hoover Price: 342.0
+Name: Cybersecurity QuickStart ID: 3 Author:Miles Wang Price: 324.0
+
+>modify
+>ID: 3
+>New Book Name: Cybersecurity QuickStart
+>New Book Author: Zhongyi Wang
+>New Book Price: 3000
+>Sucess
+
+>pls type in 'quit' or 'exit' to quit the program,'add' to add to lib, 'show' to show all book info, 'search' to check book info after providing a bookname, 'delete' to delete an entry accorind to its id, 'modify' to modify an entry after providing a valid id :)  
+
+>show
+Name: Verity ID: 2 Author:Coleen Hoover Price: 342.0
+Name: Cybersecurity QuickStart ID: 3 Author:Zhongyi Wang Price: 3000.0
+
+>quit
+```
+#### Q5
+```bash
+package hackerrank;
+
+import java.io.*;
+import java.util.*;
+
+public class list {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int length = Integer.parseInt(scanner.nextLine());  // Get the number of initial elements
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        // Read initial array elements
+        String[] elements = scanner.nextLine().split(" ");
+        for (int i = 0; i < length; i++) {
+            arr.add(Integer.parseInt(elements[i]));
+        }
+
+        int numQueries = Integer.parseInt(scanner.nextLine());  // Number of queries
+        for (int i = 0; i < numQueries; i++) {
+            String command = scanner.nextLine();
+            if (command.equals("Insert")) {
+                String[] parts = scanner.nextLine().split(" ");
+                int index = Integer.parseInt(parts[0]);
+                int value = Integer.parseInt(parts[1]);
+                arr.add(index, value);
+            } else if (command.equals("Delete")) {
+                int index = Integer.parseInt(scanner.nextLine());
+                arr.remove(index);
+            }
+        }
+
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        scanner.close();
+    }
+}
+
+```
 ## Hash maps
 Key - Value pairs, just like Python Dictionary.  
 To use hashmap, you nned to first import the hashmap class.  
@@ -1410,7 +2394,6 @@ So to ensure that at least we get something from the query we can set a default 
 examScores.getOrDefault(")
 
 ```
-
 
 ### Clear a hashmap
 
@@ -1477,4 +2460,325 @@ examScores.forEach((subject, score) -> {
 });
 
 ```
+
+
+## Stack
+In computer science, a stack or LIFO (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations: push, which adds an element to the collection, and pop, which removes the last element that was added.
+
+### Basic Operations of a Stack
+Push: Add an element to the top of the stack.
+Pop: Remove and return the top element of the stack. If the stack is empty, this operation might throw an exception.
+Peek: Return the top element without removing it from the stack.
+IsEmpty: Check if the stack is empty.
+
+#### Basic Examples of using a Stack
+
+```bash
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a stack
+        Stack<Integer> stack = new Stack<>();
+
+        // Pushing elements onto the stack
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        // Displaying the top element
+        System.out.println("Top element: " + stack.peek());
+
+        // Popping elements from the stack
+        while (!stack.isEmpty()) {
+            System.out.println("Popped element: " + stack.pop());
+        }
+    }
+}
+
+
+```
+
+A more mordern approach would be using deque as an alternative.
+
+```bash
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating a stack using Deque
+        Deque<Integer> stack = new ArrayDeque<>();
+
+        // Pushing elements onto the stack
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        // Displaying the top element
+        System.out.println("Top element: " + stack.peek());
+
+        // Popping elements from the stack
+        while (!stack.isEmpty()) {
+            System.out.println("Popped element: " + stack.pop());
+        }
+    }
+}
+
+```
+
+#### Balanced String Example
+```bash
+package hackerrank;
+
+import java.util.*;
+
+public class Stack {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Deque<String> stack = new ArrayDeque<>();
+
+        while (scanner.hasNext()) {
+            char[] originalInput = scanner.nextLine().toCharArray();
+            boolean is_balanced = true;
+            for (char c : originalInput) {
+                if (c == '(' || c == '[' || c == '{') {
+                    stack.push(String.valueOf(c));
+                } else if (c == ')' || c == ']' || c == '}') {
+                    String topEle = String.valueOf(stack.peek());
+                    if (topEle.equals(String.valueOf('(')) || topEle.equals(String.valueOf('[')) || topEle.equals(String.valueOf('{'))) {
+                        stack.pop();
+                    } else {
+                        is_balanced = false;
+                        break;
+                    }
+                }
+            }
+
+            if (is_balanced && stack.isEmpty()) {
+                System.out.println("true");
+            } else {
+                System.out.println("false");
+                stack.clear();
+            }
+        }
+    }
+}
+```
+
+## Set
+In Java, a Set is a collection that does not allow duplicate elements. This means it can be very useful for storing unique items. Java provides several implementations of the Set interface, each with different characteristics:
+
+HashSet: Offers the best performance for the operations of adding, removing, and checking if an item exists. It does not maintain the order of elements.
+LinkedHashSet: Similar to HashSet but also maintains the insertion order of the elements.
+TreeSet: Stores elements in a sorted (ascending) order. It is useful when sorted order retrieval is needed.
+
+### Basic set operations
+
+
+### HashSet
+
+```bash
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        Set<String> fruits = new HashSet<>();
+
+        // Adding elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+
+        // Adding a duplicate element (which will not be added)
+        fruits.add("Apple");
+
+        // Check if an element exists
+        if (fruits.contains("Banana")) {
+            System.out.println("Banana is in the set");
+        }
+
+        // Iterate over the set
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+        }
+
+        // Size of the set
+        System.out.println("There are " + fruits.size() + " elements in the set.");
+    }
+}
+
+```
+
+## Generic Types
+
+### Generic Methods
+Generic methods are methods that introduce their own type parameters. This is similar to declaring a generic type, but the type parameter's scope is limited to the method where it is declared. Using generic methods, you can write a single method declaration that can be called with arguments of different types, based on the type of arguments passed to the method. The compiler will ensure that the parameters are correctly typed.
+
+```bash
+public class GenericMethodExample {
+
+    // A generic method to print an array of any type
+    public static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4};
+        String[] stringArray = {"hello", "world"};
+
+        printArray(intArray);
+        printArray(doubleArray);
+        printArray(stringArray);
+    }
+}
+```
+
+## Queue
+
+### Priority Queue
+```bash
+Class Priorities
+
+    // Define a priority queue to store students with a comparator
+    Define priorityQueue as PriorityQueue of Student
+
+    Method getStudents(events as List of String) returns List of Student
+        // Loop through each event in the events list
+        For each event in events
+            // Split the event string into components
+            Split event into parts
+
+            // Check the first part of the event to determine the action
+            If parts[0] is "ENTER"
+                // Create a new student using the remaining parts of the event
+                student = new Student(parts[3] as Integer, parts[1] as String, parts[2] as Double)
+                // Add the student to the priority queue
+                priorityQueue.add(student)
+            Else if parts[0] is "SERVED"
+                // Remove the student with the highest priority from the queue
+                priorityQueue.poll()
+
+        // Create a list to hold the remaining students
+        remainingStudents = new List of Student
+
+        // Empty the priority queue into remainingStudents in priority order
+        While priorityQueue is not empty
+            remainingStudents.add(priorityQueue.poll())
+
+        // Return the list of remaining students
+        Return remainingStudents
+End Class
+
+```
+
+```bash
+package hackerrank;
+import java.util.*;
+
+public class PriorityQueuePractise {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int entries = scanner.nextInt();
+        scanner.nextLine();
+
+        // Read the next line of input
+        String inputLine = scanner.nextLine();
+
+        // Split the input line into parts based on spaces
+        String[] parts = inputLine.split(" ");
+
+
+
+
+}
+
+class Student{
+    private int id;
+    private String name;
+    private double cgpa;
+
+    public Student(int id, String name, double cgpa) {
+        this.id = id;
+        this.name = name;
+        this.cgpa = cgpa;
+    }
+    // Getter for the student ID
+    public int getID() {
+        return id;
+    }
+
+    // Getter for the student name
+    public String getName() {
+        return name;
+    }
+
+    // Getter for the student CGPA
+    public double getCGPA() {
+        return cgpa;
+    }
+}
+
+class Priority{
+    public List<Student> getStudents(List<String> events){
+        PriorityQueue<Student> Q = new PriorityQueue<>();
+
+        for (String event: events){
+            // Split the input line into parts based on spaces
+            String[] parts = event.split(" ");
+
+            // Assign and parse parts to variables
+            String op = parts[0];
+            String name = parts[1];
+            double cgpa = Double.parseDouble(parts[2]);
+            int id = Integer.parseInt(parts[3]);
+
+            switch (op){
+                case "SERVED":{
+                    //search and deque
+                    Q.poll();
+                    break;
+                }
+                case "ENTER":{
+                    //queue in
+                    Student student = new Student(id, name, cgpa);
+                    Q.offer(student);
+                    break;
+                }
+            }
+            //order Q into a proiority queue
+
+
+        }
+
+        //print remaining list
+
+    }
+
+    @Override
+    public int compare(Student s1, Student s2) {
+        if (Double.compare(s1.getCGPA(), s2.getCGPA()) == 0) {
+            return s1.getName().compareTo(s2.getName());
+        }
+        return Double.compare(s2.getCGPA(), s1.getCGPA());
+    }
+
+    }
+
+}
+```
+
+
+
+
+
+
+
 

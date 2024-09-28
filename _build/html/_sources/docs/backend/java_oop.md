@@ -570,9 +570,23 @@ a white Hasky dog is guarding my house.
 #### Q5
 ​ 定义数组存储3部汽车对象。
 
-​ 汽车的属性：品牌，价格，颜色。
+​ 汽车的属性：品牌，价格，颜色，车牌号。
 
 ​ 创建三个汽车对象，数据通过键盘录入而来，并把数据存入到数组当中。
+​ 要求，计算出三部汽车的平均价格
+统计价格比平均值低的汽车有几个？并把她们的所有信息打印出来。
+​ 要求1：添加的时候需要进行车牌号的唯一性判断。
+       a.k.a get a new Cars object, if the car ID already exist, the system will not add the new one into the array, if it is unique, then the system will create a larger array and add the new car info into the database
+
+​ 要求2：添加完毕之后，遍历所有汽车信息。
+
+​ 要求3：通过id删除汽车信息
+
+​ 如果存在，则删除，如果不存在，则提示删除失败。
+
+​ 要求4：删除完毕之后，遍历所有汽车信息。
+
+​ 要求5：车牌号为 GH835 的汽车，价格涨了8000
 
 ```bash
 package garage;
@@ -660,10 +674,24 @@ public class helloworld {
     }
 
     public static void printCarDetails(Cars[] myCars) {
+
+        double totalPrice = 0;
+
         System.out.println("Car Details:");
         for (Cars car : myCars) {
             System.out.println("Brand: " + car.getBrand() + ", Color: " + car.getColor() + ", Price: " + car.getPrice());
+            totalPrice += car.getPrice();
         }
+
+        double avgPrice = (totalPrice / myCars.length);
+        System.out.println("Average: " + avgPrice);
+
+        for (Cars car : myCars) {
+            if (car.getPrice() < avgPrice) {
+                System.out.println(car.getBrand() + "'s price is lower than the average price. (" + car.getPrice() + " < " + avgPrice + ")");
+            }
+        }
+
     }
 }
 ```
@@ -693,34 +721,20 @@ Car Details:
 Brand: audi, Color: black, Price: 3243.0
 Brand: BMW, Color: white, Price: 325423.0
 Brand: Xpeng, Color: green, Price: 1242.0
+Average: 8937.0
 
+
+Car Details:
+Brand: BYD, Color: black, Price: 34235.0
+Brand: Toyota, Color: grey, Price: 23511.0
+Brand: Landrover, Color: white, Price: 23452.0
+Average: 27066.0
+Toyota's price is lower than the average price. (23511.0 < 27066.0)
+Landrover's price is lower than the average price. (23452.0 < 27066.0)
 
 ```
+
 #### Q6
-​ 定义数组存储3部手机对象。
-
-​ 手机的属性：品牌，价格，颜色。
-
-​ 要求，计算出三部手机的平均价格
-
-```bash
-
-```
-
-#### Q7
-​ 定义数组存储4个女朋友的对象
-
-​ 女朋友的属性：姓名、年龄、性别、爱好
-
-​ 要求1：计算出四女朋友的平均年龄
-
-​ 要求2：统计年龄比平均值低的女朋友有几个？并把她们的所有信息打印出来。
-
-```bash
-
-```
-
-#### Q8
 ​ 定义数组存储3个学生对象。
 
 ​ 学生的属性：学号，姓名，年龄。
@@ -738,7 +752,107 @@ Brand: Xpeng, Color: green, Price: 1242.0
 ​ 要求5：id为2的学生，年龄+1岁
 
 ```bash
+public class Student {
+    private int id;
+    private String name;
+    private int age;
 
+    public Student() {
+    }
+
+    public Student(int id, String name, int age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+
+public class Test {
+    public static void main(String[] args) {
+
+        //1.创建一个数组用来存储学生对象
+        Student[] arr = new Student[3];
+        //2.创建学生对象并添加到数组当中
+        Student stu1 = new Student(1, "zhangsan", 23);
+        Student stu2 = new Student(2, "lisi", 24);
+
+        //3.把学生对象添加到数组当中
+        arr[0] = stu1;
+        arr[1] = stu2;
+
+
+        //要求1：再次添加一个学生对象，并在添加的时候进行学号的唯一性判断。
+        Student stu4 = new Student(1, "zhaoliu", 26);
+
+        //唯一性判断
+        //已存在 --- 不用添加
+        //不存在 --- 就可以把学生对象添加进数组
+        for (Student student : arr) {
+            if (stu4.getId() == student.getId){
+
+            }else{
+
+            }
+        }
+    }
+
+    public static void printArr(Student[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            Student stu = arr[i];
+            if(stu != null){
+                System.out.println(stu.getId() + ", " + stu.getName() + ", " + stu.getAge());
+            }
+        }
+    }
+
+    public static void addStu(Student[] arr, Student stu4){
+
+        boolean is_space_left = false;
+        for (Student student : arr) {
+            is_space_left = (student.getId() == null) ? true : is_space_left;
+        }
+
+        count = 0;
+
+        if (is_space_left){
+            while (arr[count] != null){
+                count++;
+            }
+            Student[count].setName(sut4.getName());
+            Student[count].setId(sut4.getId());
+            Student[count].setAge(sut4.getAge());
+
+        }else{
+            
+            
+        }
+    }
+}
 ```
 
 
