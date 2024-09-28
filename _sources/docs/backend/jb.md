@@ -66,9 +66,9 @@ see the hosted website at `https://FallenOverlord.github.io/<newly_cloned_dir>/`
 
 ## 9. Update the online site
 add in the .md file and remember to update the _toc.yml file
-use the command `jb build --all <mybookname>/`
+use the command `jb build --all mini/`
 ```bash
-cd <my_online_book>/
+cd mini/
 git add ./*
 git commit -m "adding my first book!"
 git push
