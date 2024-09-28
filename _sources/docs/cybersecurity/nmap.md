@@ -103,4 +103,126 @@ If the attacker knows the exact service version the machine is runing on, it can
   
 [markdown syntax](https://www.markdownguide.org/cheat-sheet/)
 
-***hello***
+## Firewall Evasion
+A firewall is a security measure against unauthorized connection attempts from external networks.   
+ 
+Evasion: fragmentation of packets, the use of decoys  
+
+IPS/IDS: based on pattern matching and signatures, if specific patterns are detected, such as a service detection scan, IPS may prevent the pending connection attempts.  
+
+ dropped packets are ignored  
+ rejected packets that are returned with an RST flag, contain different types of ICMP error codes or contain nothing at all  
+
+
+Nmap's TCP ACK scan (-sA) method is much harder to filter for firewalls and IDS/IPS systems than regular SYN (-sS) or Connect scans (sT)  
+
+```bash
+//SYN Scan
+sudo nmap 10.129.2.28 -p 21,22,25 -sS -Pn -n --disable-arp-ping --packet-trace
+
+//ACK Scan
+sudo nmap 10.129.2.28 -p 21,22,25 -sA -Pn -n --disable-arp-ping --packet-trace
+
+
+```
+ detection of IDS/IPS systems is much more difficult because these are passive traffic monitoring systems
+One method to determine whether such IPS system is present in the target network is to scan from a single host (VPS).  
+
+Decoy Scan
+```bash
+
+sudo nmap 10.129.2.28 -p 80 -sS -Pn -n --disable-arp-ping --packet-trace -D RND:5
+```
+--packet-trace	Shows all packets sent and received.
+-Pn	Disables ICMP Echo requests.
+-n	Disables DNS resolution.
+
+### DNS Scan (IPS/IDS Evasion 2)
+Submit the DNS server version of the target as the answer.  
+
+ The -sV option enables service version detection, which attempts to determine the version of the running services on the target.  
+ DNS typically operates on port 53, so you can specify this port in your scan.  
+ use nmap's NSE (Nmap Scripting Engine) scripts tailored for DNS to gather more detailed information
+```bash
+nmap --dns-server 8.8.8.8 10.129.2.48
+┌─[us-academy-2]─[10.10.14.125]─[htb-ac-1136328@htb-c1qvcg4v7i]─[~]
+└──╼ [★]$ nmap --dns-server 8.8.8.8 10.129.2.48
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-05-18 10:29 BST
+Nmap scan report for 10.129.2.48
+Host is up (0.067s latency).
+Not shown: 992 closed tcp ports (conn-refused)
+PORT    STATE    SERVICE
+21/tcp  open     ftp
+22/tcp  open     ssh
+53/tcp  filtered domain
+80/tcp  open     http
+110/tcp open     pop3
+139/tcp open     netbios-ssn
+143/tcp open     imap
+445/tcp filtered microsoft-ds
+
+nmap -sV -p 53 --script=dns-nsid 10.129.2.48
+┌─[us-academy-2]─[10.10.14.125]─[htb-ac-1136328@htb-c1qvcg4v7i]─[~]
+└──╼ [★]$ nmap -sV -p 53 --script=dns-nsid 10.129.2.48
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-05-18 10:32 BST
+Nmap scan report for 10.129.2.48
+Host is up (0.068s latency).
+
+PORT   STATE    SERVICE VERSION
+53/tcp filtered domain
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+
+
+nmap -sV -p 53 --script="dns* and not broadcast" 10.129.2.48
+┌─[us-academy-2]─[10.10.14.125]─[htb-ac-1136328@htb-c1qvcg4v7i]─[~]
+└──╼ [★]$ nmap -sV -p 53 --script="dns* and not broadcast" 10.129.2.48
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-05-18 10:34 BST
+Nmap scan report for 10.129.2.48
+Host is up (0.067s latency).
+
+PORT   STATE    SERVICE VERSION
+53/tcp filtered domain
+
+Host script results:
+|_dns-brute: Can't guess domain of "10.129.2.48"; use dns-brute.domain script argument.
+| dns-blacklist: 
+|   SPAM
+|     l2.apews.org - FAIL
+|_    all.spamrats.com - FAIL
+
+
+nmap -sV -p 53 -T1 -f --scan-delay 500ms --randomize-hosts -D RND:10 --dns-server 8.8.8.8 --script=dns-nsid 10.129.2.48
+
+nmap -sV -p 53 -T1 -f --scan-delay 500ms --randomize-hosts -D RND:10 --dns-server 8.8.8.8 --script="dns* and not broadcast" 10.129.2.48
+
+┌─[us-academy-2]─[10.10.14.125]─[htb-ac-1136328@htb-c1qvcg4v7i]─[~]
+└──╼ [★]$ nmap -sV -p 53 -T1 -f --scan-delay 500ms --randomize-hosts -D RND:10 --dns-server 8.8.8.8 --script="dns* and not broadcast" 10.129.2.48
+Sorry, but fragscan requires root privileges.
+QUITTING!
+
+┌─[us-academy-2]─[10.10.14.125]─[htb-ac-1136328@htb-c1qvcg4v7i]─[~]
+└──╼ [★]$ sudo nmap -sV -p 53 -T1 -f --scan-delay 500ms --randomize-hosts -D RND:10 --dns-server 8.8.8.8 --script="dns* and not broadcast" 10.129.2.48
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-05-18 10:38 BST
+Nmap scan report for 10.129.2.48
+Host is up (0.065s latency).
+
+PORT   STATE    SERVICE VERSION
+53/tcp filtered domain
+
+Host script results:
+|_dns-brute: Can't guess domain of "10.129.2.48"; use dns-brute.domain script argument.
+| dns-blacklist: 
+|   SPAM
+|     l2.apews.org - FAIL
+|_    all.spamrats.com - FAIL
+
+
+```
+
+```sh
+
+```
+
+
+

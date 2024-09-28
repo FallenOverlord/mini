@@ -380,15 +380,17 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">4.15.8. Strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatted-strings">4.15.8.1. Formatted Strings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">4.15.8.2. String Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-practise-questions">4.15.8.3. Strings Practise Questions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.15.8.3.1. Q1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.15.8.3.2. Q2</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.15.8.3.3. Q3</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.15.8.3.4. Q4</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.15.8.3.5. Q5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.15.8.3.6. Q6</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.15.8.3.7. Q7</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.15.8.3.8. Q8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-method-indexof">4.15.8.3. String method: indexOf()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-method-substring">4.15.8.4. String method: substring()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-practise-questions">4.15.8.5. Strings Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.15.8.5.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.15.8.5.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.15.8.5.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.15.8.5.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.15.8.5.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.15.8.5.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.15.8.5.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.15.8.5.8. Q8</a></li>
 </ul>
 </li>
 </ul>
@@ -410,21 +412,23 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">4.15.13. Loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist">4.15.14. Arraylist</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-arrays">4.15.14.1. Limitations of Arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-of-arraylists">4.15.14.2. Usage of Arraylists</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-elemnts">4.15.14.2.1. remove elemnts</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-elements">4.15.14.2.2. Update elements</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-an-arraylist">4.15.14.2.3. Sorting an ArrayList</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-method">4.15.14.2.4. Size Method</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contains-method">4.15.14.2.5. Contains Method</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-it-is-empty">4.15.14.2.6. Checking if it is empty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-of-arraylists">4.15.14.2. Usage of Arraylists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-elements-to-an-arraylist">4.15.14.3. Adding elements to an ArrayList</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-modifying-values">4.15.14.4. Accessing and Modifying values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-elemnts">4.15.14.4.1. remove elemnts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-an-arraylist">4.15.14.4.2. Sorting an ArrayList</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-method">4.15.14.4.3. Size Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contains-method">4.15.14.4.4. Contains Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-it-is-empty">4.15.14.4.5. Checking if it is empty</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loop">4.15.14.3. For Each Loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist-practise-question">4.15.14.4. ArrayList Practise Question</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.15.14.4.1. Q1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.15.14.4.2. Q2</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.15.14.4.3. Q3</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.15.14.4.4. Q4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loop">4.15.14.5. For Each Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-an-arraylist-to-an-array">4.15.14.6. Converting an ArrayList to an array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist-practise-question">4.15.14.7. ArrayList Practise Question</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.15.14.7.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.15.14.7.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.15.14.7.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.15.14.7.4. Q4</a></li>
 </ul>
 </li>
 </ul>
@@ -1037,6 +1041,13 @@ public<span class="w"> </span>class<span class="w"> </span>helloworld<span class
 <span class="o">}</span>
 </pre></div>
 </div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Please<span class="w"> </span>input<span class="w"> </span>a<span class="w"> </span>string:<span class="w"> </span>
+bash
+Original<span class="w"> </span>String:<span class="w">  </span>b<span class="w"> </span>a<span class="w"> </span>s<span class="w"> </span>h
+Randomfied<span class="w"> </span>String:<span class="w">  </span>b<span class="w"> </span>h<span class="w"> </span>s<span class="w"> </span>a
+</pre></div>
+</div>
 </section>
 </section>
 <section id="strings">
@@ -1104,72 +1115,380 @@ strstr() function in c
 System.out.println(string.contains(“mars”));
 it will return a boolean</p>
 </section>
+<section id="string-method-indexof">
+<h3><span class="section-number">4.15.8.3. </span>String method: indexOf()<a class="headerlink" href="#string-method-indexof" title="Link to this heading">#</a></h3>
+<p>find the position of a character or a substring within a string</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>String<span class="w"> </span><span class="nv">myString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">;</span>
+int<span class="w"> </span><span class="nv">index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>myString.indexOf<span class="o">(</span><span class="s1">&#39;o&#39;</span><span class="o">)</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Returns<span class="w"> </span><span class="m">4</span>
+int<span class="w"> </span><span class="nv">strIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>myString.indexOf<span class="o">(</span><span class="s2">&quot;world&quot;</span><span class="o">)</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Returns<span class="w"> </span><span class="m">7</span>
+</pre></div>
+</div>
+</section>
+<section id="string-method-substring">
+<h3><span class="section-number">4.15.8.4. </span>String method: substring()<a class="headerlink" href="#string-method-substring" title="Link to this heading">#</a></h3>
+<p>extract a substring from a string</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>String<span class="w"> </span><span class="nv">myString</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">;</span>
+String<span class="w"> </span><span class="nv">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>myString.substring<span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Returns<span class="w"> </span><span class="s2">&quot;world!&quot;</span>
+String<span class="w"> </span><span class="nv">limitedSub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>myString.substring<span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="m">5</span><span class="o">)</span><span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Returns<span class="w"> </span><span class="s2">&quot;Hello&quot;</span>
+String<span class="w"> </span><span class="nv">sub2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>myString.substring<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>Returns<span class="w"> </span><span class="s2">&quot;Hello, world&quot;</span>
+</pre></div>
+</div>
+</section>
 <section id="strings-practise-questions">
-<h3><span class="section-number">4.15.8.3. </span>Strings Practise Questions<a class="headerlink" href="#strings-practise-questions" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.15.8.5. </span>Strings Practise Questions<a class="headerlink" href="#strings-practise-questions" title="Link to this heading">#</a></h3>
 <section id="id1">
-<h4><span class="section-number">4.15.8.3.1. </span>Q1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.8.5.1. </span>Q1<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <p>键盘输入任意字符串，打乱里面的内容</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+import<span class="w"> </span>java.util.StringBuilder<span class="p">;</span>
+import<span class="w"> </span>java.util.Random<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">originalInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>StringBuilder<span class="o">(</span>scanner.nextLine<span class="o">())</span>.toString<span class="o">()</span>.toCharArray<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>printArr<span class="o">(</span>originalInput<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>printArr<span class="o">(</span>randomfy<span class="o">(</span>originalInput<span class="o">))</span><span class="p">;</span>
+
+<span class="w">        </span>
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printArr<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>arr<span class="o">[</span>i<span class="o">])</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>char<span class="o">[]</span><span class="w"> </span>randomfy<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+
+<span class="w">        </span>Random<span class="w"> </span><span class="nv">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>random<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>char<span class="w"> </span><span class="nv">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>null<span class="p">;</span>
+
+<span class="w">            </span>int<span class="w"> </span><span class="nv">randomIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>random.nextInt<span class="o">(</span>arr.length<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="nv">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arr<span class="o">[</span>i<span class="o">]</span><span class="p">;</span>
+<span class="w">            </span>arr<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arr<span class="o">[</span>randomIndex<span class="o">]</span><span class="p">;</span>
+<span class="w">            </span>arr<span class="o">[</span>randomIndex<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>temp<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>arr<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </section>
 <section id="id2">
-<h4><span class="section-number">4.15.8.3.2. </span>Q2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.8.5.2. </span>Q2<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <p>生成验证码</p>
 <p>内容：可以是小写字母，也可以是大写字母，还可以是数字</p>
 <p>规则：</p>
 <p>长度为5</p>
 <p>内容中是四位字母，1位数字。</p>
 <p>其中数字只有1位，但是可以出现在任意的位置。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Random<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>private<span class="w"> </span>static<span class="w"> </span>final<span class="w"> </span>Random<span class="w"> </span><span class="nv">random</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Random<span class="o">()</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>Single<span class="w"> </span>Random<span class="w"> </span>instance
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">numberIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>getRandomNum<span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">randomNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>getRandomNum<span class="o">(</span><span class="m">10</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>char<span class="o">[</span><span class="m">5</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span>char<span class="w"> </span><span class="nv">randomChar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>char<span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="s1">&#39;0&#39;</span><span class="w"> </span>+<span class="w"> </span>randomNumber<span class="o">)</span><span class="p">;</span><span class="w"> </span>//<span class="w"> </span>Correctly<span class="w"> </span>map<span class="w"> </span>number<span class="w"> </span>to<span class="w"> </span>character
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>array.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="nv">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>numberIndex<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>array<span class="o">[</span>numberIndex<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>randomChar<span class="p">;</span><span class="w"> </span>//<span class="w"> </span>Use<span class="w"> </span>the<span class="w"> </span>char<span class="w"> </span>mapped<span class="w"> </span>from<span class="w"> </span>randomNumber
+<span class="w">                </span>System.out.println<span class="o">(</span><span class="s2">&quot;Random Number as Char: &quot;</span><span class="w"> </span>+<span class="w"> </span>randomChar<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>array<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>getRandomChar<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>printArr<span class="o">(</span>array<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>char<span class="w"> </span>getRandomChar<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>boolean<span class="w"> </span><span class="nv">isUppercase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>random.nextBoolean<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="o">(</span>char<span class="o">)</span><span class="w"> </span><span class="o">(</span>isUppercase<span class="w"> </span>?<span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="w"> </span>+<span class="w"> </span>random.nextInt<span class="o">(</span><span class="m">26</span><span class="o">)</span><span class="w"> </span>:<span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="w"> </span>+<span class="w"> </span>random.nextInt<span class="o">(</span><span class="m">26</span><span class="o">))</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>int<span class="w"> </span>getRandomNum<span class="o">(</span>int<span class="w"> </span>size<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>random.nextInt<span class="o">(</span>size<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printArr<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>char<span class="w"> </span>c<span class="w"> </span>:<span class="w"> </span>arr<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>c<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Random<span class="w"> </span>Number<span class="w"> </span>as<span class="w"> </span>Char:<span class="w"> </span><span class="m">4</span>
+<span class="w"> </span>S<span class="w"> </span>q<span class="w"> </span>y<span class="w"> </span>y<span class="w"> </span><span class="m">4</span>
 </pre></div>
 </div>
 </section>
 <section id="id3">
-<h4><span class="section-number">4.15.8.3.3. </span>Q3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
-<p>请编写程序，由键盘录入一个字符串，统计字符串中英文字母和数字分别有多少个。比如：Hello12345World中字母：10个，数字：5个。
-1、键盘录入一个字符串，用 Scanner 实现 2、要统计两种类型的字符个数，需定义两个统计变量，初始值都为0 3、遍历字符串，得到每一个字符 4、判断该字符属于哪种类型，然后对应类型的统计变量+1，判断字母时需要考虑大小写，条件比较复杂，怎样做才能使判断更简单呢？</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<h4><span class="section-number">4.15.8.5.3. </span>Q3<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>请编写程序，由键盘录入一个字符串，统计字符串中英文字母和数字分别有多少个。比如：Hello12345World中字母：10个，数字：5个。</p>
+<p>1、键盘录入一个字符串，用 Scanner 实现 2、要统计两种类型的字符个数，需定义两个统计变量，初始值都为0 3、遍历字符串，得到每一个字符 4、判断该字符属于哪种类型，然后对应类型的统计变量+1，判断字母时需要考虑大小写，条件比较复杂，怎样做才能使判断更简单呢？</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.lang.StringBuilder<span class="p">;</span>
+import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>StringBuilder<span class="o">(</span>scanner.nextLine<span class="o">())</span>.toString<span class="o">()</span>.toCharArray<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">charCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">numCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>str.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+
+<span class="w">            </span>int<span class="w"> </span><span class="nv">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>int<span class="o">)(</span>str<span class="o">[</span>i<span class="o">]</span><span class="w"> </span>+<span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>System.err.println<span class="o">(</span>num<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>num<span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">145</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>num<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">154</span><span class="o">){</span>
+<span class="w">                </span>numCount++<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+<span class="w">                </span>charCount++<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>System.err.println<span class="o">(</span><span class="s2">&quot;char: &quot;</span><span class="w"> </span>+<span class="w"> </span>charCount<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; int: &quot;</span><span class="w"> </span>+<span class="w"> </span>numCount<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>AaZz90
+<span class="m">162</span>
+<span class="m">194</span>
+<span class="m">187</span>
+<span class="m">219</span>
+<span class="m">154</span>
+<span class="m">145</span>
+char:<span class="w"> </span><span class="m">4</span><span class="w"> </span>int:<span class="w"> </span><span class="m">2</span>
 </pre></div>
 </div>
 </section>
 <section id="id4">
-<h4><span class="section-number">4.15.8.3.4. </span>Q4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.8.5.4. </span>Q4<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <p>字符串的反转功能，判断是否相等功能</p>
 <p>训练提示
 1、判断是否对称，方法的返回值是什么类型？参数列表是什么？</p>
 <p>2、怎样判断对称呢？如果可以将字符串反转，反转后发现跟原来的字符串完全一样，不就可以判断出来了吗，那么哪个类有字符串的反转功能呢？</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+import<span class="w"> </span>java.lang.StringBuilder<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">originalInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>StringBuilder<span class="o">(</span>input<span class="o">)</span>.toString<span class="o">()</span>.toCharArray<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">reverseInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>StringBuilder<span class="o">(</span>input<span class="o">)</span>.reverse<span class="o">()</span>.toString<span class="o">()</span>.toCharArray<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>printArr<span class="o">(</span>originalInput<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>printArr<span class="o">(</span>reverseInput<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;It is &quot;</span><span class="w"> </span>+<span class="w"> </span>arrCmp<span class="o">(</span>originalInput,<span class="w"> </span>reverseInput<span class="o">)</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; that the input is symmetric.&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printArr<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>arr<span class="o">[</span>i<span class="o">])</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>boolean<span class="w"> </span>arrCmp<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr1,<span class="w"> </span>char<span class="o">[]</span><span class="w"> </span>arr2<span class="o">){</span>
+<span class="w">        </span>boolean<span class="w"> </span><span class="nv">is_same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr1.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span><span class="nv">is_same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>arr1<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>arr2<span class="o">[</span>i<span class="o">])</span><span class="w"> </span>?<span class="w"> </span>is_same<span class="w"> </span>:<span class="w"> </span>false<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>is_same<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </section>
 <section id="id5">
-<h4><span class="section-number">4.15.8.3.5. </span>Q5<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.8.5.5. </span>Q5<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <p>请定义一个方法用于判断一个字符串是否是对称的字符串，并在主方法中测试方法。例如：”abcba”、”上海自来水来自海上”均为对称字符串。</p>
 <p>训练目标
 字符串的反转功能，判断是否相等功能</p>
 <p>训练提示
 1、判断是否对称，方法的返回值是什么类型？参数列表是什么？</p>
 <p>2、怎样判断对称呢？如果可以将字符串反转，反转后发现跟原来的字符串完全一样，不就可以判断出来了吗，那么哪个类有字符串的反转功能呢？</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+import<span class="w"> </span>java.lang.StringBuilder<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">originalInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>StringBuilder<span class="o">(</span>input<span class="o">)</span>.toString<span class="o">()</span>.toCharArray<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">reverseInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>StringBuilder<span class="o">(</span>input<span class="o">)</span>.reverse<span class="o">()</span>.toString<span class="o">()</span>.toCharArray<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>printArr<span class="o">(</span>originalInput<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>printArr<span class="o">(</span>reverseInput<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;It is &quot;</span><span class="w"> </span>+<span class="w"> </span>arrCmp<span class="o">(</span>originalInput,<span class="w"> </span>reverseInput<span class="o">)</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; that the input is symmetric.&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printArr<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>arr<span class="o">[</span>i<span class="o">])</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>boolean<span class="w"> </span>arrCmp<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr1,<span class="w"> </span>char<span class="o">[]</span><span class="w"> </span>arr2<span class="o">){</span>
+<span class="w">        </span>boolean<span class="w"> </span><span class="nv">is_same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr1.length<span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span><span class="nv">is_same</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>arr1<span class="o">[</span>i<span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>arr2<span class="o">[</span>i<span class="o">])</span><span class="w"> </span>?<span class="w"> </span>is_same<span class="w"> </span>:<span class="w"> </span>false<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>is_same<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </section>
 <section id="id6">
-<h4><span class="section-number">4.15.8.3.6. </span>Q6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
-<p>我国的居民身份证号码，由由十七位数字本体码和一位数字校验码组成。请定义方法判断用户输入的身份证号码是否合法，并在主方法中调用方法测试结果。规则为：号码为18位，不能以数字0开头，前17位只可以是数字，最后一位可以是数字或者大写字母X。</p>
+<h4><span class="section-number">4.15.8.5.6. </span>Q6<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>我国的居民身份证号码，由由十七位数字本体码和一位数字校验码组成。请定义方法判断用户输入的身份证号码是否合法，并在主方法中调用方法测试结果。
+规则为：号码为18位，不能以数字0开头，前17位只可以是数字，最后一位可以是数字或者大写字母X。</p>
 <p>训练目标
 字符串的遍历、判断</p>
 <p>训练提示
 1、要判断字符串是否符合规则，方法的返回值类型是什么？参数列表是什么？</p>
 <p>2、使用String的API，对每种不符合条件的情况作出判断，一旦发现不符合条件就可以结束方法的执行，返回结果了。</p>
 <p>3、在主方法中创建键盘录入，调用方法，输入各种数据测试结果。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+import<span class="w"> </span>java.lang.StringBuilder<span class="p">;</span>
+
+//<span class="w"> </span><span class="m">0</span><span class="w"> </span>~<span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">145</span><span class="w"> </span>~<span class="w"> </span><span class="m">154</span>
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>tInterface<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>tInterface<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span><span class="nb">true</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>//get<span class="w"> </span>user<span class="w"> </span>input
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;pls type in &#39;quit&#39; or &#39;exit&#39; to quit the program :)&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot;Please input your id number: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>String<span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.equals<span class="o">(</span><span class="s2">&quot;quit&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>input.equals<span class="o">(</span><span class="s2">&quot;exit&quot;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>break<span class="p">;</span><span class="w">  </span>//<span class="w"> </span>Exit<span class="w"> </span>the<span class="w"> </span>loop<span class="w"> </span>after<span class="w"> </span>quitting
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">                </span>//<span class="w"> </span>Program<span class="w"> </span>logic
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.isEmpty<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                    </span>System.out.println<span class="o">(</span><span class="s2">&quot;Input cannot be empty. Please try again.&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">                </span><span class="o">}</span>
+<span class="w">                </span>char<span class="o">[]</span><span class="w"> </span><span class="nv">originalInput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>StringBuilder<span class="o">(</span>input<span class="o">)</span>.toString<span class="o">()</span>.toCharArray<span class="o">()</span><span class="p">;</span>
+<span class="w">                </span>printArr<span class="o">(</span>originalInput<span class="o">)</span><span class="p">;</span>
+<span class="w">                </span>System.out.println<span class="o">(</span><span class="s2">&quot;It is &quot;</span><span class="w"> </span>+<span class="w"> </span>checkValidity<span class="o">(</span>originalInput<span class="o">)</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; that the input is valid.&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printArr<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span>arr<span class="o">[</span>i<span class="o">])</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>boolean<span class="w"> </span>checkValidity<span class="o">(</span>char<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+<span class="w">        </span>boolean<span class="w"> </span><span class="nv">is_valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>arr.length<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">18</span><span class="o">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span>false<span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(((</span>int<span class="o">)</span>arr<span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">48</span><span class="o">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span>false<span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span><span class="o">(</span>arr.length<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="o">)</span><span class="p">;</span><span class="w"> </span>i++<span class="o">){</span>
+<span class="w">            </span><span class="nv">is_valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(((</span>int<span class="o">)</span>arr<span class="o">[</span>i<span class="o">])</span><span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">48</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">((</span>int<span class="o">)</span>arr<span class="o">[</span>i<span class="o">])</span><span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">57</span><span class="o">)</span><span class="w"> </span>?<span class="w"> </span>is_valid<span class="w"> </span>:<span class="w"> </span>false<span class="p">;</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot; &quot;</span><span class="w"> </span>+<span class="w"> </span><span class="o">((</span>int<span class="o">)</span>arr<span class="o">[</span>i<span class="o">]))</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span><span class="nv">is_valid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(((</span>int<span class="o">)</span>arr<span class="o">[</span>arr.length<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="o">])</span><span class="w"> </span>&gt;<span class="o">=</span><span class="w"> </span><span class="m">48</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">((</span>int<span class="o">)</span>arr<span class="o">[</span>arr.length<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="o">])</span><span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="m">57</span><span class="w"> </span>
+<span class="w">        </span><span class="o">||</span><span class="w"> </span><span class="o">(</span>int<span class="o">)</span>arr<span class="o">[</span>arr.length<span class="w"> </span>-<span class="w"> </span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">88</span><span class="o">)</span><span class="w"> </span>?<span class="w"> </span>is_valid<span class="w"> </span>:<span class="w"> </span>false<span class="p">;</span>
+<span class="w">        </span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>is_valid<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program<span class="w"> </span>:<span class="o">)</span>
+Please<span class="w"> </span>input<span class="w"> </span>your<span class="w"> </span>id<span class="w"> </span>number:<span class="w"> </span>inwkn34itrg
+<span class="w"> </span>i<span class="w"> </span>n<span class="w"> </span>w<span class="w"> </span>k<span class="w"> </span>n<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>i<span class="w"> </span>t<span class="w"> </span>r<span class="w"> </span>g
+It<span class="w"> </span>is<span class="w"> </span><span class="nb">false</span><span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>input<span class="w"> </span>is<span class="w"> </span>valid.
+pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program<span class="w"> </span>:<span class="o">)</span>
+Please<span class="w"> </span>input<span class="w"> </span>your<span class="w"> </span>id<span class="w"> </span>number:<span class="w"> </span>324jsafi
+<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span>j<span class="w"> </span>s<span class="w"> </span>a<span class="w"> </span>f<span class="w"> </span>i
+It<span class="w"> </span>is<span class="w"> </span><span class="nb">false</span><span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>input<span class="w"> </span>is<span class="w"> </span>valid.
+pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program<span class="w"> </span>:<span class="o">)</span>
+Please<span class="w"> </span>input<span class="w"> </span>your<span class="w"> </span>id<span class="w"> </span>number:<span class="w"> </span>ifiaiaibbeqqorwfef
+<span class="w"> </span>i<span class="w"> </span>f<span class="w"> </span>i<span class="w"> </span>a<span class="w"> </span>i<span class="w"> </span>a<span class="w"> </span>i<span class="w"> </span>b<span class="w"> </span>b<span class="w"> </span>e<span class="w"> </span>q<span class="w"> </span>q<span class="w"> </span>o<span class="w"> </span>r<span class="w"> </span>w<span class="w"> </span>f<span class="w"> </span>e<span class="w"> </span>f
+<span class="w"> </span><span class="m">105</span><span class="w"> </span><span class="m">102</span><span class="w"> </span><span class="m">105</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="m">105</span><span class="w"> </span><span class="m">97</span><span class="w"> </span><span class="m">105</span><span class="w"> </span><span class="m">98</span><span class="w"> </span><span class="m">98</span><span class="w"> </span><span class="m">101</span><span class="w"> </span><span class="m">113</span><span class="w"> </span><span class="m">113</span><span class="w"> </span><span class="m">111</span><span class="w"> </span><span class="m">114</span><span class="w"> </span><span class="m">119</span><span class="w"> </span><span class="m">102</span><span class="w"> </span><span class="m">101</span>
+It<span class="w"> </span>is<span class="w"> </span><span class="nb">false</span><span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>input<span class="w"> </span>is<span class="w"> </span>valid.
+pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program<span class="w"> </span>:<span class="o">)</span>
+Please<span class="w"> </span>input<span class="w"> </span>your<span class="w"> </span>id<span class="w"> </span>number:<span class="w"> </span>AIFNENVIEFIINISLFZ
+<span class="w"> </span>A<span class="w"> </span>I<span class="w"> </span>F<span class="w"> </span>N<span class="w"> </span>E<span class="w"> </span>N<span class="w"> </span>V<span class="w"> </span>I<span class="w"> </span>E<span class="w"> </span>F<span class="w"> </span>I<span class="w"> </span>I<span class="w"> </span>N<span class="w"> </span>I<span class="w"> </span>S<span class="w"> </span>L<span class="w"> </span>F<span class="w"> </span>Z
+<span class="w"> </span><span class="m">65</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">70</span><span class="w"> </span><span class="m">78</span><span class="w"> </span><span class="m">69</span><span class="w"> </span><span class="m">78</span><span class="w"> </span><span class="m">86</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">69</span><span class="w"> </span><span class="m">70</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">78</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">83</span><span class="w"> </span><span class="m">76</span><span class="w"> </span><span class="m">70</span>
+It<span class="w"> </span>is<span class="w"> </span><span class="nb">false</span><span class="w"> </span>that<span class="w"> </span>the<span class="w"> </span>input<span class="w"> </span>is<span class="w"> </span>valid.
+pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program<span class="w"> </span>:<span class="o">)</span>
+Please<span class="w"> </span>input<span class="w"> </span>your<span class="w"> </span>id<span class="w"> </span>number:<span class="w"> </span><span class="nb">exit</span>
 </pre></div>
 </div>
 </section>
 <section id="id7">
-<h4><span class="section-number">4.15.8.3.7. </span>Q7<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.8.5.7. </span>Q7<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <p>定义一个方法，把 int 数组中的数据按照指定的格式拼接成一个字符串返回，调用该方法，并在控制台输出结果。</p>
 <p>要求：</p>
 <p>​ 1、如果传递的参数为空，返回null</p>
@@ -1184,25 +1503,68 @@ it will return a boolean</p>
 <p>4、遍历数组，按照题目格式拼接数组中的元素。</p>
 <p>5、将字符串返回</p>
 <p>6、在主方法中定义数组，并调用方法，打印结果</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span>arr1<span class="o">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="m">11</span>,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="m">12</span>,34,<span class="w"> </span><span class="m">34</span><span class="o">}</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>Arrays.toString<span class="o">(</span>arr1<span class="o">))</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">5</span>,<span class="w"> </span><span class="m">6</span>,<span class="w"> </span><span class="m">7</span>,<span class="w"> </span><span class="m">8</span>,<span class="w"> </span><span class="m">9</span>,<span class="w"> </span><span class="m">10</span>,<span class="w"> </span><span class="m">11</span>,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="m">12</span>,<span class="w"> </span><span class="m">34</span>,<span class="w"> </span><span class="m">34</span><span class="o">]</span>
 </pre></div>
 </div>
 </section>
 <section id="id8">
-<h4><span class="section-number">4.15.8.3.8. </span>Q8<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.8.5.8. </span>Q8<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <p>在String类的API中，有如下两个方法：</p>
 <p>// 查找参数字符串str在调用方法的字符串中第一次出现的索引，如果不存在，返回-1
 public int indexOf(String str)</p>
 <p>// 截取字符串，从索引beginIndex（包含）开始到字符串的结尾
 public String substring(int beginIndex)
 请仔细阅读API中这两个方法的解释，完成如下需求。</p>
-<p>现有如下文本：”Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的”。请编写程序，统计该文本中”Java”一词出现的次数。</p>
+<p>现有如下文本：
+“Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的”。
+请编写程序，统计该文本中”Java”一词出现的次数。</p>
 <p>训练目标
 String类API的灵活使用</p>
 <p>训练提示
 1、要找的子串是否存在，如果存在获取其出现的位置。这个可以使用indexOf完成。 2、如果找到了，那么就记录出现的位置并在剩余的字符串中继续查找该子串，而剩余字符串的起始位是出现位置再加上子串的长度。</p>
 <p>3、以此类推，通过循环完成查找，如果找不到就是-1，每次找到用计数器记录次数。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="o">{</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">        </span>String<span class="w"> </span><span class="nv">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的&quot;</span>。<span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;There is a total of&quot;</span><span class="w">  </span>+<span class="w">  </span>findOccurance<span class="o">(</span>str<span class="o">)</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; occurance of the str &#39;Java&#39; in str &quot;</span><span class="w"> </span>+<span class="w"> </span>str<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>findOccurance<span class="o">(</span>String<span class="w"> </span>str<span class="o">){</span>
+
+<span class="w">        </span>int<span class="w"> </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>myString.indexOf<span class="o">(</span><span class="s2">&quot;Java&quot;</span><span class="o">)</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>-1<span class="o">){</span>
+<span class="w">            </span>count++<span class="p">;</span>
+<span class="w">            </span><span class="nv">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>str.substring<span class="o">(</span>myString.indexOf<span class="o">(</span><span class="s2">&quot;Java&quot;</span><span class="o">)</span><span class="p">;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>count<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的。9
+语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的。7
+语言是安全的，Java是高性能的，Java语言是跨平台的。7
+是高性能的，Java语言是跨平台的。6
+语言是跨平台的。-1
+There<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>total<span class="w"> </span>of5<span class="w"> </span>occurance<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>str<span class="w"> </span><span class="s1">&#39;Java&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>str<span class="w"> </span>Java语言是面向对象的，Java语言是健壮的，Java语言是安全的，Java是高性能的，Java语言是跨平台的。
 </pre></div>
 </div>
 </section>
@@ -1558,15 +1920,43 @@ The only way is to change its length is through copying and making a new string.
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
 </pre></div>
 </div>
-<p>ArrayList<Integer> numbers = new ArrayList<Integer>();</p>
+<p>To declare and initialize an empty ArrayList</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ArrayList&lt;Integer&gt;<span class="w"> </span><span class="nv">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>ArrayList&lt;Integer&gt;<span class="o">()</span><span class="p">;</span><span class="w">  </span>
+ArrayList&lt;String&gt;<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>ArrayList&lt;&gt;<span class="o">()</span><span class="p">;</span>
+</pre></div>
+</div>
 <p>because int, double and float are all primative types, you can make them reference types by using someing called an “wrapper” class.</p>
-<p>Integer is the reference type for int.</p>
+<p>Integer is the reference type for int.<br />
+Initializing an ArrayList with values</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>ArrayList&lt;String&gt;<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span>new<span class="w"> </span>ArrayList&lt;&gt;<span class="o">(</span>Arrays.asList<span class="o">(</span><span class="s2">&quot;aaa&quot;</span>,<span class="w"> </span><span class="s2">&quot;bbb&quot;</span>,<span class="w"> </span><span class="s2">&quot;aaa&quot;</span>,<span class="w"> </span><span class="s2">&quot;aaa&quot;</span>,<span class="w"> </span><span class="s2">&quot;ccc&quot;</span>,<span class="w"> </span><span class="s2">&quot;bbb&quot;</span><span class="o">))</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-elements-to-an-arraylist">
+<h3><span class="section-number">4.15.14.3. </span>Adding elements to an ArrayList<a class="headerlink" href="#adding-elements-to-an-arraylist" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.add<span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
 numbers.add<span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="p">;</span>
+list.add<span class="o">(</span><span class="s2">&quot;aaa&quot;</span><span class="o">)</span><span class="p">;</span>
+list.add<span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="s2">&quot;bbb&quot;</span><span class="o">)</span><span class="p">;</span>
 ...
 </pre></div>
 </div>
-<p>To print out an ArrayList</p>
+<p><code class="docutils literal notranslate"><span class="pre">add(int</span> <span class="pre">index,</span> <span class="pre">E</span> <span class="pre">element)</span></code>: Inserts the specified element at the specified position in the list.
+To print out an ArrayList</p>
+</section>
+<section id="accessing-and-modifying-values">
+<h3><span class="section-number">4.15.14.4. </span>Accessing and Modifying values<a class="headerlink" href="#accessing-and-modifying-values" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">get(int</span> <span class="pre">index)</span></code>: Returns the element at the specified position in the list.<br />
+<code class="docutils literal notranslate"><span class="pre">set(int</span> <span class="pre">index,</span> <span class="pre">E</span> <span class="pre">element)</span></code>: Replaces the element at the specified position in the list with the specified element.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>String<span class="w"> </span><span class="nv">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.get<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="p">;</span>
+list.set<span class="o">(</span><span class="m">0</span>,<span class="w"> </span><span class="s2">&quot;ccc&quot;</span><span class="o">)</span><span class="p">;</span>
+numbers.set<span class="o">(</span><span class="m">2</span>,<span class="w"> </span>Integer.valueOf<span class="o">(</span><span class="m">30</span><span class="o">))</span><span class="p">;</span>
+
+numbers.set<span class="o">(</span>index,<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>value_in<span class="w"> </span>wrapper<span class="w"> </span>class<span class="o">)</span>
+</pre></div>
+</div>
+<p>One advantage of using the wapper class is that with the primative class and the wrapper class, you can distinguish between the same number</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>System.out.println<span class="o">(</span>numbers.toString<span class="o">())</span><span class="p">;</span>
 
 <span class="c1">#it looks like an array</span>
@@ -1579,9 +1969,14 @@ numbers.add<span class="o">(</span><span class="m">2</span><span class="o">)</sp
 </div>
 <p>the agument in the numbers in the arraylist is the index of an 0-indexed array</p>
 <section id="remove-elemnts">
-<h4><span class="section-number">4.15.14.2.1. </span>remove elemnts<a class="headerlink" href="#remove-elemnts" title="Link to this heading">#</a></h4>
-<p>you can either remove by index, or you cna remove by value.</p>
+<h4><span class="section-number">4.15.14.4.1. </span>remove elemnts<a class="headerlink" href="#remove-elemnts" title="Link to this heading">#</a></h4>
+<p>you can either remove by index, or you cna remove by value.<br />
+<code class="docutils literal notranslate"><span class="pre">remove(int</span> <span class="pre">index)</span></code>: Removes the element at the specified position in the list.<br />
+<code class="docutils literal notranslate"><span class="pre">remove(Object</span> <span class="pre">o)</span></code>: Removes the first occurrence of the specified element from the list.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.remove<span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="p">;</span>
+
+list.remove<span class="o">(</span><span class="m">0</span><span class="o">)</span><span class="p">;</span>
+list.remove<span class="o">(</span><span class="s2">&quot;bbb&quot;</span><span class="o">)</span><span class="p">;</span>
 
 numbers.remove<span class="o">(</span>Integer.valueOf<span class="o">(</span><span class="m">4</span><span class="o">))</span><span class="p">;</span>
 
@@ -1589,17 +1984,8 @@ numbers.clear<span class="o">()</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
-<section id="update-elements">
-<h4><span class="section-number">4.15.14.2.2. </span>Update elements<a class="headerlink" href="#update-elements" title="Link to this heading">#</a></h4>
-<p>One advantage of using the wapper class is that with the primative class and the wrapper class, you can distinguish between the same number</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.set<span class="o">(</span><span class="m">2</span>,<span class="w"> </span>Integer.valueOf<span class="o">(</span><span class="m">30</span><span class="o">))</span><span class="p">;</span>
-
-numbers.set<span class="o">(</span>index,<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>value_in<span class="w"> </span>wrapper<span class="w"> </span>class<span class="o">)</span>
-</pre></div>
-</div>
-</section>
 <section id="sorting-an-arraylist">
-<h4><span class="section-number">4.15.14.2.3. </span>Sorting an ArrayList<a class="headerlink" href="#sorting-an-arraylist" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.4.2. </span>Sorting an ArrayList<a class="headerlink" href="#sorting-an-arraylist" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.Comparator
 
 <span class="c1">#take one agument</span>
@@ -1610,21 +1996,26 @@ numbers.sort<span class="o">(</span>Comparator.reverseOrder<span class="o">())</
 </div>
 </section>
 <section id="size-method">
-<h4><span class="section-number">4.15.14.2.4. </span>Size Method<a class="headerlink" href="#size-method" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.4.3. </span>Size Method<a class="headerlink" href="#size-method" title="Link to this heading">#</a></h4>
 <p>Continuing our example with the arraylist numbers</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.size<span class="o">()</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="contains-method">
-<h4><span class="section-number">4.15.14.2.5. </span>Contains Method<a class="headerlink" href="#contains-method" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.4.4. </span>Contains Method<a class="headerlink" href="#contains-method" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">contains(Object</span> <span class="pre">o)</span></code>: Returns true if the list contains the specified element.<br />
+<code class="docutils literal notranslate"><span class="pre">indexOf(Object</span> <span class="pre">o)</span></code>: Returns the index of the first occurrence of the specified element in the list, or -1 if the list does not contain the element.<br />
+<code class="docutils literal notranslate"><span class="pre">lastIndexOf(Object</span> <span class="pre">o)</span></code>: Returns the index of the last occurrence of the specified element in the list, or -1 if the list does not contain the element.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#returns a boolean expression</span>
 numbers.contains<span class="o">(</span>Integer.valueOf<span class="o">(</span><span class="m">10</span><span class="o">))</span><span class="p">;</span>
+int<span class="w"> </span><span class="nv">firstIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.indexOf<span class="o">(</span><span class="s2">&quot;aaa&quot;</span><span class="o">)</span><span class="p">;</span>
+int<span class="w"> </span><span class="nv">lastIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.lastIndexOf<span class="o">(</span><span class="s2">&quot;aaa&quot;</span><span class="o">)</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
 <section id="checking-if-it-is-empty">
-<h4><span class="section-number">4.15.14.2.6. </span>Checking if it is empty<a class="headerlink" href="#checking-if-it-is-empty" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.4.5. </span>Checking if it is empty<a class="headerlink" href="#checking-if-it-is-empty" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#this also returns a bool</span>
 numbers.isEmpty<span class="o">()</span><span class="p">;</span>
 </pre></div>
@@ -1632,11 +2023,16 @@ numbers.isEmpty<span class="o">()</span><span class="p">;</span>
 </section>
 </section>
 <section id="for-each-loop">
-<h3><span class="section-number">4.15.14.3. </span>For Each Loop<a class="headerlink" href="#for-each-loop" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.15.14.5. </span>For Each Loop<a class="headerlink" href="#for-each-loop" title="Link to this heading">#</a></h3>
 <p>For each element in the arrayList, preform a certain set of instructions.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>numbers.forEach<span class="o">(</span>number<span class="w"> </span>-&gt;<span class="w"> </span><span class="o">{</span>
 <span class="w">    </span>System.out.println<span class="o">(</span>number<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;is the current element&quot;</span><span class="o">)</span>
 <span class="o">})</span><span class="p">;</span>
+
+
+<span class="k">for</span><span class="w"> </span><span class="o">(</span>String<span class="w"> </span>s<span class="w"> </span>:<span class="w"> </span>list<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>System.out.println<span class="o">(</span>s<span class="o">)</span><span class="p">;</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>In order to modify the element in the arrayList through a loop.</p>
@@ -1647,10 +2043,19 @@ numbers.isEmpty<span class="o">()</span><span class="p">;</span>
 </div>
 <p>This program will multiply each element by 2.</p>
 </section>
+<section id="converting-an-arraylist-to-an-array">
+<h3><span class="section-number">4.15.14.6. </span>Converting an ArrayList to an array<a class="headerlink" href="#converting-an-arraylist-to-an-array" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">toArray()</span></code>: Returns an array containing all of the elements in the list in proper sequence.<br />
+<code class="docutils literal notranslate"><span class="pre">toArray(T[]</span> <span class="pre">a)</span></code>: Returns an array containing all of the elements in the list in proper sequence; the runtime type of the returned array is that of the specified array.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Object<span class="o">[]</span><span class="w"> </span><span class="nv">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.toArray<span class="o">()</span><span class="p">;</span>
+String<span class="o">[]</span><span class="w"> </span><span class="nv">stringArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.toArray<span class="o">(</span>new<span class="w"> </span>String<span class="o">[</span><span class="m">0</span><span class="o">])</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
 <section id="arraylist-practise-question">
-<h3><span class="section-number">4.15.14.4. </span>ArrayList Practise Question<a class="headerlink" href="#arraylist-practise-question" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">4.15.14.7. </span>ArrayList Practise Question<a class="headerlink" href="#arraylist-practise-question" title="Link to this heading">#</a></h3>
 <section id="id11">
-<h4><span class="section-number">4.15.14.4.1. </span>Q1<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.7.1. </span>Q1<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>现有如下字符串元素：[“aaa”, “bbb”, “aaa”, “aaa”, “ccc”, “bbb”]，请将所有的元素按顺序存入ArrayList集合中，并遍历集合查看存储结果。</p>
 <p>训练目标
 ArrayList集合存储字符串元素，并遍历。</p>
@@ -1658,23 +2063,119 @@ ArrayList集合存储字符串元素，并遍历。</p>
 1、创建ArrayList集合，泛型如何定义？</p>
 <p>2、怎样将数据添加到集合中？</p>
 <p>3、怎样遍历集合？</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
+import<span class="w"> </span>java.util.Arrays<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>ArrayList&lt;String&gt;<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="w">    </span>new<span class="w"> </span>ArrayList&lt;&gt;<span class="o">(</span>Arrays.asList<span class="o">(</span><span class="s2">&quot;aaa&quot;</span>,<span class="w"> </span><span class="s2">&quot;bbb&quot;</span>,<span class="w"> </span><span class="s2">&quot;aaa&quot;</span>,<span class="w"> </span><span class="s2">&quot;aaa&quot;</span>,<span class="w"> </span><span class="s2">&quot;ccc&quot;</span>,<span class="w"> </span><span class="s2">&quot;bbb&quot;</span><span class="o">))</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>String<span class="w"> </span>s<span class="w"> </span>:<span class="w"> </span>list<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>System.out.println<span class="o">(</span>s<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aaa
+bbb
+aaa
+aaa
+ccc
+bbb
 </pre></div>
 </div>
 </section>
 <section id="id12">
-<h4><span class="section-number">4.15.14.4.2. </span>Q2<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.7.2. </span>Q2<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>请定义教师（Teacher）类，属性包含姓名和专业名称。将若干教师对象存入ArrayList集合中，并遍历集合打印教师信息，格式如下：</p>
 <p>姓名：赵老师, 专业：javase
 姓名：钱老师, 专业：javaee
 姓名：孙老师, 专业：php
 姓名：李老师, 专业：python</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>teachers<span class="p">;</span>
+
+import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>ArrayList&lt;Teacher&gt;<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>ArrayList&lt;&gt;<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>teacher1.setName<span class="o">(</span><span class="s2">&quot;Blinda Wang&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher1.setMajor<span class="o">(</span><span class="s2">&quot;ECE&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher1<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>teacher2.setName<span class="o">(</span><span class="s2">&quot;Pirrer Sullivan&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher2.setMajor<span class="o">(</span><span class="s2">&quot;CIV&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher2<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>teacher3.setName<span class="o">(</span><span class="s2">&quot;Salma Elma&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher3.setMajor<span class="o">(</span><span class="s2">&quot;ECE&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher3<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>Teacher<span class="w"> </span>s<span class="w"> </span>:<span class="w"> </span>list<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;the name of teacher is &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getName<span class="o">()</span>
+<span class="w">        </span>+<span class="w"> </span><span class="s2">&quot; their major is &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getMajor<span class="o">())</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+
+package<span class="w"> </span>teachers<span class="p">;</span>
+public<span class="w"> </span>class<span class="w"> </span>Teacher<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>major<span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>Teacher<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>//<span class="w"> </span>Initialize<span class="w"> </span>fields<span class="w"> </span>with<span class="w"> </span>default<span class="w"> </span>values
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Brand&quot;</span><span class="p">;</span>
+<span class="w">        </span>this.major<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Color&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>Teacher<span class="o">(</span>String<span class="w"> </span>name,<span class="w"> </span>String<span class="w"> </span>major<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">        </span>this.major<span class="w"> </span><span class="o">=</span><span class="w"> </span>major<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setName<span class="o">(</span>String<span class="w"> </span>name<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setMajor<span class="o">(</span>String<span class="w"> </span>major<span class="o">){</span>
+<span class="w">        </span>this.major<span class="w"> </span><span class="o">=</span><span class="w"> </span>major<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getName<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getMajor<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>major<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Blinda<span class="w"> </span>Wang<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Pirrer<span class="w"> </span>Sullivan<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Salma<span class="w"> </span>Elma<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE
 </pre></div>
 </div>
 </section>
 <section id="id13">
-<h4><span class="section-number">4.15.14.4.3. </span>Q3<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.7.3. </span>Q3<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p>有如下员工信息：</p>
 <p>姓名：张三，工资：3000
 姓名：李四，工资：3500
@@ -1692,12 +2193,168 @@ ArrayList集合的修改元素和删除元素API</p>
 <p>2、创建ArrayList集合，创建员工对象，将所有员工对象存入集合</p>
 <p>3、需要判断集合中元素的信息，那么肯定需要遍历集合获取到所有元素</p>
 <p>4、ArrayList集合中，修改元素和删除元素的方法是什么？在遍历集合时，删除了集合中的元素，会不会对遍历产生影响呢？如果会，该怎么解决？</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>teachers<span class="p">;</span>
+
+import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
+import<span class="w"> </span>java.util.Iterator<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+
+<span class="w">    </span>ArrayList&lt;Teacher&gt;<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>ArrayList&lt;&gt;<span class="o">()</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>teacher1.setName<span class="o">(</span><span class="s2">&quot;Blinda Wang&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher1.setMajor<span class="o">(</span><span class="s2">&quot;ECE&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher1.setWage<span class="o">(</span><span class="m">22315</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher1<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>teacher2.setName<span class="o">(</span><span class="s2">&quot;Pirrer Sullivan&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher2.setMajor<span class="o">(</span><span class="s2">&quot;CIV&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher2.setWage<span class="o">(</span><span class="m">235324</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher2<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span>teacher3.setName<span class="o">(</span><span class="s2">&quot;Salma Elma&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher3.setMajor<span class="o">(</span><span class="s2">&quot;ECE&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>teacher2.setWage<span class="o">(</span><span class="m">324255</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher3<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">(</span><span class="s2">&quot;Seica&quot;</span>,<span class="w"> </span><span class="s2">&quot;CIV&quot;</span><span class="w"> </span>,<span class="w"> </span><span class="m">23425</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher4<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>Teacher<span class="w"> </span><span class="nv">teacher5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Teacher<span class="o">(</span><span class="s2">&quot;Scott Ramsay&quot;</span>,<span class="w"> </span><span class="s2">&quot;ChemEng&quot;</span>,<span class="w"> </span><span class="m">3256343</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>list.add<span class="o">(</span>teacher5<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span>printTeacherInfo<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>checkSeica<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>printTeacherInfo<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>System.out.println<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>delElma<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>printTeacherInfo<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>System.out.println<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">    </span>RamsayWageRaise<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span>printTeacherInfo<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+
+
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printTeacherInfo<span class="o">(</span>ArrayList&lt;Teacher&gt;<span class="w"> </span>list<span class="o">){</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>Teacher<span class="w"> </span>s<span class="w"> </span>:<span class="w"> </span>list<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;the name of teacher is &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getName<span class="o">()</span>
+<span class="w">            </span>+<span class="w"> </span><span class="s2">&quot; their major is &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getMajor<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; their wage is &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getWage<span class="o">())</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>checkSeica<span class="o">(</span>ArrayList&lt;Teacher&gt;<span class="w"> </span>list<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>Iterator&lt;Teacher&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>Teacher<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>s.getName<span class="o">()</span>.equals<span class="o">(</span><span class="s2">&quot;Seica&quot;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>s.setName<span class="o">(</span><span class="s2">&quot;Big Seica&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>delElma<span class="o">(</span>ArrayList&lt;Teacher&gt;<span class="w"> </span>list<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>Iterator&lt;Teacher&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>Teacher<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>s.getName<span class="o">()</span>.equals<span class="o">(</span><span class="s2">&quot;Salma Elma&quot;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>iterator.remove<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>RamsayWageRaise<span class="o">(</span>ArrayList&lt;Teacher&gt;<span class="w"> </span>list<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>Iterator&lt;Teacher&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>Teacher<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>s.getName<span class="o">()</span>.equals<span class="o">(</span><span class="s2">&quot;Scott Ramsay&quot;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>s.setWage<span class="o">(</span>s.getWage<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="m">500000</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+package<span class="w"> </span>teachers<span class="p">;</span>
+public<span class="w"> </span>class<span class="w"> </span>Teacher<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>major<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>wage<span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>Teacher<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>//<span class="w"> </span>Initialize<span class="w"> </span>fields<span class="w"> </span>with<span class="w"> </span>default<span class="w"> </span>values
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Brand&quot;</span><span class="p">;</span>
+<span class="w">        </span>this.major<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Color&quot;</span><span class="p">;</span>
+<span class="w">        </span>this.wage<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>Teacher<span class="o">(</span>String<span class="w"> </span>name,<span class="w"> </span>String<span class="w"> </span>major,<span class="w"> </span>double<span class="w"> </span>wage<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">        </span>this.major<span class="w"> </span><span class="o">=</span><span class="w"> </span>major<span class="p">;</span>
+<span class="w">        </span>this.wage<span class="w"> </span><span class="o">=</span><span class="w"> </span>wage<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setName<span class="o">(</span>String<span class="w"> </span>name<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setMajor<span class="o">(</span>String<span class="w"> </span>major<span class="o">){</span>
+<span class="w">        </span>this.major<span class="w"> </span><span class="o">=</span><span class="w"> </span>major<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setWage<span class="o">(</span>double<span class="w"> </span>wage<span class="o">){</span>
+<span class="w">        </span>this.wage<span class="w"> </span><span class="o">=</span><span class="w"> </span>wage<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getName<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getMajor<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>major<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getWage<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>wage<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Blinda<span class="w"> </span>Wang<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">22315</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Pirrer<span class="w"> </span>Sullivan<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">324255</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Salma<span class="w"> </span>Elma<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Seica<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">23425</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Scott<span class="w"> </span>Ramsay<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ChemEng<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">3256343</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Blinda<span class="w"> </span>Wang<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">22315</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Pirrer<span class="w"> </span>Sullivan<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">324255</span>.0<span class="w">        </span>
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Salma<span class="w"> </span>Elma<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">0</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Big<span class="w"> </span>Seica<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">23425</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Scott<span class="w"> </span>Ramsay<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ChemEng<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">3256343</span>.0<span class="w">      </span>
+
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Blinda<span class="w"> </span>Wang<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">22315</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Pirrer<span class="w"> </span>Sullivan<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">324255</span>.0<span class="w">        </span>
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Big<span class="w"> </span>Seica<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">23425</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Scott<span class="w"> </span>Ramsay<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ChemEng<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">3256343</span>.0<span class="w">      </span>
+
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Blinda<span class="w"> </span>Wang<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>ECE<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">22315</span>.0
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Pirrer<span class="w"> </span>Sullivan<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">324255</span>.0<span class="w">        </span>
+the<span class="w"> </span>name<span class="w"> </span>of<span class="w"> </span>teacher<span class="w"> </span>is<span class="w"> </span>Big<span class="w"> </span>Seica<span class="w"> </span>their<span class="w"> </span>major<span class="w"> </span>is<span class="w"> </span>CIV<span class="w"> </span>their<span class="w"> </span>wage<span class="w"> </span>is<span class="w"> </span><span class="m">23425</span>.0
 </pre></div>
 </div>
 </section>
 <section id="id14">
-<h4><span class="section-number">4.15.14.4.4. </span>Q4<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">4.15.14.7.4. </span>Q4<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p>利用面向对象的思想设计一个图书管理系统。图书的属性有：编号，书名，作者，价格。要求提供如下功能：</p>
 <p>1、提供操作菜单，可以选择要进行的操作。</p>
 <p>2、可以添加图书，添加图书时，编号需要唯一，添加成功，返回到菜单。</p>
@@ -1721,7 +2378,280 @@ ArrayList集合API的综合运用、编程逻辑的锻炼</p>
 <p>7、修改图书信息，需要根据编号先找到该图书，修改其除了编号之外的信息，存入集合覆盖原来的信息。</p>
 <p>8、删除图书信息，需要根据编号先找到该图书，根据索引直接删除即可。</p>
 <p>9、退出系统功能，借助结束程序的API实现即可。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>myLib<span class="p">;</span>
+
+import<span class="w"> </span>java.util.ArrayList<span class="p">;</span>
+import<span class="w"> </span>java.util.Iterator<span class="p">;</span>
+import<span class="w"> </span>java.util.Scanner<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>helloworld<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">){</span>
+<span class="w">        </span>Scanner<span class="w"> </span><span class="nv">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Scanner<span class="o">(</span>System.in<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>ArrayList&lt;Book&gt;<span class="w"> </span><span class="nv">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>ArrayList&lt;&gt;<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>tInterface<span class="o">(</span>list,<span class="w"> </span>scanner<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>scanner.close<span class="o">()</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>tInterface<span class="o">(</span>ArrayList&lt;Book&gt;<span class="w"> </span>list,<span class="w"> </span>Scanner<span class="w"> </span>scanner<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>printNotice<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span><span class="nb">true</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span>String<span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.equals<span class="o">(</span><span class="s2">&quot;quit&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span>input.equals<span class="o">(</span><span class="s2">&quot;exit&quot;</span><span class="o">))</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>break<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.equals<span class="o">(</span><span class="s2">&quot;add&quot;</span><span class="o">)){</span>
+<span class="w">                </span>add<span class="o">(</span>list,<span class="w"> </span>scanner<span class="o">)</span><span class="p">;</span>
+
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.equals<span class="o">(</span><span class="s2">&quot;show&quot;</span><span class="o">)){</span>
+<span class="w">                </span>showAll<span class="o">(</span>list<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.equals<span class="o">(</span><span class="s2">&quot;search&quot;</span><span class="o">)){</span>
+<span class="w">                </span>search<span class="o">(</span>list,<span class="w"> </span>scanner<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.equals<span class="o">(</span><span class="s2">&quot;delete&quot;</span><span class="o">)){</span>
+<span class="w">                </span>delete<span class="o">(</span>list,<span class="w"> </span>scanner<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>input.equals<span class="o">(</span><span class="s2">&quot;modify&quot;</span><span class="o">)){</span>
+<span class="w">                </span>modify<span class="o">(</span>list,<span class="w"> </span>scanner<span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>printNotice<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>add<span class="o">(</span>ArrayList&lt;Book&gt;<span class="w"> </span>list,<span class="w"> </span>Scanner<span class="w"> </span>scanner<span class="o">){</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;New Book ID: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="w"> </span>checkDuplicate<span class="o">(</span>list,<span class="w"> </span>id<span class="o">)</span><span class="w"> </span><span class="o">){</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;ID duplicate, quitting!&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;New Book Name: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;New Book Author: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;New Book Price: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>double<span class="w"> </span><span class="nv">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextDouble<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>Book<span class="w"> </span><span class="nv">newBook</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Book<span class="o">(</span>id,<span class="w"> </span>name,<span class="w"> </span>author,<span class="w"> </span>price<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>list.add<span class="o">(</span>newBook<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>boolean<span class="w"> </span>checkDuplicate<span class="o">(</span>ArrayList&lt;Book&gt;<span class="w"> </span>list,<span class="w"> </span>int<span class="w"> </span>key<span class="o">){</span>
+<span class="w">        </span>Iterator&lt;Book&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>Book<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>s.getId<span class="o">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>key<span class="o">){</span>
+<span class="w">                </span><span class="k">return</span><span class="w"> </span>true<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>false<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>showAll<span class="o">(</span>ArrayList&lt;Book&gt;<span class="w"> </span>list<span class="o">){</span>
+<span class="w">        </span>Iterator&lt;Book&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>Book<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Name: &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getName<span class="o">()</span>
+<span class="w">            </span>+<span class="w"> </span><span class="s2">&quot; ID: &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getId<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; Author:&quot;</span><span class="w"> </span>+<span class="w"> </span>s.getAuthor<span class="o">()</span>
+<span class="w">            </span>+<span class="w"> </span><span class="s2">&quot; Price: &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getPrice<span class="o">())</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>search<span class="o">(</span>ArrayList&lt;Book&gt;<span class="w"> </span>list,<span class="w"> </span>Scanner<span class="w"> </span>scanner<span class="o">){</span>
+<span class="w">        </span>boolean<span class="w"> </span><span class="nv">avail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+<span class="w">        </span>Iterator&lt;Book&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;Book Name: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>String<span class="w"> </span><span class="nv">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>Book<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>s.getName<span class="o">()</span>.equals<span class="o">(</span>input<span class="o">)){</span>
+<span class="w">                    </span>System.out.println<span class="o">(</span><span class="s2">&quot;Name: &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getName<span class="o">()</span>
+<span class="w">                    </span>+<span class="w"> </span><span class="s2">&quot; ID: &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getId<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; Author:&quot;</span><span class="w"> </span>+<span class="w"> </span>s.getAuthor<span class="o">()</span>
+<span class="w">                    </span>+<span class="w"> </span><span class="s2">&quot; Price: &quot;</span><span class="w"> </span>+<span class="w"> </span>s.getPrice<span class="o">())</span><span class="p">;</span>
+<span class="w">                    </span><span class="nv">avail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>true<span class="p">;</span>
+<span class="w">                </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="k">if</span><span class="o">(</span><span class="nv">avail</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">false</span><span class="o">)</span><span class="w"> </span>System.out.println<span class="o">(</span><span class="s2">&quot;No such entry with name &quot;</span><span class="w"> </span>+<span class="w"> </span>input<span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>delete<span class="o">(</span>ArrayList&lt;Book&gt;<span class="w"> </span>list,<span class="w"> </span>Scanner<span class="w"> </span>scanner<span class="o">){</span>
+<span class="w">        </span>Iterator&lt;Book&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;ID: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>checkDuplicate<span class="o">(</span>list,<span class="w"> </span>id<span class="o">)){</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>Book<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>s.getId<span class="o">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>id<span class="o">){</span>
+<span class="w">                        </span>iterator.remove<span class="o">()</span><span class="p">;</span>
+<span class="w">                        </span>System.out.println<span class="o">(</span><span class="s2">&quot;&gt;Sucess&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">                    </span><span class="o">}</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;&gt;ID# Does Not Exist, Quitting!&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>modify<span class="o">(</span>ArrayList&lt;Book&gt;<span class="w"> </span>list,<span class="w"> </span>Scanner<span class="w"> </span>scanner<span class="o">){</span>
+<span class="w">        </span>Iterator&lt;Book&gt;<span class="w"> </span><span class="nv">iterator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>list.iterator<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>//get<span class="w"> </span>ID
+<span class="w">        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;ID: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>int<span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextInt<span class="o">()</span><span class="p">;</span>
+<span class="w">        </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+
+<span class="w">        </span>//check<span class="w"> </span>ID<span class="w"> </span>validity
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>checkDuplicate<span class="o">(</span>list,<span class="w"> </span>id<span class="o">)){</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>iterator.hasNext<span class="o">())</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>Book<span class="w"> </span><span class="nv">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iterator.next<span class="o">()</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>s.getId<span class="o">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>id<span class="o">){</span>
+<span class="w">                        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;New Book Name: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">                        </span>String<span class="w"> </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">                        </span>s.setName<span class="o">(</span>name<span class="o">)</span><span class="p">;</span>
+<span class="w">                        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;New Book Author: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">                        </span>String<span class="w"> </span><span class="nv">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextLine<span class="o">()</span><span class="p">;</span>
+<span class="w">                        </span>s.setAuthor<span class="o">(</span>author<span class="o">)</span><span class="p">;</span>
+<span class="w">                        </span>System.out.print<span class="o">(</span><span class="s2">&quot;&gt;New Book Price: &quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">                        </span>double<span class="w"> </span><span class="nv">price</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>scanner.nextDouble<span class="o">()</span><span class="p">;</span>
+<span class="w">                        </span>s.setPrice<span class="o">(</span>price<span class="o">)</span><span class="p">;</span>
+<span class="w">                        </span>System.out.println<span class="o">(</span><span class="s2">&quot;&gt;Sucess&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">                    </span><span class="o">}</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+<span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;&gt;ID# Does Not Exist, Quitting!&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printNotice<span class="o">(){</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;pls type in &#39;quit&#39; or &#39;exit&#39; to quit the program,&quot;</span><span class="w"> </span>+<span class="w"> </span>
+<span class="w">        </span><span class="s2">&quot;&#39;add&#39; to add to lib, &#39;show&#39; to show all book info, &#39;search&#39; to check book info after providing a bookname, &#39;delete&#39; to delete an entry accorind to its id, &#39;modify&#39; to modify an entry after providing a valid id :)&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+package<span class="w"> </span>myLib<span class="p">;</span>
+
+public<span class="w"> </span>class<span class="w"> </span>Book<span class="w"> </span><span class="o">{</span>
+
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>author<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>double<span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span>public<span class="w"> </span>Book<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>//<span class="w"> </span>Initialize<span class="w"> </span>fields<span class="w"> </span>with<span class="w"> </span>default<span class="w"> </span>values
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Brand&quot;</span><span class="p">;</span>
+<span class="w">        </span>this.author<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Unknown Color&quot;</span><span class="p">;</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>Book<span class="o">(</span>int<span class="w"> </span>id,<span class="w"> </span>String<span class="w"> </span>name,<span class="w"> </span>String<span class="w"> </span>author,<span class="w"> </span>double<span class="w"> </span>price<span class="o">){</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">        </span>this.author<span class="w"> </span><span class="o">=</span><span class="w"> </span>author<span class="p">;</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setId<span class="o">(</span>int<span class="w"> </span>id<span class="o">){</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setName<span class="o">(</span>String<span class="w"> </span>name<span class="o">){</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setAuthor<span class="o">(</span>String<span class="w"> </span>author<span class="o">){</span>
+<span class="w">        </span>this.author<span class="w"> </span><span class="o">=</span><span class="w"> </span>author<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setPrice<span class="o">(</span>double<span class="w"> </span>price<span class="o">){</span>
+<span class="w">        </span>this.price<span class="w"> </span><span class="o">=</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getName<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>int<span class="w"> </span>getId<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>double<span class="w"> </span>getPrice<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>price<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getAuthor<span class="o">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>author<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Console Output</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program,<span class="s1">&#39;add&#39;</span><span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>to<span class="w"> </span>lib,<span class="w"> </span><span class="s1">&#39;show&#39;</span><span class="w"> </span>to<span class="w"> </span>show<span class="w"> </span>all<span class="w"> </span>book<span class="w"> </span>info,<span class="w"> </span><span class="s1">&#39;search&#39;</span><span class="w"> </span>to<span class="w"> </span>check<span class="w"> </span>book<span class="w"> </span>info<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>bookname,<span class="w"> </span><span class="s1">&#39;delete&#39;</span><span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>accorind<span class="w"> </span>to<span class="w"> </span>its<span class="w"> </span>id,<span class="w"> </span><span class="s1">&#39;modify&#39;</span><span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>id<span class="w"> </span>:<span class="o">)</span>
+
+&gt;add
+&gt;New<span class="w"> </span>Book<span class="w"> </span>ID:<span class="w"> </span><span class="m">1</span>
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Name:<span class="w"> </span>Livewired
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Author:<span class="w"> </span>David<span class="w"> </span>Eagleman
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Price:<span class="w"> </span><span class="m">324</span>
+
+&gt;pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program,<span class="s1">&#39;add&#39;</span><span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>to<span class="w"> </span>lib,<span class="w"> </span><span class="s1">&#39;show&#39;</span><span class="w"> </span>to<span class="w"> </span>show<span class="w"> </span>all<span class="w"> </span>book<span class="w"> </span>info,<span class="w"> </span><span class="s1">&#39;search&#39;</span><span class="w"> </span>to<span class="w"> </span>check<span class="w"> </span>book<span class="w"> </span>info<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>bookname,<span class="w"> </span><span class="s1">&#39;delete&#39;</span><span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>accorind<span class="w"> </span>to<span class="w"> </span>its<span class="w"> </span>id,<span class="w"> </span><span class="s1">&#39;modify&#39;</span><span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>id<span class="w"> </span>:<span class="o">)</span><span class="w">  </span>
+
+&gt;add
+&gt;New<span class="w"> </span>Book<span class="w"> </span>ID:<span class="w"> </span><span class="m">1</span>
+ID<span class="w"> </span>duplicate,<span class="w"> </span>quitting!
+
+&gt;add
+&gt;New<span class="w"> </span>Book<span class="w"> </span>ID:<span class="w"> </span><span class="m">2</span>
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Name:<span class="w"> </span>Verity
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Author:<span class="w"> </span>Coleen<span class="w"> </span>Hoover
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Price:<span class="w"> </span><span class="m">342</span>
+
+&gt;pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program,<span class="s1">&#39;add&#39;</span><span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>to<span class="w"> </span>lib,<span class="w"> </span><span class="s1">&#39;show&#39;</span><span class="w"> </span>to<span class="w"> </span>show<span class="w"> </span>all<span class="w"> </span>book<span class="w"> </span>info,<span class="w"> </span><span class="s1">&#39;search&#39;</span><span class="w"> </span>to<span class="w"> </span>check<span class="w"> </span>book<span class="w"> </span>info<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>bookname,<span class="w"> </span><span class="s1">&#39;delete&#39;</span><span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>accorind<span class="w"> </span>to<span class="w"> </span>its<span class="w"> </span>id,<span class="w"> </span><span class="s1">&#39;modify&#39;</span><span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>id<span class="w"> </span>:<span class="o">)</span><span class="w">  </span>
+
+&gt;add
+&gt;New<span class="w"> </span>Book<span class="w"> </span>ID:<span class="w"> </span><span class="m">3</span><span class="w">                        </span>
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Name:<span class="w"> </span>Cybersecurity<span class="w"> </span>QuickStart
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Author:<span class="w"> </span>Miles<span class="w"> </span>Wang
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Price:<span class="w"> </span><span class="m">324</span>
+
+&gt;pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program,<span class="s1">&#39;add&#39;</span><span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>to<span class="w"> </span>lib,<span class="w"> </span><span class="s1">&#39;show&#39;</span><span class="w"> </span>to<span class="w"> </span>show<span class="w"> </span>all<span class="w"> </span>book<span class="w"> </span>info,<span class="w"> </span><span class="s1">&#39;search&#39;</span><span class="w"> </span>to<span class="w"> </span>check<span class="w"> </span>book<span class="w"> </span>info<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>bookname,<span class="w"> </span><span class="s1">&#39;delete&#39;</span><span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>accorind<span class="w"> </span>to<span class="w"> </span>its<span class="w"> </span>id,<span class="w"> </span><span class="s1">&#39;modify&#39;</span><span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>id<span class="w"> </span>:<span class="o">)</span><span class="w">  </span>
+
+&gt;show
+Name:<span class="w"> </span>Livewired<span class="w"> </span>ID:<span class="w"> </span><span class="m">1</span><span class="w"> </span>Author:David<span class="w"> </span>Eagleman<span class="w"> </span>Price:<span class="w"> </span><span class="m">324</span>.0
+Name:<span class="w"> </span>Verity<span class="w"> </span>ID:<span class="w"> </span><span class="m">2</span><span class="w"> </span>Author:Coleen<span class="w"> </span>Hoover<span class="w"> </span>Price:<span class="w"> </span><span class="m">342</span>.0
+Name:<span class="w"> </span>Cybersecurity<span class="w"> </span>QuickStart<span class="w"> </span>ID:<span class="w"> </span><span class="m">3</span><span class="w"> </span>Author:Miles<span class="w"> </span>Wang<span class="w"> </span>Price:<span class="w"> </span><span class="m">324</span>.0
+
+&gt;search
+&gt;Book<span class="w"> </span>Name:<span class="w"> </span>Verity
+Name:<span class="w"> </span>Verity<span class="w"> </span>ID:<span class="w"> </span><span class="m">2</span><span class="w"> </span>Author:Coleen<span class="w"> </span>Hoover<span class="w"> </span>Price:<span class="w"> </span><span class="m">342</span>.0
+
+&gt;delete
+&gt;ID:<span class="w"> </span><span class="m">1</span>
+&gt;Sucess
+
+&gt;show<span class="w"> </span>
+Name:<span class="w"> </span>Verity<span class="w"> </span>ID:<span class="w"> </span><span class="m">2</span><span class="w"> </span>Author:Coleen<span class="w"> </span>Hoover<span class="w"> </span>Price:<span class="w"> </span><span class="m">342</span>.0
+Name:<span class="w"> </span>Cybersecurity<span class="w"> </span>QuickStart<span class="w"> </span>ID:<span class="w"> </span><span class="m">3</span><span class="w"> </span>Author:Miles<span class="w"> </span>Wang<span class="w"> </span>Price:<span class="w"> </span><span class="m">324</span>.0
+
+&gt;modify
+&gt;ID:<span class="w"> </span><span class="m">3</span>
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Name:<span class="w"> </span>Cybersecurity<span class="w"> </span>QuickStart
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Author:<span class="w"> </span>Zhongyi<span class="w"> </span>Wang
+&gt;New<span class="w"> </span>Book<span class="w"> </span>Price:<span class="w"> </span><span class="m">3000</span>
+&gt;Sucess
+
+&gt;pls<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s1">&#39;quit&#39;</span><span class="w"> </span>or<span class="w"> </span><span class="s1">&#39;exit&#39;</span><span class="w"> </span>to<span class="w"> </span>quit<span class="w"> </span>the<span class="w"> </span>program,<span class="s1">&#39;add&#39;</span><span class="w"> </span>to<span class="w"> </span>add<span class="w"> </span>to<span class="w"> </span>lib,<span class="w"> </span><span class="s1">&#39;show&#39;</span><span class="w"> </span>to<span class="w"> </span>show<span class="w"> </span>all<span class="w"> </span>book<span class="w"> </span>info,<span class="w"> </span><span class="s1">&#39;search&#39;</span><span class="w"> </span>to<span class="w"> </span>check<span class="w"> </span>book<span class="w"> </span>info<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>bookname,<span class="w"> </span><span class="s1">&#39;delete&#39;</span><span class="w"> </span>to<span class="w"> </span>delete<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>accorind<span class="w"> </span>to<span class="w"> </span>its<span class="w"> </span>id,<span class="w"> </span><span class="s1">&#39;modify&#39;</span><span class="w"> </span>to<span class="w"> </span>modify<span class="w"> </span>an<span class="w"> </span>entry<span class="w"> </span>after<span class="w"> </span>providing<span class="w"> </span>a<span class="w"> </span>valid<span class="w"> </span>id<span class="w"> </span>:<span class="o">)</span><span class="w">  </span>
+
+&gt;show
+Name:<span class="w"> </span>Verity<span class="w"> </span>ID:<span class="w"> </span><span class="m">2</span><span class="w"> </span>Author:Coleen<span class="w"> </span>Hoover<span class="w"> </span>Price:<span class="w"> </span><span class="m">342</span>.0
+Name:<span class="w"> </span>Cybersecurity<span class="w"> </span>QuickStart<span class="w"> </span>ID:<span class="w"> </span><span class="m">3</span><span class="w"> </span>Author:Zhongyi<span class="w"> </span>Wang<span class="w"> </span>Price:<span class="w"> </span><span class="m">3000</span>.0
+
+&gt;quit
 </pre></div>
 </div>
 </section>
@@ -1915,15 +2845,17 @@ examScores.forEach<span class="o">((</span>subject,<span class="w"> </span>score
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">4.15.8. Strings</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatted-strings">4.15.8.1. Formatted Strings</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-functions">4.15.8.2. String Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-practise-questions">4.15.8.3. Strings Practise Questions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.15.8.3.1. Q1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.15.8.3.2. Q2</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.15.8.3.3. Q3</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.15.8.3.4. Q4</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.15.8.3.5. Q5</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.15.8.3.6. Q6</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.15.8.3.7. Q7</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.15.8.3.8. Q8</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-method-indexof">4.15.8.3. String method: indexOf()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-method-substring">4.15.8.4. String method: substring()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strings-practise-questions">4.15.8.5. Strings Practise Questions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">4.15.8.5.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">4.15.8.5.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">4.15.8.5.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.15.8.5.4. Q4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.15.8.5.5. Q5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.15.8.5.6. Q6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.15.8.5.7. Q7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">4.15.8.5.8. Q8</a></li>
 </ul>
 </li>
 </ul>
@@ -1945,21 +2877,23 @@ examScores.forEach<span class="o">((</span>subject,<span class="w"> </span>score
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">4.15.13. Loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist">4.15.14. Arraylist</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-of-arrays">4.15.14.1. Limitations of Arrays</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-of-arraylists">4.15.14.2. Usage of Arraylists</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-elemnts">4.15.14.2.1. remove elemnts</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#update-elements">4.15.14.2.2. Update elements</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-an-arraylist">4.15.14.2.3. Sorting an ArrayList</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-method">4.15.14.2.4. Size Method</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contains-method">4.15.14.2.5. Contains Method</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-it-is-empty">4.15.14.2.6. Checking if it is empty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage-of-arraylists">4.15.14.2. Usage of Arraylists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-elements-to-an-arraylist">4.15.14.3. Adding elements to an ArrayList</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-and-modifying-values">4.15.14.4. Accessing and Modifying values</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-elemnts">4.15.14.4.1. remove elemnts</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-an-arraylist">4.15.14.4.2. Sorting an ArrayList</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#size-method">4.15.14.4.3. Size Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contains-method">4.15.14.4.4. Contains Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-if-it-is-empty">4.15.14.4.5. Checking if it is empty</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loop">4.15.14.3. For Each Loop</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist-practise-question">4.15.14.4. ArrayList Practise Question</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.15.14.4.1. Q1</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.15.14.4.2. Q2</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.15.14.4.3. Q3</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.15.14.4.4. Q4</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-each-loop">4.15.14.5. For Each Loop</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-an-arraylist-to-an-array">4.15.14.6. Converting an ArrayList to an array</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arraylist-practise-question">4.15.14.7. ArrayList Practise Question</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">4.15.14.7.1. Q1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">4.15.14.7.2. Q2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">4.15.14.7.3. Q3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">4.15.14.7.4. Q4</a></li>
 </ul>
 </li>
 </ul>

@@ -364,8 +364,6 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">4.16.1.3.4. Q4</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">4.16.1.3.5. Q5</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">4.16.1.3.6. Q6</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">4.16.1.3.7. Q7</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">4.16.1.3.8. Q8</a></li>
 </ul>
 </li>
 </ul>
@@ -928,8 +926,17 @@ a<span class="w"> </span>white<span class="w"> </span>Hasky<span class="w"> </sp
 <section id="q5">
 <h4><span class="section-number">4.16.1.3.5. </span>Q5<a class="headerlink" href="#q5" title="Link to this heading">#</a></h4>
 <p>​ 定义数组存储3部汽车对象。</p>
-<p>​ 汽车的属性：品牌，价格，颜色。</p>
-<p>​ 创建三个汽车对象，数据通过键盘录入而来，并把数据存入到数组当中。</p>
+<p>​ 汽车的属性：品牌，价格，颜色，车牌号。</p>
+<p>​ 创建三个汽车对象，数据通过键盘录入而来，并把数据存入到数组当中。
+​ 要求，计算出三部汽车的平均价格
+统计价格比平均值低的汽车有几个？并把她们的所有信息打印出来。
+​ 要求1：添加的时候需要进行车牌号的唯一性判断。
+a.k.a get a new Cars object, if the car ID already exist, the system will not add the new one into the array, if it is unique, then the system will create a larger array and add the new car info into the database</p>
+<p>​ 要求2：添加完毕之后，遍历所有汽车信息。</p>
+<p>​ 要求3：通过id删除汽车信息</p>
+<p>​ 如果存在，则删除，如果不存在，则提示删除失败。</p>
+<p>​ 要求4：删除完毕之后，遍历所有汽车信息。</p>
+<p>​ 要求5：车牌号为 GH835 的汽车，价格涨了8000</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>package<span class="w"> </span>garage<span class="p">;</span>
 
 //Cars<span class="w"> </span>class
@@ -1015,10 +1022,24 @@ public<span class="w"> </span>class<span class="w"> </span>helloworld<span class
 <span class="w">    </span><span class="o">}</span>
 
 <span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printCarDetails<span class="o">(</span>Cars<span class="o">[]</span><span class="w"> </span>myCars<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">        </span>double<span class="w"> </span><span class="nv">totalPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
 <span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Car Details:&quot;</span><span class="o">)</span><span class="p">;</span>
 <span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>Cars<span class="w"> </span>car<span class="w"> </span>:<span class="w"> </span>myCars<span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <span class="w">            </span>System.out.println<span class="o">(</span><span class="s2">&quot;Brand: &quot;</span><span class="w"> </span>+<span class="w"> </span>car.getBrand<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;, Color: &quot;</span><span class="w"> </span>+<span class="w"> </span>car.getColor<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;, Price: &quot;</span><span class="w"> </span>+<span class="w"> </span>car.getPrice<span class="o">())</span><span class="p">;</span>
+<span class="w">            </span><span class="nv">totalPrice</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>car.getPrice<span class="o">()</span><span class="p">;</span>
 <span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span>double<span class="w"> </span><span class="nv">avgPrice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>totalPrice<span class="w"> </span>/<span class="w"> </span>myCars.length<span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>System.out.println<span class="o">(</span><span class="s2">&quot;Average: &quot;</span><span class="w"> </span>+<span class="w"> </span>avgPrice<span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>Cars<span class="w"> </span>car<span class="w"> </span>:<span class="w"> </span>myCars<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>car.getPrice<span class="o">()</span><span class="w"> </span>&lt;<span class="w"> </span>avgPrice<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span>System.out.println<span class="o">(</span>car.getBrand<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;&#39;s price is lower than the average price. (&quot;</span><span class="w"> </span>+<span class="w"> </span>car.getPrice<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot; &lt; &quot;</span><span class="w"> </span>+<span class="w"> </span>avgPrice<span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;)&quot;</span><span class="o">)</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+
 <span class="w">    </span><span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
@@ -1046,30 +1067,21 @@ Car<span class="w"> </span>Details:
 Brand:<span class="w"> </span>audi,<span class="w"> </span>Color:<span class="w"> </span>black,<span class="w"> </span>Price:<span class="w"> </span><span class="m">3243</span>.0
 Brand:<span class="w"> </span>BMW,<span class="w"> </span>Color:<span class="w"> </span>white,<span class="w"> </span>Price:<span class="w"> </span><span class="m">325423</span>.0
 Brand:<span class="w"> </span>Xpeng,<span class="w"> </span>Color:<span class="w"> </span>green,<span class="w"> </span>Price:<span class="w"> </span><span class="m">1242</span>.0
+Average:<span class="w"> </span><span class="m">8937</span>.0
+
+
+Car<span class="w"> </span>Details:
+Brand:<span class="w"> </span>BYD,<span class="w"> </span>Color:<span class="w"> </span>black,<span class="w"> </span>Price:<span class="w"> </span><span class="m">34235</span>.0
+Brand:<span class="w"> </span>Toyota,<span class="w"> </span>Color:<span class="w"> </span>grey,<span class="w"> </span>Price:<span class="w"> </span><span class="m">23511</span>.0
+Brand:<span class="w"> </span>Landrover,<span class="w"> </span>Color:<span class="w"> </span>white,<span class="w"> </span>Price:<span class="w"> </span><span class="m">23452</span>.0
+Average:<span class="w"> </span><span class="m">27066</span>.0
+Toyota<span class="s1">&#39;s price is lower than the average price. (23511.0 &lt; 27066.0)</span>
+<span class="s1">Landrover&#39;</span>s<span class="w"> </span>price<span class="w"> </span>is<span class="w"> </span>lower<span class="w"> </span>than<span class="w"> </span>the<span class="w"> </span>average<span class="w"> </span>price.<span class="w"> </span><span class="o">(</span><span class="m">23452</span>.0<span class="w"> </span>&lt;<span class="w"> </span><span class="m">27066</span>.0<span class="o">)</span>
 </pre></div>
 </div>
 </section>
 <section id="q6">
 <h4><span class="section-number">4.16.1.3.6. </span>Q6<a class="headerlink" href="#q6" title="Link to this heading">#</a></h4>
-<p>​ 定义数组存储3部手机对象。</p>
-<p>​ 手机的属性：品牌，价格，颜色。</p>
-<p>​ 要求，计算出三部手机的平均价格</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="q7">
-<h4><span class="section-number">4.16.1.3.7. </span>Q7<a class="headerlink" href="#q7" title="Link to this heading">#</a></h4>
-<p>​ 定义数组存储4个女朋友的对象</p>
-<p>​ 女朋友的属性：姓名、年龄、性别、爱好</p>
-<p>​ 要求1：计算出四女朋友的平均年龄</p>
-<p>​ 要求2：统计年龄比平均值低的女朋友有几个？并把她们的所有信息打印出来。</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</section>
-<section id="q8">
-<h4><span class="section-number">4.16.1.3.8. </span>Q8<a class="headerlink" href="#q8" title="Link to this heading">#</a></h4>
 <p>​ 定义数组存储3个学生对象。</p>
 <p>​ 学生的属性：学号，姓名，年龄。</p>
 <p>​ 要求1：添加的时候需要进行学号的唯一性判断。</p>
@@ -1078,7 +1090,107 @@ Brand:<span class="w"> </span>Xpeng,<span class="w"> </span>Color:<span class="w
 <p>​ 如果存在，则删除，如果不存在，则提示删除失败。</p>
 <p>​ 要求4：删除完毕之后，遍历所有学生信息。</p>
 <p>​ 要求5：id为2的学生，年龄+1岁</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>public<span class="w"> </span>class<span class="w"> </span>Student<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>String<span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span>private<span class="w"> </span>int<span class="w"> </span>age<span class="p">;</span>
+
+<span class="w">    </span>public<span class="w"> </span>Student<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>Student<span class="o">(</span>int<span class="w"> </span>id,<span class="w"> </span>String<span class="w"> </span>name,<span class="w"> </span>int<span class="w"> </span>age<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">        </span>this.age<span class="w"> </span><span class="o">=</span><span class="w"> </span>age<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>int<span class="w"> </span>getId<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setId<span class="o">(</span>int<span class="w"> </span>id<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>this.id<span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>String<span class="w"> </span>getName<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setName<span class="o">(</span>String<span class="w"> </span>name<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>this.name<span class="w"> </span><span class="o">=</span><span class="w"> </span>name<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>int<span class="w"> </span>getAge<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span>age<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>void<span class="w"> </span>setAge<span class="o">(</span>int<span class="w"> </span>age<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>this.age<span class="w"> </span><span class="o">=</span><span class="w"> </span>age<span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+
+
+public<span class="w"> </span>class<span class="w"> </span>Test<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>main<span class="o">(</span>String<span class="o">[]</span><span class="w"> </span>args<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+
+<span class="w">        </span>//1.创建一个数组用来存储学生对象
+<span class="w">        </span>Student<span class="o">[]</span><span class="w"> </span><span class="nv">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Student<span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="p">;</span>
+<span class="w">        </span>//2.创建学生对象并添加到数组当中
+<span class="w">        </span>Student<span class="w"> </span><span class="nv">stu1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Student<span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="s2">&quot;zhangsan&quot;</span>,<span class="w"> </span><span class="m">23</span><span class="o">)</span><span class="p">;</span>
+<span class="w">        </span>Student<span class="w"> </span><span class="nv">stu2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Student<span class="o">(</span><span class="m">2</span>,<span class="w"> </span><span class="s2">&quot;lisi&quot;</span>,<span class="w"> </span><span class="m">24</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>//3.把学生对象添加到数组当中
+<span class="w">        </span>arr<span class="o">[</span><span class="m">0</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>stu1<span class="p">;</span>
+<span class="w">        </span>arr<span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>stu2<span class="p">;</span>
+
+
+<span class="w">        </span>//要求1：再次添加一个学生对象，并在添加的时候进行学号的唯一性判断。
+<span class="w">        </span>Student<span class="w"> </span><span class="nv">stu4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>new<span class="w"> </span>Student<span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="s2">&quot;zhaoliu&quot;</span>,<span class="w"> </span><span class="m">26</span><span class="o">)</span><span class="p">;</span>
+
+<span class="w">        </span>//唯一性判断
+<span class="w">        </span>//已存在<span class="w"> </span>---<span class="w"> </span>不用添加
+<span class="w">        </span>//不存在<span class="w"> </span>---<span class="w"> </span>就可以把学生对象添加进数组
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>Student<span class="w"> </span>student<span class="w"> </span>:<span class="w"> </span>arr<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>stu4.getId<span class="o">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>student.getId<span class="o">){</span>
+
+<span class="w">            </span><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>printArr<span class="o">(</span>Student<span class="o">[]</span><span class="w"> </span>arr<span class="o">){</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>int<span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="w"> </span>arr.length<span class="p">;</span><span class="w"> </span>i++<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span>Student<span class="w"> </span><span class="nv">stu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>arr<span class="o">[</span>i<span class="o">]</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="o">(</span>stu<span class="w"> </span>!<span class="o">=</span><span class="w"> </span>null<span class="o">){</span>
+<span class="w">                </span>System.out.println<span class="o">(</span>stu.getId<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;, &quot;</span><span class="w"> </span>+<span class="w"> </span>stu.getName<span class="o">()</span><span class="w"> </span>+<span class="w"> </span><span class="s2">&quot;, &quot;</span><span class="w"> </span>+<span class="w"> </span>stu.getAge<span class="o">())</span><span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+
+<span class="w">    </span>public<span class="w"> </span>static<span class="w"> </span>void<span class="w"> </span>addStu<span class="o">(</span>Student<span class="o">[]</span><span class="w"> </span>arr,<span class="w"> </span>Student<span class="w"> </span>stu4<span class="o">){</span>
+
+<span class="w">        </span>boolean<span class="w"> </span><span class="nv">is_space_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="o">(</span>Student<span class="w"> </span>student<span class="w"> </span>:<span class="w"> </span>arr<span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="nv">is_space_left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>student.getId<span class="o">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>null<span class="o">)</span><span class="w"> </span>?<span class="w"> </span><span class="nb">true</span><span class="w"> </span>:<span class="w"> </span>is_space_left<span class="p">;</span>
+<span class="w">        </span><span class="o">}</span>
+
+<span class="w">        </span><span class="nv">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">(</span>is_space_left<span class="o">){</span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>arr<span class="o">[</span>count<span class="o">]</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span>null<span class="o">){</span>
+<span class="w">                </span>count++<span class="p">;</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">            </span>Student<span class="o">[</span>count<span class="o">]</span>.setName<span class="o">(</span>sut4.getName<span class="o">())</span><span class="p">;</span>
+<span class="w">            </span>Student<span class="o">[</span>count<span class="o">]</span>.setId<span class="o">(</span>sut4.getId<span class="o">())</span><span class="p">;</span>
+<span class="w">            </span>Student<span class="o">[</span>count<span class="o">]</span>.setAge<span class="o">(</span>sut4.getAge<span class="o">())</span><span class="p">;</span>
+
+<span class="w">        </span><span class="o">}</span><span class="k">else</span><span class="o">{</span>
+<span class="w">            </span>
+<span class="w">            </span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 </section>
@@ -1160,8 +1272,6 @@ Brand:<span class="w"> </span>Xpeng,<span class="w"> </span>Color:<span class="w
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q4">4.16.1.3.4. Q4</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q5">4.16.1.3.5. Q5</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q6">4.16.1.3.6. Q6</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q7">4.16.1.3.7. Q7</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#q8">4.16.1.3.8. Q8</a></li>
 </ul>
 </li>
 </ul>
