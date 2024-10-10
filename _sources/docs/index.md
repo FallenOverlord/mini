@@ -1,7 +1,11 @@
 # H3ll0, W0r1d!
 
 My name is [Miles Wang](https://www.linkedin.com/in/miles-wang-177127293/) and I'm a software developer with a focus on computer security. Welcome to my website!  
-![A Photo of Me](../_static/photos/standP.jpg){width="50%"}
+
+```{figure} /_static/photos/standP.jpg
+:width: 150px
+:height: 300px
+```
 
 [`My Resume`](about/about.md)  
 [`My Industrial Experience`](about/experience.md)  

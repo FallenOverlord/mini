@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.8. Web Footprinting &#8212; Cybersecurity QuickStart</title>
+    <title>1.9. Jupyter Book Basics &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/cybersecurity/footprinting';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/cybersecurity/jb';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.9. Jupyter Book Basics" href="jb.html" />
-    <link rel="prev" title="1.7. HTB CPTS Moduals" href="cpts.html" />
+    <link rel="next" title="1.10. mySQL Basics" href="mySQL.html" />
+    <link rel="prev" title="1.8. Web Footprinting" href="footprinting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,8 +178,8 @@
 <li class="toctree-l2"><a class="reference internal" href="ctf.html">1.5. CTF Write Ups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpts.html">1.7. HTB CPTS Moduals</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Web Footprinting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="jb.html">1.9. Jupyter Book Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="footprinting.html">1.8. Web Footprinting</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.9. Jupyter Book Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mySQL.html">1.10. mySQL Basics</a></li>
 </ul>
 </li>
@@ -246,7 +246,7 @@
       
       
       
-      <li><a href="../../_sources/docs/cybersecurity/footprinting.md" target="_blank"
+      <li><a href="../../_sources/docs/cybersecurity/jb.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +330,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Web Footprinting</h1>
+    <h1>Jupyter Book Basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,7 +340,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.8.1. DNS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book-on-vs-code">1.9.1. 1. Install jupyter book on VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-version-status">1.9.2. 2.Check version status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-template">1.9.3. 3. Create a new template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#book-structure">1.9.4. 4. Book structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-markdown-syntaxes">1.9.5. 5. Basic Markdown syntaxes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink">1.9.6. <code class="docutils literal notranslate"><span class="pre">[&lt;hyperlink_text&gt;](&lt;relative_path_to_linked_file&gt;)</span></code> will create a hyperlink</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-book">1.9.7. 6. Building the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-online-repo-for-jupyter-book">1.9.8. 7. Create an online repo for jupyter-book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-the-jupyter-book-online">1.9.9. 8. Publish the jupyter-book online</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-online-site">1.9.10. 9. Update the online site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book-explore-more-features">1.9.11. Jupyter-book Explore More Features</a></li>
 </ul>
             </nav>
         </div>
@@ -352,97 +362,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="web-footprinting">
-<h1><span class="section-number">1.8. </span>Web Footprinting<a class="headerlink" href="#web-footprinting" title="Link to this heading">#</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#services &amp; sharable drives</span>
-smbclient<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span>//10.129.14.128
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-book-basics">
+<h1><span class="section-number">1.9. </span>Jupyter Book Basics<a class="headerlink" href="#jupyter-book-basics" title="Link to this heading">#</a></h1>
+<section id="install-jupyter-book-on-vs-code">
+<h2><span class="section-number">1.9.1. </span>1. Install jupyter book on VS Code<a class="headerlink" href="#install-jupyter-book-on-vs-code" title="Link to this heading">#</a></h2>
+<p>pip install -U jupyter-book</p>
+</section>
+<section id="check-version-status">
+<h2><span class="section-number">1.9.2. </span>2.Check version status<a class="headerlink" href="#check-version-status" title="Link to this heading">#</a></h2>
+<p>jupyter-book –version</p>
+<p>OR</p>
+<p>jb –version</p>
+</section>
+<section id="create-a-new-template">
+<h2><span class="section-number">1.9.3. </span>3. Create a new template<a class="headerlink" href="#create-a-new-template" title="Link to this heading">#</a></h2>
+<p>jb create &lt;book_name&gt;/</p>
+</section>
+<section id="book-structure">
+<h2><span class="section-number">1.9.4. </span>4. Book structure<a class="headerlink" href="#book-structure" title="Link to this heading">#</a></h2>
+<p>_config.yml contain title, author and logo info
+_toc.yml contain the files and chapters of the book
+.md, .ipynb and .rst files are all part of the book content
+a Markdown file (<a class="reference external" href="http://markdown.md">markdown.md</a>)
+a Jupyter Notebook (.ipynb): a combination of computational content and narrative content
+a MyST Markdown Notebook (<a class="reference external" href="http://markdown-notebooks.md">markdown-notebooks.md</a>)</p>
+</section>
+<section id="basic-markdown-syntaxes">
+<h2><span class="section-number">1.9.5. </span>5. Basic Markdown syntaxes<a class="headerlink" href="#basic-markdown-syntaxes" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>:::<span class="o">{</span>&lt;name&gt;<span class="o">}</span>
+&lt;content&gt;
+:::
 
-<span class="c1">#connect to a specific shareable service</span>
-smbclient<span class="w"> </span>//10.129.14.128/&lt;service&gt;
-
-<span class="c1">#download files</span>
-get<span class="w"> </span>&lt;file&gt;
-
-Command<span class="w">	</span>Description
-
-5WrS4aEh
-
-smbclient<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span>//10.129.32.142<span class="w">	</span>Null<span class="w"> </span>session<span class="w"> </span>authentication<span class="w"> </span>on<span class="w"> </span>SMB.
-
-nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span>
-
-nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span><span class="w"> </span>--script<span class="w"> </span>smb-os-discovery<span class="w"> </span><span class="m">10</span>.129.32.142
-
-smbclient<span class="w"> </span>-L<span class="w"> </span>//10.129.32.142<span class="w"> </span>-N
-
-smbclient<span class="w"> </span>//&lt;FQDN/IP&gt;/&lt;share&gt;<span class="w">	</span>Connect<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>SMB<span class="w"> </span>share.
-
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>samba-common-bin
-
-rpcclient<span class="w"> </span>-U<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span>Interaction<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>using<span class="w"> </span>RPC.
-
-<span class="c1">#Enumerate Users</span>
-enumdomusers
-queryuser<span class="w"> </span>&lt;user_rid&gt;
-enumdomgroups
-querygroupmem<span class="w"> </span>&lt;group_rid&gt;
-<span class="c1">#get system path</span>
-netshareenum
-rpcclient<span class="w"> </span>$&gt;<span class="w"> </span>srvinfo
-Query<span class="w">	</span>Description
-srvinfo<span class="w">	</span>Server<span class="w"> </span>information.
-enumdomains<span class="w">	</span>Enumerate<span class="w"> </span>all<span class="w"> </span>domains<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>deployed<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>network.
-querydominfo<span class="w">	</span>Provides<span class="w"> </span>domain,<span class="w"> </span>server,<span class="w"> </span>and<span class="w"> </span>user<span class="w"> </span>information<span class="w"> </span>of<span class="w"> </span>deployed<span class="w"> </span>domains.
-netshareenumall<span class="w">	</span>Enumerates<span class="w"> </span>all<span class="w"> </span>available<span class="w"> </span>shares.
-netsharegetinfo<span class="w"> </span>sambashare<span class="w">	</span><span class="c1">#Provides information about a specific share.</span>
-enumdomusers<span class="w">	</span>Enumerates<span class="w"> </span>all<span class="w"> </span>domain<span class="w"> </span>users.
-queryuser<span class="w"> </span>&lt;RID&gt;<span class="w">	</span>Provides<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>user.
-
-samrdump.py<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span>Username<span class="w"> </span>enumeration<span class="w"> </span>using<span class="w"> </span>Impacket<span class="w"> </span>scripts.
-
-smbmap<span class="w"> </span>-H<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span>Enumerating<span class="w"> </span>SMB<span class="w"> </span>shares.
-nmap<span class="w"> </span>--script<span class="w"> </span>banner<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>-p445
-crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>--shares<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">	</span><span class="c1">#Enumerating SMB shares using null session authentication.</span>
-
-enum4linux-ng.py<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>-A<span class="w">	</span>SMB<span class="w"> </span>enumeration<span class="w"> </span>using<span class="w"> </span>enum4linux.
+<span class="c1">#&lt;title&gt;</span>
+<span class="c1">##&lt;section_header&gt;</span>
 </pre></div>
 </div>
-<p>NFS</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>showmount<span class="w"> </span>-e<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span><span class="c1">#Show available NFS shares.</span>
-┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.63<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-dqbdmnddna<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
-└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>showmount<span class="w"> </span>-e<span class="w"> </span><span class="m">10</span>.129.32.142
-Export<span class="w"> </span>list<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.32.142:
-/var/nfs<span class="w">      </span><span class="m">10</span>.0.0.0/8
-/mnt/nfsshare<span class="w"> </span><span class="m">10</span>.0.0.0/8
-
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>mkdir<span class="w"> </span>target-NFS
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span><span class="m">10</span>.129.32.142:/<span class="w"> </span>./target-NFS/<span class="w"> </span>-o<span class="w"> </span>nolock
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>target-NFS
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>tree<span class="w"> </span>.
-
-mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span><span class="m">10</span>.129.32.142://var/nfs<span class="w"> </span>
-
-umount<span class="w"> </span>./target-NFS<span class="w">	</span><span class="c1">#Unmount the specific NFS share.</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>**&lt;content&gt;**<span class="w"> </span>
 </pre></div>
 </div>
-<section id="dns">
-<h2><span class="section-number">1.8.1. </span>DNS<a class="headerlink" href="#dns" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">10</span>.129.250.195
-
-Interact<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>DNS<span class="w"> </span>using<span class="w"> </span>its<span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span>and<span class="w"> </span>enumerate<span class="w"> </span>the<span class="w"> </span>Fully<span class="w"> </span>Qualified<span class="w"> </span>Domain<span class="w"> </span>Name<span class="w"> </span><span class="o">(</span>FQDN<span class="o">)</span><span class="w"> </span>of<span class="w"> </span>it<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;inlanefreight.htb&quot;</span><span class="w"> </span>domain.
-
-dig<span class="w"> </span>ns<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.250.195
-
-+<span class="w"> </span><span class="m">1</span><span class="w">  </span>Identify<span class="w"> </span><span class="k">if</span><span class="w"> </span>its<span class="w"> </span>possible<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>a<span class="w"> </span>zone<span class="w"> </span>transfer<span class="w"> </span>and<span class="w"> </span>submit<span class="w"> </span>the<span class="w"> </span>TXT<span class="w"> </span>record<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>answer.<span class="w"> </span><span class="o">(</span>Format:<span class="w"> </span>HTB<span class="o">{</span>...<span class="o">))</span>
-
-+<span class="w"> </span><span class="m">1</span><span class="w">  </span>What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>IPv4<span class="w"> </span>address<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>hostname<span class="w"> </span>DC1?
-
-+<span class="w"> </span><span class="m">1</span><span class="w">  </span>What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>FQDN<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>host<span class="w"> </span>where<span class="w"> </span>the<span class="w"> </span>last<span class="w"> </span>octet<span class="w"> </span>ends<span class="w"> </span>with<span class="w"> </span><span class="s2">&quot;x.x.x.203&quot;</span>?
+<p>makes the content bold</p>
+</section>
+<section id="hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink">
+<h2><span class="section-number">1.9.6. </span><code class="docutils literal notranslate"><span class="pre">[&lt;hyperlink_text&gt;](&lt;relative_path_to_linked_file&gt;)</span></code> will create a hyperlink<a class="headerlink" href="#hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink" title="Link to this heading">#</a></h2>
+</section>
+<section id="building-the-book">
+<h2><span class="section-number">1.9.7. </span>6. Building the book<a class="headerlink" href="#building-the-book" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">&lt;book_name&gt;/</span></code> will generate a fully functioning HTML site
+after changes are incurred and a newer version of HTML site needs to
+be built upon the changed files, you should use the command <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">&lt;book_name&gt;/</span></code>
+tip: after new content files are added in, remember to add <code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">file:</span> <span class="pre">&lt;file_name&gt;</span></code> in
+the _toc.yml file</p>
+</section>
+<section id="create-an-online-repo-for-jupyter-book">
+<h2><span class="section-number">1.9.8. </span>7. Create an online repo for jupyter-book<a class="headerlink" href="#create-an-online-repo-for-jupyter-book" title="Link to this heading">#</a></h2>
+<p>first create a new dir in github: <a class="github reference external" href="https://github.com/new">new</a>
+tip: ensure that the new dir has both name and descriptions but NO README file
+Next, clone the empty dir into local dev env: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/&lt;my-</span> <span class="pre">org&gt;/&lt;my-repository-name&gt;</span></code>
+Now, copy all the jupyter-book content into the newly added empty folder:
+<code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span> <span class="pre">&lt;jupyter_book_name&gt;/*</span> <span class="pre">&lt;newly_cloned_dir_name&gt;/</span></code>
+Next step is to sync the local and remote repo:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">&lt;newly_cloned_dir_name&gt;</span></code>
+git add ./*
+git commit -m “adding my first book!”
+git push</p>
+</section>
+<section id="publish-the-jupyter-book-online">
+<h2><span class="section-number">1.9.9. </span>8. Publish the jupyter-book online<a class="headerlink" href="#publish-the-jupyter-book-online" title="Link to this heading">#</a></h2>
+<p>Firstly, pip install ghp-import
+Secondly, cd into the <code class="docutils literal notranslate"><span class="pre">&lt;newly_cloned_dir&gt;</span></code>
+ghp-import -n -p -f _build/html
+see the hosted website at <code class="docutils literal notranslate"><span class="pre">https://FallenOverlord.github.io/&lt;newly_cloned_dir&gt;/</span></code></p>
+</section>
+<section id="update-the-online-site">
+<h2><span class="section-number">1.9.10. </span>9. Update the online site<a class="headerlink" href="#update-the-online-site" title="Link to this heading">#</a></h2>
+<p>add in the .md file and remember to update the _toc.yml file
+use the command <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">--all</span> <span class="pre">mini/</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>mini/
+git<span class="w"> </span>add<span class="w"> </span>./*
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;adding my first book!&quot;</span>
+git<span class="w"> </span>push
+ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>_build/html
 </pre></div>
 </div>
-<p>Commands</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
-dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>tip: got to <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;user_name&gt;/&lt;project_name&gt;/actions</span></code>
+to check if the update is through</p>
+</div>
+</section>
+<section id="jupyter-book-explore-more-features">
+<h2><span class="section-number">1.9.11. </span>Jupyter-book Explore More Features<a class="headerlink" href="#jupyter-book-explore-more-features" title="Link to this heading">#</a></h2>
+<p>Code blocks, non-executable code
+First, add headers</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>---
+jupytext:
+<span class="w">  </span>text_representation:
+<span class="w">    </span>extension:<span class="w"> </span>.md
+<span class="w">    </span>format_name:<span class="w"> </span>myst
+kernelspec:
+<span class="w">  </span>display_name:<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>
+<span class="w">  </span>language:<span class="w"> </span>python
+<span class="w">  </span>name:<span class="w"> </span>python3
+---
+</pre></div>
+</div>
+<p>Next,  foramt non-executable code like this</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh<span class="w"> </span>username@hostname
 </pre></div>
 </div>
 </section>
@@ -479,20 +504,20 @@ dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cpts.html"
+       href="footprinting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.7. </span>HTB CPTS Moduals</p>
+        <p class="prev-next-title"><span class="section-number">1.8. </span>Web Footprinting</p>
       </div>
     </a>
     <a class="right-next"
-       href="jb.html"
+       href="mySQL.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.9. </span>Jupyter Book Basics</p>
+        <p class="prev-next-title"><span class="section-number">1.10. </span>mySQL Basics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -512,7 +537,17 @@ dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.8.1. DNS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-jupyter-book-on-vs-code">1.9.1. 1. Install jupyter book on VS Code</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-version-status">1.9.2. 2.Check version status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-template">1.9.3. 3. Create a new template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#book-structure">1.9.4. 4. Book structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-markdown-syntaxes">1.9.5. 5. Basic Markdown syntaxes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperlink-text-relative-path-to-linked-file-will-create-a-hyperlink">1.9.6. <code class="docutils literal notranslate"><span class="pre">[&lt;hyperlink_text&gt;](&lt;relative_path_to_linked_file&gt;)</span></code> will create a hyperlink</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-book">1.9.7. 6. Building the book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-an-online-repo-for-jupyter-book">1.9.8. 7. Create an online repo for jupyter-book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publish-the-jupyter-book-online">1.9.9. 8. Publish the jupyter-book online</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#update-the-online-site">1.9.10. 9. Update the online site</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book-explore-more-features">1.9.11. Jupyter-book Explore More Features</a></li>
 </ul>
   </nav></div>
 

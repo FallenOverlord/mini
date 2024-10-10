@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.8. Web Footprinting &#8212; Cybersecurity QuickStart</title>
+    <title>1.10. mySQL Basics &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/cybersecurity/footprinting';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/cybersecurity/mySQL';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.9. Jupyter Book Basics" href="jb.html" />
-    <link rel="prev" title="1.7. HTB CPTS Moduals" href="cpts.html" />
+    <link rel="next" title="2. ABOUT ME" href="../about/about.html" />
+    <link rel="prev" title="1.9. Jupyter Book Basics" href="jb.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,9 +178,9 @@
 <li class="toctree-l2"><a class="reference internal" href="ctf.html">1.5. CTF Write Ups</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cysa.html">1.6. CompTIA CySA+ (CS0-003)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpts.html">1.7. HTB CPTS Moduals</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.8. Web Footprinting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="footprinting.html">1.8. Web Footprinting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jb.html">1.9. Jupyter Book Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mySQL.html">1.10. mySQL Basics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.10. mySQL Basics</a></li>
 </ul>
 </li>
 </ul>
@@ -246,7 +246,7 @@
       
       
       
-      <li><a href="../../_sources/docs/cybersecurity/footprinting.md" target="_blank"
+      <li><a href="../../_sources/docs/cybersecurity/mySQL.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +330,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Web Footprinting</h1>
+    <h1>mySQL Basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,7 +340,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.8.1. DNS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.10.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-sql">1.10.1.1. Intro to SQL</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -352,99 +355,54 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="web-footprinting">
-<h1><span class="section-number">1.8. </span>Web Footprinting<a class="headerlink" href="#web-footprinting" title="Link to this heading">#</a></h1>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#services &amp; sharable drives</span>
-smbclient<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span>//10.129.14.128
+  <section class="tex2jax_ignore mathjax_ignore" id="mysql-basics">
+<h1><span class="section-number">1.10. </span>mySQL Basics<a class="headerlink" href="#mysql-basics" title="Link to this heading">#</a></h1>
+<p>mySQL is a relational database management system.<br />
+It is a software that manages databases.</p>
+<section id="introduction">
+<h2><span class="section-number">1.10.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>There is always something that should uniquely identify a row in the table(database).</p>
+<p>Columns represents attributes.<br />
+Primary Key: unique attributes for each row.<br />
+Segarate Key: a primary key that has no real-world implications.<br />
+Natural Key: a real-world attribute that is used as the primary key.<br />
+Foreign Key: Primary keys from another table. The way multiple tables connect.<br />
+Composite Key: when there is no sigle attribut that uniquely define a row, u need the bondle of two attributes that is unique for each row.<br />
+You can use two foriegn keys as a composite key.</p>
+<section id="intro-to-sql">
+<h3><span class="section-number">1.10.1.1. </span>Intro to SQL<a class="headerlink" href="#intro-to-sql" title="Link to this heading">#</a></h3>
+<p>A STANDARD language for interacting with RELATIONAL databases.<br />
+Queries: request made to DB management sys for specific info</p>
+<p>SQL = Data (Query + Definition + Control + Manipulation) Language.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">create</span><span class="w"> </span><span class="k">database</span><span class="w"> </span><span class="n">db1</span><span class="p">;</span>
 
-<span class="c1">#connect to a specific shareable service</span>
-smbclient<span class="w"> </span>//10.129.14.128/&lt;service&gt;
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">();</span>
 
-<span class="c1">#download files</span>
-get<span class="w"> </span>&lt;file&gt;
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">student_id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="w">    </span><span class="n">major</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">);</span>
 
-Command<span class="w">	</span>Description
+<span class="k">DESCRIBE</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
 
-5WrS4aEh
+<span class="k">DROP</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="p">;</span>
 
-smbclient<span class="w"> </span>-N<span class="w"> </span>-L<span class="w"> </span>//10.129.32.142<span class="w">	</span>Null<span class="w"> </span>session<span class="w"> </span>authentication<span class="w"> </span>on<span class="w"> </span>SMB.
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">ADD</span><span class="w"> </span><span class="n">gpa</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
 
-nmap<span class="w"> </span>-sC<span class="w"> </span>-sV<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span>
-
-nmap<span class="w"> </span>-p<span class="w"> </span><span class="m">445</span><span class="w"> </span>--script<span class="w"> </span>smb-os-discovery<span class="w"> </span><span class="m">10</span>.129.32.142
-
-smbclient<span class="w"> </span>-L<span class="w"> </span>//10.129.32.142<span class="w"> </span>-N
-
-smbclient<span class="w"> </span>//&lt;FQDN/IP&gt;/&lt;share&gt;<span class="w">	</span>Connect<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>SMB<span class="w"> </span>share.
-
-sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>samba-common-bin
-
-rpcclient<span class="w"> </span>-U<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span>Interaction<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>using<span class="w"> </span>RPC.
-
-<span class="c1">#Enumerate Users</span>
-enumdomusers
-queryuser<span class="w"> </span>&lt;user_rid&gt;
-enumdomgroups
-querygroupmem<span class="w"> </span>&lt;group_rid&gt;
-<span class="c1">#get system path</span>
-netshareenum
-rpcclient<span class="w"> </span>$&gt;<span class="w"> </span>srvinfo
-Query<span class="w">	</span>Description
-srvinfo<span class="w">	</span>Server<span class="w"> </span>information.
-enumdomains<span class="w">	</span>Enumerate<span class="w"> </span>all<span class="w"> </span>domains<span class="w"> </span>that<span class="w"> </span>are<span class="w"> </span>deployed<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>network.
-querydominfo<span class="w">	</span>Provides<span class="w"> </span>domain,<span class="w"> </span>server,<span class="w"> </span>and<span class="w"> </span>user<span class="w"> </span>information<span class="w"> </span>of<span class="w"> </span>deployed<span class="w"> </span>domains.
-netshareenumall<span class="w">	</span>Enumerates<span class="w"> </span>all<span class="w"> </span>available<span class="w"> </span>shares.
-netsharegetinfo<span class="w"> </span>sambashare<span class="w">	</span><span class="c1">#Provides information about a specific share.</span>
-enumdomusers<span class="w">	</span>Enumerates<span class="w"> </span>all<span class="w"> </span>domain<span class="w"> </span>users.
-queryuser<span class="w"> </span>&lt;RID&gt;<span class="w">	</span>Provides<span class="w"> </span>information<span class="w"> </span>about<span class="w"> </span>a<span class="w"> </span>specific<span class="w"> </span>user.
-
-samrdump.py<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span>Username<span class="w"> </span>enumeration<span class="w"> </span>using<span class="w"> </span>Impacket<span class="w"> </span>scripts.
-
-smbmap<span class="w"> </span>-H<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span>Enumerating<span class="w"> </span>SMB<span class="w"> </span>shares.
-nmap<span class="w"> </span>--script<span class="w"> </span>banner<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>-p445
-crackmapexec<span class="w"> </span>smb<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>--shares<span class="w"> </span>-u<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>-p<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w">	</span><span class="c1">#Enumerating SMB shares using null session authentication.</span>
-
-enum4linux-ng.py<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w"> </span>-A<span class="w">	</span>SMB<span class="w"> </span>enumeration<span class="w"> </span>using<span class="w"> </span>enum4linux.
+<span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">student</span><span class="w"> </span><span class="k">DROP</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">gpa</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>NFS</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>showmount<span class="w"> </span>-e<span class="w"> </span><span class="m">10</span>.129.32.142<span class="w">	</span><span class="c1">#Show available NFS shares.</span>
-┌─<span class="o">[</span>us-academy-2<span class="o">]</span>─<span class="o">[</span><span class="m">10</span>.10.14.63<span class="o">]</span>─<span class="o">[</span>htb-ac-1136328@htb-dqbdmnddna<span class="o">]</span>─<span class="o">[</span>~<span class="o">]</span>
-└──╼<span class="w"> </span><span class="o">[</span>★<span class="o">]</span>$<span class="w"> </span>showmount<span class="w"> </span>-e<span class="w"> </span><span class="m">10</span>.129.32.142
-Export<span class="w"> </span>list<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span>.129.32.142:
-/var/nfs<span class="w">      </span><span class="m">10</span>.0.0.0/8
-/mnt/nfsshare<span class="w"> </span><span class="m">10</span>.0.0.0/8
-
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>mkdir<span class="w"> </span>target-NFS
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>sudo<span class="w"> </span>mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span><span class="m">10</span>.129.32.142:/<span class="w"> </span>./target-NFS/<span class="w"> </span>-o<span class="w"> </span>nolock
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>target-NFS
-FallenOverlord@htb<span class="o">[</span>/htb<span class="o">]</span>$<span class="w"> </span>tree<span class="w"> </span>.
-
-mount<span class="w"> </span>-t<span class="w"> </span>nfs<span class="w"> </span><span class="m">10</span>.129.32.142://var/nfs<span class="w"> </span>
-
-umount<span class="w"> </span>./target-NFS<span class="w">	</span><span class="c1">#Unmount the specific NFS share.</span>
+<p>SQL Datatypes</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="nb">INT</span>
+<span class="nb">DECIMAL</span><span class="p">(</span><span class="n">M</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span>
+<span class="nb">VARCHAR</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">BLOB</span>
+<span class="nb">DATE</span>
+<span class="k">TIMESTAMP</span>
 </pre></div>
 </div>
-<section id="dns">
-<h2><span class="section-number">1.8.1. </span>DNS<a class="headerlink" href="#dns" title="Link to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">10</span>.129.250.195
-
-Interact<span class="w"> </span>with<span class="w"> </span>the<span class="w"> </span>target<span class="w"> </span>DNS<span class="w"> </span>using<span class="w"> </span>its<span class="w"> </span>IP<span class="w"> </span>address<span class="w"> </span>and<span class="w"> </span>enumerate<span class="w"> </span>the<span class="w"> </span>Fully<span class="w"> </span>Qualified<span class="w"> </span>Domain<span class="w"> </span>Name<span class="w"> </span><span class="o">(</span>FQDN<span class="o">)</span><span class="w"> </span>of<span class="w"> </span>it<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span><span class="s2">&quot;inlanefreight.htb&quot;</span><span class="w"> </span>domain.
-
-dig<span class="w"> </span>ns<span class="w"> </span>inlanefreight.htb<span class="w"> </span>@10.129.250.195
-
-+<span class="w"> </span><span class="m">1</span><span class="w">  </span>Identify<span class="w"> </span><span class="k">if</span><span class="w"> </span>its<span class="w"> </span>possible<span class="w"> </span>to<span class="w"> </span>perform<span class="w"> </span>a<span class="w"> </span>zone<span class="w"> </span>transfer<span class="w"> </span>and<span class="w"> </span>submit<span class="w"> </span>the<span class="w"> </span>TXT<span class="w"> </span>record<span class="w"> </span>as<span class="w"> </span>the<span class="w"> </span>answer.<span class="w"> </span><span class="o">(</span>Format:<span class="w"> </span>HTB<span class="o">{</span>...<span class="o">))</span>
-
-+<span class="w"> </span><span class="m">1</span><span class="w">  </span>What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>IPv4<span class="w"> </span>address<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>hostname<span class="w"> </span>DC1?
-
-+<span class="w"> </span><span class="m">1</span><span class="w">  </span>What<span class="w"> </span>is<span class="w"> </span>the<span class="w"> </span>FQDN<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>host<span class="w"> </span>where<span class="w"> </span>the<span class="w"> </span>last<span class="w"> </span>octet<span class="w"> </span>ends<span class="w"> </span>with<span class="w"> </span><span class="s2">&quot;x.x.x.203&quot;</span>?
-</pre></div>
-</div>
-<p>Commands</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
-dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
-</pre></div>
-</div>
+</section>
 </section>
 </section>
 
@@ -479,20 +437,20 @@ dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="cpts.html"
+       href="jb.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.7. </span>HTB CPTS Moduals</p>
+        <p class="prev-next-title"><span class="section-number">1.9. </span>Jupyter Book Basics</p>
       </div>
     </a>
     <a class="right-next"
-       href="jb.html"
+       href="../about/about.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.9. </span>Jupyter Book Basics</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>ABOUT ME</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -512,7 +470,10 @@ dig<span class="w"> </span>soa<span class="w"> </span>www.inlanefreight.com
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.8.1. DNS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1.10.1. Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-sql">1.10.1.1. Intro to SQL</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
