@@ -1,7 +1,7 @@
 format: jb-book
 root: docs/index
 parts:
-  - caption: Cybersecurity
+  - caption: Learning
     numbered: True
     chapters:
       - file: docs/cybersecurity/cs_intro
@@ -13,38 +13,12 @@ parts:
         - file: docs/cybersecurity/ctf
         - file: docs/cybersecurity/cysa
         - file: docs/cybersecurity/cpts
+        - file: docs/cybersecurity/footprinting.md
 
-  - caption: C Programming Language
+  - caption: About Miles
     numbered: True
     chapters:
-      - file: docs/c/c_intro
+      - file: docs/about/about.md
         sections:
-          - file: docs/c/struct
-          - file: docs/c/linkedlist
-          - file: docs/c/final
-          - file: docs/c/searching
-
-  - caption: ECE244
-    numbered: True
-    chapters:
-      - file: docs/cpp/cpp_intro
-        sections:
-        - file: docs/cpp/io
-
-  - caption: ECE
-    numbered: True
-    chapters:
-      - file: docs/ece/ece_intro
-        sections:
-          - file: docs/ece/circuits_basics
-
-  - caption: Backend Dev
-    numbered: True
-    chapters:
-      - file: docs/backend/java_intro
-        sections:
-          - file: docs/backend/java_basics
-          - file: docs/backend/java_oop
-          - file: docs/backend/java_projects
-          - file: docs/backend/mySQL
-          - file: docs/backend/jb
+        - file: docs/about/experience.md
+        - file: docs/about/projects.md
