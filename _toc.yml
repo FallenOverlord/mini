@@ -14,11 +14,14 @@ parts:
         - file: docs/cybersecurity/cysa
         - file: docs/cybersecurity/cpts
         - file: docs/cybersecurity/footprinting.md
+        - file: docs/cybersecurity/jb.md
+        - file: docs/cybersecurity/mySQL.md
 
   - caption: About Miles
     numbered: True
     chapters:
       - file: docs/about/about.md
         sections:
+        - file: docs/about/resume.md
         - file: docs/about/experience.md
         - file: docs/about/projects.md
