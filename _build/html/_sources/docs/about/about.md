@@ -1,8 +1,8 @@
 # ABOUT ME
 
 ```{figure} /_static/photos/milesCasual.jpg
-:width: 160px
-:height: 300px
+:width: 180px
+:height: 320px
 ```
 
 Hello World! I'm a software developer with a focus on computer security. Currently, I am a Computer Engineering student at the University of Toronto.

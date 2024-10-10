@@ -3,8 +3,8 @@
 My name is [Miles Wang](https://www.linkedin.com/in/miles-wang-177127293/) and I'm a software developer with a focus on computer security. Welcome to my website!  
 
 ```{figure} /_static/photos/standP.jpg
-:width: 150px
-:height: 300px
+:width: 180px
+:height: 320px
 ```
 
 [`My Resume`](about/about.md)  
