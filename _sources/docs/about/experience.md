@@ -50,7 +50,7 @@ control ensuring data integrity and privacy, while optimizing database queries f
 ![UTRA](../../_static/photos/utra.png)
 
 ::::{grid}
-:gutter: 4
+:gutter: 3
 
 :::{grid-item-card}
 • Created a 3D shell model for a Sumo Robot that features space-efficiency and structurally integral design, through
@@ -63,12 +63,10 @@ SolidWorks and Ultimaker Slicker.
 
 :::{grid-item-card}
 • Leveraging Ultrasound and Infrared modules to detect opponents up to 180mm, and track a moving opponent with an
-error rate of 5% 
-:::
-
-:::{grid-item-card}
+error rate of 5%.
 • Won the 2024 annual University of Toronto SUMO Robot Tournament, with an historical score (87.5% win rate).
 :::
+
 ::::
 
 ## Certificates
