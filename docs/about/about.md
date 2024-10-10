@@ -1,7 +1,7 @@
 # ABOUT ME
 
 ```{figure} /_static/photos/milesCasual.jpg
-:width: 180px
+:width: 200px
 :height: 320px
 ```
 
@@ -11,6 +11,9 @@ I've always been passionate about understanding the underlying mechanisms of com
 
 My expertise includes Java, C, C++, Python and Shell Script. Recently, I have been intrigued with SIEM and penetration testing tools. Aside from coding, I enjoy running, playing board games and the ocarina.
 
+[`My Resume`](resume.md) [`My Projects`](projects.md)  
+[`My Experience`](experience.md)
 
 
-
+[GitHub](https://github.com/FallenOverlord?tab=repositories)  
+[Linkedin](https://www.linkedin.com/in/miles-wang-177127293/)  
