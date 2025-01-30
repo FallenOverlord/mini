@@ -104,4 +104,14 @@ Next,  foramt non-executable code like this
 ssh username@hostname
 ```
 
-
+## Summary
+### Local Build & Publish
+Get to the location that contains the project, mini in my case. Not inside the project.
+```bash
+jb build --all mini/
+cd mini/
+git add ./*
+git commit -m "adding my first book!"
+git push
+ghp-import -n -p -f _build/html
+```

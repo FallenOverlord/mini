@@ -12,7 +12,6 @@ parts:
         - file: docs/cybersecurity/cheatSheet
         - file: docs/cybersecurity/ctf
         - file: docs/cybersecurity/cysa
-        - file: docs/cybersecurity/cpts
         - file: docs/cybersecurity/footprinting.md
         - file: docs/cybersecurity/jb.md
         - file: docs/cybersecurity/mySQL.md
