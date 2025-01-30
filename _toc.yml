@@ -15,6 +15,9 @@ parts:
         - file: docs/cybersecurity/footprinting.md
         - file: docs/cybersecurity/jb.md
         - file: docs/cybersecurity/mySQL.md
+      - file: docs/swe/swe_intro
+        sections:
+        - file: docs/swe/git
 
 
   - caption: About Miles
