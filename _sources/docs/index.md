@@ -10,6 +10,7 @@ My name is [Miles Wang](https://www.linkedin.com/in/miles-wang-177127293/) and I
 [`My Resume`](about/resume.md) [`My Projects`](about/projects.md)  
 [`My Experience`](about/experience.md)
 [`Learn Cybersecurity`](cybersecurity/cs_intro.md)  
+[`Learn Software Engineering`](swe/swe_intro.md)
   
   
   
