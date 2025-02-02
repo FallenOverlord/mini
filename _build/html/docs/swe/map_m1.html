@@ -343,7 +343,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-and-testing">Making and Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walkflow">Walkflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#go-to-m1-h-and-see-all-the-functions-that-need-to-be-implemented">go to m1.h and see all the functions that need to be implemented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-the-functions">Implement the functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-and-testing">Making and Testing</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -358,10 +363,61 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="mapper-milestone-1">
 <h1>Mapper Milestone 1<a class="headerlink" href="#mapper-milestone-1" title="Link to this heading">#</a></h1>
 <p>An example project of using C++ to make a Mapper application, which shows street segments and location info.</p>
+<section id="walkflow">
+<h2>Walkflow<a class="headerlink" href="#walkflow" title="Link to this heading">#</a></h2>
+<section id="go-to-m1-h-and-see-all-the-functions-that-need-to-be-implemented">
+<h3>go to m1.h and see all the functions that need to be implemented<a class="headerlink" href="#go-to-m1-h-and-see-all-the-functions-that-need-to-be-implemented" title="Link to this heading">#</a></h3>
+<p>open Mate Terminal, command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/cad2/ece297s/public/include/milestones</span></code> and see m1.h.<br />
+assign the functions, the functions at the end are more likely to be harder.</p>
+</section>
+<section id="implement-the-functions">
+<h3>Implement the functions<a class="headerlink" href="#implement-the-functions" title="Link to this heading">#</a></h3>
+<p>open a new terminal and command <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">ece297/work/mapper</span></code> or whatever the path to the m1.cpp file is.</p>
+</section>
 <section id="making-and-testing">
-<h2>Making and Testing<a class="headerlink" href="#making-and-testing" title="Link to this heading">#</a></h2>
-<p>go to the location that contains MakeFile, and run the command <code class="docutils literal notranslate"><span class="pre">make</span></code>.
+<h3>Making and Testing<a class="headerlink" href="#making-and-testing" title="Link to this heading">#</a></h3>
+<p>go to the location that contains MakeFile, and run the command <code class="docutils literal notranslate"><span class="pre">make</span></code> + <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code>.
 to test runn the command <code class="docutils literal notranslate"><span class="pre">ece297exercise</span> <span class="pre">1</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#workflow</span>
+make<span class="w"> </span>clean
+make<span class="w"> </span><span class="nv">CONF</span><span class="o">=</span>release
+
+ece297exercise<span class="w"> </span><span class="m">1</span>
+
+ece297exercise<span class="w"> </span><span class="m">1</span><span class="w"> </span>--list_testers
+
+<span class="c1">#public_M1_perf_OSM_Test is one of the teseters listed</span>
+ece297exercise<span class="w"> </span><span class="m">1</span><span class="w"> </span>--debug_test<span class="w"> </span>Public_M1_Perf_OSM_Tests
+
+make<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+<p>below are the public testers for m1.h</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">	 </span>Public_M1_Func_Intersection_Tests
+<span class="w">	 </span>Public_M1_Func_Street_Tests
+<span class="w">	 </span>Public_M1_Func_Distance-Time_Tests
+<span class="w">	 </span>Public_M1_Func_Spatial_Tests
+<span class="w">	 </span>Public_M1_Func_OSM_Tests
+
+<span class="w">	 </span>Public_M1_Perf_Intersection_Tests
+<span class="w">	 </span>Public_M1_Perf_Street_Tests
+<span class="w">	 </span>Public_M1_Perf_Distance-Time_Tests
+<span class="w">	 </span>Public_M1_Perf_OSM_Tests
+
+<span class="w">	 </span>Public_M1_Load_Maps
+<span class="w">	 </span>Public_M1_Valgrind
+
+ece297exercise<span class="w"> </span><span class="m">1</span><span class="w"> </span>--debug_test<span class="w"> </span>Public_M1_Load_Maps
+make<span class="w"> </span><span class="nb">test</span>
+
+ece297exercise<span class="w"> </span><span class="m">1</span><span class="w"> </span>--debug_test<span class="w"> </span>Public_M1_Func_Intersection_Tests
+make<span class="w"> </span><span class="nb">test</span>
+
+ece297exercise<span class="w"> </span><span class="m">1</span><span class="w"> </span>--debug_test<span class="w"> </span>Public_M1_Func_Intersection_Tests
+make<span class="w"> </span><span class="nb">test</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -411,7 +467,12 @@ to test runn the command <code class="docutils literal notranslate"><span class=
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-and-testing">Making and Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#walkflow">Walkflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#go-to-m1-h-and-see-all-the-functions-that-need-to-be-implemented">go to m1.h and see all the functions that need to be implemented</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implement-the-functions">Implement the functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-and-testing">Making and Testing</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

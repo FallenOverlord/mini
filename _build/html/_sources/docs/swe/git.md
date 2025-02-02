@@ -18,6 +18,8 @@ hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+git pull -r
 ```
 remediate it by pulling the latest chages before pushing: `git pull origin master --rebase`  
 now push your commits to the repository: `git push origin master`  
@@ -25,3 +27,9 @@ now push your commits to the repository: `git push origin master`
 
 
 ## Summary
+workflow
+```bash
+git status
+git add libstreetmap/src/m1.cpp
+git commit -m " building loadmap and closemap funcs on m1.cpp "
+```
