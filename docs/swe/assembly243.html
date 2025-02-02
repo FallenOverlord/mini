@@ -345,7 +345,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-4-i-o">2.3.1. Lab 4 I/O</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-4-i-o">2.3.1. Lab 4 I/O</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">2.3.1.1. Part 1</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -359,6 +362,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ece243-lab">
 <h1><span class="section-number">2.3. </span>ECE243 Lab<a class="headerlink" href="#ece243-lab" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Cpulator link: <a class="reference external" href="https://cpulator.01xz.net/?sys=rv32-de1soc">https://cpulator.01xz.net/?sys=rv32-de1soc</a></p>
+</div>
 <section id="lab-4-i-o">
 <h2><span class="section-number">2.3.1. </span>Lab 4 I/O<a class="headerlink" href="#lab-4-i-o" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
@@ -407,6 +414,114 @@ If more than 2 values need to be returned, the extra values must be stored in th
 <p>CPUlator Warning<br />
 If you overwrite s0 – s11 without saving them first, CPUlator will give an error saying you have “clobbered” a register.</p>
 </div>
+<section id="part-1">
+<h3><span class="section-number">2.3.1.1. </span>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">        </span>.section<span class="w"> </span>.text
+<span class="w">        </span>.global<span class="w"> </span>_start
+
+<span class="w">        </span>/*<span class="w"> </span>Define<span class="w"> </span>constants<span class="w"> </span>using<span class="w"> </span>proper<span class="w"> </span>syntax<span class="w"> </span>*/
+<span class="w">        </span>.equ<span class="w"> </span>LED_BASE,<span class="w"> </span>0xFF200000
+<span class="w">        </span>.equ<span class="w"> </span>KEY_BASE,<span class="w"> </span>0xFF200050
+
+_start:
+<span class="w">        </span>/*<span class="w"> </span>Initialize<span class="w"> </span>the<span class="w"> </span>display<span class="w"> </span>value<span class="w"> </span>to<span class="w"> </span><span class="m">1</span><span class="w"> </span>and<span class="w"> </span>write<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>LED<span class="w"> </span>port<span class="w"> </span>*/
+<span class="w">        </span>li<span class="w">      </span>t0,<span class="w"> </span><span class="m">1</span><span class="w">             </span><span class="c1"># t0 holds the current display value</span>
+<span class="w">        </span>li<span class="w">      </span>t3,<span class="w"> </span>LED_BASE<span class="w">      </span><span class="c1"># t3 = LED port base address</span>
+<span class="w">        </span>li<span class="w">      </span>t5,<span class="w"> </span>KEY_BASE<span class="w">      </span><span class="c1"># t5 = KEY port base address (for lw instructions)</span>
+<span class="w">        </span>sw<span class="w">      </span>t0,<span class="w"> </span><span class="m">0</span><span class="o">(</span>t3<span class="o">)</span>
+
+Main_Loop:
+<span class="w">        </span>/*<span class="w"> </span>Poll<span class="w"> </span>the<span class="w"> </span>KEY<span class="w"> </span>port<span class="w"> </span><span class="k">until</span><span class="w"> </span>a<span class="w"> </span>key<span class="w"> </span>press<span class="w"> </span>is<span class="w"> </span>detected<span class="w"> </span>*/
+<span class="w">        </span>lw<span class="w">      </span>t2,<span class="w"> </span><span class="m">0</span><span class="o">(</span>t5<span class="o">)</span><span class="w">         </span><span class="c1"># Read the KEY port into t2 using base register t5</span>
+<span class="w">        </span>beq<span class="w">     </span>t2,<span class="w"> </span>zero,<span class="w"> </span>Main_Loop<span class="w">  </span><span class="c1"># If no key pressed, keep polling</span>
+
+<span class="w">        </span>/*<span class="w"> </span>Check<span class="w"> </span>which<span class="w"> </span>KEY<span class="w"> </span>is<span class="w"> </span>pressed.
+<span class="w">           </span>KEY0:<span class="w"> </span>Bit<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">(</span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>0x1<span class="o">)</span><span class="w"> </span>*/
+<span class="w">        </span>li<span class="w">      </span>t4,<span class="w"> </span>0x1
+<span class="w">        </span>and<span class="w">     </span>t4,<span class="w"> </span>t2,<span class="w"> </span>t4<span class="w">        </span><span class="c1"># Isolate bit0</span>
+<span class="w">        </span>bnez<span class="w">    </span>t4,<span class="w"> </span>KEY0_Handler
+
+<span class="w">        </span>/*<span class="w"> </span>KEY1:<span class="w"> </span>Bit<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">(</span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>0x2<span class="o">)</span><span class="w"> </span>*/
+<span class="w">        </span>li<span class="w">      </span>t4,<span class="w"> </span>0x2
+<span class="w">        </span>and<span class="w">     </span>t4,<span class="w"> </span>t2,<span class="w"> </span>t4<span class="w">        </span><span class="c1"># Isolate bit1</span>
+<span class="w">        </span>bnez<span class="w">    </span>t4,<span class="w"> </span>KEY1_Handler
+
+<span class="w">        </span>/*<span class="w"> </span>KEY2:<span class="w"> </span>Bit<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">(</span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>0x4<span class="o">)</span><span class="w"> </span>*/
+<span class="w">        </span>li<span class="w">      </span>t4,<span class="w"> </span>0x4
+<span class="w">        </span>and<span class="w">     </span>t4,<span class="w"> </span>t2,<span class="w"> </span>t4<span class="w">        </span><span class="c1"># Isolate bit2</span>
+<span class="w">        </span>bnez<span class="w">    </span>t4,<span class="w"> </span>KEY2_Handler
+
+<span class="w">        </span>/*<span class="w"> </span>KEY3:<span class="w"> </span>Bit<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">(</span><span class="nv">mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>0x8<span class="o">)</span><span class="w"> </span>*/
+<span class="w">        </span>li<span class="w">      </span>t4,<span class="w"> </span>0x8
+<span class="w">        </span>and<span class="w">     </span>t4,<span class="w"> </span>t2,<span class="w"> </span>t4<span class="w">        </span><span class="c1"># Isolate bit3</span>
+<span class="w">        </span>bnez<span class="w">    </span>t4,<span class="w"> </span>KEY3_Handler
+
+<span class="w">        </span>/*<span class="w"> </span>If<span class="w"> </span>no<span class="w"> </span>recognized<span class="w"> </span>key,<span class="w"> </span><span class="nb">wait</span><span class="w"> </span><span class="k">until</span><span class="w"> </span>keys<span class="w"> </span>are<span class="w"> </span>released<span class="w"> </span>*/
+<span class="w">        </span>j<span class="w">       </span>Wait_Release
+
+/*----------------------------------------------------------------------
+<span class="w">  </span>KEY0_Handler:<span class="w">  </span>If<span class="w"> </span>KEY0<span class="w"> </span>is<span class="w"> </span>pressed,<span class="w"> </span><span class="nb">set</span><span class="w"> </span>display<span class="w"> </span>to<span class="w"> </span><span class="m">1</span>.
+----------------------------------------------------------------------*/
+KEY0_Handler:
+<span class="w">        </span>li<span class="w">      </span>t0,<span class="w"> </span><span class="m">1</span><span class="w">             </span><span class="c1"># Set display value to 1</span>
+<span class="w">        </span>j<span class="w">       </span>Update_LED
+
+/*----------------------------------------------------------------------
+<span class="w">  </span>KEY1_Handler:<span class="w">  </span>If<span class="w"> </span>KEY1<span class="w"> </span>is<span class="w"> </span>pressed,<span class="w"> </span>increment<span class="w"> </span>display<span class="w"> </span><span class="o">(</span>unless<span class="w"> </span>blank<span class="w"> </span>or<span class="w"> </span>already<span class="w"> </span><span class="m">15</span><span class="o">)</span>.
+<span class="w">                </span>If<span class="w"> </span>display<span class="w"> </span>is<span class="w"> </span>blank<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span><span class="m">1</span>.
+----------------------------------------------------------------------*/
+KEY1_Handler:
+<span class="w">        </span>beq<span class="w">     </span>t0,<span class="w"> </span>zero,<span class="w"> </span>KEY1_SetTo1<span class="w">  </span><span class="c1"># If blank, set to 1</span>
+<span class="w">        </span>li<span class="w">      </span>t4,<span class="w"> </span><span class="m">15</span>
+<span class="w">        </span>beq<span class="w">     </span>t0,<span class="w"> </span>t4,<span class="w"> </span>Wait_Release<span class="w">    </span><span class="c1"># If already 15, do nothing</span>
+<span class="w">        </span>addi<span class="w">    </span>t0,<span class="w"> </span>t0,<span class="w"> </span><span class="m">1</span><span class="w">         </span><span class="c1"># Otherwise, increment</span>
+<span class="w">        </span>j<span class="w">       </span>Update_LED
+
+KEY1_SetTo1:
+<span class="w">        </span>li<span class="w">      </span>t0,<span class="w"> </span><span class="m">1</span>
+<span class="w">        </span>j<span class="w">       </span>Update_LED
+
+/*----------------------------------------------------------------------
+<span class="w">  </span>KEY2_Handler:<span class="w">  </span>If<span class="w"> </span>KEY2<span class="w"> </span>is<span class="w"> </span>pressed,<span class="w"> </span>decrement<span class="w"> </span>display<span class="w"> </span><span class="o">(</span>unless<span class="w"> </span>blank<span class="w"> </span>or<span class="w"> </span>already<span class="w"> </span><span class="m">1</span><span class="o">)</span>.
+<span class="w">                </span>If<span class="w"> </span>display<span class="w"> </span>is<span class="w"> </span>blank<span class="w"> </span><span class="o">(</span><span class="m">0</span><span class="o">)</span>,<span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="nb">set</span><span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span><span class="m">1</span>.
+----------------------------------------------------------------------*/
+KEY2_Handler:
+<span class="w">        </span>beq<span class="w">     </span>t0,<span class="w"> </span>zero,<span class="w"> </span>KEY2_SetTo1<span class="w">  </span><span class="c1"># If blank, set to 1</span>
+<span class="w">        </span>li<span class="w">      </span>t4,<span class="w"> </span><span class="m">1</span>
+<span class="w">        </span>beq<span class="w">     </span>t0,<span class="w"> </span>t4,<span class="w"> </span>Wait_Release<span class="w">    </span><span class="c1"># If already 1, do nothing</span>
+<span class="w">        </span>addi<span class="w">    </span>t0,<span class="w"> </span>t0,<span class="w"> </span>-1<span class="w">        </span><span class="c1"># Otherwise, decrement</span>
+<span class="w">        </span>j<span class="w">       </span>Update_LED
+
+KEY2_SetTo1:
+<span class="w">        </span>li<span class="w">      </span>t0,<span class="w"> </span><span class="m">1</span>
+<span class="w">        </span>j<span class="w">       </span>Update_LED
+
+/*----------------------------------------------------------------------
+<span class="w">  </span>KEY3_Handler:<span class="w">  </span>If<span class="w"> </span>KEY3<span class="w"> </span>is<span class="w"> </span>pressed,<span class="w"> </span>blank<span class="w"> </span>the<span class="w"> </span>display<span class="w"> </span><span class="o">(</span>i.e.<span class="w"> </span><span class="nb">set</span><span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span><span class="m">0</span><span class="o">)</span>.
+----------------------------------------------------------------------*/
+KEY3_Handler:
+<span class="w">        </span>li<span class="w">      </span>t0,<span class="w"> </span><span class="m">0</span><span class="w">             </span><span class="c1"># Blank the display</span>
+<span class="w">        </span>j<span class="w">       </span>Update_LED
+
+/*----------------------------------------------------------------------
+<span class="w">  </span>Update_LED:<span class="w">  </span>Write<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>display<span class="w"> </span>value<span class="w"> </span><span class="o">(</span><span class="k">in</span><span class="w"> </span>t0<span class="o">)</span><span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>LED<span class="w"> </span>port.
+----------------------------------------------------------------------*/
+Update_LED:
+<span class="w">        </span>li<span class="w">      </span>t3,<span class="w"> </span>LED_BASE<span class="w">      </span><span class="c1"># Reload LED port base address (or reuse t3 if it wasn&#39;t clobbered)</span>
+<span class="w">        </span>sw<span class="w">      </span>t0,<span class="w"> </span><span class="m">0</span><span class="o">(</span>t3<span class="o">)</span>
+<span class="w">        </span>j<span class="w">       </span>Wait_Release
+
+/*----------------------------------------------------------------------
+<span class="w">  </span>Wait_Release:<span class="w">  </span>Wait<span class="w"> </span><span class="k">until</span><span class="w"> </span>all<span class="w"> </span>keys<span class="w"> </span>are<span class="w"> </span>released<span class="w"> </span><span class="o">(</span>i.e.<span class="w"> </span>KEY<span class="w"> </span>port<span class="w"> </span>reads<span class="w"> </span><span class="m">0</span><span class="o">)</span>.
+----------------------------------------------------------------------*/
+Wait_Release:
+Release_Loop:
+<span class="w">        </span>lw<span class="w">      </span>t2,<span class="w"> </span><span class="m">0</span><span class="o">(</span>t5<span class="o">)</span><span class="w">         </span><span class="c1"># Read KEY port using base register t5</span>
+<span class="w">        </span>bnez<span class="w">    </span>t2,<span class="w"> </span>Release_Loop
+<span class="w">        </span>j<span class="w">       </span>Main_Loop
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -474,7 +589,10 @@ If you overwrite s0 – s11 without saving them first, CPUlator will give an err
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-4-i-o">2.3.1. Lab 4 I/O</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lab-4-i-o">2.3.1. Lab 4 I/O</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">2.3.1.1. Part 1</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
