@@ -1,4 +1,4 @@
-# Colaborating with a team using git
+# ECE297-M0 Collaboration with Git
 
 ## Tracking and Committing
 `git status`to check for uncommitted changes  
