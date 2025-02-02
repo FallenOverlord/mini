@@ -1,4 +1,4 @@
-# Mapper Milestone 1
+# ECE297-M1 Mapper Functions
 An example project of using C++ to make a Mapper application, which shows street segments and location info.
 
 ## Walkflow
