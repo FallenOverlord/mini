@@ -1,4 +1,7 @@
 # ECE243 Lab
+```{note}
+Cpulator link: https://cpulator.01xz.net/?sys=rv32-de1soc
+```
 
 ## Lab 4 I/O
 
@@ -49,4 +52,111 @@ If more than 2 values need to be returned, the extra values must be stored in th
 ```{warning}
 CPUlator Warning  
 If you overwrite s0 – s11 without saving them first, CPUlator will give an error saying you have "clobbered" a register.
+```
+
+### Part 1
+```bash
+        .section .text
+        .global _start
+
+        /* Define constants using proper syntax */
+        .equ LED_BASE, 0xFF200000
+        .equ KEY_BASE, 0xFF200050
+
+_start:
+        /* Initialize the display value to 1 and write it to the LED port */
+        li      t0, 1             # t0 holds the current display value
+        li      t3, LED_BASE      # t3 = LED port base address
+        li      t5, KEY_BASE      # t5 = KEY port base address (for lw instructions)
+        sw      t0, 0(t3)
+
+Main_Loop:
+        /* Poll the KEY port until a key press is detected */
+        lw      t2, 0(t5)         # Read the KEY port into t2 using base register t5
+        beq     t2, zero, Main_Loop  # If no key pressed, keep polling
+
+        /* Check which KEY is pressed.
+           KEY0: Bit 0 (mask = 0x1) */
+        li      t4, 0x1
+        and     t4, t2, t4        # Isolate bit0
+        bnez    t4, KEY0_Handler
+
+        /* KEY1: Bit 1 (mask = 0x2) */
+        li      t4, 0x2
+        and     t4, t2, t4        # Isolate bit1
+        bnez    t4, KEY1_Handler
+
+        /* KEY2: Bit 2 (mask = 0x4) */
+        li      t4, 0x4
+        and     t4, t2, t4        # Isolate bit2
+        bnez    t4, KEY2_Handler
+
+        /* KEY3: Bit 3 (mask = 0x8) */
+        li      t4, 0x8
+        and     t4, t2, t4        # Isolate bit3
+        bnez    t4, KEY3_Handler
+
+        /* If no recognized key, wait until keys are released */
+        j       Wait_Release
+
+/*----------------------------------------------------------------------
+  KEY0_Handler:  If KEY0 is pressed, set display to 1.
+----------------------------------------------------------------------*/
+KEY0_Handler:
+        li      t0, 1             # Set display value to 1
+        j       Update_LED
+
+/*----------------------------------------------------------------------
+  KEY1_Handler:  If KEY1 is pressed, increment display (unless blank or already 15).
+                If display is blank (0), then set it to 1.
+----------------------------------------------------------------------*/
+KEY1_Handler:
+        beq     t0, zero, KEY1_SetTo1  # If blank, set to 1
+        li      t4, 15
+        beq     t0, t4, Wait_Release    # If already 15, do nothing
+        addi    t0, t0, 1         # Otherwise, increment
+        j       Update_LED
+
+KEY1_SetTo1:
+        li      t0, 1
+        j       Update_LED
+
+/*----------------------------------------------------------------------
+  KEY2_Handler:  If KEY2 is pressed, decrement display (unless blank or already 1).
+                If display is blank (0), then set it to 1.
+----------------------------------------------------------------------*/
+KEY2_Handler:
+        beq     t0, zero, KEY2_SetTo1  # If blank, set to 1
+        li      t4, 1
+        beq     t0, t4, Wait_Release    # If already 1, do nothing
+        addi    t0, t0, -1        # Otherwise, decrement
+        j       Update_LED
+
+KEY2_SetTo1:
+        li      t0, 1
+        j       Update_LED
+
+/*----------------------------------------------------------------------
+  KEY3_Handler:  If KEY3 is pressed, blank the display (i.e. set it to 0).
+----------------------------------------------------------------------*/
+KEY3_Handler:
+        li      t0, 0             # Blank the display
+        j       Update_LED
+
+/*----------------------------------------------------------------------
+  Update_LED:  Write the current display value (in t0) to the LED port.
+----------------------------------------------------------------------*/
+Update_LED:
+        li      t3, LED_BASE      # Reload LED port base address (or reuse t3 if it wasn't clobbered)
+        sw      t0, 0(t3)
+        j       Wait_Release
+
+/*----------------------------------------------------------------------
+  Wait_Release:  Wait until all keys are released (i.e. KEY port reads 0).
+----------------------------------------------------------------------*/
+Wait_Release:
+Release_Loop:
+        lw      t2, 0(t5)         # Read KEY port using base register t5
+        bnez    t2, Release_Loop
+        j       Main_Loop
 ```
