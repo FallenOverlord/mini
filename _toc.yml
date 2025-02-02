@@ -18,6 +18,7 @@ parts:
       - file: docs/swe/swe_intro
         sections:
         - file: docs/swe/git
+        - file: docs/swe/map_m1
 
 
   - caption: About Miles
