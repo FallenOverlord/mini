@@ -50,4 +50,22 @@ make test
 
 ece297exercise 1 --debug_test Public_M1_Func_Intersection_Tests
 make test
+
+# Street Tests
+ece297exercise 1 --debug_test Public_M1_Func_Street_Tests
+make test
+
+ece297exercise 1 --debug_test Public_M1_Perf_Street_Tests
+make test
+
+# Spatial Tests
+ece297exercise 1 --debug_test Public_M1_Func_Spatial_Tests
+make test
+
+# Distance Time Tests
+ece297exercise 1 --debug_test Public_M1_Func_Distance-Time_Tests
+make test
+
+ece297exercise 1 --debug_test Public_M1_Perf_Distance-Time_Tests
+make test
 ```
