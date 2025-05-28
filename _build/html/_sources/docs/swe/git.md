@@ -4,6 +4,8 @@
 `git status`to check for uncommitted changes  
 `git add <file>` to add new files to Git tracking  
 `git commit -m "<description>"` to commit the changes
+`git pull -r` pull the newest commit from git
+`git reset .` OR `git reset --hard HEAD` discard all local changes and untracked files
 
 ## Branching and Pulling
 `git branch` to check the name of the branch, e.g. `* master`means you are on the master branch.  
@@ -24,6 +26,10 @@ git pull -r
 remediate it by pulling the latest chages before pushing: `git pull origin master --rebase`  
 now push your commits to the repository: `git push origin master`  
 
+## Cloning the repository
+### Using IntelliJ IDEA as code editor
+`File` -> `New` -> `Project from version control` 
+Select version control as `git` and `url` as the repository's url
 
 
 ## Summary

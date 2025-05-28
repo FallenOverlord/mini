@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2.3. Use GTK, EZLB and Glade &#8212; Cybersecurity QuickStart</title>
+    <title>2.4. Python Scripting and SQL &#8212; Cybersecurity QuickStart</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/swe/gtk';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/swe/pysql';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.4. Python Scripting and SQL" href="pysql.html" />
-    <link rel="prev" title="2.2. ECE297-M1 Mapper Functions" href="map_m1.html" />
+    <link rel="next" title="3. ABOUT ME" href="../about/about.html" />
+    <link rel="prev" title="2.3. Use GTK, EZLB and Glade" href="gtk.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,8 +185,8 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="swe_intro.html">2. Software Engineering</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="git.html">2.1. ECE297-M0 Collaboration with Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="map_m1.html">2.2. ECE297-M1 Mapper Functions</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. Use GTK, EZLB and Glade</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pysql.html">2.4. Python Scripting and SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gtk.html">2.3. Use GTK, EZLB and Glade</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">2.4. Python Scripting and SQL</a></li>
 </ul>
 </li>
 </ul>
@@ -252,7 +252,7 @@
       
       
       
-      <li><a href="../../_sources/docs/swe/gtk.md" target="_blank"
+      <li><a href="../../_sources/docs/swe/pysql.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Use GTK, EZLB and Glade</h1>
+    <h1>Python Scripting and SQL</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -346,7 +346,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-glade">2.3.1. Using Glade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-configuring-a-database">2.4.1. Creating and Configuring a database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-already-have-a-csv-file">2.4.1.1. When you already have a csv file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-need-to-append-a-csv-to-a-existing-table">2.4.1.2. When you need to append a csv to a existing table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-a-database-using-python-scripts">2.4.2. Connecting with a database using python scripts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-configurations">2.4.2.1. Basic Configurations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections">2.4.2.2. Connections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-query">2.4.3. SQL Query</a></li>
 </ul>
             </nav>
         </div>
@@ -358,12 +368,90 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="use-gtk-ezlb-and-glade">
-<h1><span class="section-number">2.3. </span>Use GTK, EZLB and Glade<a class="headerlink" href="#use-gtk-ezlb-and-glade" title="Link to this heading">#</a></h1>
-<section id="using-glade">
-<h2><span class="section-number">2.3.1. </span>Using Glade<a class="headerlink" href="#using-glade" title="Link to this heading">#</a></h2>
-<p>Open glade with <code class="docutils literal notranslate"><span class="pre">glade</span> <span class="pre">libstreetmap/resources/main.ui</span></code><br />
-Click on the left top cornor with the blue zoomer button to add widgets.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-scripting-and-sql">
+<h1><span class="section-number">2.4. </span>Python Scripting and SQL<a class="headerlink" href="#python-scripting-and-sql" title="Link to this heading">#</a></h1>
+<section id="creating-and-configuring-a-database">
+<h2><span class="section-number">2.4.1. </span>Creating and Configuring a database<a class="headerlink" href="#creating-and-configuring-a-database" title="Link to this heading">#</a></h2>
+<section id="when-you-already-have-a-csv-file">
+<h3><span class="section-number">2.4.1.1. </span>When you already have a csv file<a class="headerlink" href="#when-you-already-have-a-csv-file" title="Link to this heading">#</a></h3>
+<p>working with MySQL workbench GUI:<br />
+MySQL Connections -&gt; <code class="docutils literal notranslate"><span class="pre">+</span></code> -&gt; give it a password and test the connections<br />
+In the left <code class="docutils literal notranslate"><span class="pre">SCHEMAS</span></code> tab, right and create a new schema<br />
+Right click on the schema and click <code class="docutils literal notranslate"><span class="pre">Table</span> <span class="pre">Data</span> <span class="pre">Import</span> <span class="pre">Wizard</span></code></p>
+</section>
+<section id="when-you-need-to-append-a-csv-to-a-existing-table">
+<h3><span class="section-number">2.4.1.2. </span>When you need to append a csv to a existing table<a class="headerlink" href="#when-you-need-to-append-a-csv-to-a-existing-table" title="Link to this heading">#</a></h3>
+<p>Click on the table and click <code class="docutils literal notranslate"><span class="pre">Table</span> <span class="pre">Data</span> <span class="pre">Import</span> <span class="pre">Wizard</span></code><br />
+Do not select truncate</p>
+</section>
+</section>
+<section id="connecting-with-a-database-using-python-scripts">
+<h2><span class="section-number">2.4.2. </span>Connecting with a database using python scripts<a class="headerlink" href="#connecting-with-a-database-using-python-scripts" title="Link to this heading">#</a></h2>
+<section id="basic-configurations">
+<h3><span class="section-number">2.4.2.1. </span>Basic Configurations<a class="headerlink" href="#basic-configurations" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pymsql</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import<span class="w"> </span>pymysql
+from<span class="w"> </span>datetime<span class="w"> </span>import<span class="w"> </span>datetime
+
+<span class="c1"># 1. Connection settings</span>
+<span class="nv">HOST</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;127.0.0.1&#39;</span>
+<span class="nv">PORT</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="m">3306</span>
+<span class="nv">USER</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;root&#39;</span>
+<span class="nv">PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;1234&#39;</span>
+<span class="nv">DATABASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;myDB&#39;</span><span class="w"> </span><span class="c1"># schema name</span>
+</pre></div>
+</div>
+</section>
+<section id="connections">
+<h3><span class="section-number">2.4.2.2. </span>Connections<a class="headerlink" href="#connections" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2. Table and column you want to query</span>
+<span class="nv">TABLE_NAME</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;may2025&#39;</span>
+<span class="nv">TIME_COLUMN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Date&#39;</span>
+<span class="nv">SDESCR_COLUMN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Sub-description&#39;</span>
+<span class="nv">VAL_COLUMN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Amount&#39;</span>
+<span class="nv">DESCR_COLUMN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Description&#39;</span>
+
+<span class="c1"># 3. Define your interval (YYYY-MM-DD HH:MM:SS)</span>
+<span class="nv">START</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2025-04-01 00:00:00&#39;</span>
+<span class="nv">END</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;2025-05-26 23:59:59&#39;</span>
+
+def<span class="w"> </span>fetch_between<span class="o">(</span>start_ts:<span class="w"> </span>str,<span class="w"> </span>end_ts:<span class="w"> </span>str<span class="o">)</span>:
+<span class="w">    </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    Connects to MySQL and returns all rows where TIME_COLUMN</span>
+<span class="s2">    is BETWEEN start_ts AND end_ts.</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+<span class="w">    </span><span class="nv">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>pymysql.connect<span class="o">(</span>
+<span class="w">        </span><span class="nv">host</span><span class="o">=</span>HOST,
+<span class="w">        </span><span class="nv">port</span><span class="o">=</span>PORT,
+<span class="w">        </span><span class="nv">user</span><span class="o">=</span>USER,
+<span class="w">        </span><span class="nv">password</span><span class="o">=</span>PASSWORD,
+<span class="w">        </span><span class="nv">database</span><span class="o">=</span>DATABASE,
+<span class="w">        </span><span class="nv">charset</span><span class="o">=</span><span class="s1">&#39;utf8mb4&#39;</span>,
+<span class="w">        </span><span class="nv">cursorclass</span><span class="o">=</span>pymysql.cursors.DictCursor
+<span class="w">    </span><span class="o">)</span>
+<span class="w">    </span>try:
+<span class="w">        </span>with<span class="w"> </span>conn.cursor<span class="o">()</span><span class="w"> </span>as<span class="w"> </span>cur:
+<span class="w">            </span><span class="nv">sql</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>f<span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                &lt;your sql query&gt;</span>
+<span class="s2">            &quot;&quot;&quot;</span>
+<span class="w">            </span>cur.execute<span class="o">(</span>sql,<span class="w"> </span><span class="o">(</span>start_ts,<span class="w"> </span>end_ts<span class="o">))</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span>cur.fetchall<span class="o">()</span>
+<span class="w">    </span>finally:
+<span class="w">        </span>conn.close<span class="o">()</span>
+
+<span class="k">if</span><span class="w"> </span><span class="nv">__name__</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;__main__&#39;</span>:
+<span class="w">    </span><span class="nv">rows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>fetch_between<span class="o">(</span>START,<span class="w"> </span>END<span class="o">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>rows:
+<span class="w">        </span>print<span class="o">(</span><span class="s2">&quot;No entries found in that interval.&quot;</span><span class="o">)</span>
+<span class="w">    </span><span class="k">else</span>:
+<span class="w">        </span><span class="k">for</span><span class="w"> </span>row<span class="w"> </span><span class="k">in</span><span class="w"> </span>rows:
+<span class="w">            </span>print<span class="o">(</span>row<span class="o">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sql-query">
+<h2><span class="section-number">2.4.3. </span>SQL Query<a class="headerlink" href="#sql-query" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -398,20 +486,20 @@ Click on the left top cornor with the blue zoomer button to add widgets.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="map_m1.html"
+       href="gtk.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.2. </span>ECE297-M1 Mapper Functions</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>Use GTK, EZLB and Glade</p>
       </div>
     </a>
     <a class="right-next"
-       href="pysql.html"
+       href="../about/about.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Python Scripting and SQL</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>ABOUT ME</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -431,7 +519,17 @@ Click on the left top cornor with the blue zoomer button to add widgets.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-glade">2.3.1. Using Glade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-configuring-a-database">2.4.1. Creating and Configuring a database</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-already-have-a-csv-file">2.4.1.1. When you already have a csv file</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#when-you-need-to-append-a-csv-to-a-existing-table">2.4.1.2. When you need to append a csv to a existing table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-with-a-database-using-python-scripts">2.4.2. Connecting with a database using python scripts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-configurations">2.4.2.1. Basic Configurations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections">2.4.2.2. Connections</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-query">2.4.3. SQL Query</a></li>
 </ul>
   </nav></div>
 

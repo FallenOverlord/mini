@@ -186,6 +186,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.1. ECE297-M0 Collaboration with Git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="map_m1.html">2.2. ECE297-M1 Mapper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gtk.html">2.3. Use GTK, EZLB and Glade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pysql.html">2.4. Python Scripting and SQL</a></li>
 </ul>
 </li>
 </ul>
@@ -347,7 +348,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-and-committing">2.1.1. Tracking and Committing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-and-pulling">2.1.2. Branching and Pulling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">2.1.3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-repository">2.1.3. Cloning the repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-intellij-idea-as-code-editor">2.1.3.1. Using IntelliJ IDEA as code editor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">2.1.4. Summary</a></li>
 </ul>
             </nav>
         </div>
@@ -365,7 +370,9 @@ document.write(`
 <h2><span class="section-number">2.1.1. </span>Tracking and Committing<a class="headerlink" href="#tracking-and-committing" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>to check for uncommitted changes<br />
 <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">&lt;file&gt;</span></code> to add new files to Git tracking<br />
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;description&gt;&quot;</span></code> to commit the changes</p>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;&lt;description&gt;&quot;</span></code> to commit the changes
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">-r</span></code> pull the newest commit from git
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">.</span></code> OR <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">--hard</span> <span class="pre">HEAD</span></code> discard all local changes and untracked files</p>
 </section>
 <section id="branching-and-pulling">
 <h2><span class="section-number">2.1.2. </span>Branching and Pulling<a class="headerlink" href="#branching-and-pulling" title="Link to this heading">#</a></h2>
@@ -387,8 +394,16 @@ git<span class="w"> </span>pull<span class="w"> </span>-r
 <p>remediate it by pulling the latest chages before pushing: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span> <span class="pre">--rebase</span></code><br />
 now push your commits to the repository: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">master</span></code></p>
 </section>
+<section id="cloning-the-repository">
+<h2><span class="section-number">2.1.3. </span>Cloning the repository<a class="headerlink" href="#cloning-the-repository" title="Link to this heading">#</a></h2>
+<section id="using-intellij-idea-as-code-editor">
+<h3><span class="section-number">2.1.3.1. </span>Using IntelliJ IDEA as code editor<a class="headerlink" href="#using-intellij-idea-as-code-editor" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">File</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">New</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Project</span> <span class="pre">from</span> <span class="pre">version</span> <span class="pre">control</span></code>
+Select version control as <code class="docutils literal notranslate"><span class="pre">git</span></code> and <code class="docutils literal notranslate"><span class="pre">url</span></code> as the repository’s url</p>
+</section>
+</section>
 <section id="summary">
-<h2><span class="section-number">2.1.3. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.1.4. </span>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <p>workflow</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
 git<span class="w"> </span>add<span class="w"> </span>libstreetmap/src/m1.cpp
@@ -464,7 +479,11 @@ git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </sp
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-and-committing">2.1.1. Tracking and Committing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#branching-and-pulling">2.1.2. Branching and Pulling</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">2.1.3. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-repository">2.1.3. Cloning the repository</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-intellij-idea-as-code-editor">2.1.3.1. Using IntelliJ IDEA as code editor</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">2.1.4. Summary</a></li>
 </ul>
   </nav></div>
 
