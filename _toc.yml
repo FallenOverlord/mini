@@ -20,6 +20,7 @@ parts:
         - file: docs/swe/git
         - file: docs/swe/map_m1
         - file: docs/swe/gtk
+        - file: docs/swe/pysql
 
 
 
@@ -31,3 +32,4 @@ parts:
         - file: docs/about/resume.md
         - file: docs/about/experience.md
         - file: docs/about/projects.md
+        - file: README.md
