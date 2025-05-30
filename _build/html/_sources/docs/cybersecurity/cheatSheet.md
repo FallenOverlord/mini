@@ -1,5 +1,10 @@
 # Commands Cheatsheet
 
+## WIFI
+show password of saved wifi connections on windows pc
+`netsh wlan show profiles` to check the name of the wifi
+`netsh wlan show profile name="Your WiFi Name" key=clear` to check the password
+
 ## Footprinting
 ### IMAP/POP3
 ```bash

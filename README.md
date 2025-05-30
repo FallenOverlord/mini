@@ -1,4 +1,4 @@
-About This Book
+# About This Book
 
 Welcome! I’m Miles Wang, and I built this book to provide accessible, step-by-step guidance for those interested in the exciting world of computer security. My goal is to share everything I’ve learned in the field of cybersecurity, as well as related areas, to contribute back to the community that has helped me grow.
 

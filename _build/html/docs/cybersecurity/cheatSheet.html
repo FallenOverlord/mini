@@ -187,15 +187,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../swe/map_m1.html">2.2. ECE297-M1 Mapper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../swe/gtk.html">2.3. Use GTK, EZLB and Glade</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../swe/pysql.html">2.4. Python Scripting and SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../swe/sb_basics.html">2.5. Spring Boot Basics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ece/ece_intro.html">3. ECE</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ece/circuits_basics.html">3.2. Circuits Basics</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">About Miles</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../about/about.html">3. ABOUT ME</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../about/resume.html">3.1. Resume</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/experience.html">3.2. EXPERIENCE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../about/projects.html">3.3. PROJECTS</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about/about.html">4. ABOUT ME</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/resume.html">4.1. Resume</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/experience.html">4.2. EXPERIENCE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/projects.html">4.3. PROJECTS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../README.html">4.4. About This Book</a></li>
 </ul>
 </li>
 </ul>
@@ -346,18 +352,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footprinting">1.4.1. Footprinting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imap-pop3">1.4.1.1. IMAP/POP3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smtp">1.4.1.2. SMTP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.4.1.3. DNS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">1.4.1.4. Lab</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.4.1.4.1. SSH</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-lab">1.4.1.4.2. SQL Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wifi">1.4.1. WIFI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footprinting">1.4.2. Footprinting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imap-pop3">1.4.2.1. IMAP/POP3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smtp">1.4.2.2. SMTP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.4.2.3. DNS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">1.4.2.4. Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.4.2.4.1. SSH</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-lab">1.4.2.4.2. SQL Lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-gathering-web">1.4.2. Info gathering web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-gathering-web">1.4.3. Info gathering web</a></li>
 </ul>
             </nav>
         </div>
@@ -371,10 +378,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="commands-cheatsheet">
 <h1><span class="section-number">1.4. </span>Commands Cheatsheet<a class="headerlink" href="#commands-cheatsheet" title="Link to this heading">#</a></h1>
+<section id="wifi">
+<h2><span class="section-number">1.4.1. </span>WIFI<a class="headerlink" href="#wifi" title="Link to this heading">#</a></h2>
+<p>show password of saved wifi connections on windows pc
+<code class="docutils literal notranslate"><span class="pre">netsh</span> <span class="pre">wlan</span> <span class="pre">show</span> <span class="pre">profiles</span></code> to check the name of the wifi
+<code class="docutils literal notranslate"><span class="pre">netsh</span> <span class="pre">wlan</span> <span class="pre">show</span> <span class="pre">profile</span> <span class="pre">name=&quot;Your</span> <span class="pre">WiFi</span> <span class="pre">Name&quot;</span> <span class="pre">key=clear</span></code> to check the password</p>
+</section>
 <section id="footprinting">
-<h2><span class="section-number">1.4.1. </span>Footprinting<a class="headerlink" href="#footprinting" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.2. </span>Footprinting<a class="headerlink" href="#footprinting" title="Link to this heading">#</a></h2>
 <section id="imap-pop3">
-<h3><span class="section-number">1.4.1.1. </span>IMAP/POP3<a class="headerlink" href="#imap-pop3" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.2.1. </span>IMAP/POP3<a class="headerlink" href="#imap-pop3" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Scan the server for ICMP/POP3 ports for server info</span>
 sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.84.93<span class="w"> </span>-sV<span class="w"> </span>-p110,143,993,995<span class="w"> </span>-sC
 
@@ -409,7 +422,7 @@ openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span cla
 </div>
 </section>
 <section id="smtp">
-<h3><span class="section-number">1.4.1.2. </span>SMTP<a class="headerlink" href="#smtp" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.2.2. </span>SMTP<a class="headerlink" href="#smtp" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interact with SMTP Server</span>
 telnet<span class="w"> </span><span class="m">10</span>.129.84.93<span class="w"> </span><span class="m">25</span>
 HELO<span class="w"> </span>mail1.inlanefreight.htb<span class="w"> </span><span class="c1"># init session</span>
@@ -424,7 +437,7 @@ sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span
 </div>
 </section>
 <section id="dns">
-<h3><span class="section-number">1.4.1.3. </span>DNS<a class="headerlink" href="#dns" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.2.3. </span>DNS<a class="headerlink" href="#dns" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#grep admin email info</span>
 dig<span class="w"> </span>soa<span class="w"> </span>&lt;target_ip&gt;
 
@@ -451,7 +464,7 @@ dnsenum<span class="w"> </span>--dnsserver<span class="w"> </span><span class="m
 </div>
 </section>
 <section id="lab">
-<h3><span class="section-number">1.4.1.4. </span>Lab<a class="headerlink" href="#lab" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.4.2.4. </span>Lab<a class="headerlink" href="#lab" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>PORT<span class="w">     </span>STATE<span class="w"> </span>SERVICE
 <span class="m">21</span>/tcp<span class="w">   </span>open<span class="w">  </span>ftp
 <span class="m">22</span>/tcp<span class="w">   </span>open<span class="w">  </span>ssh
@@ -463,7 +476,7 @@ dnsenum<span class="w"> </span>--dnsserver<span class="w"> </span><span class="m
 </pre></div>
 </div>
 <section id="ssh">
-<h4><span class="section-number">1.4.1.4.1. </span>SSH<a class="headerlink" href="#ssh" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">1.4.2.4.1. </span>SSH<a class="headerlink" href="#ssh" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>/etc/ssh/sshd_config<span class="w">  </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;/^\s*$/d&#39;</span>
 
 dig<span class="w"> </span>soa<span class="w"> </span><span class="m">10</span>.129.203.129
@@ -503,7 +516,7 @@ fPve51nX
 </div>
 </section>
 <section id="sql-lab">
-<h4><span class="section-number">1.4.1.4.2. </span>SQL Lab<a class="headerlink" href="#sql-lab" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">1.4.2.4.2. </span>SQL Lab<a class="headerlink" href="#sql-lab" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>nmap<span class="w"> </span><span class="m">10</span>.129.202.41<span class="w"> </span>-sV<span class="w"> </span>-sC<span class="w"> </span>-p3306<span class="w"> </span>--script<span class="w"> </span>mysql*
 
 sudo<span class="w"> </span>nmap<span class="w"> </span>--script<span class="w"> </span>ms-sql-info,ms-sql-empty-password,ms-sql-xp-cmdshell,ms-sql-config,ms-sql-ntlm-info,ms-sql-tables,ms-sql-hasdbaccess,ms-sql-dac,ms-sql-dump-hashes<span class="w"> </span>--script-args<span class="w"> </span>mssql.instance-port<span class="o">=</span><span class="m">1433</span>,mssql.username<span class="o">=</span>sa,mssql.password<span class="o">=</span>,mssql.instance-name<span class="o">=</span>MSSQLSERVER<span class="w"> </span>-sV<span class="w"> </span>-p<span class="w"> </span><span class="m">1433</span><span class="w"> </span><span class="m">10</span>.129.202.41
@@ -527,7 +540,7 @@ tree<span class="w"> </span>.
 </section>
 </section>
 <section id="info-gathering-web">
-<h2><span class="section-number">1.4.2. </span>Info gathering web<a class="headerlink" href="#info-gathering-web" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.4.3. </span>Info gathering web<a class="headerlink" href="#info-gathering-web" title="Link to this heading">#</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">TARGET</span><span class="o">=</span><span class="s2">&quot;tesla.com&quot;</span>
 whois<span class="w"> </span><span class="nv">$TARGET</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;@&#39;</span>
 
@@ -607,18 +620,19 @@ nslookup<span class="w"> </span><span class="nv">$TARGET</span><span class="w"> 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footprinting">1.4.1. Footprinting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imap-pop3">1.4.1.1. IMAP/POP3</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smtp">1.4.1.2. SMTP</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.4.1.3. DNS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">1.4.1.4. Lab</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.4.1.4.1. SSH</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-lab">1.4.1.4.2. SQL Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wifi">1.4.1. WIFI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#footprinting">1.4.2. Footprinting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imap-pop3">1.4.2.1. IMAP/POP3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smtp">1.4.2.2. SMTP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dns">1.4.2.3. DNS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lab">1.4.2.4. Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ssh">1.4.2.4.1. SSH</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sql-lab">1.4.2.4.2. SQL Lab</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-gathering-web">1.4.2. Info gathering web</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info-gathering-web">1.4.3. Info gathering web</a></li>
 </ul>
   </nav></div>
 

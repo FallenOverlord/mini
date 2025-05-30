@@ -21,8 +21,10 @@ parts:
         - file: docs/swe/map_m1
         - file: docs/swe/gtk
         - file: docs/swe/pysql
-
-
+        - file: docs/swe/sb_basics
+      - file: docs/ece/ece_intro
+        sections:
+        - file: docs/ece/circuits_basics
 
   - caption: About Miles
     numbered: True
