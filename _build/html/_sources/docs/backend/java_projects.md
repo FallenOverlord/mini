@@ -53,7 +53,7 @@ public class PDFgen {
 
         // Recipient's email ID needs to be mentioned.
         String to0 = "mars.wang@mail.utoronto.ca";
-        String to = "chenxl8@asiainfo.com";
+        String to = "nflsicmars@gmail.com";
         // Sender's email ID needs to be mentioned
         String from = "3330525778@qq.com";
         final String username = "3330525778";
